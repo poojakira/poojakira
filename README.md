@@ -39,7 +39,7 @@
 #### Academic & Industry Environment:
 * **Academic Research:** Arizona State University (M.S. Software Engineering)
 * **Industry Fellowship:** Honeywell Aerospace Innovation Fellow
-* **Publications:** IEEE-Published Author in Multi-Agent Systems & Reinforcement Learning
+* **Publications:** IEEE-Published Author 
 
 <br>
 
