@@ -9,7 +9,7 @@
   <a href="https://poojakira.dev" target="_blank">
     <img src="https://img.shields.io/badge/Portfolio-0F2027?style=for-the-badge&logo=vercel&logoColor=2C5364" alt="Portfolio" height="28">
   </a>
-  <a href="mailto:poojakira@users.noreply.github.com">
+  <a href="mailto:poojakiranbhardwaj@gmail.com">
     <img src="https://img.shields.io/badge/Secure_Comm-0F2027?style=for-the-badge&logo=gmail&logoColor=2C5364" alt="Email" height="28">
   </a>
 </div>
