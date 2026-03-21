@@ -1,83 +1,103 @@
 <div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0D1117&height=220&section=header&text=POOJA%20KIRAN&fontSize=75&fontColor=00FFCC&fontAlignY=40&desc=AEROSPACE%20%E2%9C%A6%20CYBERSECURITY%20%E2%9C%A6%20MLOPS&descAlignY=62&descAlign=50&animation=fadeIn" width="100%"/>
+  <h1 style="border-bottom: none;">POOJA KIRAN BHARADWAJ</h1>
+  <p><b>Machine Learning Engineer & IEEE-Published Researcher</b></p>
+  <p><i>Building Scalable AI at the Nexus of Aerospace, Cybersecurity, and MLOps</i></p>
+  <br>
+  <div>
+    <a href="https://linkedin.com/in/poojakiran" target="_blank">
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/LinkedIn-000000?style=for-the-badge&logo=linkedin&logoColor=white">
+        <img alt="LinkedIn" src="https://img.shields.io/badge/LinkedIn-F3F4F6?style=for-the-badge&logo=linkedin&logoColor=black">
+      </picture>
+    </a>
+    <a href="https://poojakira.dev" target="_blank">
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/Portfolio-000000?style=for-the-badge&logo=vercel&logoColor=white">
+        <img alt="Portfolio" src="https://img.shields.io/badge/Portfolio-F3F4F6?style=for-the-badge&logo=vercel&logoColor=black">
+      </picture>
+    </a>
+    <a href="mailto:poojakira@users.noreply.github.com">
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/Contact-000000?style=for-the-badge&logo=mail.ru&logoColor=white">
+        <img alt="Email" src="https://img.shields.io/badge/Contact-F3F4F6?style=for-the-badge&logo=mail.ru&logoColor=black">
+      </picture>
+    </a>
+  </div>
 </div>
 
-<p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&pause=1000&color=00FFCC&center=true&vCenter=true&width=800&lines=Initializing+AI+Systems...;Establishing+Secure+Telemetry...;Target+Locked:+Flight+Optimization;Welcome+to+Mission+Control." alt="Typing SVG" />
-</p>
+<br><br>
 
-<p align="center">
-  <a href="https://linkedin.com/in/poojakiran" target="_blank"><img src="https://img.shields.io/badge/LINKEDIN-0D1117?style=for-the-badge&logo=linkedin&logoColor=00FFCC&color=00FFCC&labelColor=0D1117" alt="LinkedIn"></a>
-  <a href="https://poojakira.dev" target="_blank"><img src="https://img.shields.io/badge/PORTFOLIO-0D1117?style=for-the-badge&logo=google-chrome&logoColor=00FFCC&color=00FFCC&labelColor=0D1117" alt="Portfolio"></a>
-  <a href="mailto:poojakira@users.noreply.github.com"><img src="https://img.shields.io/badge/SECURE_COMM-0D1117?style=for-the-badge&logo=gmail&logoColor=00FFCC&color=00FFCC&labelColor=0D1117" alt="Email"></a>
-</p>
+### ⸻ OVERVIEW
 
-<br/>
+I am an M.S. Software Engineering candidate at **Arizona State University** and a **Honeywell Aerospace Innovation Fellow**. My engineering focus is dedicated to the architecture of mission-critical AI systems. I specialize in the research and deployment of **Physics-Informed Neural Networks (PINNs)**, high-throughput transformer optimization, and **Security-Focused MLOps**. 
 
-### 📟 `SYS.ROOT > IDENTITY_MATRIX`
+I design and deploy infrastructure that demands zero-fault mathematical precision, operating reliably at the intersection of flight dynamics and aggressively encrypted telemetry pipelines.
 
-```zsh
-❯ whoami
-Pooja Kiran Bharadwaj - Machine Learning Engineer & IEEE-published Researcher
+<br>
 
-❯ systemctl status poojakira.service
-● poojakira.service - Mission Critical AI Architect
-   Active: active (running) since Nov 2024
-   Location: Arizona State University (M.S. Software Engineering)
-   Clearance: Honeywell Aerospace Innovation Fellow
-   Capabilities:
-     ├─ Aerospace: Physics-Informed Neural Networks (PINNs), Flight Dynamics GNC
-     ├─ MLOps: High-Throughput Transformer Defragmentation, Model Deployment
-     └─ Cybersec: AES-256 Encrypted Telemetry Pipelines
+### ⸻ TECHNICAL ARCHITECTURE
 
-❯ echo "The best way to predict the future is to build it—securely."
-```
+<table width="100%" style="border-collapse: collapse; border: none;">
+  <tr style="border: none;">
+    <td valign="top" width="50%" style="border: none;">
+      <b>Core Engineering</b><br><br>
+      ▪ Python, C++, JavaScript (ES6+), SQL<br>
+      ▪ PyTorch, TensorFlow, Scikit-Learn<br>
+      ▪ Multi-Agent Reinforcement Learning<br>
+      ▪ Time-Series Diagnostics & Computer Vision<br>
+    </td>
+    <td valign="top" width="50%" style="border: none;">
+      <b>Systems & Infrastructure</b><br><br>
+      ▪ AWS Cloud Architecture & Security<br>
+      ▪ Kubernetes, Docker, CI/CD Pipelines<br>
+      ▪ AES-256 Encryption & RSA Signaling<br>
+      ▪ Linux Systems & Hardware Interfacing<br>
+    </td>
+  </tr>
+</table>
 
-<br/>
+<br>
 
-### ⚡ `SYS.LOAD > TECHNICAL_ARSENAL`
-
-<p align="center">
-  <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=py,js,cpp,sql,pytorch,tensorflow,scikitlearn,numpy,opencv,aws,docker,kubernetes,git,linux,githubactions&theme=dark" alt="Skills" />
-  </a>
-</p>
-
-<br/>
-
-### 🛰️ `SYS.ACTIVE_NODES > MISSION_CRITICAL_DEPLOYMENTS`
+### ⸻ MISSION-CRITICAL DEPLOYMENTS
 
 <div align="center">
   <a href="https://github.com/poojakira/PulseNet">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=poojakira&repo=PulseNet&title_color=00FFCC&text_color=c9d1d9&icon_color=00FFCC&bg_color=0D1117&border_color=00FFCC" alt="PulseNet"/>
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api/pin/?username=poojakira&repo=PulseNet&theme=dark&hide_border=true&bg_color=00000000">
+      <img alt="PulseNet" src="https://github-readme-stats.vercel.app/api/pin/?username=poojakira&repo=PulseNet&theme=default&hide_border=true&bg_color=00000000">
+    </picture>
   </a>
   <a href="https://github.com/poojakira/CommandX">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=poojakira&repo=CommandX&title_color=00FFCC&text_color=c9d1d9&icon_color=00FFCC&bg_color=0D1117&border_color=00FFCC" alt="CommandX"/>
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api/pin/?username=poojakira&repo=CommandX&theme=dark&hide_border=true&bg_color=00000000">
+      <img alt="CommandX" src="https://github-readme-stats.vercel.app/api/pin/?username=poojakira&repo=CommandX&theme=default&hide_border=true&bg_color=00000000">
+    </picture>
   </a>
   <a href="https://github.com/poojakira/Predictive-GPU-Memory-Defragmenter">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=poojakira&repo=Predictive-GPU-Memory-Defragmenter&title_color=00FFCC&text_color=c9d1d9&icon_color=00FFCC&bg_color=0D1117&border_color=00FFCC" alt="Predictive GPU Memory Defragmenter"/>
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api/pin/?username=poojakira&repo=Predictive-GPU-Memory-Defragmenter&theme=dark&hide_border=true&bg_color=00000000">
+      <img alt="Predictive GPU Memory" src="https://github-readme-stats.vercel.app/api/pin/?username=poojakira&repo=Predictive-GPU-Memory-Defragmenter&theme=default&hide_border=true&bg_color=00000000">
+    </picture>
   </a>
 </div>
 
-<br/>
+<br>
 
-### 📡 `SYS.MONITOR > TACTICAL_TELEMETRY`
+### ⸻ ENGINEERING METRICS
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=poojakira&show_icons=true&title_color=00FFCC&text_color=c9d1d9&icon_color=00FFCC&bg_color=0D1117&border_color=00FFCC&count_private=true" alt="GitHub Stats" height="195"/>
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=poojakira&theme=radical&background=0D1117&border=00FFCC&ring=00FFCC&fire=00FFCC&currStreakNum=c9d1d9&currStreakLabel=c9d1d9&sideNums=00FFCC&sideLabels=c9d1d9&dates=c9d1d9" alt="GitHub Streak" height="195"/>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api?username=poojakira&show_icons=true&theme=dark&hide_border=true&bg_color=00000000&count_private=true">
+    <img alt="GitHub Stats" src="https://github-readme-stats.vercel.app/api?username=poojakira&show_icons=true&theme=default&hide_border=true&bg_color=00000000&count_private=true" height="150">
+  </picture>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api/top-langs/?username=poojakira&layout=compact&theme=dark&hide_border=true&bg_color=00000000">
+    <img alt="Top Languages" src="https://github-readme-stats.vercel.app/api/top-langs/?username=poojakira&layout=compact&theme=default&hide_border=true&bg_color=00000000" height="150">
+  </picture>
 </div>
 
-<br/>
+<br>
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=poojakira&layout=compact&title_color=00FFCC&text_color=c9d1d9&bg_color=0D1117&border_color=00FFCC" alt="Top Languages" height="195"/>
-  <img src="https://github-profile-trophy.vercel.app/?username=poojakira&theme=hacker&no-frame=true&no-bg=true&margin-w=15&margin-h=15" alt="Trophies" height="195"/>
-</div>
-
-<br/>
-
-<!-- FOOTER -->
-<div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0D1117&height=100&section=footer" width="100%"/>
+  <p><i>The most reliable way to predict the future is to engineer it securely.</i></p>
 </div>
