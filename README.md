@@ -81,7 +81,7 @@ As an M.S. Software Engineering scholar at **Arizona State University** and a **
 
 <div align="center">
   <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=poojakira&layout=compact&theme=tokyonight&bg_color=1A1B27&border_color=3B82F6&hide_border=false" alt="Top Languages" height="200"/>
-  <img src="https://github-profile-trophy.vercel.app/?username=poojakira&theme=tokyonight&no-frame=false&no-bg=false&margin-w=15&margin-h=15" alt="Trophies" height="200"/>
+  <img src="https://github-profile-trophy.vercel.app/?username=poojakira&theme=radical&no-frame=false&no-bg=false&margin-w=15&margin-h=15" alt="Trophies" height="200"/>
 </div>
 
 <br>
