@@ -100,7 +100,6 @@
 
 <div align="center">
   <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=poojakira&layout=compact&theme=dark&bg_color=0D1117&title_color=2C5364&text_color=c9d1d9&icon_color=2C5364&border_color=2C5364&hide_border=false" height="195" />
-  <img src="https://github-profile-trophy.vercel.app/?username=poojakira&theme=darkhub&no-frame=false&no-bg=true&margin-w=15&margin-h=15" alt="Trophies" height="195"/>
 </div>
 
 <br>
