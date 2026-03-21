@@ -17,15 +17,26 @@
 <br><br>
 
 <h2 align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Space+Mono&weight=600&size=20&pause=2000&color=2C5364&center=true&vCenter=true&width=1000&lines=Architecting+Fault-Tolerant+AI+Systems+for+Aerospace;Researching+Physics-Informed+Neural+Networks+(PINNs);Deploying+Cryptographically+Secure+MLOps+Pipelines;Developing+Deterministic+GNC+Routines+for+Satellites" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.demolab.com?font=Space+Mono&weight=600&size=20&pause=2000&color=2C5364&center=true&vCenter=true&width=1000&lines=Security-focused+MLOps+engineer;ML+Infrastructure+%26+SRE;Fault-tolerant+AI+systems;Telemetry+%26+GPU+training+workloads" alt="Typing SVG" />
 </h2>
 
 <br>
 
-### ⬣ SYSTEMS ARCHITECTURE & ENGINEERING FOCUS
-> I architect high-throughput, horizontally scalable AI systems designed for **zero-fault tolerance**. My research and industry deployments reside at the absolute intersection of **Aerospace Flight Dynamics**, **Mathematical Optimization**, and **Encrypted Telemetry Pipelines**.
+### ⬣ PROFESSIONAL OVERVIEW
 
-**Operating Environment:**
+**Security-focused MLOps engineer and IEEE-published researcher building fault-tolerant AI systems for satellites, telemetry, and GPU training workloads.**
+<br>**Target roles:** MLOps Engineer, ML Infra / SRE, Security-focused Cloud Engineer.
+
+* **Main Focus:** MLOps / ML Infrastructure + Security
+* **Core Skills:** PyTorch, Python, Docker, Kubernetes, AWS, security for ML pipelines, telemetry systems
+
+#### Engineering Highlights:
+* Built a GPU memory fragmentation predictor using Transformers to reduce OOM failures in large-model training workloads.
+* Developed PulseNet, a predictive maintenance pipeline on NASA C-MAPSS turbofan engine data with encryption and audit logging.
+* Designed mission-control style systems (CommandX, orbit-Q) for satellite telemetry, autonomous GNC, and health monitoring.
+* AWS certified; hands-on with Docker, Kubernetes, and secure ML deployment pipelines.
+
+#### Academic & Industry Environment:
 * **Academic Research:** Arizona State University (M.S. Software Engineering)
 * **Industry Fellowship:** Honeywell Aerospace Innovation Fellow
 * **Publications:** IEEE-Published Author in Multi-Agent Systems & Reinforcement Learning
