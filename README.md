@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=8B5CF6,6366F1,3B82F6,0EA5E9&height=280&section=header&text=POOJA%20KIRAN%20BHARADWAJ&fontSize=65&fontColor=ffffff&fontAlignY=36&desc=Lead%20AI%20Systems%20Architect%20%7C%20Machine%20Learning%20Engineer&descAlignY=58&descAlign=50&animation=twinkling" width="100%"/>
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=8B5CF6,6366F1,3B82F6,0EA5E9&height=280&section=header&text=POOJA%20KIRAN%20BHARADWAJ&fontSize=65&fontColor=ffffff&fontAlignY=36&desc=AI%20Systems%20Architect%20%7C%20Machine%20Learning%20Engineer&descAlignY=58&descAlign=50&animation=twinkling" width="100%"/>
 </div>
 
 <div align="center">
