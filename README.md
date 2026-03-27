@@ -1,102 +1,146 @@
 <p align="center">
-  <img src="image%20.jpg" alt="Pooja Kiran - Machine Learning Engineer" width="60%" />
+  <img src="./image.jpg"
+       alt="Pooja Kiran Banner" width="100%" />
+</p>
+
+<h1 align="center">🤖 Pooja Kiran</h1>
+
+<p align="center">
+  <b>Machine Learning & MLOps Engineer</b><br/>
+  Building fault‑tolerant GPU systems, secure telemetry pipelines, and aerospace ML workloads.
 </p>
 
 <p align="center">
-  <a href="https://www.linkedin.com/in/poojakiran/">LinkedIn</a> •
-  <a href="https://github.com/poojakira">GitHub</a> •
-  <a href="mailto:poojakiranbharadwaj@gmail.com">Email</a>
+  <img
+    src="https://readme-typing-svg.demolab.com?font=Space+Mono&weight=600&size=22&pause=2000&color=8B5CF6&center=true&vCenter=true&width=1000&lines=Machine+Learning+Engineer;MLOps+%26+GPU+Infrastructure;Mission-Critical+Telemetry+Pipelines;Physics-Informed+AI+Systems"
+    alt="Typing headline"
+  />
+</p>
+
+<p align="center">
+  <a href="https://www.linkedin.com/in/poojakiran/"><b>LinkedIn</b></a> •
+  <a href="https://github.com/poojakira"><b>GitHub</b></a> •
+  <a href="mailto:poojakiranbharadwaj@gmail.com"><b>Email</b></a>
 </p>
 
 ---
 
-## 💼 Professional Overview
+<h2 align="center">⬣ Skills & Tools</h2>
 
-**Machine Learning Engineer** and IEEE-published researcher specializing in MLOps, fault-tolerant GPU training environments, and mission-critical telemetry systems.  
-Bridging complex ML models and production infrastructure with a focus on security and reliability in aerospace and satellite workloads.
-
-- **Target roles:** Machine Learning Engineer · MLOps Engineer · ML Infrastructure Engineer  
-- **Core competencies:** Scalable model deployment, GPU utilization & profiling, predictive maintenance, secure telemetry pipelines, physics-informed AI
-
----
-
-## 🎓 Academic & Research Focus
-
-- **M.S. in Information Technology (Security & AI focus)** – Arizona State University  
-- **Research:** Reliability of GPU-accelerated training, physics-aware AI for aerospace, secure ML pipelines in constrained, safety-critical environments  
-- **Publications:** IEEE-published work on adaptive EV charging and GPU memory optimization
-
----
-
-## 🚀 Engineering Highlights & ML Projects
-
-### 🧠 Predictive GPU Memory Defragmenter
-
-Engineered a transformer-based sequence model to predict and mitigate GPU memory fragmentation during deep learning training.
-
-- **Impact:** Reduced Out-Of-Memory (OOM) failures and increased hardware utilization on NVIDIA RTX-class architectures  
-- **Tech stack:** PyTorch, sequence modeling, custom GPU memory profiling, Python
-
-### 🛰️ Apex‑Aegis Tactical Suite
-
-Deployed a Physics-Informed Neural Network (PINN) engine for simulating multi-physics trajectories under strict safety parameters.
-
-- **Impact:** High-fidelity, low-latency inference for risk-aware trajectory predictions in dynamic aerospace environments  
-- **Tech stack:** PINNs, RK4 integrator, atmospheric & dynamics modeling, C++
-
-### 📡 CommandX — Satellite Mission Control
-
-Built an end-to-end data and mission-control pipeline unifying orbital physics, autonomous guidance, and real-time visualization.
-
-- **Impact:** Continuous, low-latency streaming of orbital elements, system health metrics, and automated anomaly detection  
-- **Tech stack:** Python, orbital mechanics libraries, real-time data streaming, Grafana
-
-### 🔐 PulseNet — Secure Telemetry & Maintenance
-
-Architected a security-first time-series machine learning pipeline for predictive maintenance on high-frequency sensor fleets.
-
-- **Impact:** Early anomaly detection with zero-trust encrypted storage and robust access auditing  
-- **Tech stack:** Time-series forecasting, cryptography, AWS, Kubernetes
-
----
-
-## 🧠 Core Technical Infrastructure
-
-### Languages & ML Frameworks
-
-<p align="left">
+<p align="center">
   <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" />
   <img src="https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white" />
   <img src="https://img.shields.io/badge/SQL-003B57?style=for-the-badge&logo=postgresql&logoColor=white" />
-  <img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white" />
-  <img src="https://img.shields.io/badge/TensorFlow-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white" />
 </p>
 
-### MLOps, Cloud & Infrastructure
+<p align="center">
+  <img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white" />
+  <img src="https://img.shields.io/badge/TensorFlow-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white" />
+  <img src="https://img.shields.io/badge/Deep%20Learning-20232A?style=for-the-badge&logo=pytorch&logoColor=EE4C2C" />
+</p>
 
-<p align="left">
+<p align="center">
   <img src="https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=FF9900" />
   <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" />
   <img src="https://img.shields.io/badge/Kubernetes-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white" />
   <img src="https://img.shields.io/badge/GitHub%20Actions-2088FF?style=for-the-badge&logo=githubactions&logoColor=white" />
-  <img src="https://img.shields.io/badge/Linux-000000?style=for-the-badge&logo=linux&logoColor=white" />
-  <img src="https://img.shields.io/badge/Zero%20Trust%20Security-111827?style=for-the-badge&logo=databricks&logoColor=white" />
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Zero%20Trust-111827?style=for-the-badge&logo=databricks&logoColor=white" />
   <img src="https://img.shields.io/badge/Observability-1F2937?style=for-the-badge&logo=grafana&logoColor=F59E0B" />
+  <img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black" />
 </p>
 
 ---
 
-## 📊 Activity & Telemetry
+## ⬣ Professional Overview
 
-<p align="center">
-  <img
-    src="https://github-readme-activity-graph.vercel.app/graph?username=poojakira&theme=github-dark&hide_border=true&area=true&color=8B5CF6&line=3B82F6&point=ffffff"
-    width="100%"
-  />
-</p>
+- Security-focused **Machine Learning Engineer** and IEEE-published researcher.
+- Specializes in bridging the gap between complex ML models and production-ready infrastructure, specifically for **aerospace and satellite workloads**.
+- Highly focused on **GPU reliability, predictive maintenance, and scalable model deployment** in constrained and safety-critical environments.
 
-<p align="center">
-  <img
-    src="https://github-readme-stats.vercel.app/api?username=poojakira&show_icons=true&theme=dark&bg_color=0D1117&title_color=8B5CF6&text_color=c9d1d9&icon_color=3B82F6&hide_border=true"
-  />
-</p>
+---
+
+## ⬣ Engineering Highlights
+
+- 🧠 Engineered a **Predictive GPU Memory Defragmenter** using transformer models to eliminate OOM failures and maximize NVIDIA RTX utilization.
+- 🛰️ Deployed **Apex-Aegis**, a Physics-Informed Neural Network (PINN) engine for risk-aware, multi-physics trajectory simulations.
+- 📡 Built **CommandX**, a mission-control stack capable of low-latency streaming for orbital elements and automated anomaly detection.
+- 🔐 Architected **PulseNet**, a security-first predictive maintenance pipeline utilizing zero-trust encrypted storage and time-series ML.
+
+---
+
+## ⬣ Academic & Research Focus
+
+- **M.S. in Information Technology (Security & AI focus)** – Arizona State University.
+- Research focus: Reliability of GPU-accelerated training, physics-aware AI for aerospace, and securing ML pipelines.
+- **IEEE Publications:** Authored peer-reviewed research on adaptive EV charging algorithms and GPU memory optimization.
+
+---
+
+## ⬣ Core Technical Infrastructure
+
+- **Languages & Frameworks**: Python, C++, SQL, PyTorch, TensorFlow.
+- **ML & Advanced AI**: Sequence Modeling (Transformers), Physics-Informed Neural Networks (PINNs), Time-Series ML, Anomaly Detection.
+- **Cloud & MLOps**: AWS, Docker, Kubernetes, CI/CD (GitHub Actions), Linux system administration.
+- **Security & Observability**: Zero-trust architecture, encrypted data storage, Grafana telemetry dashboards, custom GPU memory profiling.
+
+---
+
+## ⬣ Mission‑Critical Projects
+
+### 🧠 Predictive GPU Memory Defragmenter
+
+Transformer-based engine that models GPU memory fragmentation and proactively defragments training workloads.
+
+- Drastically reduces Out-Of-Memory (OOM) failures and maximizes hardware utilization on NVIDIA RTX-class architectures.
+- Seamlessly integrates sequence modeling with custom GPU memory profiling scripts.
+- Designed to optimize large-scale deep learning training loops.
+
+🔗 Repo: [Predictive-GPU-Defrag](https://github.com/poojakira/Predictive-GPU-Defrag)
+
+---
+
+### 🛰️ Apex‑Aegis Tactical Suite
+
+Physics-Informed Neural Network (PINN) engine designed to simulate multi‑physics trajectories under strict safety constraints.
+
+- Delivers high-fidelity, risk‑aware, low‑latency inference for dynamic aerospace environments.
+- Utilizes RK4 integrators combined with complex atmospheric and dynamics modeling.
+- Built with C++ and deep learning frameworks for maximum performance.
+
+🔗 Repo: [Apex-Aegis](https://github.com/poojakira/Apex-Aegis) 
+
+---
+
+### 📡 CommandX — Satellite Mission Control
+
+End-to-end data and mission-control pipeline unifying orbital physics, autonomous guidance, and real-time visualization.
+
+- Enables continuous, low-latency streaming of orbital elements and system health metrics.
+- Surfaces automated anomaly flags so operators can quickly triage events.
+- Employs Python, orbital mechanics libraries, and Grafana for real-time data monitoring.
+
+🔗 Repo: [CommandX](https://github.com/poojakira/CommandX) 
+
+---
+
+### 🔐 PulseNet — Secure Telemetry & Maintenance
+
+Security-first, time-series machine learning pipeline for predictive maintenance on high-frequency sensor fleets.
+
+- Deploys early anomaly detection models before hard faults occur in industrial or aerospace equipment.
+- Enforces strict security through zero-trust encrypted storage and robust access auditing.
+- Architecture scales across AWS and Kubernetes for reliable, mission-critical execution.
+
+🔗 Repo: [PulseNet](https://github.com/poojakira/PulseNet) 
+---
+
+## ⬣ What I’m Looking For
+
+- **Machine Learning Engineer / MLOps Engineer** roles focused on infrastructure, model deployment, and scaling.
+- **Platform & Cloud Engineering** positions that prioritize security, fault tolerance, and GPU optimization.
+- Teams that value **scalable deployments, observability, and mission‑critical robustness** in their AI pipelines.
+
+---
