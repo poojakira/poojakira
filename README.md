@@ -110,7 +110,7 @@ Physics-Informed Neural Network (PINN) engine designed to simulate multi‑physi
 - Utilizes RK4 integrators combined with complex atmospheric and dynamics modeling.
 - Built with C++ and deep learning frameworks for maximum performance.
 
-🔗 Repo: [Apex-Aegis](https://github.com/poojakira/Apex-Aegis) 
+🔗 Repo: [Apex-Aegis](https://github.com/poojakira/Apex-Aegis)
 
 ---
 
@@ -122,7 +122,7 @@ End-to-end data and mission-control pipeline unifying orbital physics, autonomou
 - Surfaces automated anomaly flags so operators can quickly triage events.
 - Employs Python, orbital mechanics libraries, and Grafana for real-time data monitoring.
 
-🔗 Repo: [CommandX](https://github.com/poojakira/CommandX) 
+🔗 Repo: [CommandX](https://github.com/poojakira/CommandX)
 
 ---
 
@@ -134,7 +134,7 @@ Security-first, time-series machine learning pipeline for predictive maintenance
 - Enforces strict security through zero-trust encrypted storage and robust access auditing.
 - Architecture scales across AWS and Kubernetes for reliable, mission-critical execution.
 
-🔗 Repo: [PulseNet](https://github.com/poojakira/PulseNet) 
+🔗 Repo: [PulseNet](https://github.com/poojakira/PulseNet)
 ---
 
 ## ⬣ What I’m Looking For
