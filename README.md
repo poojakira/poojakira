@@ -3,10 +3,11 @@
 </p>
 
 <p align="center">
-  <a href="https://www.linkedin.com/in/poojakiran/"><b>LinkedIn</b></a> •
-  <a href="https://github.com/poojakira"><b>GitHub</b></a> •
-  <a href="mailto:poojakiranbharadwaj@gmail.com"><b>Email</b></a>
+  <a href="https://www.linkedin.com/in/poojakiran/">LinkedIn</a> •
+  <a href="https://github.com/poojakira">GitHub</a> •
+  <a href="mailto:poojakiranbharadwaj@gmail.com">Email</a>
 </p>
+
 ---
 
 ## 💼 Professional Overview
