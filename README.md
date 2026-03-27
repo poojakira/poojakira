@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./image.jpg" alt="Pooja Kiran - Machine Learning Engineer" width="60%" />
+  <img src="image%20.jpg" alt="Pooja Kiran - Machine Learning Engineer" width="60%" />
 </p>
 
 <p align="center">
@@ -7,7 +7,6 @@
   <a href="https://github.com/poojakira"><b>GitHub</b></a> •
   <a href="mailto:poojakiranbharadwaj@gmail.com"><b>Email</b></a>
 </p>
-
 ---
 
 ## 💼 Professional Overview
