@@ -1,12 +1,13 @@
 <p align="center">
-  <img src="./image.jpg"
-       alt="Pooja Kiran Banner" width="100%" />
+  <img src="./image .jpg" alt="Pooja Kiran Banner" width="100%" />
 </p>
 
-<h1 align="center">🤖 Pooja Kiran</h1>
+<h1 align="center">
+  🤖 Pooja Kiran
+</h1>
 
 <p align="center">
-  <b>Machine Learning & MLOps Engineer</b><br/>
+  <b>Machine Learning &amp; MLOps Engineer</b><br/>
   Building fault‑tolerant GPU systems, secure telemetry pipelines, and aerospace ML workloads.
 </p>
 
@@ -25,7 +26,7 @@
 
 ---
 
-<h2 align="center">⬣ Skills & Tools</h2>
+## ⬣ Skills &amp; Tools
 
 <p align="center">
   <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" />
@@ -71,9 +72,9 @@
 
 ---
 
-## ⬣ Academic & Research Focus
+## ⬣ Academic &amp; Research Focus
 
-- **M.S. in Information Technology (Security & AI focus)** – Arizona State University.
+- **M.S. in Information Technology (Security &amp; AI focus)** – Arizona State University.
 - Research focus: Reliability of GPU-accelerated training, physics-aware AI for aerospace, and securing ML pipelines.
 - **IEEE Publications:** Authored peer-reviewed research on adaptive EV charging algorithms and GPU memory optimization.
 
@@ -81,10 +82,10 @@
 
 ## ⬣ Core Technical Infrastructure
 
-- **Languages & Frameworks**: Python, C++, SQL, PyTorch, TensorFlow.
-- **ML & Advanced AI**: Sequence Modeling (Transformers), Physics-Informed Neural Networks (PINNs), Time-Series ML, Anomaly Detection.
-- **Cloud & MLOps**: AWS, Docker, Kubernetes, CI/CD (GitHub Actions), Linux system administration.
-- **Security & Observability**: Zero-trust architecture, encrypted data storage, Grafana telemetry dashboards, custom GPU memory profiling.
+- **Languages &amp; Frameworks**: Python, C++, SQL, PyTorch, TensorFlow.
+- **ML &amp; Advanced AI**: Sequence Modeling (Transformers), Physics-Informed Neural Networks (PINNs), Time-Series ML, Anomaly Detection.
+- **Cloud &amp; MLOps**: AWS, Docker, Kubernetes, CI/CD (GitHub Actions), Linux system administration.
+- **Security &amp; Observability**: Zero-trust architecture, encrypted data storage, Grafana telemetry dashboards, custom GPU memory profiling.
 
 ---
 
@@ -126,7 +127,7 @@ End-to-end data and mission-control pipeline unifying orbital physics, autonomou
 
 ---
 
-### 🔐 PulseNet — Secure Telemetry & Maintenance
+### 🔐 PulseNet — Secure Telemetry &amp; Maintenance
 
 Security-first, time-series machine learning pipeline for predictive maintenance on high-frequency sensor fleets.
 
@@ -135,12 +136,11 @@ Security-first, time-series machine learning pipeline for predictive maintenance
 - Architecture scales across AWS and Kubernetes for reliable, mission-critical execution.
 
 🔗 Repo: [PulseNet](https://github.com/poojakira/PulseNet)
+
 ---
 
 ## ⬣ What I’m Looking For
 
 - **Machine Learning Engineer / MLOps Engineer** roles focused on infrastructure, model deployment, and scaling.
-- **Platform & Cloud Engineering** positions that prioritize security, fault tolerance, and GPU optimization.
+- **Platform &amp; Cloud Engineering** positions that prioritize security, fault tolerance, and GPU optimization.
 - Teams that value **scalable deployments, observability, and mission‑critical robustness** in their AI pipelines.
-
----
