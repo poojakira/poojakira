@@ -2,13 +2,11 @@
   <img src="./image .jpg" alt="Pooja Kiran Banner" width="100%" />
 </p>
 
-<h1 align="center">
-  🤖 Pooja Kiran
-</h1>
+<h1 align="center">🤖 Pooja Kiran</h1>
 
 <p align="center">
-  <b>Machine Learning &amp; MLOps Engineer</b><br/>
-  Building fault‑tolerant GPU systems, secure telemetry pipelines, and aerospace ML workloads.
+  <b>Machine Learning Engineer | MLOps & GPU Systems – GPU OOM, Telemetry Reliability, Satellite ML Ops</b><br>
+  Building GPU-aware training pipelines, secure telemetry systems, and aerospace-inspired ML workloads.
 </p>
 
 <p align="center">
@@ -26,7 +24,7 @@
 
 ---
 
-## ⬣ Skills &amp; Tools
+## ⬣ Skills & Tools
 
 <p align="center">
   <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" />
@@ -55,37 +53,51 @@
 
 ---
 
-## ⬣ Professional Overview
+## ⬣ Professional & Experience Overview
 
-- Security-focused **Machine Learning Engineer** and IEEE-published researcher.
-- Specializes in bridging the gap between complex ML models and production-ready infrastructure, specifically for **aerospace and satellite workloads**.
-- Highly focused on **GPU reliability, predictive maintenance, and scalable model deployment** in constrained and safety-critical environments.
+- **Independent Graduate Researcher – ML/MLOps** · Self-directed (ASU) · Aug 2024 – Present  
+Run GPU experiments on RL/recsys models, study memory/telemetry behavior, and simulate satellite links to see how MLOps choices affect learning outcomes.
+
+- **Graduate Teaching Assistant – IT Grader, IFT 483/543: Security Compliance for IT** · ASU · May 2025 – Aug 2025  
+Graded 45+ security compliance projects using NIST/ISO-based rubrics, improving consistency and turnaround on HIPAA/GDPR and risk assessment work.
+
+- **Graduate Teaching Assistant – IT Grader, IFT 301: Web Programming for HCI** · ASU · Mar 2025 – May 2025  
+Reviewed 80+ HTML/CSS/JS projects and HCI assignments, giving UX-focused feedback and helping standardize grading for multi‑page web apps.
+
+- **Independent Undergraduate Researcher – RL E‑Learning** · MSRUAS · Aug 2023 – Feb 2024  
+Built an RL‑driven personalized E‑learning system over satellite links and co‑authored an IEEE INDICON 2023 paper on Q‑learning for adaptive content delivery. 
 
 ---
 
 ## ⬣ Engineering Highlights
 
-- 🧠 Engineered a **Predictive GPU Memory Defragmenter** using transformer models to eliminate OOM failures and maximize NVIDIA RTX utilization.
-- 🛰️ Deployed **Apex-Aegis**, a Physics-Informed Neural Network (PINN) engine for risk-aware, multi-physics trajectory simulations.
-- 📡 Built **CommandX**, a mission-control stack capable of low-latency streaming for orbital elements and automated anomaly detection.
-- 🔐 Architected **PulseNet**, a security-first predictive maintenance pipeline utilizing zero-trust encrypted storage and time-series ML.
+- 🧠 Engineered a **Predictive GPU Memory Defragmenter** using sequence models to reduce OOM failures and improve NVIDIA RTX utilization.  
+- 🛰️ Built **Apex-Aegis**, a physics-informed engine for multi‑physics trajectory simulations under safety constraints.  
+- 📡 Developed **CommandX**, a mission-control stack for low-latency orbital telemetry streaming and anomaly surfacing.  
+- 🔐 Architected **PulseNet**, a security-first predictive maintenance pipeline with encrypted storage and time-series ML.
 
 ---
 
-## ⬣ Academic &amp; Research Focus
+## ⬣ Academic & Research Focus
 
-- **M.S. in Information Technology (Security &amp; AI focus)** – Arizona State University.
-- Research focus: Reliability of GPU-accelerated training, physics-aware AI for aerospace, and securing ML pipelines.
-- **IEEE Publications:** Authored peer-reviewed research on adaptive EV charging algorithms and GPU memory optimization.
+- **Master’s in Information Technology Security – Arizona State University**  
+- **B.Tech in Computer Science – M. S. Ramaiah University of Applied Sciences (8.44 CGPA)**  
+
+- **Research focus:** GPU-accelerated training reliability, physics-aware AI for aerospace-style systems, and securing ML pipelines.  
+
+- **Certifications:**  
+  - AWS Academy Graduate – Cloud Security Foundations  
+  - AWS Academy Graduate – Cloud Architecting  
+  - Technology Innovation Lab – Honeywell Aerospace & ASU (industry-linked academic program)
 
 ---
 
 ## ⬣ Core Technical Infrastructure
 
-- **Languages &amp; Frameworks**: Python, C++, SQL, PyTorch, TensorFlow.
-- **ML &amp; Advanced AI**: Sequence Modeling (Transformers), Physics-Informed Neural Networks (PINNs), Time-Series ML, Anomaly Detection.
-- **Cloud &amp; MLOps**: AWS, Docker, Kubernetes, CI/CD (GitHub Actions), Linux system administration.
-- **Security &amp; Observability**: Zero-trust architecture, encrypted data storage, Grafana telemetry dashboards, custom GPU memory profiling.
+- **Languages & Frameworks:** Python, C++, SQL, PyTorch, TensorFlow.  
+- **ML & Advanced AI:** Transformers, Physics-Informed Neural Networks (PINNs), time-series ML, anomaly detection.  
+- **Cloud & MLOps:** AWS, Docker, Kubernetes, CI/CD with GitHub Actions, Linux system administration.  
+- **Security & Observability:** Zero-trust concepts, encryption, Grafana telemetry dashboards, custom GPU memory profiling.
 
 ---
 
@@ -93,11 +105,11 @@
 
 ### 🧠 Predictive GPU Memory Defragmenter
 
-Transformer-based engine that models GPU memory fragmentation and proactively defragments training workloads.
+Transformer-style engine that models GPU memory fragmentation and proactively defragments training workloads.
 
-- Drastically reduces Out-Of-Memory (OOM) failures and maximizes hardware utilization on NVIDIA RTX-class architectures.
-- Seamlessly integrates sequence modeling with custom GPU memory profiling scripts.
-- Designed to optimize large-scale deep learning training loops.
+- Reduces Out-Of-Memory (OOM) failures and improves hardware utilization on RTX-class GPUs.  
+- Integrates sequence modeling with custom GPU memory profiling scripts.  
+- Designed to optimize large-scale deep learning training loops.  
 
 🔗 Repo: [Predictive-GPU-Defrag](https://github.com/poojakira/Predictive-GPU-Defrag)
 
@@ -105,11 +117,10 @@ Transformer-based engine that models GPU memory fragmentation and proactively de
 
 ### 🛰️ Apex‑Aegis Tactical Suite
 
-Physics-Informed Neural Network (PINN) engine designed to simulate multi‑physics trajectories under strict safety constraints.
+Physics-informed engine for simulating multi‑physics trajectories under risk constraints.
 
-- Delivers high-fidelity, risk‑aware, low‑latency inference for dynamic aerospace environments.
-- Utilizes RK4 integrators combined with complex atmospheric and dynamics modeling.
-- Built with C++ and deep learning frameworks for maximum performance.
+- Provides high-fidelity, low‑latency inference for dynamic environments.  
+- Uses numerical integrators (e.g., RK4) with atmospheric and dynamics modeling.  
 
 🔗 Repo: [Apex-Aegis](https://github.com/poojakira/Apex-Aegis)
 
@@ -117,23 +128,21 @@ Physics-Informed Neural Network (PINN) engine designed to simulate multi‑physi
 
 ### 📡 CommandX — Satellite Mission Control
 
-End-to-end data and mission-control pipeline unifying orbital physics, autonomous guidance, and real-time visualization.
+End-to-end mission-control pipeline for orbital physics, guidance, and visualization.
 
-- Enables continuous, low-latency streaming of orbital elements and system health metrics.
-- Surfaces automated anomaly flags so operators can quickly triage events.
-- Employs Python, orbital mechanics libraries, and Grafana for real-time data monitoring.
+- Streams orbital elements and system health metrics with low latency.  
+- Surfaces automated anomaly flags for operator triage.  
 
 🔗 Repo: [CommandX](https://github.com/poojakira/CommandX)
 
 ---
 
-### 🔐 PulseNet — Secure Telemetry &amp; Maintenance
+### 🔐 PulseNet — Secure Telemetry & Maintenance
 
-Security-first, time-series machine learning pipeline for predictive maintenance on high-frequency sensor fleets.
+Security-first, time-series ML pipeline for predictive maintenance.
 
-- Deploys early anomaly detection models before hard faults occur in industrial or aerospace equipment.
-- Enforces strict security through zero-trust encrypted storage and robust access auditing.
-- Architecture scales across AWS and Kubernetes for reliable, mission-critical execution.
+- Detects early anomalies before hard faults in sensor-heavy systems.  
+- Uses encrypted storage and strict access control; deployable on AWS and Kubernetes.  
 
 🔗 Repo: [PulseNet](https://github.com/poojakira/PulseNet)
 
@@ -141,6 +150,6 @@ Security-first, time-series machine learning pipeline for predictive maintenance
 
 ## ⬣ What I’m Looking For
 
-- **Machine Learning Engineer / MLOps Engineer** roles focused on infrastructure, model deployment, and scaling.
-- **Platform &amp; Cloud Engineering** positions that prioritize security, fault tolerance, and GPU optimization.
-- Teams that value **scalable deployments, observability, and mission‑critical robustness** in their AI pipelines.
+- **Machine Learning Engineer / MLOps Engineer** roles focused on infrastructure, GPU-heavy training, and production deployment.  
+- **ML Platform / Cloud Engineering** positions that prioritize security, fault tolerance, observability, and telemetry pipelines.  
+- Teams building **AI infrastructure, aerospace/defense ML, or mission‑critical systems** where reliability and security matter.
