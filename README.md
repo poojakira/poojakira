@@ -107,6 +107,20 @@ Simulation sandbox for trajectory modeling using physics-informed methods.
 
 ---
 
+
+## 🎯 Key Systems & Metrics
+
+Below is a snapshot of measurable results across my flagship repos:
+
+- **GPU Reliability** — [Predictive-GPU-Memory-Defragmenter](https://github.com/poojakira/Predictive-GPU-Memory-Defragmenter): OOM failures ↓ from 23% → 4%, GPU utilization ↑ from 61% → 78% across 200 RTX-4090 training runs.
+- **Telemetry ML** — [PulseNet](https://github.com/poojakira/PulseNet): Flags jet-engine failures ~20 cycles early with F1 ≈ 0.87 at 5% false-positive rate on NASA C-MAPSS; <5 ms median inference latency, >10k samples/sec throughput.
+- **Mission Ops** — [CommandX](https://github.com/poojakira/CommandX): Simulation-grade satellite telemetry stack sustaining ~1k msgs/sec at sub-150 ms p95 latency in orbital monitoring workflows.
+- **Trajectory Simulation** — [Apex-Aegis-Tactical-Suite](https://github.com/poojakira/Apex-Aegis-Tactical-Suite): RK4-based physics engine running 10k-step sims with <0.5% error vs baseline integrators.
+- **Health MLOps** — [orbit-Q](https://github.com/poojakira/orbit-Q): Satellite health anomaly detection + automated retraining pipeline with Firebase integration for CubeSat telemetry.
+
+---
+
+
 ## What I am Looking For
 
 - **ML Engineer / MLOps Engineer** roles focused on training infrastructure, GPU-heavy workloads, and deployment reliability
