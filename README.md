@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./image .jpg" alt="Pooja Kiran Banner" width="100%" />
+  <img src="./banner.jpg" alt="Pooja Kiran Banner" width="100%" />
 </p>
 
 <h1 align="center">Pooja Kiran</h1>
@@ -10,27 +10,27 @@
 </p>
 
 <p align="center">
-  <a href="https://www.linkedin.com/in/poojakiran/">LinkedIn</a> &nbsp;•&nbsp;
-  <a href="https://github.com/poojakira">GitHub</a> &nbsp;•&nbsp;
+  <a href="https://www.linkedin.com/in/poojakiran/">LinkedIn</a> &nbsp;- &nbsp;
+  <a href="https://github.com/poojakira">GitHub</a> &nbsp;- &nbsp;
   <a href="mailto:poojakiranbharadwaj@gmail.com">Email</a>
 </p>
 
----
+***
 
 ## About Me
 
-I am an M.S. student in Information Technology Security at Arizona State University, architecting ML and MLOps projects focused on GPU training reliability, secure telemetry pipelines, and aerospace-style anomaly detection. 
+I am an M.S. student in Information Technology Security at Arizona State University, building ML and MLOps projects focused on GPU training reliability, secure telemetry pipelines, and aerospace-style anomaly detection.
 
 I co-authored an **[IEEE INDICON 2023 paper](https://ieeexplore.ieee.org/document/10440852)** on reinforcement learning for adaptive e-learning over satellite links. My work bridges the gap between academic research and scalable engineering—profiling memory, optimizing pipelines, and ensuring system security for high-stakes environments.
 
----
+***
 
 ## 📚 Publications
 
 - **A Personalized E-Learning System Using Reinforcement Learning Through Satellite** *P. K. Bharadwaj et al.* | **IEEE INDICON 2023** | [**View on IEEE Xplore**](https://ieeexplore.ieee.org/document/10440852)
   > **Technical Impact:** Designed a Q-Learning prototype to optimize content delivery over high-latency satellite links, implementing adaptive state-space modeling to handle fluctuating network conditions.
 
----
+***
 
 ## Skills & Tools
 
@@ -41,7 +41,7 @@ I co-authored an **[IEEE INDICON 2023 paper](https://ieeexplore.ieee.org/documen
 **Security:** AES-256 Encryption, zero-trust architecture, NIST/ISO compliance frameworks  
 **Research Tools:** Jupyter, Google Colab, ROS, RK4 Numerical Integration
 
----
+***
 
 ## Experience
 
@@ -61,19 +61,19 @@ I co-authored an **[IEEE INDICON 2023 paper](https://ieeexplore.ieee.org/documen
 - Developed the core RL engine for satellite communication optimization.
 - Co-authored and presented findings at **IEEE INDICON 2023**.
 
----
+***
 
 ## 🎯 Key Systems & Metrics
 
 Below is a snapshot of measurable results across my flagship repos:
 
-- **GPU Reliability** — [Predictive-GPU-Memory-Defragmenter](https://github.com/poojakira/Predictive-GPU-Memory-Defragmenter): OOM failures ↓ from **23% → 4%**, GPU utilization ↑ from **61% → 78%** across 200 RTX-4090 training runs.
-- **Telemetry ML** — [PulseNet](https://github.com/poojakira/PulseNet): Flags jet-engine failures ~20 cycles early with **F1 ≈ 0.87** on NASA C-MAPSS data; <5 ms median inference latency.
-- **Mission Ops** — [CommandX](https://github.com/poojakira/CommandX): Simulation-grade satellite telemetry stack sustaining **~1k msgs/sec** at sub-150 ms p95 latency.
-- **Trajectory Simulation** — [Apex-Aegis-Tactical-Suite](https://github.com/poojakira/Apex-Aegis-Tactical-Suite): RK4-based physics engine running 10k-step sims with **<0.5% error** vs baseline integrators.
-- **Health MLOps** — [orbit-Q](https://github.com/poojakira/orbit-Q): Satellite health anomaly detection + automated retraining pipeline with Firebase integration.
+- **GPU Reliability** — [Predictive-GPU-Memory-Defragmenter](https://github.com/poojakira/Predictive-GPU-Memory-Defragmenter): 100% OOM elimination (4.0 → 0.0 OOM errors) across 5 RTX 4060 benchmark runs; +38% compute throughput.
+- **Telemetry ML** — [PulseNet](https://github.com/poojakira/PulseNet): Anomaly detection on NASA C-MAPSS data; F1 ≈ 0.87; <5 ms median inference latency (local benchmark).
+- **Mission Ops** — [CommandX](https://github.com/poojakira/CommandX): Simulation-grade satellite telemetry stack with EKF, Genetic Algorithm optimizer, and 1,000-run Monte Carlo IV&V.
+- **Trajectory Simulation** — [Apex-Aegis-Tactical-Suite](https://github.com/poojakira/Apex-Aegis-Tactical-Suite): RK4-based physics engine with ML surrogate achieving 10.5x tested speedup and <0.15% error vs. baseline integrator.
+- **Health MLOps** — [orbit-Q](https://github.com/poojakira/orbit-Q): Satellite health anomaly detection (3-model ensemble) + automated retraining pipeline with Firebase integration.
 
----
+***
 
 ## What I am Looking For
 
