@@ -5,7 +5,7 @@
 <br/>
 
 
-# Pooja Kiran
+<h1 align="center">Pooja Kiran</h1>
 
 **ML / MLOps Engineer · GPU Training Reliability · Telemetry Pipelines · Secure ML Infrastructure (IT Security background)**
 
