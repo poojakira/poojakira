@@ -182,7 +182,7 @@ The goal is for this profile to reflect **authentic, ongoing engineering work**,
 ## Publication
 
 - **“A Personalized E-Learning System Using Reinforcement Learning Through Satellite”**  
-  **P. K. Bharadwaj et al.** · **IEEE INDICON 2023**  
+  **IEEE INDICON 2023**  
   [View on IEEE Xplore](https://ieeexplore.ieee.org/document/10440852)  
 
 Technical contribution: Q-learning-based adaptive content delivery over high-latency satellite links, with emphasis on dynamic state modeling under constrained network conditions.
