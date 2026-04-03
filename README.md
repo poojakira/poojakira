@@ -1,3 +1,9 @@
+<div align="center">
+  <img src="https://raw.githubusercontent.com/poojakira/poojakira/main/banner.jpg" alt="Pooja Kiran — ML / MLOps Engineer" width="100%" />
+</div>
+
+<br/>
+
 # Pooja Kiran
 
 **ML / MLOps Engineer · GPU Training Reliability · Telemetry Pipelines · Secure ML Infrastructure (IT Security background)**
