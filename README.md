@@ -1,6 +1,6 @@
 # Pooja Kiran
 
-**ML / MLOps Engineer · GPU Training Reliability · Telemetry Pipelines · Secure ML Infrastructure (ex-InfoSec)**
+**ML / MLOps Engineer · GPU Training Reliability · Telemetry Pipelines · Secure ML Infrastructure (ex-Graduate Teaching Assistant (IT grader)**
 
 I build production-minded ML systems with a focus on **GPU training reliability**, **telemetry-driven observability**, and **secure ML infrastructure** in reliability-sensitive environments.
 
