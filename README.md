@@ -1,82 +1,161 @@
-<p align="center">
-  <img src="./banner.jpg" alt="Pooja Kiran Banner" width="100%" />
-</p>
+# Pooja Kiran
 
-<h1 align="center">Pooja Kiran</h1>
+**ML / MLOps Engineer · GPU Training Reliability · Telemetry Pipelines · Secure ML Infrastructure**
 
-<p align="center">
-  <b>ML / MLOps Engineer &nbsp;·&nbsp; GPU Training Reliability &nbsp;·&nbsp; Telemetry Pipelines &nbsp;·&nbsp; Secure ML Infrastructure</b><br>
-  Building practical ML systems with a focus on training reliability, observability, and aerospace-style monitoring.
-</p>
+I build production-oriented ML systems focused on training stability, observability, secure deployment, and reliability-sensitive environments.
 
-<p align="center">
-  <a href="https://www.linkedin.com/in/poojakiran/">LinkedIn</a> &nbsp;- &nbsp;
-  <a href="https://github.com/poojakira">GitHub</a> &nbsp;- &nbsp;
-  <a href="mailto:poojakiranbharadwaj@gmail.com">Email</a>
-</p>
+- 📍 Phoenix, Arizona, US
+- 🎓 M.S. in Information Technology Security, Arizona State University
+- 📄 IEEE INDICON 2023 co-author
+- ☁️ AWS Certified
+- 🔗 [LinkedIn](https://www.linkedin.com/in/poojakiran/)
+- 📫 [Email](mailto:poojakiranbharadwaj@gmail.com)
 
-***
+---
 
 ## About Me
 
-I am an M.S. student in Information Technology Security at Arizona State University, building ML and MLOps projects focused on GPU training reliability, secure telemetry pipelines, and aerospace-style anomaly detection.
+I am an ML / MLOps engineer focused on GPU training reliability, telemetry-driven systems, anomaly detection, and secure ML infrastructure.
 
-I co-authored an **[IEEE INDICON 2023 paper](https://ieeexplore.ieee.org/document/10440852)** on reinforcement learning for adaptive e-learning over satellite links. My work bridges the gap between academic research and scalable engineering—profiling memory, optimizing pipelines, and ensuring system security for high-stakes environments.
+My work sits at the intersection of machine learning, systems engineering, and observability. I am especially interested in ML platform, training infrastructure, deployment reliability, and production ML systems for high-stakes domains such as aerospace, defense, and critical infrastructure.
 
-***
+I also co-authored an IEEE INDICON 2023 paper on reinforcement learning for adaptive e-learning over satellite links, which strengthened my interest in building intelligent systems that operate under constrained and reliability-sensitive conditions.
 
-## 📚 Publications
+---
 
-- **A Personalized E-Learning System Using Reinforcement Learning Through Satellite** *P. K. Bharadwaj et al.* | **IEEE INDICON 2023** | [**View on IEEE Xplore**](https://ieeexplore.ieee.org/document/10440852)
-  > **Technical Impact:** Designed a Q-Learning prototype to optimize content delivery over high-latency satellite links, implementing adaptive state-space modeling to handle fluctuating network conditions.
+## Key Systems & Metrics
 
-***
+Here is a snapshot of measurable outcomes across my flagship projects:
 
-## Skills & Tools
+- **[Predictive-GPU-Memory-Defragmenter](https://github.com/poojakira/Predictive-GPU-Memory-Defragmenter)**  
+  Prototype for modeling GPU memory fragmentation and reducing training-time out-of-memory failures on RTX-class workloads.  
+  **Results:** 100% OOM elimination across benchmark runs; +38% compute throughput.
 
-**Languages:** Python, C++, SQL  
-**ML Frameworks:** PyTorch, TensorFlow, scikit-learn  
-**MLOps & Cloud:** AWS, Docker, Kubernetes, GitHub Actions CI/CD  
-**Systems & Observability:** Linux, GPU memory profiling (CUDA), Grafana, custom telemetry pipelines  
-**Security:** AES-256 Encryption, zero-trust architecture, NIST/ISO compliance frameworks  
-**Research Tools:** Jupyter, Google Colab, ROS, RK4 Numerical Integration
+- **[PulseNet](https://github.com/poojakira/PulseNet)**  
+  Predictive maintenance and anomaly detection pipeline built on NASA C-MAPSS data with deployment-oriented structure.  
+  **Results:** F1 ≈ 0.87; <5 ms median local inference latency.
 
-***
+- **[CommandX](https://github.com/poojakira/CommandX)**  
+  Mission-control telemetry simulation and anomaly surfacing stack for orbital monitoring and operator-facing systems.  
+  **Results:** Includes EKF-based estimation, genetic optimization, and 1,000-run Monte Carlo IV&V workflow.
 
-## Experience
+- **[Apex-Aegis-Tactical-Suite](https://github.com/poojakira/Apex-Aegis-Tactical-Suite)**  
+  RK4-based tactical trajectory simulator with an ML surrogate for faster decision support.  
+  **Results:** 10.5x tested speedup with <0.15% error versus baseline integrator.
 
-**Independent Graduate Researcher — ML/MLOps** · ASU · Aug 2024 – Present  
-- Leading GPU experiments on RL and recommendation-system training loops to study memory fragmentation and OOM behavior.
-- Simulating satellite telemetry pipelines to quantify how MLOps architectural choices affect large-scale training outcomes.
+- **[orbit-Q](https://github.com/poojakira/orbit-Q)**  
+  CubeSat telemetry monitoring pipeline with anomaly detection, automated retraining, and Firebase-backed workflow.  
+  **Results:** Multi-model health monitoring pipeline for satellite system analytics.
 
-**Technical Evaluator (Graduate TA) — Security Compliance** · ASU · May 2025 – Aug 2025  
-- Scaled technical evaluation for 45+ security audits based on HIPAA, GDPR, and NIST/ISO frameworks.
-- Developed standardized grading rubrics that improved consistency and reduced cohort turnaround time by 20%.
+---
 
-**Technical Evaluator (Graduate TA) — Web Programming for HCI** · ASU · Mar 2025 – May 2025  
-- Conducted technical code reviews for 80+ full-stack projects, focusing on UX/UI performance and accessibility standards.
-- Mentored students on building resilient multi-page web applications and modern JS practices.
+## Selected Projects
 
-**Undergraduate Researcher — RL & Satellite Systems** · MSRUAS · Aug 2023 – Feb 2024  
-- Developed the core RL engine for satellite communication optimization.
-- Co-authored and presented findings at **IEEE INDICON 2023**.
+### Predictive GPU Memory Defragmenter
+A systems-focused ML infrastructure project designed to detect fragmentation risk and evaluate strategies to improve training reliability under GPU memory pressure.
 
-***
+**Focus areas:** GPU memory profiling, fragmentation modeling, training stability, performance optimization, observability.
 
-## 🎯 Key Systems & Metrics
+### PulseNet
+A production-style ML pipeline for predictive maintenance and anomaly detection using industrial telemetry data.
 
-Below is a snapshot of measurable results across my flagship repos:
+**Focus areas:** feature engineering, anomaly detection, model serving, Dockerized workflows, MLOps structure.
 
-- **GPU Reliability** — [Predictive-GPU-Memory-Defragmenter](https://github.com/poojakira/Predictive-GPU-Memory-Defragmenter): 100% OOM elimination (4.0 → 0.0 OOM errors) across 5 RTX 4060 benchmark runs; +38% compute throughput.
-- **Telemetry ML** — [PulseNet](https://github.com/poojakira/PulseNet): Anomaly detection on NASA C-MAPSS data; F1 ≈ 0.87; <5 ms median inference latency (local benchmark).
-- **Mission Ops** — [CommandX](https://github.com/poojakira/CommandX): Simulation-grade satellite telemetry stack with EKF, Genetic Algorithm optimizer, and 1,000-run Monte Carlo IV&V.
-- **Trajectory Simulation** — [Apex-Aegis-Tactical-Suite](https://github.com/poojakira/Apex-Aegis-Tactical-Suite): RK4-based physics engine with ML surrogate achieving 10.5x tested speedup and <0.15% error vs. baseline integrator.
-- **Health MLOps** — [orbit-Q](https://github.com/poojakira/orbit-Q): Satellite health anomaly detection (3-model ensemble) + automated retraining pipeline with Firebase integration.
+### CommandX
+A telemetry simulation and operator-support system for orbital mission monitoring.
 
-***
+**Focus areas:** telemetry pipelines, estimation, simulation, monitoring dashboards, mission-grade reasoning.
 
-## What I am Looking For
+### orbit-Q
+A health monitoring pipeline for satellite telemetry with retraining workflow support.
 
-- **ML Engineer / MLOps Engineer** roles focused on training infrastructure, GPU-heavy workloads, and deployment reliability.
-- **ML Platform / Cloud Engineer** positions that care about observability, fault tolerance, and secure pipelines.
-- Teams building AI infrastructure for high-stakes or reliability-sensitive systems (Space, Defense, Critical Infrastructure).
+**Focus areas:** anomaly detection, ensemble modeling, data flow automation, reliability monitoring.
+
+---
+
+## Core Stack
+
+### Languages
+- Python
+- C++
+- SQL
+
+### Machine Learning
+- PyTorch
+- TensorFlow
+- scikit-learn
+
+### MLOps / Cloud / DevOps
+- AWS
+- Docker
+- Kubernetes
+- GitHub Actions
+- CI/CD workflows
+
+### Systems / Observability
+- Linux
+- GPU memory profiling
+- CUDA-oriented experimentation
+- Grafana
+- Telemetry pipelines
+- Performance benchmarking
+
+### Security
+- AES-256 encryption concepts
+- Zero-trust architecture
+- NIST / ISO-aligned security thinking
+- Secure ML infrastructure design
+
+### Research / Engineering Tools
+- Jupyter
+- Google Colab
+- ROS
+- RK4 numerical simulation workflows
+
+---
+
+## Publication
+
+- **A Personalized E-Learning System Using Reinforcement Learning Through Satellite**  
+  **P. K. Bharadwaj et al.** · **IEEE INDICON 2023**  
+  [View on IEEE Xplore](https://ieeexplore.ieee.org/document/10440852)
+
+**Technical contribution:** Contributed to a Q-learning-based adaptive system for content delivery over high-latency satellite links, with emphasis on dynamic state modeling under constrained network conditions.
+
+---
+
+## What I’m Looking For
+
+I’m interested in roles such as:
+
+- **Machine Learning Engineer**
+- **MLOps Engineer**
+- **ML Platform Engineer**
+- **Cloud / Infrastructure Engineer for ML systems**
+
+I’m particularly excited by teams working on:
+
+- GPU-heavy training systems
+- ML platform and infrastructure
+- Observability and reliability engineering
+- Secure deployment pipelines
+- Aerospace, defense, or other high-stakes ML applications
+
+---
+
+## Current Focus
+
+Right now, I’m spending most of my time on:
+
+- Improving GPU training reliability
+- Building telemetry-aware ML systems
+- Hardening MLOps pipelines for production-style environments
+- Strengthening project documentation, benchmarking, and reproducibility
+
+---
+
+## Connect
+
+- [LinkedIn](https://www.linkedin.com/in/poojakiran/)
+- [GitHub](https://github.com/poojakira)
+- [Email](mailto:poojakiranbharadwaj@gmail.com)
