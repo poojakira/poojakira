@@ -90,5 +90,5 @@
 ---
 
 <p align="center">
-  <i>IEEE-published · AWS Certified · M.S. Robotics & Automation, Arizona State University</i>
+  <i>IEEE-published · AWS Certified · M.S. information Technology, Arizona State University</i>
 </p>
