@@ -72,7 +72,6 @@
 
 ## ⬣ What I'm Targeting
 
-Roles at **NVIDIA, Microsoft, Google DeepMind, Anduril, SpaceX, or Palantir**:
 - **ML Engineer** — production model pipelines, inference optimization, GPU/distributed training
 - **MLOps / Platform Engineer** — observability, reliability, CI/CD for ML, model registry workflows
 - **Applied Scientist** — telemetry + time-series + anomaly detection in aerospace or safety-critical domains
