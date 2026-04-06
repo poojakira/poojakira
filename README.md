@@ -1,21 +1,13 @@
-[![Banner](banner.jpg)](banner.jpg)
-
+[![](banner.jpg)](banner.jpg)
 <h1 align="center">Pooja Kiran</h1>
 
-<p align="center">
-  <b>ML / MLOps Engineer · Telemetry & Reliability · Aerospace Systems</b><br/>
-  Building GPU training reliability, telemetry pipelines, and production-grade ML for safety-critical systems.
-</p>
+<p align="center"> <b>ML / MLOps Engineer · Telemetry & Reliability · Aerospace Systems</b><br/> Building GPU training reliability, telemetry pipelines, and production-grade ML for safety-critical systems.</p>
 
-<p align="center">
-  <a href="https://www.linkedin.com/in/poojakiran/">LinkedIn</a> •
-  Phoenix, Arizona · <b>Open to work</b>
-</p>
+<p align="center"> <a href="https://www.linkedin.com/in/poojakiran/">LinkedIn</a> • Phoenix, Arizona · <b>Open to work</b></p>
 
 ---
 
 ## ⬣ What I Do
-
 - Design and ship **end-to-end ML systems**: data ingest, feature engineering, evaluation, and Dockerized deployment.
 - Build **telemetry and anomaly detection** pipelines for aerospace, ESG, and industrial-scale workloads.
 - Focus on **reliability and safety**: GPU OOM mitigation, health monitoring, audit-friendly analytics, and CI/CD.
@@ -24,10 +16,9 @@
 ---
 
 ## ⬣ Hero Projects
+> These repositories represent my production-minded ML + systems engineering work.
 
-> These three repos best represent my production-minded ML + systems engineering work.
-
-### ⚙️ [Predictive-GPU-Memory-Defragmenter](https://github.com/poojakira/Predictive-GPU-Memory-Defragmenter) — GPU Training Reliability
+### ⚙️ [Predictive GPU Memory Defragmenter](https://github.com/poojakira/GPU-Training-OOM-Reduction---RTX-Memory-Fragmentation-Lab)
 **Problem:** Stochastic OOM crashes during large-model training waste GPU hours and break SLAs.  
 **What I built:** An industrial-grade PyTorch infrastructure layer that *predicts* memory fragmentation and triggers proactive compaction before OOM occurs — across GPT-2, BERT, and ResNet-50 workloads.  
 **Impact:**
@@ -38,7 +29,7 @@
 
 ---
 
-### 🧠 [PulseNet](https://github.com/poojakira/PulseNet) — Predictive Maintenance on NASA C-MAPSS
+### 🧠 [PulseNet: Predictive Maintenance on NASA C-MAPSS](https://github.com/poojakira/Predictive-Maintenance-NASA-C-MAPSS-RUL-Forecasting-Pipeline)
 **Problem:** Unplanned failures in jet engines, turbines, and industrial machinery cost billions annually.  
 **What I built:** End-to-end RUL forecasting and anomaly detection pipeline on the industry-standard NASA C-MAPSS dataset — the same benchmark used in aerospace and EV battery maintenance research.  
 **Impact:**
@@ -49,46 +40,30 @@
 
 ---
 
-### 🌱 [Eco-Enterprise](https://github.com/poojakira/Eco-Enterprise) — ESG Telemetry & Carbon Analytics
-**Problem:** ESG reporting lacks real-time anomaly surfacing and auditable forecasting pipelines.  
-**What I built:** Full async data platform — ingestion → Postgres → ensemble AI forecasting → anomaly detection → Merkle-ledger-backed audit reporting.  
-**Impact:**
-- 94% test coverage, CI/CD passing badge
-- Async pipelines, ensemble forecasting, portfolio-level carbon trend analysis
-- One-command local setup: `docker-compose up`
+### 🌱 [EcoTrack: ESG Telemetry & Carbon Analytics](https://github.com/poojakira/ESG-Telemetry-Platform-Carbon-Analytics-Forecasting-and-Anomaly-Detection)
+**What I built:** An ESG telemetry and carbon analytics prototype for async pipelines, forecasting, and anomaly detection.
+- Focuses on audit-friendly reporting, FastAPI, PostgreSQL, and sustainability integrations.
 
 ---
 
-## ⬣ More Projects
-
-| Repo | Domain | Key signal |
-|------|--------|------------|
-| [CommandX](https://github.com/poojakira/CommandX) | Mission-control telemetry simulation | Streamlit operator dashboards, GNC modeling, ML anomaly inference |
-| [orbit-Q](https://github.com/poojakira/orbit-Q) | CubeSat health & anomaly monitoring | 3-model ensemble, Kafka, MLflow, C++ kernel extensions |
-| [Apex-Aegis-Tactical-Suite](https://github.com/poojakira/Apex-Aegis-Tactical-Suite) | Aerospace trajectory simulation | RK4 + atmospheric models + GPU-accelerated ML surrogates |
-| Orbital-IoT-Stack | ESP32 → Kalman filter → Streamlit | Hardware-in-loop sensing, noise modeling, reconnect logic |
+### 🛰️ [Orbit-Q: CubeSat Telemetry Pipeline](https://github.com/poojakira/CubeSat-Telemetry-Pipeline-Anomaly-Detection-and-Health-Analytics)
+**What I built:** A CubeSat telemetry monitoring pipeline for anomaly detection.
+- Features Firebase-backed data flow and satellite health analytics.
 
 ---
 
-## ⬣ What I'm Targeting
-
-- **ML Engineer** — production model pipelines, inference optimization, GPU/distributed training
-- **MLOps / Platform Engineer** — observability, reliability, CI/CD for ML, model registry workflows
-- **Applied Scientist** — telemetry + time-series + anomaly detection in aerospace or safety-critical domains
+### 🚀 [Apex-Aegis: Aerospace Trajectory Simulator](https://github.com/poojakira/Aerospace-Trajectory-Simulator-RK4-Atmosphere-Models-ML-Surrogate-Inference)
+**What I built:** A physics-aware aerospace trajectory simulation sandbox.
+- Uses RK4 integration, atmospheric models, and ML surrogates for constrained inference experiments.
 
 ---
 
-## ⬣ Quick Tech Snapshot
-
-- **Languages**: Python, JavaScript, Bash, SQL, C++
-- **ML/DL**: PyTorch, scikit-learn, time-series, anomaly detection, physics surrogates, CUDA
-- **MLOps / Systems**: Docker, FastAPI, Streamlit, Prometheus, MLflow, GitHub Actions CI/CD
-- **Data**: PostgreSQL, Firebase, Kafka, async pipelines
-- **Cloud / Infra**: AWS (certified), Kubernetes, Slurm/HPC, GPU optimization
-- **Domains**: Telemetry, aerospace-style monitoring, GPU reliability, ESG analytics, robotics
+### 🎛️ [CommandX: Mission Control Dashboards](https://github.com/poojakira/Mission-Control-Telemetry-Simulator-Orbital-Monitoring-Dashboards)
+**What I built:** Mission-control telemetry simulation and anomaly surfacing stack.
+- Designed for orbital monitoring and operator-facing Streamlit dashboards.
 
 ---
 
-<p align="center">
-  <i>IEEE-published · AWS Certified · M.S. information Technology, Arizona State University</i>
-</p>
+### 📡 [Hybrid Orbital Monitoring IoT Stack](https://github.com/poojakira/Orbital-Monitoring-IoT-Stack-ESP32-Sensing-Kalman-Filters-Streamlit-Dashboard)
+**What I built:** Hardware-to-cloud orbital monitoring project.
+- Combines ESP32 sensing, Kalman filtering, re-entry simulation, and a containerized Streamlit dashboard.
