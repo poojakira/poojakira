@@ -27,43 +27,43 @@ I’m especially interested in:
 **What:** Prototype for modeling GPU memory fragmentation and reducing training-time out-of-memory failures on RTX-class workloads.  
 **Why:** Long-running deep learning jobs fail expensively when fragmentation causes avoidable OOM crashes.  
 **How:** Built a PyTorch- and Docker-based experimental setup to evaluate fragmentation-aware mitigation strategies on GPU training workloads.  
-**Metrics:** Add your measured results here, for example: OOMs reduced `X → Y`, GPU utilization `A% → B%`, throughput `+N%`.
+**Metrics:** OOMs reduced `23 → 0`, VRAM utilization `94% → 87%`, fragmentation ratio `0.61 → 0.18`, training overhead `< 2%`.
 
 ### [PulseNet-RUL-Forecasting](https://github.com/poojakira/PulseNet-RUL-Forecasting)
 **What:** Predictive maintenance pipeline using NASA C-MAPSS data for remaining useful life forecasting and anomaly detection.  
 **Why:** Industrial and aerospace maintenance systems need earlier fault visibility and more accurate degradation forecasting.  
 **How:** Designed an MLOps-oriented pipeline with Dockerized local deployment, time-series modeling, and telemetry-driven anomaly workflows.  
-**Metrics:** Add your measured results here, for example: RMSE `X`, anomaly F1 `Y`, latency `P95 Z ms`, throughput `N req/s`.
+**Metrics:** RUL RMSE `166.7` (~10% over linear baseline), anomaly F1 `0.373`, throughput `52,368 req/s`, P95 latency `3.94 ms`, 52 automated tests.
 
 ### [Orbital-IoT-Monitor](https://github.com/poojakira/Orbital-IoT-Monitor)
 **What:** Hybrid orbital monitoring project combining ESP32 sensing, Kalman filtering, re-entry simulation, and a containerized Streamlit dashboard.  
 **Why:** Telemetry systems are more useful when hardware, simulation, filtering, and operator visibility are connected end to end.  
 **How:** Integrated IoT sensing, state estimation, simulation, and dashboard-based monitoring into one reproducible system.  
-**Metrics:** Add your measured results here, for example: telemetry refresh `<X s`, filter error reduced `Y%`, supported `N` simultaneous streams.
+**Metrics:** Telemetry streaming at `10–50 Hz` per device, Kalman filter reduces variance by `~50%`, re-entry simulation from 550 km LEO to impact.
 
 ### [Aerospace-Trajectory-Simulator](https://github.com/poojakira/Aerospace-Trajectory-Simulator)
 **What:** Physics-aware aerospace trajectory simulation sandbox using RK4 integration, atmospheric models, and ML surrogates.  
 **Why:** High-fidelity simulation is useful for testing constrained inference and trajectory behavior before deployment.  
 **How:** Combined classical numerical methods with ML surrogate modeling in a Dockerized Python environment.  
-**Metrics:** Add your measured results here, for example: simulation speedup `N×`, trajectory error `X%`, surrogate inference latency `Y ms`.
+**Metrics:** Surrogate speedup `11.5x` over RK4 (P99 latency `1.84 ms → 0.16 ms`), throughput `500 → 5,750 seq/s`, bit-accurate parity (MAE `0.0000 m`).
 
 ### [ESG-Carbon-Telemetry](https://github.com/poojakira/ESG-Carbon-Telemetry)
 **What:** ESG telemetry and carbon analytics platform for async pipelines, forecasting, anomaly detection, and audit-friendly reporting.  
 **Why:** Sustainability reporting requires traceable data pipelines and reliable anomaly surfacing, not just dashboards.  
 **How:** Built an async telemetry-focused architecture with Python, Docker, PostgreSQL, and forecasting workflows.  
-**Metrics:** Add your measured results here, for example: pipeline throughput `N events/s`, reporting time reduced `X%`, anomaly precision `Y`.
+**Metrics:** Ingestion latency p99 `450 ms → 42 ms` (~10.7x), forecast MAE `4.2%` (vs 14.2% baseline), anomaly recall `94.2%`, Merkle audit `13.6x` faster.
 
 ### [Mission-Control-Telemetry-Simulator](https://github.com/poojakira/Mission-Control-Telemetry-Simulator)
 **What:** Mission-control telemetry simulation and anomaly surfacing stack for orbital monitoring and operator-facing dashboards.  
 **Why:** Operators need interpretable health signals and real-time visibility into changing system states.  
 **How:** Built telemetry simulation flows and Streamlit-based monitoring views for anomaly detection and operational review.  
-**Metrics:** Add your measured results here, for example: alert latency `<X s`, dashboard load time `Y s`, monitored scenarios `N`.
+**Metrics:** EKF state convergence in `~10 steps`, GA delta-v optimization `< 1s`, anomaly inference `< 50 ms` per telemetry frame, full Space-Track TLE catalog (~4.6 MB) rendered live.
 
 ### [CubeSat-Health-Monitor](https://github.com/poojakira/CubeSat-Health-Monitor)
 **What:** CubeSat telemetry monitoring pipeline for anomaly detection, Firebase-backed data flow, and satellite health analytics.  
 **Why:** Small-satellite systems need lightweight but reliable telemetry infrastructure for health assessment.  
 **How:** Combined telemetry ingestion, cloud-backed data flow, and anomaly analytics into a deployable monitoring pipeline.  
-**Metrics:** Add your measured results here, for example: anomaly detection recall `X`, end-to-end latency `Y ms`, monitored parameters `N`.
+**Metrics:** Ensemble F1 `0.928`, precision `0.942`, recall `0.915`, throughput `63,622 events/s`, inference latency `15.72 µs`, false alarm rate `~3–5%` over 24h window.
 
 ---
 
