@@ -16,26 +16,26 @@ I work at the intersection of **machine learning** and **security** — building
 
 ## Featured Projects
 
-### [secure-ml-platform](https://github.com/poojakira/secure-ml-platform)
+### [Secure-ML-platform](https://github.com/poojakira/Secure-ML-platform)
 Security-hardened ML platform for predictive maintenance on NASA C-MAPSS turbofan data. JWT auth, AES encryption at rest, hash-chain audit ledger, Prometheus observability, 79 automated tests, full CI/CD pipeline.
 
-### [gpu-memory-optimizer](https://github.com/poojakira/gpu-memory-optimizer)
+### [RTX-OOM-Guard](https://github.com/poojakira/RTX-OOM-Guard)
 GPU memory defragmentation system for transformer training. Transformer-based fragmentation predictor with tiered compaction policy (compact → evict → emergency). Prevents OOM crashes with minimal overhead.
 
-### [satellite-anomaly-detection](https://github.com/poojakira/satellite-anomaly-detection)
+### [CubeSat-Health-Monitor](https://github.com/poojakira/CubeSat-Health-Monitor)
 CubeSat health monitoring with three-model ensemble (Isolation Forest + Autoencoder + LSTM), Kafka/Firebase ingestion, adaptive polling, and Streamlit ops dashboard.
 
-### [trajectory-optimization](https://github.com/poojakira/trajectory-optimization)
-Physics-aware trajectory simulation using RK4 integration, atmospheric models, and ML surrogates for fast inference. Digital twin with structural health monitoring.
+### [Aerospace-Trajectory-Simulator](https://github.com/poojakira/Aerospace-Trajectory-Simulator)
+Vectorized projectile-motion rollout with RK4 integration and analytical surrogate model. Numerically equivalent to floating-point round-off.
 
-### [telemetry-streaming-pipeline](https://github.com/poojakira/telemetry-streaming-pipeline)
-Satellite telemetry streaming with Extended Kalman Filter state estimation, genetic algorithm orbit optimization, and operator-facing anomaly dashboard.
+### [Mission-Control-Telemetry-Simulator](https://github.com/poojakira/Mission-Control-Telemetry-Simulator)
+Satellite telemetry simulation with J2-perturbed Extended Kalman Filter, genetic algorithm orbit optimization, and operator-facing Streamlit dashboard.
 
-### [carbon-analytics-platform](https://github.com/poojakira/carbon-analytics-platform)
-Carbon emissions tracking with async batch ingestion, Merkle-anchored audit trail, PostgreSQL persistence, and forecasting. FastAPI backend with Streamlit frontend.
+### [ESG-Carbon-Telemetry](https://github.com/poojakira/ESG-Carbon-Telemetry)
+Carbon emissions tracking with async batch ingestion, Merkle hash-chain audit trail, PostgreSQL persistence, and ARIMA forecasting.
 
-### [iot-telemetry-monitor](https://github.com/poojakira/iot-telemetry-monitor)
-IoT telemetry monitoring with MQTT ingestion, autoencoder anomaly detection, Kalman filtering, and containerized dashboard.
+### [Orbital-IoT-Monitor](https://github.com/poojakira/Orbital-IoT-Monitor)
+ESP32 + MQTT + Python telemetry pipeline with autoencoder anomaly detection, Kalman filtering, and containerized Streamlit dashboard.
 
 ---
 
