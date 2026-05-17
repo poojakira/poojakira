@@ -1,41 +1,36 @@
 # Pooja Kiran
 
-Security-focused ML engineer. I build ML systems where auth, encryption, and audit trails aren't afterthoughts.
+ML Security Engineer. I build ML systems where auth, encryption, and audit trails are first-class concerns — not bolted on after deployment.
 
-M.S. Information Technology (Security), Arizona State University. Looking for AppSec / ML Security roles.
+**Focus:** Securing inference pipelines · adversarial input detection · GPU training reliability · tamper-evident audit trails
 
 ---
 
-## Main projects
+## What I work on
 
-**[Secure-ML-platform](https://github.com/poojakira/Secure-ML-platform)** — Predictive maintenance API with JWT/RBAC, Fernet encryption at rest, hash-chain audit ledger, sliding-window rate limiter, Prometheus metrics. 79 tests. Real load test results in `docs/LOAD_TEST_RESULTS.md` (spoiler: 4 req/s on a laptop with single worker — the honest number).
+| Project | What it demonstrates |
+|---------|---------------------|
+| **[Secure-ML-platform](https://github.com/poojakira/Secure-ML-platform)** | FastAPI inference service with JWT auth, Fernet encryption at rest, hash-chain audit ledger, rate limiting, OOD input detection. 79 tests. [Validation notebook](https://github.com/poojakira/Secure-ML-platform/blob/main/notebooks/colab_validation.ipynb) with real metrics. |
+| **[RTX-OOM-Guard](https://github.com/poojakira/RTX-OOM-Guard)** | Proactive CUDA memory defragmentation for PyTorch training. Monitors fragmentation, triggers compaction before OOM. [Colab T4 benchmark](https://github.com/poojakira/RTX-OOM-Guard/blob/main/notebooks/colab_t4_validation.ipynb). |
+| **[CubeSat-Health-Monitor](https://github.com/poojakira/CubeSat-Health-Monitor)** | 3-model ensemble (IF + Autoencoder + LSTM) with majority-vote anomaly detection. Eclipse transition suppression logic. |
+| **[ESG-Carbon-Telemetry](https://github.com/poojakira/ESG-Carbon-Telemetry)** | Async batch-ingestion pipeline with PostgreSQL COPY, ARIMA forecasting, Merkle audit trail. |
 
-**[RTX-OOM-Guard](https://github.com/poojakira/RTX-OOM-Guard)** — Research prototype: can you predict GPU OOM before it happens? Answer: sort of. `torch.cuda.empty_cache()` does most of the work. The transformer predictor is overkill. Honest limitations documented in `docs/HONEST_ASSESSMENT.md`.
-
-## Smaller projects
-
-**[CubeSat-Health-Monitor](https://github.com/poojakira/CubeSat-Health-Monitor)** — Ensemble anomaly detection for satellite telemetry (class project that grew). The interesting part is the majority-vote logic and eclipse transition handling, not the models themselves.
-
-**[ESG-Carbon-Telemetry](https://github.com/poojakira/ESG-Carbon-Telemetry)** — FastAPI + PostgreSQL exercise with a Merkle audit trail. Built to learn async batch ingestion patterns.
-
-**[Aerospace-Trajectory-Simulator](https://github.com/poojakira/Aerospace-Trajectory-Simulator)** — RK4 numerical integration exercise. Not aerospace engineering, just applied math with a neural net curve fit on top.
-
-**[Mission-Control-Telemetry-Simulator](https://github.com/poojakira/Mission-Control-Telemetry-Simulator)** — EKF + orbital mechanics learning project. The J2 perturbation math is real; the "mission control" framing is aspirational.
-
-**[Orbital-IoT-Monitor](https://github.com/poojakira/Orbital-IoT-Monitor)** — ESP32 + MQTT class project. The hardware is a thermistor on a breadboard, not a satellite.
+Each repo has a runnable Colab validation notebook producing real numbers — no fabricated benchmarks.
 
 ## Background
 
-- M.S. IT Security — ASU (2024–2026)
-- B.E. CS — M.S. Ramaiah University
-- IEEE INDICON 2023 — personalized e-learning with RL
+- **M.S. Information Technology (Security)** — Arizona State University, 2024–2026
+- **B.E. Computer Science** — M.S. Ramaiah University
+- IEEE INDICON 2023 — Personalized e-learning with reinforcement learning
 - Honeywell Aerospace × ASU Innovation Lab
 - AWS Cloud Security Foundations
 
-## Open source
+## What I'm looking for
 
-Looking to contribute to ML infrastructure security tooling (mlflow, feast, or similar). If you maintain something in this space and want help with auth/audit features, I'm interested.
+ML Security Engineer · AI Platform Security · MLOps with security focus · Application Security (ML-adjacent)
+
+I want to work where ML meets security — securing model serving infrastructure, detecting adversarial inputs, building audit trails for model predictions, or hardening training pipelines against data poisoning.
 
 ---
 
-[LinkedIn](https://www.linkedin.com/in/poojakiran/) · Phoenix, AZ
+[LinkedIn](https://www.linkedin.com/in/poojakiran/) · Phoenix, AZ · Open to relocation
