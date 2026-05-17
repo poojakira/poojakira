@@ -16,6 +16,9 @@ I work at the intersection of **machine learning** and **security** — building
 
 ## Featured Projects
 
+### [Curriculum-Intelligence](https://github.com/poojakira/Curriculum-Intelligence)
+GNN-based knowledge tracing on EdNet-KT1 (131M interactions). GATv2 + GRU model for adaptive curriculum recommendations. Research extension of my IEEE INDICON 2023 paper.
+
 ### [Secure-ML-platform](https://github.com/poojakira/Secure-ML-platform)
 Security-hardened ML platform for predictive maintenance on NASA C-MAPSS turbofan data. JWT auth, AES encryption at rest, hash-chain audit ledger, Prometheus observability, 79 automated tests, full CI/CD pipeline.
 
