@@ -4,7 +4,7 @@ ML Security Engineer · IEEE INDICON 2023 Author · AWS Cloud Security · M.S. I
 
 Building secure ML systems for anomaly detection, telemetry pipelines, and industrial predictive maintenance.
 
-📍 Phoenix, Arizona | [LinkedIn](https://www.linkedin.com/in/poojakiran/) | Open to work (July 2026)
+📍 Phoenix, Arizona | [LinkedIn](https://www.linkedin.com/in/poojakiran/) | [Portfolio](https://poojakira.github.io/Pooja_Portfolio/) | Open to work (July 2026)
 
 ---
 
