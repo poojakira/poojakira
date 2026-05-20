@@ -1,35 +1,33 @@
 # Pooja Kiran
 
-**ML Security Engineer** — I attack and defend machine learning systems.
+**ML Engineer** — LLM systems, RAG pipelines, ML security, production inference.
 
-Adversarial robustness, LLM security, model supply chain integrity, privacy attacks. M.S. IT Security @ Arizona State University.
+M.S. Information Technology Security @ Arizona State University · IEEE INDICON 2023 Author · Honeywell Aerospace Lab
 
-## Security Research
+## What I Build
 
-| Project | What it does |
+🔍 **LLM Infrastructure** — RAG pipelines with vector search, cross-encoder reranking, prompt versioning, evaluation (RAGAS)
+
+🛡️ **ML Security** — Prompt injection detection (DeBERTa classifier), adversarial robustness (AutoAttack, certified defenses), model supply chain auditing
+
+⚙️ **ML Platforms** — Model registry with rollback, A/B testing (Welch's t-test), drift detection (KS-test + Bonferroni), online learning
+
+🔧 **GPU Systems** — CUDA memory defragmentation, optimizer state migration, DDP coordination
+
+## Featured Projects
+
+| Project | What It Does |
 |---------|-------------|
-| **[Adversarial-Robustness-Toolkit](https://github.com/poojakira/Adversarial-Robustness-Toolkit)** | FGSM, PGD, C&W attacks + adversarial training defense. Evaluated on CIFAR-10 with ResNet-18. Includes red team report. |
-| **[LLM-Guard-Scanner](https://github.com/poojakira/LLM-Guard-Scanner)** | Prompt injection detection, output data leakage scanning, RAG poisoning detection. Covers OWASP LLM Top 10 (2025). |
-| **[Model-Supply-Chain-Auditor](https://github.com/poojakira/Model-Supply-Chain-Auditor)** | Pickle malware scanner (opcode disassembly) + Ed25519 model signing. Detects RCE payloads in serialized models. |
-| **[ML-Privacy-Attacks](https://github.com/poojakira/ML-Privacy-Attacks)** | Membership inference (Shokri et al., 2017) and model inversion (Fredrikson et al., 2015). Quantifies privacy leakage. |
-| **[Secure-ML-platform](https://github.com/poojakira/Secure-ML-platform)** | Secure inference API — JWT auth, encryption at rest, hash-chain audit trail, rate limiting, ensemble anomaly detection. 79 tests. |
+| **[docquery](https://github.com/poojakira/docquery)** | Production RAG pipeline — Qdrant vector DB, bge-reranker-v2-m3, Redis embedding cache, prompt versioning, Celery async ingestion |
+| **[coderev-agents](https://github.com/poojakira/coderev-agents)** | Multi-agent code review — LangGraph orchestration, QLoRA fine-tuned CodeLlama-7B, AWQ/GPTQ/GGUF quantization comparison |
+| **[production-ml-platform](https://github.com/poojakira/production-ml-platform)** | Full MLOps — A/B testing, drift detection, model registry, SHAP explainability, online learning (River), focal loss |
+| **[RTX-OOM-Guard](https://github.com/poojakira/RTX-OOM-Guard)** | GPU memory defragmentation — optimizer migration, EWMA fragmentation estimator, DDP-safe coordination |
+| **[LLM-Guard-Scanner](https://github.com/poojakira/LLM-Guard-Scanner)** | LLM security — DeBERTa injection classifier, perplexity-based obfuscation detection, canary tokens, OWASP LLM Top 10 |
 
-## ML Systems
+## Tech
 
-| Project | What it does |
-|---------|-------------|
-| **[RTX-OOM-Guard](https://github.com/poojakira/RTX-OOM-Guard)** | Proactive CUDA memory defragmentation for PyTorch training. Prevents OOM by compacting fragmented VRAM. |
-| **[CubeSat-Health-Monitor](https://github.com/poojakira/CubeSat-Health-Monitor)** | 3-model ensemble anomaly detection (IF + Autoencoder + LSTM) on time-series telemetry. |
+Python · PyTorch · FastAPI · LangGraph · Qdrant · Redis · Docker · GitHub Actions · W&B · MLflow · SHAP · Prometheus
 
-## Background
+---
 
-- **M.S. Information Technology (Security)** — Arizona State University, 2024-2026
-- **B.E. Computer Science** — M.S. Ramaiah University
-- IEEE INDICON 2023 — Published: personalized e-learning with reinforcement learning
-- Honeywell Aerospace x ASU Innovation Lab
-
-## What I'm looking for
-
-ML Security Engineer roles — securing inference pipelines, adversarial input detection, model integrity verification, LLM safety guardrails.
-
-[LinkedIn](https://www.linkedin.com/in/poojakiran/) · Phoenix, AZ · Open to relocation
+*Open to ML Engineer roles — LLM systems, ML security, MLOps. Phoenix, AZ.*
