@@ -1,7 +1,5 @@
 # Pooja Kiran
 
-**ML Engineer** — LLM systems, RAG pipelines, ML security, production inference.
-
 M.S. Information Technology Security @ Arizona State University · IEEE INDICON 2023 Author · Honeywell Aerospace Lab
 
 ## What I Build
