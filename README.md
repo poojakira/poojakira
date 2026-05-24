@@ -16,6 +16,8 @@ I am targeting ML Security Engineer / AI Security Engineer / MLSecOps roles wher
 
 ## Strongest Evidence
 
+Live local evidence dashboard: [security-dashboard.html](security-dashboard.html). Rebuild with `python tools/build_security_dashboard.py`; it scans local repo files and avoids unsupported benchmark claims.
+
 | Area recruiters screen for | Repository | Evidence |
 | --- | --- | --- |
 | Model supply chain security | [Model-Supply-Chain-Auditor](https://github.com/poojakira/Model-Supply-Chain-Auditor) | Pickle opcode scanning, PyTorch archive inspection, SafeTensors validation, Ed25519 signing, SLSA-style provenance, YAML promotion policy gate, SARIF output |
