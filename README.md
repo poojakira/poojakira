@@ -1,5 +1,7 @@
 # Pooja Kiran
 
+**Recruiter Demo:** `./run_evidence.sh` (outputs `evidence.json`, `evidence.sarif`)
+
 ML Security Engineer candidate focused on LLM application security, model supply chain risk, adversarial ML, privacy attacks, and production ML platform controls.
 
 M.S. Information Technology Security, Arizona State University. IEEE INDICON 2023 author. Honeywell Aerospace Lab background.
