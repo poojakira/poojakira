@@ -60,6 +60,13 @@ for repo in $REPOS; do
         echo "  No Makefile found, skipping SBOM/Provenance."
     fi
 
+    # Collect WHITEPAPER.md if it exists in Model-Supply-Chain-Auditor
+    if [ "$repo" == "Model-Supply-Chain-Auditor" ] && [ -f "WHITEPAPER.md" ]; then
+        echo "  Collecting WHITEPAPER.md..."
+        cp WHITEPAPER.md "$ABS_EVIDENCE_DIR/${repo}_WHITEPAPER.md"
+        echo "  Collected WHITEPAPER: ${repo}_WHITEPAPER.md"
+    fi
+
     cd - > /dev/null
 done
 
