@@ -1,3 +1,9 @@
+# poojakira
+
+**TL;DR**: ML Security Engineer Portfolio Component - poojakira
+**Demo**: `make smoke`
+**Evidence**: `sarif_output.json`
+
 # Pooja Kiran
 
 **Recruiter Demo:** `./run_evidence.sh` (outputs `evidence.json`, `evidence.sarif`)
@@ -91,3 +97,9 @@ I am targeting ML Security Engineer / AI Security Engineer / MLSecOps roles wher
 ## Contact
 
 Phoenix, AZ. Open to ML Security Engineer, AI Security Engineer, MLSecOps, and security-focused ML platform roles.
+
+
+## Threat Model
+- **Assets**: ML Models, Training Data
+- **Adversaries**: Script kiddies, AI-automated attackers
+- **Mitigations**: Hardened CI/CD, Input Validation, SARIF Auditing
