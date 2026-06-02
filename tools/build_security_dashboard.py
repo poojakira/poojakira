@@ -51,7 +51,13 @@ REPOS = (
         "LLM application security",
         "Deterministic attack fixtures; no company dataset claimed.",
         ("OWASP LLM01", "OWASP LLM02", "MITRE ATLAS"),
-        ("prompt injection", "rag poisoning", "output scanner", "canary", "normalization"),
+        (
+            "prompt injection",
+            "rag poisoning",
+            "output scanner",
+            "canary",
+            "normalization",
+        ),
     ),
     RepoSpec(
         "Adversarial-Robustness-Toolkit",
@@ -65,7 +71,12 @@ REPOS = (
         "Privacy attack evaluation",
         "Official UCI Bank Marketing loader; not company-financial data.",
         ("NIST AI RMF Govern/Measure", "Privacy threat modeling"),
-        ("membership inference", "model inversion", "confidence sanitization", "privacy report"),
+        (
+            "membership inference",
+            "model inversion",
+            "confidence sanitization",
+            "privacy report",
+        ),
     ),
     RepoSpec(
         "Secure-ML-platform",
@@ -176,9 +187,15 @@ def repo_snapshot(spec: RepoSpec) -> dict[str, object]:
     text_index = read_repo_text(path)
     files = list(iter_repo_files(path)) if path.exists() else []
     tests = [p for p in files if "test" in p.name.lower() or "tests" in p.parts]
-    workflows = [p for p in files if ".github" in p.parts and p.suffix in {".yml", ".yaml"}]
+    workflows = [
+        p for p in files if ".github" in p.parts and p.suffix in {".yml", ".yaml"}
+    ]
     normalized_index = normalize_evidence(text_index)
-    evidence = [control for control in spec.expected_controls if normalize_evidence(control) in normalized_index]
+    evidence = [
+        control
+        for control in spec.expected_controls
+        if normalize_evidence(control) in normalized_index
+    ]
     missing = [control for control in spec.expected_controls if control not in evidence]
     status = git_status(path)
     return {
@@ -199,7 +216,9 @@ def repo_card(spec: RepoSpec, snapshot: dict[str, object]) -> str:
     evidence = snapshot["evidence"]
     missing = snapshot["missing"]
     status = str(snapshot["status"])
-    risk = "attention" if missing or status not in {"clean", "not-a-git-repo"} else "ready"
+    risk = (
+        "attention" if missing or status not in {"clean", "not-a-git-repo"} else "ready"
+    )
     return f"""
     <article class="card {risk}">
       <div class="card-head">
@@ -265,7 +284,9 @@ python tools/build_security_dashboard.py
 ```
 """
     (docs / "ML_SECURITY_AUDIT_2026.md").write_text(markdown, encoding="utf-8")
-    (docs / "security-showcase.html").write_text(render_repo_page(spec, snapshot), encoding="utf-8")
+    (docs / "security-showcase.html").write_text(
+        render_repo_page(spec, snapshot), encoding="utf-8"
+    )
 
 
 def bullet_list(items: object) -> str:
@@ -346,10 +367,21 @@ def read_repo_text(path: Path) -> str:
         return ""
     chunks: list[str] = []
     for candidate in iter_repo_files(path):
-        if candidate.suffix.lower() not in {".py", ".md", ".yml", ".yaml", ".json", ".toml", ".js", ".jsx"}:
+        if candidate.suffix.lower() not in {
+            ".py",
+            ".md",
+            ".yml",
+            ".yaml",
+            ".json",
+            ".toml",
+            ".js",
+            ".jsx",
+        }:
             continue
         try:
-            chunks.append(candidate.read_text(encoding="utf-8", errors="ignore").lower())
+            chunks.append(
+                candidate.read_text(encoding="utf-8", errors="ignore").lower()
+            )
         except OSError:
             continue
     return "\n".join(chunks)
