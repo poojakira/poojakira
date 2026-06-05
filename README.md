@@ -1,7 +1,6 @@
 # Pooja Kiran — ML Security Engineer
 
 **What I do:**
-
 I specialize in building and securing cutting-edge AI systems, focusing on three core pillars:
 
 *   **Offensive ML Security:** Probing and understanding vulnerabilities in machine learning models, including privacy attacks (membership inference, model inversion), adversarial robustness (FGSM, PGD, C&W, AutoAttack), and data poisoning.
@@ -11,7 +10,6 @@ I specialize in building and securing cutting-edge AI systems, focusing on three
 ---
 
 ## 🌟 Featured Work
-
 These projects showcase my expertise in ML security. For a deeper dive, explore the pinned repositories on my profile.
 
 *   **ML-Privacy-Attacks:** Quantifying and mitigating privacy leakage in trained models through membership inference and model inversion attacks.
@@ -25,17 +23,14 @@ These projects showcase my expertise in ML security. For a deeper dive, explore 
 ---
 
 ## 🎯 What I’m targeting in 2026
-
 I am actively seeking **ML Security Engineer** roles, with a particular interest in **LLM security, supply chain security, and inference hardening**. My goal is to contribute to organizations building secure and resilient AI systems.
 
 ---
 
 ## 📜 Research & writing
-
 - **[Paper/Project Title]** — *Conference/Workshop, Year*
   **Topic:** e.g., anomaly detection for aviation systems, secure telemetry, etc.
   **Code:** [link-to-repo] • **Result:** e.g., *X% improvement in detection at Y% false positive rate.*
-
 - **Security write‑ups & notes**
   - [Threat modeling LLM/RAG systems](#)
   - [Practical membership inference attacks in production‑like setups](#)
@@ -43,7 +38,6 @@ I am actively seeking **ML Security Engineer** roles, with a particular interest
 ---
 
 ## 🛠️ Tech stack
-
 - **Languages:** Python, Go/Java, Bash, SQL
 - **ML/AI:** PyTorch, TensorFlow, scikit‑learn, Hugging Face, Triton/ONNX
 - **Security:** cryptography, JWT/OAuth2, SBOM/SLSA, OWASP LLM, MITRE ATLAS
