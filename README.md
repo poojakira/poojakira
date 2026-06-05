@@ -1,48 +1,31 @@
 # Pooja Kiran — ML Security Engineer
 
-**What I do:**
-I specialize in building and securing cutting-edge AI systems, focusing on three core pillars:
-
-*   **Offensive ML Security:** Probing and understanding vulnerabilities in machine learning models, including privacy attacks (membership inference, model inversion), adversarial robustness (FGSM, PGD, C&W, AutoAttack), and data poisoning.
-*   **Defensive Controls:** Designing and implementing robust safeguards such as artifact signing and verification, LLM guardrails, and automated security scanners to protect ML pipelines and models.
-*   **Secure ML Platforms:** Architecting and deploying production-grade ML platforms with integrated security features like authentication, authorization, immutable audit logging, drift detection, and CI/CD security gates.
+> **[0x00] Security Philosophy**: I believe that AI safety is a secondary concern to AI security. You cannot have a "safe" model that is not first "secure." My work focuses on **Defense in Depth for Non-Deterministic Systems**, ensuring that ML pipelines are resilient against adversarial intent, artifact tampering, and privacy leakage.
 
 ---
 
-## 🌟 Featured Work
-These projects showcase my expertise in ML security. For a deeper dive, explore the pinned repositories on my profile.
+## 🌟 [0x01] Industrial Impact & Featured Work (June 2026)
 
-*   **ML-Privacy-Attacks:** Quantifying and mitigating privacy leakage in trained models through membership inference and model inversion attacks.
-*   **Adversarial-Robustness-Toolkit:** A comprehensive toolkit for evaluating and enhancing the adversarial robustness of ML models against various attack techniques.
-*   **Model-Supply-Chain-Auditor:** Ensuring the integrity and provenance of ML artifacts by verifying signatures, validating SafeTensors, and generating SBOMs for secure CI/CD.
-*   **LLM-Guard-Scanner:** A prototype scanner for detecting prompt injection, PII/secret leakage, and RAG poisoning in Large Language Models.
-*   **Secure-ML-platform:** A reference implementation for secure ML inference, featuring JWT authentication, RBAC, encrypted models, and hash-chained audit logs.
-*   **docquery:** A secure RAG pipeline for financial document Q&A, emphasizing data privacy and integrity.
-*   **PulseNet-RUL-Forecasting:** Predictive maintenance with a focus on data lineage, threat modeling, and CI gates for a full secure ML lifecycle.
-
----
-
-## 🎯 What I’m targeting in 2026
-I am actively seeking **ML Security Engineer** roles, with a particular interest in **LLM security, supply chain security, and inference hardening**. My goal is to contribute to organizations building secure and resilient AI systems.
+| Project | Threat Model | Core Defense | 2026 Status |
+| :--- | :--- | :--- | :--- |
+| **[Audit-ML-SupplyChain](https://github.com/poojakira/Model-Supply-Chain-Auditor)** | Artifact Tampering / Poisoning | Ed25519 Signing + SafeTensors Validation | **Production-Ready** |
+| **[LLM-Guardrail-Engine](https://github.com/poojakira/LLM-Guard-Scanner)** | Prompt Injection / PII Leakage | Regex-Heuristics + Output Redaction | **Beta (Hardening)** |
+| **[Adversarial-Hardening-Suite](https://github.com/poojakira/Adversarial-Robustness-Toolkit)** | Evasion / Adversarial Examples | FGSM/PGD Defense + Robustness Metrics | **Research Tool** |
+| **[Privacy-Attack-Quant](https://github.com/poojakira/ML-Privacy-Attacks)** | Membership Inference / Inversion | Differential Privacy + Leakage Audits | **Research Tool** |
+| **[Secure-RAG-Framework](https://github.com/poojakira/docquery)** | RAG Poisoning / Hallucination | Retrieval Verification + Secure Caching | **Prototype** |
+| **[Secure-ML-Platform](https://github.com/poojakira/Secure-ML-platform)** | Unauthorized Inference / Audit Gaps | JWT RBAC + Hash-Chained Audit Logs | **Maintenance** |
 
 ---
 
-## 📜 Research & writing
-- **[Paper/Project Title]** — *Conference/Workshop, Year*
-  **Topic:** e.g., anomaly detection for aviation systems, secure telemetry, etc.
-  **Code:** [link-to-repo] • **Result:** e.g., *X% improvement in detection at Y% false positive rate.*
-- **Security write‑ups & notes**
-  - [Threat modeling LLM/RAG systems](#)
-  - [Practical membership inference attacks in production‑like setups](#)
+## 🎯 [0x02] Current Focus (June 2026)
+I am currently researching **Latent Space Jailbreak Detection** and **Hardware-Rooted Model Provenance**. I am actively seeking **ML Security Engineer** roles where I can build production-grade defenses for LLM and Vision systems.
 
 ---
 
-## 🛠️ Tech stack
-- **Languages:** Python, Go/Java, Bash, SQL
-- **ML/AI:** PyTorch, TensorFlow, scikit‑learn, Hugging Face, Triton/ONNX
-- **Security:** cryptography, JWT/OAuth2, SBOM/SLSA, OWASP LLM, MITRE ATLAS
-- **Infra:** Docker, Kubernetes, FastAPI, gRPC, Redis, Postgres, Prometheus/Grafana
-- **Tooling:** GitHub Actions, pytest, mypy, pre‑commit, SARIF, Terraform (if applicable)
+## 🛠️ [0x03] Tech Stack & Tooling
+- **Offensive:** FGSM, PGD, C&W, AutoAttack, Shokri/Fredrikson Privacy Attacks
+- **Defensive:** Ed25519, SafeTensors, JWT/OAuth2, SBOM/SLSA, OWASP LLM, MITRE ATLAS
+- **Infra:** Triton, PyTorch, Docker, K8s, GitHub Actions, CodeQL
 
 ---
 
