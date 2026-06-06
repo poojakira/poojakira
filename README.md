@@ -1,32 +1,28 @@
-# Pooja Kiran — ML Security Engineer
+# Pooja Kiran
+**ML Security Engineer**
 
-> **[0x00] Security Philosophy**: I believe that AI safety is a secondary concern to AI security. You cannot have a "safe" model that is not first "secure." My work focuses on **Defense in Depth for Non-Deterministic Systems**, ensuring that ML pipelines are resilient against adversarial intent, artifact tampering, and privacy leakage.
-
----
-
-## 🌟 [0x01] Industrial Impact & Featured Work (June 2026)
-
-| Project | Threat Model | Core Defense | 2026 Status |
-| :--- | :--- | :--- | :--- |
-| **[Audit-ML-SupplyChain](https://github.com/poojakira/Model-Supply-Chain-Auditor)** | Artifact Tampering / Poisoning | Ed25519 Signing + SafeTensors Validation | **Production-Ready** |
-| **[LLM-Guardrail-Engine](https://github.com/poojakira/LLM-Guard-Scanner)** | Prompt Injection / PII Leakage | Regex-Heuristics + Output Redaction | **Beta (Hardening)** |
-| **[Adversarial-Hardening-Suite](https://github.com/poojakira/Adversarial-Robustness-Toolkit)** | Evasion / Adversarial Examples | FGSM/PGD Defense + Robustness Metrics | **Research Tool** |
-| **[Privacy-Attack-Quant](https://github.com/poojakira/ML-Privacy-Attacks)** | Membership Inference / Inversion | Differential Privacy + Leakage Audits | **Research Tool** |
-| **[Secure-RAG-Framework](https://github.com/poojakira/docquery)** | RAG Poisoning / Hallucination | Retrieval Verification + Secure Caching | **Prototype** |
-| **[Secure-ML-Platform](https://github.com/poojakira/Secure-ML-platform)** | Unauthorized Inference / Audit Gaps | JWT RBAC + Hash-Chained Audit Logs | **Maintenance** |
+Phoenix, AZ | [LinkedIn](https://www.linkedin.com/in/pooja-kiran/) | [GitHub](https://github.com/poojakira)
 
 ---
 
-## 🎯 [0x02] Current Focus (June 2026)
-I am currently researching **Latent Space Jailbreak Detection** and **Hardware-Rooted Model Provenance**. I am actively seeking **ML Security Engineer** roles where I can build production-grade defenses for LLM and Vision systems.
+## Flagship ML Security Repositories
+
+| Repository | Core Function | Security Property Demonstrated | Status |
+|---|---|---|---|
+| [Model-Supply-Chain-Auditor](https://github.com/poojakira/Model-Supply-Chain-Auditor) | Static analysis of pickle bytecode for malicious opcodes and Ed25519 model signing. | **Integrity**: Prevents arbitrary code execution via model weights and ensures artifact provenance. | ![CI](https://github.com/poojakira/Model-Supply-Chain-Auditor/actions/workflows/ci.yml/badge.svg) |
+| [LLM-Guard-Scanner](https://github.com/poojakira/LLM-Guard-Scanner) | Lightweight scanner for prompt injection detection, PII leakage, and RAG poisoning. | **Input Validation**: Hardens LLM interfaces against adversarial prompts and sensitive data exfiltration. | ![CI](https://github.com/poojakira/LLM-Guard-Scanner/actions/workflows/ci.yml/badge.svg) |
+| [ML-Privacy-Attacks](https://github.com/poojakira/ML-Privacy-Attacks) | Implementation of membership inference and model inversion attacks with DP-SGD defenses. | **Confidentiality**: Quantifies and mitigates training data leakage in deep learning models. | ![CI](https://github.com/poojakira/ML-Privacy-Attacks/actions/workflows/ci.yml/badge.svg) |
+| [docquery](https://github.com/poojakira/docquery) | Production RAG pipeline with multi-tenant isolation and retrieval-stage security controls. | **Isolation**: Ensures data separation and prevents indirect prompt injection in retrieval-augmented systems. | ![CI](https://github.com/poojakira/docquery/actions/workflows/ci.yml/badge.svg) |
+| [Adversarial-Robustness-Toolkit](https://github.com/poojakira/Adversarial-Robustness-Toolkit) | Adversarial attack suite (FGSM, PGD, C&W) and robust training implementations for vision models. | **Availability/Reliability**: Evaluates model performance under adversarial noise and implements hardening. | ![CI](https://github.com/poojakira/Adversarial-Robustness-Toolkit/actions/workflows/ci.yml/badge.svg) |
+| [Secure-ML-platform](https://github.com/poojakira/Secure-ML-platform) | Infrastructure for secure model serving with JWT-based RBAC and hash-chained audit logs. | **Access Control**: Implements least-privilege access and non-repudiable auditing for ML infrastructure. | ![CI](https://github.com/poojakira/Secure-ML-platform/actions/workflows/ci.yml/badge.svg) |
 
 ---
 
-## 🛠️ [0x03] Tech Stack & Tooling
-- **Offensive:** FGSM, PGD, C&W, AutoAttack, Shokri/Fredrikson Privacy Attacks
-- **Defensive:** Ed25519, SafeTensors, JWT/OAuth2, SBOM/SLSA, OWASP LLM, MITRE ATLAS
-- **Infra:** Triton, PyTorch, Docker, K8s, GitHub Actions, CodeQL
+## Technical Competencies
 
----
-
-**Location**: Phoenix, AZ | [LinkedIn](https://www.linkedin.com/in/pooja-kiran/) | [Portfolio](https://poojakira.github.io/Pooja_Portfolio/)
+- **Adversarial ML**: Implementation of evasion, poisoning, and privacy attacks; adversarial training and defense.
+- **ML Ops Security**: Model signing (Ed25519), SBOM generation, SLSA provenance, and secure artifact distribution.
+- **LLM Security**: Prompt injection detection, PII redaction, and security controls for RAG pipelines.
+- **Security Engineering**: JWT/OAuth2, RBAC, hash-chained logging, and automated security scanning (pip-audit, ruff).
+- **Frameworks**: PyTorch, FastAPI, Qdrant, Docker, GitHub Actions.
+- **Standards**: MITRE ATLAS, OWASP LLM Top 10, NIST AI RMF.
