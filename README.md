@@ -1,46 +1,42 @@
-# Pooja Kiran
-**ML Security Engineer**
+# Pooja Kiran — ML Security Engineer
 
-Phoenix, AZ | [LinkedIn](https://www.linkedin.com/in/pooja-kiran/) | [GitHub](https://github.com/poojakira)
+Building defenses where ML systems actually fail: supply-chain integrity, LLM attack surfaces,
+privacy leakage at inference time, and adversarial robustness with honest failure documentation.
 
----
-
-## Flagship ML Security Repositories
-
-| Repository | Core Function | Security Property Demonstrated | Status |
-|---|---|---|---|
-| [Model-Supply-Chain-Auditor](https://github.com/poojakira/Model-Supply-Chain-Auditor) | Static analysis of pickle bytecode for malicious opcodes and Ed25519 model signing. | **Integrity**: Prevents arbitrary code execution via model weights and ensures artifact provenance. | ![CI](https://github.com/poojakira/Model-Supply-Chain-Auditor/actions/workflows/ci.yml/badge.svg) |
-| [LLM-Guard-Scanner](https://github.com/poojakira/LLM-Guard-Scanner) | Lightweight scanner for prompt injection detection, PII leakage, and RAG poisoning. | **Input Validation**: Hardens LLM interfaces against adversarial prompts and sensitive data exfiltration. | ![CI](https://github.com/poojakira/LLM-Guard-Scanner/actions/workflows/ci.yml/badge.svg) |
-| [ML-Privacy-Attacks](https://github.com/poojakira/ML-Privacy-Attacks) | Implementation of membership inference and model inversion attacks with DP-SGD defenses. | **Confidentiality**: Quantifies and mitigates training data leakage in deep learning models. | ![CI](https://github.com/poojakira/ML-Privacy-Attacks/actions/workflows/ci.yml/badge.svg) |
-| [docquery](https://github.com/poojakira/docquery) | Production RAG pipeline with multi-tenant isolation and retrieval-stage security controls. | **Isolation**: Ensures data separation and prevents indirect prompt injection in retrieval-augmented systems. | ![CI](https://github.com/poojakira/docquery/actions/workflows/ci.yml/badge.svg) |
-| [Adversarial-Robustness-Toolkit](https://github.com/poojakira/Adversarial-Robustness-Toolkit) | Adversarial attack suite (FGSM, PGD, C&W) and robust training implementations for vision models. | **Availability/Reliability**: Evaluates model performance under adversarial noise and implements hardening. | ![CI](https://github.com/poojakira/Adversarial-Robustness-Toolkit/actions/workflows/ci.yml/badge.svg) |
-| [Secure-ML-platform](https://github.com/poojakira/Secure-ML-platform) | Infrastructure for secure model serving with JWT-based RBAC and hash-chained audit logs. | **Access Control**: Implements least-privilege access and non-repudiable auditing for ML infrastructure. | ![CI](https://github.com/poojakira/Secure-ML-platform/actions/workflows/ci.yml/badge.svg) |
+Phoenix, AZ · [LinkedIn](https://www.linkedin.com/in/pooja-kiran/) · [GitHub](https://github.com/poojakira)
 
 ---
 
-## Technical Competencies
+### Active work
 
-- **Adversarial ML**: Implementation of evasion, poisoning, and privacy attacks; adversarial training and defense.
-- **ML Ops Security**: Model signing (Ed25519), SBOM generation, SLSA provenance, and secure artifact distribution.
-- **LLM Security**: Prompt injection detection, PII redaction, and security controls for RAG pipelines.
-- **Security Engineering**: JWT/OAuth2, RBAC, hash-chained logging, and automated security scanning (pip-audit, ruff).
-- **Frameworks**: PyTorch, FastAPI, Qdrant, Docker, GitHub Actions.
-- **Standards**: MITRE ATLAS, OWASP LLM Top 10, NIST AI RMF.
+| Repo | Threat domain | What it measures |
+|------|--------------|-----------------|
+| [LLM-Guard-Scanner](https://github.com/poojakira/LLM-Guard-Scanner) | LLM attack surface | Prompt injection, PII/secret leakage, RAG poisoning — OWASP LLM Top 10 mapped |
+| [Model-Supply-Chain-Auditor](https://github.com/poojakira/Model-Supply-Chain-Auditor) | Supply chain integrity | Pickle/PyTorch artifact scanning, SafeTensors validation, Ed25519 signing, SARIF output |
+| [ML-Privacy-Attacks](https://github.com/poojakira/ML-Privacy-Attacks) | Privacy leakage | MIA advantage 0.42 on UCI Bank Marketing — EU AI Act Art.10 FAIL flagged automatically |
+| [Adversarial-Robustness-Toolkit](https://github.com/poojakira/Adversarial-Robustness-Toolkit) | Adversarial robustness | FGSM / PGD / C&W / AutoAttack on CIFAR-10 — clean-trained model drops to 0% under PGD |
+| [PulseNet-RUL-Forecasting](https://github.com/poojakira/PulseNet-RUL-Forecasting) | Secure MLOps | C-MAPSS pipeline: STRIDE threat model, RBAC, 2.7 ms mean inference, SARIF CI gates |
+| [docquery](https://github.com/poojakira/docquery) | RAG security | Multi-tenant RAG hardened against indirect injection — Qdrant, reranking, FastAPI |
 
+---
 
-## Security & Limitations
-This project is a research prototype and is not intended for production use. It has not been formally audited and may contain vulnerabilities. Specific limitations include:
-- No formal guarantees of security or robustness.
-- May not protect against all classes of attacks.
+### Focus areas
 
+- LLM agent security — prompt injection, indirect injection, RAG poisoning, context guard
+- ML supply-chain integrity — artifact signing, pickle scanning, SBOM, SLSA alignment
+- Privacy attacks at inference — membership inference, model inversion, DP-SGD accounting
+- Adversarial robustness — documented failure conditions, not just "defense works" claims
+- Secure MLOps — SARIF gates, RBAC, audit logging, drift detection, tenant isolation
 
-### Threat Model
-This section outlines the assumed attacker capabilities and the scope of protection. We assume a "white-box" attacker with access to the model and data, but not necessarily the training infrastructure. We do not explicitly protect against zero-day exploits or highly sophisticated, targeted attacks beyond the scope of typical research prototypes.
+---
 
+### Standards and frameworks
 
-## Data, Privacy, and Ethics
-This project uses data that is either synthetic, publicly available, or anonymized. No sensitive personal data is used unless explicitly stated and justified. Users should be aware of the ethical implications of deploying ML models and ensure compliance with relevant privacy regulations.
+OWASP LLM Top 10 · MITRE ATLAS · NIST AI RMF · EU AI Act Art.10/15 · STRIDE · SLSA
 
+---
 
-## Supply Chain Security
-To ensure the integrity of dependencies, we recommend running `pip-audit` or `safety` regularly. For model artifacts, hashes and verification steps should be documented to prevent tampering.
+### Currently
+
+Building an agentic threat evaluation harness covering indirect prompt injection, tool-call hijacking,
+and memory poisoning — motivated by the 31% browser-agent hijack rate in Anthropic's 2026 system card.
