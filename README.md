@@ -3,7 +3,7 @@
 Building defenses where ML systems actually fail: supply-chain integrity, LLM attack surfaces,
 privacy leakage at inference time, and adversarial robustness with honest failure documentation.
 
-Phoenix, AZ · [LinkedIn](https://www.linkedin.com/in/pooja-kiran/) · [GitHub](https://github.com/poojakira)
+Phoenix, AZ · [LinkedIn](https://www.linkedin.com/in/poojakiran/) · [GitHub](https://github.com/poojakira)
 
 ---
 
