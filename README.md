@@ -1,47 +1,36 @@
-# Pooja Kiran — ML Security Engineer
+# Hi, I'm Pooja Kiran ðŸ‘‹
 
-[![LinkedIn](https://img.shields.shields.shields.io/badge/LinkedIn-Pooja%20Kiran-blue?style=flat-square&logo=linkedin)](https://www.linkedin.com/in/poojakiran/) [![GitHub](https://img.shields.shields.shields.io/badge/GitHub-poojakira-black?style=flat-square&logo=github)](https://github.com/poojakira) [![Email](https://img.shields.shields.shields.io/badge/Email-poojakiranbhardwaj%40gmail.com-red?style=flat-square&logo=gmail)](mailto:poojakiranbhardwaj@gmail.com)
+**Aspiring ML Security Engineer** based in Greater Phoenix Area, AZ
 
-> **"I study how machine learning systems break — and build the tools to detect it."**
-
-I am an **ML Security Engineer** specializing in the practical defense of LLM, RAG, and agentic AI pipelines. My work focuses on bridging the gap between academic research and production-grade security engineering, with a heavy emphasis on **supply-chain integrity**, **adversarial robustness**, and **privacy-preserving ML**.
+I build open-source tools to secure LLM, RAG, and agentic AI pipelines â€” from model supply chain to deployment.
 
 ---
 
-### 🛡️ Flagship Security Projects
-
-| Repository | Domain | Core Innovation |
-| --- | --- | --- |
-| [LLM-Guard-Scanner](https://github.com/poojakira/LLM-Guard-Scanner) | LLM Attack Surface | Multi-layer scanner for prompt injection, PII leakage, and RAG poisoning. Mapped to OWASP LLM Top 10. |
-| [Model-Supply-Chain-Auditor](https://github.com/poojakira/Model-Supply-Chain-Auditor) | Supply Chain | End-to-end integrity: Pickle scanning, SafeTensors validation, and Ed25519 artifact signing with SARIF output. |
-| [Adversarial-Robustness-Toolkit](https://github.com/poojakira/Adversarial-Robustness-Toolkit) | Robustness | Benchmarking FGSM/PGD/C&W/AutoAttack on CIFAR-10. Includes honest failure documentation. |
-| [PulseNet-RUL-Forecasting](https://github.com/poojakira/PulseNet-RUL-Forecasting) | Secure MLOps | Hardened C-MAPSS pipeline with STRIDE threat modeling, RBAC, and automated SARIF CI gates. |
-| [docquery](https://github.com/poojakira/docquery) | RAG Security | Secure RAG prototype hardened against indirect injection using Qdrant and multi-tenant isolation. |
+### ðŸ” What I Work On
+- **LLM / RAG Security** â€” prompt injection defense, RAG poisoning mitigation, canary tokens, multi-tenant isolation
+- **Model Supply-Chain Security** â€” pickle scanning, SafeTensors validation, Ed25519 signing, SLSA, SARIF CI gates
+- **Adversarial ML** â€” FGSM, PGD, C&W, AutoAttack, Madry adversarial training, TRADES, randomized smoothing
+- **Privacy Attacks & Defenses** â€” membership inference, model inversion, DP-SGD with RDP accounting
+- **Secure MLOps** â€” RBAC/JWT, audit logging, drift detection, CI/CD security gates
 
 ---
 
-### 🎯 Technical Focus Areas
+### ðŸ› ï¸ Featured Projects
 
-- **LLM & Agentic Security**: Prompt injection (direct/indirect), tool-call hijacking, and RAG poisoning defenses.
-- **Supply-Chain Integrity**: SLSA alignment, SBOM generation, artifact signing, and malicious model detection.
-- **Privacy Engineering**: Membership Inference Attacks (MIA), DP-SGD implementation, and EU AI Act compliance.
-- **Secure MLOps**: CI/CD security gates, audit logging, drift detection, and tenant isolation in inference APIs.
-
----
-
-### 📜 Standards & Frameworks
-
-`OWASP LLM Top 10` · `MITRE ATLAS` · `NIST AI RMF` · `EU AI Act (Art. 10/15)` · `STRIDE` · `SLSA` · `SARIF`
+| Project | Description |
+|---|---|
+| [LLM-Guard-Scanner](https://github.com/poojakira/LLM-Guard-Scanner) | Multi-layer OWASP LLM Top 10 scanner with SARIF CI gates |
+| [Model-Supply-Chain-Auditor](https://github.com/poojakira/Model-Supply-Chain-Auditor) | Pickle opcode analysis + SafeTensors + Ed25519 signing |
+| [ML-Privacy-Attacks](https://github.com/poojakira/ML-Privacy-Attacks) | MIA, model inversion, DP-SGD â€” mapped to EU AI Act |
+| [Adversarial-Robustness-Toolkit](https://github.com/poojakira/Adversarial-Robustness-Toolkit) | CIFAR-10 robustness benchmarks: FGSM, PGD, C&W, AutoAttack |
+| [docquery](https://github.com/poojakira/docquery) | Secure financial-document RAG pipeline with JWT + Qdrant |
+| [PulseNet-RUL-Forecasting](https://github.com/poojakira/PulseNet-RUL-Forecasting) | Secure MLOps on NASA C-MAPSS with STRIDE threat model |
 
 ---
 
-### 🚀 Current Research
+### ðŸ“« Connect
+- ðŸŒ [Portfolio](https://poojakira.github.io)
+- ðŸ’¼ [LinkedIn](https://linkedin.com/in/poojakiran)
+- ðŸ“§ poojakiranbhardwaj@gmail.com
 
-I'm developing an **Agentic Threat Evaluation Harness** to simulate complex attack vectors in autonomous agents, specifically targeting tool-use hijacking and long-term memory poisoning.
-
----
-
-### 🎓 Education & Certification
-
-- **M.S. in Information Technology (Security focus)** — Arizona State University (ASU)
-- **IEEE INDICON 2023** — Published research on Reinforcement Learning through satellite communication.
+**F-1 OPT (EAD Pending) Â· Available July 6, 2026 Â· Open to on-site roles anywhere in the USA**
