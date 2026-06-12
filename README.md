@@ -1,4 +1,4 @@
-# Hi, I'm Pooja Kiran ðŸ‘‹
+# Hi, I'm Pooja Kiran ,
 
 **Seeking ML Security Engineer Roles** based in Greater Phoenix Area, AZ
 
