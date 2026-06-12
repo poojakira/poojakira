@@ -1,6 +1,6 @@
 # Hi, I'm Pooja Kiran ðŸ‘‹
 
-**Aspiring ML Security Engineer** based in Greater Phoenix Area, AZ
+**Seeking ML Security Engineer Roles** based in Greater Phoenix Area, AZ
 
 I build open-source tools to secure LLM, RAG, and agentic AI pipelines â€” from model supply chain to deployment.
 
