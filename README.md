@@ -1,12 +1,12 @@
 # Hi, I'm Pooja Kiran 👋
 
-### System Software Engineer, AI Infrastructure · Greater Phoenix Area, AZ
+### Seeking System Software Engineer, AI Infrastructure Roles · Greater Phoenix Area, AZ
 
 [![Portfolio](https://img.shields.io/badge/Portfolio-poojakira.github.io-2563eb?style=for-the-badge&logo=google-chrome&logoColor=white)](https://poojakira.github.io)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/poojakiran)
 [![Email](https://img.shields.io/badge/Email-Reach%20Me-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:poojakiranbhardwaj@gmail.com)
 
-I build hardened AI system pipelines — artifact integrity gates, Kubernetes-deployed model serving, CI/CD security automation, and measurable reliability controls from data ingestion to inference API.
+I build hardened AI system pipelines � targeting SSE AI Infrastructure roles — artifact integrity gates, Kubernetes-deployed model serving, CI/CD security automation, and measurable reliability controls from data ingestion to inference API.
 
 ---
 
