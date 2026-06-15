@@ -1,7 +1,7 @@
 # Technical Whitepaper: Model-Supply-Chain-Auditor
 
 ## Abstract
-This whitepaper details the advanced security engineering implemented within the `Model-Supply-Chain-Auditor` project. Designed to address the critical vulnerabilities inherent in modern Machine Learning (ML) pipelines, this project showcases a robust, multi-layered approach to securing the ML supply chain. It integrates real-world security primitives, automates the generation of machine-readable evidence (SARIF, SBOM, SLSA Provenance), and adheres to stringent 2026 industry standards for ML Security Engineering.
+This whitepaper details the advanced security engineering implemented within the `Model-Supply-Chain-Auditor` project. Designed to address the critical vulnerabilities inherent in modern Machine Learning (ML) pipelines, this project showcases a robust, multi-layered approach to securing the ML supply chain. It integrates real-world security primitives, automates the generation of machine-readable evidence (SARIF, SBOM, SLSA Provenance), and adheres to stringent 2026 industry standards for Seeking SSE AI Infrastructureing.
 
 ## 1. Introduction
 The proliferation of ML models across critical infrastructure necessitates a paradigm shift in security practices. Traditional software supply chain security measures are often insufficient for the unique challenges posed by ML, including data poisoning, model evasion, and integrity compromises. The `Model-Supply-Chain-Auditor` project directly confronts these challenges by implementing a comprehensive suite of security controls, moving beyond theoretical concepts to demonstrable, auditable safeguards.
@@ -38,7 +38,7 @@ The project emphasizes auditability through machine-readable outputs:
 *   **Aggregated Evidence:** The `run_evidence.sh` script in the profile repository orchestrates the collection of SARIF, SBOM, and provenance data from all projects, consolidating them into a central `evidence_artifacts/` directory. This creates a single, auditable package for recruiters and security auditors.
 
 ## 6. Conclusion
-The `Model-Supply-Chain-Auditor` project stands as a testament to elite ML security engineering. By integrating real-world security libraries, enforcing robust configurations, and automating the generation of verifiable evidence, it demonstrates a proactive and comprehensive approach to securing the ML supply chain. This project is not merely a collection of features; it is a blueprint for building trust and resilience in ML systems, meeting and exceeding the brutal demands of a 2026 ML Security Engineer role.
+The `Model-Supply-Chain-Auditor` project stands as a testament to elite Seeking SSE AI Infrastructureing. By integrating real-world security libraries, enforcing robust configurations, and automating the generation of verifiable evidence, it demonstrates a proactive and comprehensive approach to securing the ML supply chain. This project is not merely a collection of features; it is a blueprint for building trust and resilience in ML systems, meeting and exceeding the brutal demands of a 2026 Seeking SSE AI Infrastructure role.
 
 ## References
 [1] SafeTensors GitHub Repository: [https://github.com/huggingface/safetensors](https://github.com/huggingface/safetensors)
