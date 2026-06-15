@@ -23,7 +23,7 @@ Once enabled, you need to trigger the first run to generate the green "Passing" 
 Navigate back to each repository's `README.md`. You should now see a vibrant green **"Smoke Test | passing"** badge.
 
 ## Why This Matters
-In 2026, a "Passing" badge is the minimum entry requirement. A "Disabled" or "Grey" badge tells a recruiter that your automation is broken. By completing these manual steps, you prove that you possess the **"Operational Excellence"** required for a Lead ML Security Engineer role.
+In 2026, a "Passing" badge is the minimum entry requirement. A "Disabled" or "Grey" badge tells a recruiter that your automation is broken. By completing these manual steps, you prove that you possess the **"Operational Excellence"** required for a Lead Seeking SSE AI Infrastructure role.
 
 ---
 **Status: CI/CD Pipelines Prepared. Awaiting Manual Activation.**
