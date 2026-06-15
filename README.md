@@ -1,6 +1,6 @@
 # Hi, I'm Pooja Kiran 👋
 
-### Seeking System Software Engineer, AI Infrastructure Roles · Greater Phoenix Area, AZ
+### Seeking SSE AI Infrastructure · Greater Phoenix Area, AZ
 
 [![Portfolio](https://img.shields.io/badge/Portfolio-poojakira.github.io-2563eb?style=for-the-badge&logo=google-chrome&logoColor=white)](https://poojakira.github.io)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/poojakiran)
