@@ -11,10 +11,10 @@ I build and test security controls around ML systems: model supply-chain verific
 ## GitHub Actions Status — Flagship Repos
 
 [![LLM-Guard-Scanner CI](https://github.com/poojakira/LLM-Guard-Scanner/actions/workflows/redteam.yml/badge.svg)](https://github.com/poojakira/LLM-Guard-Scanner/actions)
-[![Model-Supply-Chain-Auditor CI](https://github.com/poojakira/Model-Supply-Chain-Auditor/actions/workflows/main.yml/badge.svg)](https://github.com/poojakira/Model-Supply-Chain-Auditor/actions)
-[![Secure-ML-Platform CI](https://github.com/poojakira/Secure-ML-platform/actions/workflows/main.yml/badge.svg)](https://github.com/poojakira/Secure-ML-platform/actions)
-[![docquery CI](https://github.com/poojakira/docquery/actions/workflows/main.yml/badge.svg)](https://github.com/poojakira/docquery/actions)
-[![ML-Privacy-Attacks CI](https://github.com/poojakira/ML-Privacy-Attacks/actions/workflows/main.yml/badge.svg)](https://github.com/poojakira/ML-Privacy-Attacks/actions)
+[![Model-Supply-Chain-Auditor CI](https://github.com/poojakira/Model-Supply-Chain-Auditor/actions/workflows/ci.yml/badge.svg)](https://github.com/poojakira/Model-Supply-Chain-Auditor/actions)
+[![Secure-ML-Platform CI](https://github.com/poojakira/Secure-ML-platform/actions/workflows/ci.yml/badge.svg)](https://github.com/poojakira/Secure-ML-platform/actions)
+[![docquery CI](https://github.com/poojakira/docquery/actions/workflows/ci.yml/badge.svg)](https://github.com/poojakira/docquery/actions)
+[![ML-Privacy-Attacks CI](https://github.com/poojakira/ML-Privacy-Privacy-Attacks/actions/workflows/ci.yml/badge.svg)](https://github.com/poojakira/ML-Privacy-Attacks/actions)
 
 ---
 
