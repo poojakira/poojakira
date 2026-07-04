@@ -1,6 +1,6 @@
-### Hi, I'm Pooja Kiran. ML Security Engineer.
+# Pooja Kiran — ML Security Engineer
 
-I build and test security controls around ML systems: model supply-chain verification, LLM/RAG application security, adversarial ML evaluation, and secure ML serving infrastructure. Every featured repo includes a documented threat model, verified test suite, and known-limitations section.
+I build security controls around ML systems: model supply-chain scanning, LLM/agent security monitoring, adversarial robustness, privacy-attack measurement, and secure ML serving.
 
 [![Portfolio](https://img.shields.io/badge/Portfolio-poojakira.github.io-2563eb?style=for-the-badge&logo=google-chrome&logoColor=white)](https://poojakira.github.io)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/poojakiran)
@@ -8,96 +8,75 @@ I build and test security controls around ML systems: model supply-chain verific
 
 ---
 
-## GitHub Actions Status — Flagship Repos
+## Public Repositories
 
-[![LLM-Guard-Scanner CI](https://github.com/poojakira/LLM-Guard-Scanner/actions/workflows/redteam.yml/badge.svg)](https://github.com/poojakira/LLM-Guard-Scanner/actions)
-[![Model-Supply-Chain-Auditor CI](https://github.com/poojakira/Model-Supply-Chain-Auditor/actions/workflows/ci.yml/badge.svg)](https://github.com/poojakira/Model-Supply-Chain-Auditor/actions)
-[![Secure-ML-Platform CI](https://github.com/poojakira/Secure-ML-platform/actions/workflows/ci.yml/badge.svg)](https://github.com/poojakira/Secure-ML-platform/actions)
-[![docquery CI](https://github.com/poojakira/docquery/actions/workflows/ci.yml/badge.svg)](https://github.com/poojakira/docquery/actions)
-[![ML-Privacy-Attacks CI](https://github.com/poojakira/ML-Privacy-Privacy-Attacks/actions/workflows/ci.yml/badge.svg)](https://github.com/poojakira/ML-Privacy-Attacks/actions)
+### AI Security Infrastructure
 
----
+| Repo | What it does | Tests | Release |
+|---|---|---|---|
+| [aegisai-public-dashboard](https://github.com/poojakira/aegisai-public-dashboard) | Live AI security monitoring dashboard — request metrics, threat heatmaps, RAG canary monitoring, agent trust graphs, CVE timeline. Deployed on Vercel. | CI ✅ | v1.0.0 |
+| [hf-model-provenance-scanner](https://github.com/poojakira/hf-model-provenance-scanner) | Scan any Hugging Face repo for malicious signals before `model.load()`. Detects org impersonation, pickle exploits, download velocity anomalies. Zero deps. | 100 tests ✅ | v0.1.0 |
+| [mcp-security-gateway-monitor](https://github.com/poojakira/mcp-security-gateway-monitor) | Monitor MCP tool calls for prompt injection in descriptions, PII leakage, shadow servers, and exfiltration patterns. Immutable audit trail. | 105 tests ✅ | v0.1.0 |
+| [ml-pipeline-integrity-guard](https://github.com/poojakira/ml-pipeline-integrity-guard) | Per-layer SHA-256 weight fingerprinting, output drift detection, backdoor canary probing, rollback urgency scoring 0–100. Pure Python. | 89 tests ✅ | v0.1.0 |
 
-### Portfolio by Security Layer
+### Applied ML Security
 
-#### Model Supply Chain
-| Repo | What it does |
-|------|-------------|
-| [Model-Supply-Chain-Auditor](https://github.com/poojakira/Model-Supply-Chain-Auditor) | Pickle opcode AST analysis, SafeTensors validation, Ed25519 signing, SLSA v1.0 provenance, policy-as-code CI gates, SARIF output |
-| [LLM-Guard-Scanner](https://github.com/poojakira/LLM-Guard-Scanner) | Prompt injection detection (pattern + embedding), PII/secret scanning, RAG poisoning checks, PyRIT/Garak red-teaming, OWASP LLM Top 10 mapping |
-
-#### LLM / RAG Security
-| Repo | What it does |
-|------|-------------|
-| [docquery](https://github.com/poojakira/docquery) | Multi-tenant RAG pipeline with context guard, source provenance, PII redaction, prompt versioning, Qdrant + BGE reranking |
-| [LLM-Guard-Scanner](https://github.com/poojakira/LLM-Guard-Scanner) | (above) — also covers agentic scanner for tool-calling contexts |
-
-#### Adversarial ML & Privacy
-| Repo | What it does |
-|------|-------------|
-| [Adversarial-Robustness-Toolkit](https://github.com/poojakira/Adversarial-Robustness-Toolkit) | 5 attack families (FGSM/PGD/C&W/APGD/Square) + 3 defenses (PGD-AT/TRADES/RS) on CIFAR-10 ResNet-18 with measured reports |
-| [ML-Privacy-Attacks](https://github.com/poojakira/ML-Privacy-Attacks) | Membership inference (Shokri 2017, Carlini 2022, Yeom 2018), model inversion, DP-SGD accounting, EU AI Act / GDPR compliance mapping |
-
-#### Secure ML Platform & Infrastructure
-| Repo | What it does |
-|------|-------------|
-| [production-ml-platform](https://github.com/poojakira/production-ml-platform) | ML serving with A/B testing (Thompson sampling), drift detection (KS/ADWIN), SHAP explainability, JWT auth, K8s deployment, Istio canary routing |
-| [PulseNet-RUL-Forecasting](https://github.com/poojakira/PulseNet-RUL-Forecasting) | Predictive maintenance on NASA C-MAPSS with data lineage, JWT auth, RBAC, hash-chain audit logging, CI verification |
-| [Secure-ML-platform](https://github.com/poojakira/Secure-ML-platform) | ML serving prototype with CORS/HSTS/rate-limiting/JWT/RBAC/audit/integrity/encryption — 15 security controls |
-
-#### Supporting
-| Repo | What it does |
-|------|-------------|
-| [coderev-agents](https://github.com/poojakira/coderev-agents) | Multi-agent code review combining Bandit SAST + LLM reasoning with prompt-injection guards (prototype) |
-| [RTX-OOM-Guard](https://github.com/poojakira/RTX-OOM-Guard) | GPU out-of-memory detection and prevention for PyTorch training (GPU systems research) |
+| Repo | What it does | Tests | Release |
+|---|---|---|---|
+| [docquery](https://github.com/poojakira/docquery) | Production RAG pipeline for financial document Q&A with RAG poisoning detection (OWASP LLM08:2025). Qdrant retrieval, cross-encoder reranking, FastAPI, Redis. | CI ✅ | v0.1.0 |
+| [PulseNet-RUL-Forecasting](https://github.com/poojakira/PulseNet-RUL-Forecasting) | Remaining Useful Life forecasting on NASA C-MAPSS data with adversarial sensor input detection (FDIA), RBAC, STRIDE threat model, CI security gates. | CI ✅ | v1.0.0 |
 
 ---
 
-## 2026 Blueprint Skills Coverage
+## What each tool actually solves
 
-| Domain | Repo Evidence | Level |
-|---|---|---|
-| Adversarial ML (FGSM/PGD/C&W/TRADES) | Adversarial-Robustness-Toolkit | ██████████ Advanced |
-| LLM Security / Prompt Injection | LLM-Guard-Scanner, docquery | ██████████ Advanced |
-| ML Supply Chain / SLSA / Pickle | Model-Supply-Chain-Auditor | █████████░ Strong |
-| Privacy Attacks (MIA/Inversion/DP) | ML-Privacy-Attacks | █████████░ Strong |
-| RAG Pipeline Security | docquery, LLM-Guard-Scanner | █████████░ Strong |
-| Agentic AI Security | coderev-agents | ███████░░░ Developing |
-| Secure MLOps (CI/CD/SBOM/SARIF) | Secure-ML-platform, production-ml-platform | █████████░ Strong |
-| Cloud Security (AWS/GCP/Azure) | ⚠️ IN PROGRESS | ████░░░░░░ Gap |
-| Governance (NIST AI RMF/EU AI Act) | ML-Privacy-Attacks, PulseNet | ████████░░ Solid |
-| Red Teaming (garak/PyRIT) | LLM-Guard-Scanner | ███████░░░ Developing |
+**hf-model-provenance-scanner** — In May 2026 a fake AI model repo reached 244,000 downloads in 18 hours before detection. This tool checks repos for impersonation, hidden execution scripts, and trust signals *before* any file is downloaded.
+```bash
+pip install -e . && hf-scan meta-llama/Llama-3-8B
+```
 
----
+**mcp-security-gateway-monitor** — 200,000 exposed MCP server instances with zero auth by default (mid-2026). One server silently BCCed every email to an attacker. This tool monitors every tool call for exactly these patterns.
+```bash
+pip install -e ".[dev]" && python -m pytest tests/ -v
+```
 
-## Currently Building
+**ml-pipeline-integrity-guard** — A major ML framework was compromised for 42 undetected minutes in 2026. This tool fingerprints your model's weights per-layer, detects output drift, probes for backdoor triggers, and scores rollback urgency.
+```bash
+pip install -e ".[dev]" && python -m pytest tests/ -v
+```
 
-- [ ] cloud-ml-infra-hardening: Terraform AWS VPC+EKS+Bedrock guardrails (target: July 14, 2026)
-- [ ] LLM-Guard-Scanner: DeBERTa fine-tuned classifier on labeled injection dataset
-- [ ] llm-red-teaming-toolkit: Live attacks against Ollama llama3.2 with measured results
+**aegisai-public-dashboard** — Live, public, zero-auth dashboard with 9 threat-intelligence panels. Deployed and running at no cost.
+- Live: [aegisai-public-dashboard.vercel.app](https://aegisai-public-dashboard.vercel.app)
 
 ---
 
-## Portfolio Website: [poojakira.github.io](https://poojakira.github.io)
+## Technical areas
+
+- **LLM/Agent security**: Prompt injection, tool poisoning, MCP security, RAG poisoning (OWASP LLM Top 10)
+- **Model supply chain**: Provenance verification, pickle exploit detection, typosquat detection, SBOM
+- **ML integrity**: Weight fingerprinting, output drift detection, backdoor probing, rollback scoring
+- **Adversarial ML**: FDIA detection on sensor streams, adversarial robustness evaluation
+- **Secure serving**: JWT RS256, RBAC, rate limiting, audit logging, Prometheus metrics
+- **Stack**: Python 3.11+, FastAPI, Next.js 14, Supabase, Docker, GitHub Actions, Qdrant, Redis
 
 ---
 
-### Infrastructure & Security
+## Availability
 
-`Kubernetes` `Terraform` `AWS` `FastAPI` `PyTorch` `GitHub Actions` `Prometheus` `Grafana` `OpenTelemetry` `SARIF` `Ed25519` `Qdrant` `Redis` `Helm`
-
-### Verification Standard
-
-Each featured repo includes:
-- `make test` / `pytest` — local verification
-- Documented threat model with adversary/attack/mitigation table
-- Known-limitations section
-- CI workflow with least-privilege permissions
-- Reproducible example commands
+- **Location**: Greater Phoenix Area, AZ
+- **Available**: July 6, 2026
+- **Visa**: F-1 OPT (H-1B sponsorship needed)
+- **Preferred roles**: ML Security Engineer · AI Security Researcher · Applied ML Security
 
 ---
 
-### Metrics
+## Contact
 
-[![GitHub stats](https://github-readme-stats.vercel.app/api?username=poojakira&show_icons=true&hide=stars&count_private=true&include_all_commits=true&theme=transparent)](https://github.com/poojakira)
-[![Top languages](https://github-readme-stats.vercel.app/api/top-langs/?username=poojakira&layout=compact&theme=transparent)](https://github.com/poojakira)
+- **Email**: [poojakiranbhardwaj@gmail.com](mailto:poojakiranbhardwaj@gmail.com)
+- **GitHub**: [github.com/poojakira](https://github.com/poojakira)
+- **LinkedIn**: [linkedin.com/in/poojakiran](https://linkedin.com/in/poojakiran)
+- **Portfolio**: [poojakira.github.io](https://poojakira.github.io)
+
+---
+
+*Last updated: July 2026 · All repos are public and runnable · No broken links*
