@@ -5,8 +5,8 @@ EVIDENCE_DIR="evidence_artifacts"
 ABS_EVIDENCE_DIR="/home/ubuntu/repos/poojakira/$EVIDENCE_DIR"
 mkdir -p "$ABS_EVIDENCE_DIR"
 
-echo "=== 2026 BRUTAL PORTFOLIO EVIDENCE GENERATOR ==="
-echo "Target: ML Security Engineer (Entry/Associate)"
+echo "=== PORTFOLIO EVIDENCE COLLECTOR ==="
+echo "Target: ML Security Engineer"
 
 # Get all subdirectories in /home/ubuntu/repos except 'poojakira'
 REPOS=$(find ../ -maxdepth 1 -mindepth 1 -type d ! -name "poojakira" -exec basename {} \;)
@@ -70,7 +70,7 @@ for repo in $REPOS; do
     cd - > /dev/null
 done
 
-# Aggregate into one evidence.json
-echo "{\"timestamp\": \"$(date -u)\", \"repos_audited\": \"$(echo $REPOS | wc -w)\", \"status\": \"Elite\"}" > "$ABS_EVIDENCE_DIR/evidence.json"
+# Aggregate into one evidence.json. This records collection only, not validation.
+echo "{\"timestamp\": \"$(date -u)\", \"repos_audited\": \"$(echo $REPOS | wc -w)\", \"status\": \"UNVERIFIED_COLLECTION\"}" > "$ABS_EVIDENCE_DIR/evidence.json"
 
 echo "Evidence collection complete. See $ABS_EVIDENCE_DIR/"

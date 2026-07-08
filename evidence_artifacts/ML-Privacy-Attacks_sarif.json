@@ -4,7 +4,7 @@
   "runs": [
     {
       "tool": { "driver": { "name": "ML-Privacy-Attacks Smoke Test" } },
-      "results": [ { "message": { "text": "Verified 2026 security controls." }, "level": "pass" } ]
+      "results": [ { "message": { "text": "UNVERIFIED legacy generated smoke artifact; rerun the source repository tests before citing." }, "level": "note" } ]
     }
   ]
 }
