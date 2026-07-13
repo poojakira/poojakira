@@ -1,7 +1,8 @@
-# Pooja Kiran — ML Security Engineer
+# Pooja Kiran — AI Security Engineer
 
-I build security controls around ML systems: model supply-chain scanning, LLM/agent
-security monitoring, adversarial robustness, dataset-poisoning detection, and secure ML serving.
+AI Security Engineer building security controls around AI/ML systems: model
+supply-chain scanning, LLM/agent security monitoring, adversarial robustness,
+dataset-poisoning detection, and secure ML serving.
 
 [![Portfolio](https://img.shields.io/badge/Portfolio-poojakira.github.io-2563eb?style=for-the-badge&logo=google-chrome&logoColor=white)](https://poojakira.github.io)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/poojakiran)
@@ -97,7 +98,7 @@ pip install -e . && python -m pytest tests/ -q
 
 - **Location**: Greater Phoenix Area, AZ
 - **Visa**: F-1 OPT (H-1B sponsorship needed)
-- **Preferred roles**: ML Security Engineer · AI Security Researcher · Applied ML Security
+- **Preferred roles**: AI Security Engineer · ML Security Engineer · AI Security Researcher
 
 ---
 
