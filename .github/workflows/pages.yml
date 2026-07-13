@@ -38,6 +38,7 @@ jobs:
 
       - name: Copy dashboard to docs
         run: |
+          mkdir -p docs
           cp security-dashboard.html docs/index.html
           cp README.md docs/README.md
 
