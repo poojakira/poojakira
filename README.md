@@ -1,6 +1,7 @@
 # Pooja Kiran — ML Security Engineer
 
-I build security controls around ML systems: model supply-chain scanning, LLM/agent security monitoring, adversarial robustness, privacy-attack measurement, and secure ML serving.
+I build security controls around ML systems: model supply-chain scanning, LLM/agent
+security monitoring, adversarial robustness, dataset-poisoning detection, and secure ML serving.
 
 [![Portfolio](https://img.shields.io/badge/Portfolio-poojakira.github.io-2563eb?style=for-the-badge&logo=google-chrome&logoColor=white)](https://poojakira.github.io)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/poojakiran)
@@ -10,105 +11,91 @@ I build security controls around ML systems: model supply-chain scanning, LLM/ag
 
 ## Public Repositories
 
-### AI Security Infrastructure
+> Facts below (versions, test counts) are taken directly from each repo's
+> `pyproject.toml` and `tests/`. "Tests" = number of test functions in the
+> suite. Status reflects whether the repo currently ships a runnable
+> implementation or is a design spec.
 
-| Repo | What it does | Tests | Release |
+### Shipping — real implementations
+
+| Repo | What it does | Version | Tests |
 |---|---|---|---|
-| [aegisai-public-dashboard](https://github.com/poojakira/aegisai-public-dashboard) | Live AI security monitoring dashboard — request metrics, threat heatmaps, RAG canary monitoring, agent trust graphs, CVE timeline. Deployed on Vercel. | CI ✅ | v1.0.0 |
-| [hf-model-provenance-scanner](https://github.com/poojakira/hf-model-provenance-scanner) | Scan any Hugging Face repo for malicious signals before `model.load()`. Detects org impersonation (Levenshtein + Unicode homoglyphs), pickle exploits, SBOM absence. Zero deps. | 100 tests ✅ | v0.1.0 |
-| [mcp-security-gateway-monitor](https://github.com/poojakira/mcp-security-gateway-monitor) | Monitor MCP tool calls for prompt injection, PII leakage, shadow servers, and exfiltration. SHA-256 hash-chained immutable audit log with WAL persistence. | 105 tests ✅ | v0.1.0 |
-| [ml-pipeline-integrity-guard](https://github.com/poojakira/ml-pipeline-integrity-guard) | Per-layer SHA-256 weight fingerprinting, output drift detection (min-sample-guarded), backdoor canary probing, rollback urgency scoring 0–100. | 89 tests ✅ | v0.1.0 |
+| [hf-model-provenance-scanner](https://github.com/poojakira/hf-model-provenance-scanner) | Zero-dependency scan of a Hugging Face repo/dir before `model.load()`: pickle-opcode RCE-gadget detection, org-impersonation (Levenshtein + homoglyph), SafeTensors/GGUF/ONNX checks, SBOM/signature/provenance policy. | 0.2.0 | 100 |
+| [mcp-security-gateway-monitor](https://github.com/poojakira/mcp-security-gateway-monitor) | Monitors MCP tool calls for prompt injection, PII leakage, shadow servers, and exfiltration, with a SHA-256 hash-chained, WAL-persisted immutable audit log. Optional (BETA) scikit-learn classifier. | 0.1.0 | 462 |
+| [adversarial-ml-lab](https://github.com/poojakira/adversarial-ml-lab) | FGSM, PGD, and C&W attacks on PyTorch classifiers plus PGD adversarial-training defense. Eval harness emits CI-gateable JSON benchmark reports. | 0.1.0 | 290 |
+| [dataset-poisoning-detector](https://github.com/poojakira/dataset-poisoning-detector) | Detects anomalous/poisoned training samples via per-class z-score, IQR fences, and IsolationForest, returning per-sample anomaly scores with feature-level attribution. | 0.2.0 | 32 |
+| [PulseNet-RUL-Forecasting](https://github.com/poojakira/PulseNet-RUL-Forecasting) | Turbofan remaining-useful-life forecasting on NASA C-MAPSS, with JWT RS256 RBAC, a hash-chained audit ledger, and an FGSM adversarial-eval CI gate. | 2.1.0 | 54 |
 
-### Adversarial ML & Privacy Attacks
+### Design stage — specification only (no implementation yet)
 
-| Repo | What it does | Tests | Release |
-|---|---|---|---|
-| [adversarial-ml-lab](https://github.com/poojakira/adversarial-ml-lab) | FGSM, PGD, C&W L2 attacks on PyTorch classifiers + PGD adversarial training defense. Eval harness produces CI-gateable JSON benchmark reports. | 13 tests ✅ | v0.1.0 |
-| [model-privacy-attacks](https://github.com/poojakira/model-privacy-attacks) | Membership inference (threshold / entropy / shadow model) and model extraction simulators. Black-box access only. Attack AUC > 0.6 verified on synthetic data. | 12 tests ✅ | v0.1.0 |
-| [dataset-poisoning-detector](https://github.com/poojakira/dataset-poisoning-detector) | Detect injected malicious training samples using z-score (per-class), IQR fences, and IsolationForest. Returns per-sample anomaly scores with feature-level attribution. | 13 tests ✅ | v0.1.0 |
+These repositories currently contain a design/README specification. The code,
+tests, and benchmark numbers described in them are **not yet implemented** and
+should be treated as planned work, not shipped results.
 
-### LLM & Agent Security
-
-| Repo | What it does | Tests | Release |
-|---|---|---|---|
-| [llm-redteam-framework](https://github.com/poojakira/llm-redteam-framework) | Generate adversarial prompts across 6 mutation categories (direct override, role switch, context escape, indirect embed, obfuscation, multi-step). Offline TF-IDF + LR detector, AUC > 0.85. | 15 tests ✅ | v0.1.0 |
-
-### Applied ML Security
-
-| Repo | What it does | Tests | Release |
-|---|---|---|---|
-| [docquery](https://github.com/poojakira/docquery) | Production RAG pipeline with tenant-isolated Qdrant retrieval, context_guard (NFKC + homoglyph injection detection), PII redaction, JWT auth, Prometheus metrics, k8s + Terraform. | CI ✅ | v0.4.2 |
-| [PulseNet-RUL-Forecasting](https://github.com/poojakira/PulseNet-RUL-Forecasting) | Turbofan RUL forecasting on SHA-256 verified NASA C-MAPSS data. JWT RS256 RBAC, hash-chained audit ledger, FDIA detector implementing BaseAnomalyModel, FGSM adversarial eval CI gate. | CI ✅ | v2.1.0 |
+| Repo | Planned scope | Status |
+|---|---|---|
+| [model-privacy-attacks](https://github.com/poojakira/model-privacy-attacks) | Membership-inference (threshold / shadow) and model-extraction simulators; LLM Min-K% Prob MIA. | Spec only — implementation pending |
+| [llm-redteam-framework](https://github.com/poojakira/llm-redteam-framework) | Adversarial-prompt generation across mutation categories + an offline TF-IDF/LR detector. | Spec only — implementation pending |
 
 ---
 
-## What each tool actually solves
+## What the shipping tools solve
 
-**hf-model-provenance-scanner** — In May 2026, a fake OpenAI repo reached 244,000 downloads in 18 hours before detection. This tool checks repos for org impersonation, hidden execution scripts, and trust signals *before* any file is downloaded.
+**hf-model-provenance-scanner** — Fake/impersonating model repos have reached
+hundreds of thousands of downloads before takedown. This tool statically checks
+a repo for org impersonation, pickle deserialization RCE gadgets, and missing
+trust signals *before* any file is loaded — without executing the model.
 
 ```bash
-pip install -e . && hf-scan meta-llama/Llama-3-8B
+pip install -e . && hf-scanner meta-llama/Llama-3-8B --mode remote
 ```
 
-**adversarial-ml-lab** — Most production classifiers have never been tested for adversarial robustness. This lab runs FGSM, PGD, and C&W attacks against any PyTorch model and produces a JSON report you can gate CI on.
+**adversarial-ml-lab** — Most production classifiers are never tested for
+adversarial robustness. This lab runs FGSM/PGD/C&W against a PyTorch model and
+produces a JSON report you can gate CI on.
 
 ```bash
 pip install -e ".[dev]" && python -m adv_lab.eval.harness --n-samples 500 --output results/report.json
 ```
 
-**mcp-security-gateway-monitor** — 200,000 exposed MCP server instances with zero auth (mid-2026). One server silently BCCed every email to an attacker. This tool monitors every tool call for exactly these patterns, with a cryptographically verified audit trail.
+**mcp-security-gateway-monitor** — Exposed MCP servers with weak auth can leak
+tool-call data. This monitors every tool call for injection/exfiltration/PII
+patterns with a cryptographically hash-chained audit trail.
 
 ```bash
-pip install -e ".[dev]" && python -m pytest tests/ -v
+pip install -e ".[dev]" && python -m pytest tests/ -q
 ```
 
-**model-privacy-attacks** — Measures privacy leakage from ML inference APIs: can an adversary infer training set membership from softmax confidence scores? Can they steal your decision boundary with 1,000 queries?
+**dataset-poisoning-detector** — Scans training data for anomalous samples
+before training, with three detectors and per-sample feature attribution.
 
 ```bash
-pip install -e ".[dev]" && python -m pytest tests/ -v
+pip install -e ".[dev]" && python -m pytest tests/ -q
 ```
 
-**llm-redteam-framework** — Generates adversarial prompts across 6 mutation categories and trains an offline classifier to detect them. No LLM API required. Useful for testing guardrails and building labeled safety datasets.
+**PulseNet-RUL-Forecasting** — Predictive-maintenance RUL forecasting on NASA
+C-MAPSS with authn/z, audit logging, and an adversarial-eval CI gate.
 
 ```bash
-pip install -e ".[dev]" && python -m pytest tests/ -v
+pip install -e . && python -m pytest tests/ -q
 ```
-
-**ml-pipeline-integrity-guard** — A major ML framework was compromised for 42 undetected minutes in 2026. This tool fingerprints model weights per-layer, detects output drift, and probes for backdoor triggers.
-
-```bash
-pip install -e ".[dev]" && python -m pytest tests/ -v
-```
-
-**dataset-poisoning-detector** — Scans training datasets for anomalous samples before training begins. Three detectors (z-score, IQR, IsolationForest) return per-sample anomaly scores with feature attribution.
-
-```bash
-pip install -e ".[dev]" && python -m pytest tests/ -v
-```
-
-**aegisai-public-dashboard** — Live, public, zero-auth dashboard with 9 threat-intelligence panels. Deployed and running at no cost.
-
-- Live: [aegisai-public-dashboard.vercel.app](https://aegisai-public-dashboard.vercel.app)
 
 ---
 
 ## Technical areas
 
-- **Adversarial ML**: FGSM, PGD, C&W attacks, PGD adversarial training, FDIA detection
-- **Privacy attacks**: Membership inference (threshold / entropy / shadow), model extraction
-- **LLM/Agent security**: Prompt injection, tool poisoning, MCP security, RAG poisoning (OWASP LLM Top 10)
-- **Model supply chain**: Provenance verification, pickle exploit detection, typosquat detection, SBOM
-- **ML integrity**: Weight fingerprinting, output drift detection, backdoor probing, rollback scoring
-- **Data security**: Dataset poisoning detection, per-sample anomaly attribution
-- **Secure serving**: JWT RS256, RBAC, rate limiting, audit logging, Prometheus metrics
-- **Stack**: Python 3.11+, PyTorch, FastAPI, Next.js 14, Supabase, Docker, GitHub Actions, Qdrant, Redis
+- **Model supply chain**: pickle-opcode RCE detection, typosquat/homoglyph detection, SBOM/provenance policy
+- **Adversarial ML**: FGSM, PGD, C&W attacks; PGD adversarial training; FGSM CI gating
+- **LLM/Agent security**: prompt-injection & exfiltration monitoring for MCP tool calls (OWASP LLM Top 10)
+- **Data security**: dataset-poisoning detection with per-sample anomaly attribution
+- **Secure serving**: JWT RS256, RBAC, rate limiting, hash-chained audit logging, Prometheus metrics
+- **Stack**: Python 3.11+, PyTorch, scikit-learn, FastAPI, Docker, GitHub Actions
 
 ---
 
 ## Availability
 
 - **Location**: Greater Phoenix Area, AZ
-- **Available**: July 6, 2026
 - **Visa**: F-1 OPT (H-1B sponsorship needed)
 - **Preferred roles**: ML Security Engineer · AI Security Researcher · Applied ML Security
 
@@ -123,4 +110,4 @@ pip install -e ".[dev]" && python -m pytest tests/ -v
 
 ---
 
-*Last updated: July 2026 · All 10 repos are public and runnable · No broken links*
+*Last updated: July 2026 · 5 repositories ship runnable code; 2 are design specs in progress.*
