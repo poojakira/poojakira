@@ -14,10 +14,10 @@ I build security controls around ML systems: model supply-chain scanning, LLM/ag
 
 | Repo | What it does | Tests | Release |
 |---|---|---|---|
-| [aegisai-public-dashboard](https://github.com/poojakira/aegisai-public-dashboard) | Live AI security monitoring dashboard — request metrics, threat heatmaps, RAG canary monitoring, agent trust graphs, CVE timeline. Deployed on Vercel. | CI ✅ | v1.0.0 |
+| aegisai-public-dashboard *(not currently public)* | Live AI security monitoring dashboard — request metrics, threat heatmaps, RAG canary monitoring, agent trust graphs, CVE timeline. | — | — |
 | [hf-model-provenance-scanner](https://github.com/poojakira/hf-model-provenance-scanner) | Scan any Hugging Face repo for malicious signals before `model.load()`. Detects org impersonation (Levenshtein + Unicode homoglyphs), pickle exploits, SBOM absence. Zero deps. | 100 tests ✅ | v0.1.0 |
 | [mcp-security-gateway-monitor](https://github.com/poojakira/mcp-security-gateway-monitor) | Monitor MCP tool calls for prompt injection, PII leakage, shadow servers, and exfiltration. SHA-256 hash-chained immutable audit log with WAL persistence. | 105 tests ✅ | v0.1.0 |
-| [ml-pipeline-integrity-guard](https://github.com/poojakira/ml-pipeline-integrity-guard) | Per-layer SHA-256 weight fingerprinting, output drift detection (min-sample-guarded), backdoor canary probing, rollback urgency scoring 0–100. | 89 tests ✅ | v0.1.0 |
+| ml-pipeline-integrity-guard *(not currently public)* | Per-layer SHA-256 weight fingerprinting, output drift detection (min-sample-guarded), backdoor canary probing, rollback urgency scoring 0–100. | — | — |
 
 ### Adversarial ML & Privacy Attacks
 
@@ -66,11 +66,7 @@ pip install -e ".[dev]" && python -m pytest tests/ -v
 
 **llm-redteam-framework** *(WIP — scaffold only, no code/tests yet)* — Planned: generate adversarial prompts across mutation categories and train an offline classifier to detect them, for testing guardrails and building labeled safety datasets.
 
-**ml-pipeline-integrity-guard** — A major ML framework was compromised for 42 undetected minutes in 2026. This tool fingerprints model weights per-layer, detects output drift, and probes for backdoor triggers.
-
-```bash
-pip install -e ".[dev]" && python -m pytest tests/ -v
-```
+**ml-pipeline-integrity-guard** *(not currently public)* — Intended to fingerprint model weights per-layer, detect output drift, and probe for backdoor triggers.
 
 **dataset-poisoning-detector** — Scans training datasets for anomalous samples before training begins. Three detectors (z-score, IQR, IsolationForest) return per-sample anomaly scores with feature attribution.
 
@@ -78,9 +74,7 @@ pip install -e ".[dev]" && python -m pytest tests/ -v
 pip install -e ".[dev]" && python -m pytest tests/ -v
 ```
 
-**aegisai-public-dashboard** — Live, public, zero-auth dashboard with 9 threat-intelligence panels. Deployed and running at no cost.
-
-- Live: [aegisai-public-dashboard.vercel.app](https://aegisai-public-dashboard.vercel.app)
+**aegisai-public-dashboard** *(not currently public)* — Intended as a live AI security monitoring dashboard. Links removed until the repository/deployment is public and verifiable.
 
 ---
 
@@ -119,8 +113,9 @@ obfuscated to reduce automated scraping/phishing:
 ---
 
 *Last updated: July 2026. Repos marked ✅ are public and runnable; those marked
-🚧 WIP are early scaffolds without code/tests yet, and `docquery` is not
-currently public. Per-repo "N tests" counts refer to the number of passing
-tests, not branch or mutation coverage — run `pytest --cov --cov-branch`
-(and a mutation tool such as `mutmut`) for a coverage figure that reflects
-real test strength.*
+🚧 WIP are early scaffolds without code/tests yet. `docquery`,
+`aegisai-public-dashboard`, and `ml-pipeline-integrity-guard` are listed but not
+currently public/verifiable, so their links were removed — they will be restored
+once the repositories are public. Per-repo "N tests" counts are passing-test
+counts, not branch or mutation coverage; run `pytest --cov --cov-branch` (and a
+mutation tool such as `mutmut`) for a figure that reflects real test strength.*
