@@ -4,7 +4,7 @@ I build security controls around ML systems: model supply-chain scanning, LLM/ag
 
 [![Portfolio](https://img.shields.io/badge/Portfolio-poojakira.github.io-2563eb?style=for-the-badge&logo=google-chrome&logoColor=white)](https://poojakira.github.io)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/poojakiran)
-[![Email](https://img.shields.io/badge/Email-Reach%20Me-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:poojakiranbhardwaj@gmail.com)
+[![Contact](https://img.shields.io/badge/Contact-via%20Portfolio-EA4335?style=for-the-badge&logo=google-chrome&logoColor=white)](https://poojakira.github.io)
 
 ---
 
@@ -24,20 +24,20 @@ I build security controls around ML systems: model supply-chain scanning, LLM/ag
 | Repo | What it does | Tests | Release |
 |---|---|---|---|
 | [adversarial-ml-lab](https://github.com/poojakira/adversarial-ml-lab) | FGSM, PGD, C&W L2 attacks on PyTorch classifiers + PGD adversarial training defense. Eval harness produces CI-gateable JSON benchmark reports. | 13 tests ✅ | v0.1.0 |
-| [model-privacy-attacks](https://github.com/poojakira/model-privacy-attacks) | Membership inference (threshold / entropy / shadow model) and model extraction simulators. Black-box access only. Attack AUC > 0.6 verified on synthetic data. | 12 tests ✅ | v0.1.0 |
+| [model-privacy-attacks](https://github.com/poojakira/model-privacy-attacks) | *(Planned)* Membership inference (threshold / entropy / shadow model) and model extraction simulators, black-box only. | 🚧 WIP | — |
 | [dataset-poisoning-detector](https://github.com/poojakira/dataset-poisoning-detector) | Detect injected malicious training samples using z-score (per-class), IQR fences, and IsolationForest. Returns per-sample anomaly scores with feature-level attribution. | 13 tests ✅ | v0.1.0 |
 
 ### LLM & Agent Security
 
 | Repo | What it does | Tests | Release |
 |---|---|---|---|
-| [llm-redteam-framework](https://github.com/poojakira/llm-redteam-framework) | Generate adversarial prompts across 6 mutation categories (direct override, role switch, context escape, indirect embed, obfuscation, multi-step). Offline TF-IDF + LR detector, AUC > 0.85. | 15 tests ✅ | v0.1.0 |
+| [llm-redteam-framework](https://github.com/poojakira/llm-redteam-framework) | *(Planned)* Adversarial prompt generation across mutation categories + an offline detector for testing guardrails. | 🚧 WIP | — |
 
 ### Applied ML Security
 
 | Repo | What it does | Tests | Release |
 |---|---|---|---|
-| [docquery](https://github.com/poojakira/docquery) | Production RAG pipeline with tenant-isolated Qdrant retrieval, context_guard (NFKC + homoglyph injection detection), PII redaction, JWT auth, Prometheus metrics, k8s + Terraform. | CI ✅ | v0.4.2 |
+| docquery *(not currently public)* | Production RAG pipeline with tenant-isolated Qdrant retrieval, context_guard (NFKC + homoglyph injection detection), PII redaction, JWT auth, Prometheus metrics, k8s + Terraform. | — | — |
 | [PulseNet-RUL-Forecasting](https://github.com/poojakira/PulseNet-RUL-Forecasting) | Turbofan RUL forecasting on SHA-256 verified NASA C-MAPSS data. JWT RS256 RBAC, hash-chained audit ledger, FDIA detector implementing BaseAnomalyModel, FGSM adversarial eval CI gate. | CI ✅ | v2.1.0 |
 
 ---
@@ -62,17 +62,9 @@ pip install -e ".[dev]" && python -m adv_lab.eval.harness --n-samples 500 --outp
 pip install -e ".[dev]" && python -m pytest tests/ -v
 ```
 
-**model-privacy-attacks** — Measures privacy leakage from ML inference APIs: can an adversary infer training set membership from softmax confidence scores? Can they steal your decision boundary with 1,000 queries?
+**model-privacy-attacks** *(WIP — scaffold only, no code/tests yet)* — Planned: measure privacy leakage from ML inference APIs (membership inference from confidence scores; decision-boundary extraction under a query budget).
 
-```bash
-pip install -e ".[dev]" && python -m pytest tests/ -v
-```
-
-**llm-redteam-framework** — Generates adversarial prompts across 6 mutation categories and trains an offline classifier to detect them. No LLM API required. Useful for testing guardrails and building labeled safety datasets.
-
-```bash
-pip install -e ".[dev]" && python -m pytest tests/ -v
-```
+**llm-redteam-framework** *(WIP — scaffold only, no code/tests yet)* — Planned: generate adversarial prompts across mutation categories and train an offline classifier to detect them, for testing guardrails and building labeled safety datasets.
 
 **ml-pipeline-integrity-guard** — A major ML framework was compromised for 42 undetected minutes in 2026. This tool fingerprints model weights per-layer, detects output drift, and probes for backdoor triggers.
 
@@ -116,11 +108,19 @@ pip install -e ".[dev]" && python -m pytest tests/ -v
 
 ## Contact
 
-- **Email**: [poojakiranbhardwaj@gmail.com](mailto:poojakiranbhardwaj@gmail.com)
+Reach me via LinkedIn or the portfolio contact form (preferred). Email is shown
+obfuscated to reduce automated scraping/phishing:
+
+- **Email**: `poojakiranbhardwaj [at] gmail [dot] com`
 - **GitHub**: [github.com/poojakira](https://github.com/poojakira)
 - **LinkedIn**: [linkedin.com/in/poojakiran](https://linkedin.com/in/poojakiran)
 - **Portfolio**: [poojakira.github.io](https://poojakira.github.io)
 
 ---
 
-*Last updated: July 2026 · All 10 repos are public and runnable · No broken links*
+*Last updated: July 2026. Repos marked ✅ are public and runnable; those marked
+🚧 WIP are early scaffolds without code/tests yet, and `docquery` is not
+currently public. Per-repo "N tests" counts refer to the number of passing
+tests, not branch or mutation coverage — run `pytest --cov --cov-branch`
+(and a mutation tool such as `mutmut`) for a coverage figure that reflects
+real test strength.*
