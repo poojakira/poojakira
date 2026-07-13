@@ -26,10 +26,12 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
-      - name: Build dashboard
-        uses: actions/setup-python@0b93645e5fea7323368d4e411b0bb7e112d8a43f
+      - name: Set up Python
+        uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+
+      - name: Build dashboard
         run: python tools/build_security_dashboard.py
 
       - name: Copy dashboard to docs
