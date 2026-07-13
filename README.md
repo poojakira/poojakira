@@ -13,30 +13,20 @@ dataset-poisoning detection, and secure ML serving.
 ## Public Repositories
 
 > Facts below (versions, test counts) are taken directly from each repo's
-> `pyproject.toml` and `tests/`. "Tests" = number of test functions in the
-> suite. Status reflects whether the repo currently ships a runnable
-> implementation or is a design spec.
+> `pyproject.toml` and `tests/`. "Tests" = number of tests collected by
+> `pytest` in the suite. Every repo below ships a runnable implementation.
 
 ### Shipping — real implementations
 
 | Repo | What it does | Version | Tests |
 |---|---|---|---|
-| [hf-model-provenance-scanner](https://github.com/poojakira/hf-model-provenance-scanner) | Zero-dependency scan of a Hugging Face repo/dir before `model.load()`: pickle-opcode RCE-gadget detection, org-impersonation (Levenshtein + homoglyph), SafeTensors/GGUF/ONNX checks, SBOM/signature/provenance policy. | 0.2.0 | 100 |
+| [hf-model-provenance-scanner](https://github.com/poojakira/hf-model-provenance-scanner) | Zero-dependency scan of a Hugging Face repo/dir before `model.load()`: pickle-opcode RCE-gadget detection, org-impersonation (Levenshtein + homoglyph), SafeTensors/GGUF/ONNX checks, SBOM/signature/provenance policy. | 0.2.0 | 103 |
 | [mcp-security-gateway-monitor](https://github.com/poojakira/mcp-security-gateway-monitor) | Monitors MCP tool calls for prompt injection, PII leakage, shadow servers, and exfiltration, with a SHA-256 hash-chained, WAL-persisted immutable audit log. Optional (BETA) scikit-learn classifier. | 0.1.0 | 462 |
-| [adversarial-ml-lab](https://github.com/poojakira/adversarial-ml-lab) | FGSM, PGD, and C&W attacks on PyTorch classifiers plus PGD adversarial-training defense. Eval harness emits CI-gateable JSON benchmark reports. | 0.1.0 | 290 |
-| [dataset-poisoning-detector](https://github.com/poojakira/dataset-poisoning-detector) | Detects anomalous/poisoned training samples via per-class z-score, IQR fences, and IsolationForest, returning per-sample anomaly scores with feature-level attribution. | 0.2.0 | 32 |
-| [PulseNet-RUL-Forecasting](https://github.com/poojakira/PulseNet-RUL-Forecasting) | Turbofan remaining-useful-life forecasting on NASA C-MAPSS, with JWT RS256 RBAC, a hash-chained audit ledger, and an FGSM adversarial-eval CI gate. | 2.1.0 | 54 |
-
-### Design stage — specification only (no implementation yet)
-
-These repositories currently contain a design/README specification. The code,
-tests, and benchmark numbers described in them are **not yet implemented** and
-should be treated as planned work, not shipped results.
-
-| Repo | Planned scope | Status |
-|---|---|---|
-| [model-privacy-attacks](https://github.com/poojakira/model-privacy-attacks) | Membership-inference (threshold / shadow) and model-extraction simulators; LLM Min-K% Prob MIA. | Spec only — implementation pending |
-| [llm-redteam-framework](https://github.com/poojakira/llm-redteam-framework) | Adversarial-prompt generation across mutation categories + an offline TF-IDF/LR detector. | Spec only — implementation pending |
+| [adversarial-ml-lab](https://github.com/poojakira/adversarial-ml-lab) | FGSM, PGD, and C&W attacks on PyTorch classifiers plus PGD adversarial-training defense. Eval harness emits CI-gateable JSON benchmark reports. | 0.1.0 | 295 |
+| [dataset-poisoning-detector](https://github.com/poojakira/dataset-poisoning-detector) | Detects anomalous/poisoned training samples via per-class z-score, IQR fences, and IsolationForest, returning per-sample anomaly scores with feature-level attribution. | 0.2.0 | 34 |
+| [PulseNet-RUL-Forecasting](https://github.com/poojakira/PulseNet-RUL-Forecasting) | Turbofan remaining-useful-life forecasting on NASA C-MAPSS, with JWT RS256 RBAC, a hash-chained audit ledger, and an FGSM adversarial-eval CI gate. | 2.1.0 | 60 |
+| [model-privacy-attacks](https://github.com/poojakira/model-privacy-attacks) | Membership-inference (confidence-threshold and shadow-model) and model-extraction attacks on sklearn classifiers, plus a reference-free Min-K% Prob MIA over LLM token log-probs. Seed-42 synthetic tests measure implementation correctness, not real-world leakage. | 0.1.0 | 8 |
+| [llm-redteam-framework](https://github.com/poojakira/llm-redteam-framework) | Generates adversarial prompts across six mutation categories (override, role-switch, context-escape, indirect-embed, obfuscation, multi-step) plus hard-negative benign prompts, and detects them with an offline char-n-gram TF-IDF + logistic-regression classifier scored on a leave-templates-out held-out split. | 0.1.0 | 24 |
 
 ---
 
@@ -81,6 +71,25 @@ C-MAPSS with authn/z, audit logging, and an adversarial-eval CI gate.
 pip install -e . && python -m pytest tests/ -q
 ```
 
+**model-privacy-attacks** — Trained models can leak whether a specific record
+was in their training set. This runs membership-inference (threshold + shadow)
+and model-extraction attacks on sklearn classifiers, plus a Min-K% Prob MIA on
+LLM token log-probs, with seed-42 synthetic tests for reproducibility.
+
+```bash
+pip install -e . && python -m pytest tests/ -q
+```
+
+**llm-redteam-framework** — Prompt-injection payloads mutate faster than
+static filters. This generates adversarial prompts across six mutation
+categories (with hard-negative benign prompts) and trains an offline char
+n-gram detector scored on a leave-templates-out split so metrics reflect
+generalization, not memorization.
+
+```bash
+pip install -e . && python -m pytest tests/ -q
+```
+
 ---
 
 ## Technical areas
@@ -111,4 +120,4 @@ pip install -e . && python -m pytest tests/ -q
 
 ---
 
-*Last updated: July 2026 · 5 repositories ship runnable code; 2 are design specs in progress.*
+*Last updated: July 2026 · 7 repositories ship runnable code with tests.*
