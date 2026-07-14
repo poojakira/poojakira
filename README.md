@@ -103,6 +103,13 @@ pip install -e . && python -m pytest tests/ -q
 
 ---
 
+## Research
+
+**Cybersecurity Innovation Researcher — TEM 598 Technology Innovation Lab (graduate research practicum), Arizona State University × Honeywell Aerospace Innovation Hub.**
+Contributed to a graduate research practicum (launched Fall 2024) exploring AI and cybersecurity challenges for aerospace systems.
+
+---
+
 ## Availability
 
 - **Location**: Greater Phoenix Area, AZ
