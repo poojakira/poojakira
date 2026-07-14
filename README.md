@@ -44,7 +44,7 @@ Contributed to a graduate research practicum (launched Fall 2024) exploring AI a
 - **Personalized E-learning System Using Reinforcement Learning Through Satellite**
   *IEEE Xplore, 2024* [[Link](https://ieeexplore.ieee.org/document/10440852)]
 - **Smart Charge Pro Empowering Future Mobility With Advanced Safety And Efficiency In Electric Vehicle Charging Infrastructure**
-  *IOSR Journal of Computer Engineering, 22023* [[Link](https://www.iosrjournals.org/iosr-jce/pages/25(4)Series-1.html)]
+  *IOSR Journal of Computer Engineering, 2023* [[Link](https://www.iosrjournals.org/iosr-jce/pages/25(4)Series-1.html)]
 
 ---
 
