@@ -10,12 +10,12 @@ AI Security Engineer building security controls around AI/ML systems: model supp
 
 ## 🔬 Featured Research & Projects
 
-| Project | Description | Status | Stars | Forks |
-| :--- | :--- | :--- | :--- | :--- |
-| [**hf-model-provenance-scanner**](https://github.com/poojakira/hf-model-provenance-scanner) | Zero-dependency scanner for Hugging Face models: RCE, impersonation, provenance, SBOM. | Maintained 
-| [**llm-redteam-framework**](https://github.com/poojakira/llm-redteam-framework) | Generates adversarial prompts and detects them with an offline char-n-gram TF-IDF classifier. | Maintained 
-| [**mcp-security-gateway-monitor**](https://github.com/poojakira/mcp-security-gateway-monitor) | Monitors MCP tool calls for prompt injection, PII leakage, shadow servers, and exfiltration. | Maintained 
-| [**adversarial-ml-lab**](https://github.com/poojakira/adversarial-ml-lab) | FGSM, PGD, and C&W attacks on PyTorch classifiers plus PGD adversarial-training defense. | Research Prototype 
+| Project | Description | Status |
+| :--- | :--- | :--- |
+| [**hf-model-provenance-scanner**](https://github.com/poojakira/hf-model-provenance-scanner) | Zero-dependency scanner for Hugging Face models: RCE, impersonation, provenance, SBOM. | Maintained | 
+| [**llm-redteam-framework**](https://github.com/poojakira/llm-redteam-framework) | Generates adversarial prompts and detects them with an offline char-n-gram TF-IDF classifier. | Maintained |
+| [**mcp-security-gateway-monitor**](https://github.com/poojakira/mcp-security-gateway-monitor) | Monitors MCP tool calls for prompt injection, PII leakage, shadow servers, and exfiltration. | Maintained | 
+| [**adversarial-ml-lab**](https://github.com/poojakira/adversarial-ml-lab) | FGSM, PGD, and C&W attacks on PyTorch classifiers plus PGD adversarial-training defense. | Research Prototype | 
 ---
 
 ## 💡 Research Interests
