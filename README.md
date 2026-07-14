@@ -1,62 +1,58 @@
-# Pooja Kiran — AI Security Research Lab
+# Pooja Kiran - ML Security Engineer
 
-AI Security Engineer building security controls around AI/ML systems: model supply-chain scanning, LLM/agent security monitoring, adversarial robustness, dataset-poisoning detection, and secure ML serving.
+I build security controls around AI/ML systems: model supply-chain checks, LLM/agent security monitoring, adversarial robustness experiments, dataset-poisoning detection, model privacy evaluation, and secure ML serving.
 
-[![Portfolio](https://img.shields.io/badge/Portfolio-poojakira.github.io-2563eb?style=for-the-badge&logo=google-chrome&logoColor=white)](https://poojakira.github.io)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/poojakiran)
 [![Email](https://img.shields.io/badge/Email-Reach%20Me-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:poojakiranbhardwaj@gmail.com)
 
 ---
 
-## 🔬 Featured Research & Projects
+## Selected Public Work
 
-| Project | Description | Status |
+| Project | What it demonstrates | Status |
 | :--- | :--- | :--- |
-| [**hf-model-provenance-scanner**](https://github.com/poojakira/hf-model-provenance-scanner) | Zero-dependency scanner for Hugging Face models: RCE, impersonation, provenance, SBOM. | Maintained | 
-| [**llm-redteam-framework**](https://github.com/poojakira/llm-redteam-framework) | Generates adversarial prompts and detects them with an offline char-n-gram TF-IDF classifier. | Maintained |
-| [**mcp-security-gateway-monitor**](https://github.com/poojakira/mcp-security-gateway-monitor) | Monitors MCP tool calls for prompt injection, PII leakage, shadow servers, and exfiltration. | Maintained | 
-| [**adversarial-ml-lab**](https://github.com/poojakira/adversarial-ml-lab) | FGSM, PGD, and C&W attacks on PyTorch classifiers plus PGD adversarial-training defense. | Research Prototype | 
----
-
-## 💡 Research Interests
-
-`#LLMSecurity` `#AdversarialML` `#ModelProvenance` `#SupplyChainSecurity` `#MLOpsSecurity` `#DataPoisoning` `#PrivacyPreservingML` `#AgentSecurity`
+| [hf-model-provenance-scanner](https://github.com/poojakira/hf-model-provenance-scanner) | Hugging Face model provenance, impersonation, pickle-risk, and supply-chain signal checks. | Public repo |
+| [mcp-security-gateway-monitor](https://github.com/poojakira/mcp-security-gateway-monitor) | MCP tool-call monitoring for prompt injection, PII leakage, shadow servers, and exfiltration patterns. | Public repo |
+| [llm-redteam-framework](https://github.com/poojakira/llm-redteam-framework) | Adversarial prompt generation and offline detector experiments for LLM red-team workflows. | Public repo |
+| [PulseNet-RUL-Forecasting](https://github.com/poojakira/PulseNet-RUL-Forecasting) | NASA C-MAPSS RUL forecasting with security-oriented CI, audit logging, RBAC, and threat modeling. | v1.0.0 |
+| [dataset-poisoning-detector](https://github.com/poojakira/dataset-poisoning-detector) | Dataset poisoning and anomalous-sample detection experiments. | Public repo |
+| [model-privacy-attacks](https://github.com/poojakira/model-privacy-attacks) | Membership-inference and model-privacy attack evaluation. | Public repo |
+| [adversarial-ml-lab](https://github.com/poojakira/adversarial-ml-lab) | FGSM, PGD, and C&W adversarial ML attacks plus adversarial-training defenses. | Prototype |
 
 ---
 
-## 🛠️ Technical Expertise
+## Technical Focus
 
-- **Model supply chain**: pickle-opcode RCE detection, typosquat/homoglyph detection, SBOM/provenance policy
-- **Adversarial ML**: FGSM, PGD, C&W attacks; PGD adversarial training; FGSM CI gating
-- **LLM/Agent security**: prompt-injection & exfiltration monitoring for MCP tool calls (OWASP LLM Top 10)
-- **Data security**: dataset-poisoning detection with per-sample anomaly attribution
-- **Secure serving**: JWT auth, RBAC, rate limiting, hash-chained audit logging, Prometheus metrics
-- **Stack**: Python 3.11+, PyTorch, scikit-learn, FastAPI, Docker, GitHub Actions
-
----
-
-## 🎓 Research & Publications
-
-**Cybersecurity Innovation Researcher — TEM 598 Technology Innovation Lab (graduate research practicum), Arizona State University × Honeywell Aerospace Innovation Hub.**
-Contributed to a graduate research practicum (launched Fall 2024) exploring AI and cybersecurity challenges for aerospace systems.
-
-- **Personalized E-learning System Using Reinforcement Learning Through Satellite**
-  *IEEE Xplore, 2024* [[Link](https://ieeexplore.ieee.org/document/10440852)]
-- **Smart Charge Pro Empowering Future Mobility With Advanced Safety And Efficiency In Electric Vehicle Charging Infrastructure**
-  *IOSR Journal of Computer Engineering, 2023* [[Link](https://www.iosrjournals.org/iosr-jce/pages/25(4)Series-1.html)]
+- Model supply chain: provenance checks, pickle-risk detection, typosquat/homoglyph signals, SBOM-oriented workflows
+- LLM and agent security: prompt-injection monitoring, tool-call inspection, exfiltration and PII-leak detection
+- Adversarial ML: FGSM, PGD, C&W attacks; adversarial training; CI-oriented robustness checks
+- Data security: dataset-poisoning detection and per-sample anomaly attribution
+- Secure serving: JWT auth, RBAC, rate limiting, audit logging, Prometheus metrics
+- Stack: Python 3.11+, PyTorch, scikit-learn, FastAPI, Docker, GitHub Actions
 
 ---
 
-## 🌐 Availability & Contact
+## Research and Publications
 
-- **Location**: Greater Phoenix Area, AZ
-- **Visa**: F-1 OPT (H-1B sponsorship needed)
-- **Preferred roles**: AI Security Engineer · ML Security Engineer · AI Security Researcher
-- **Email**: [poojakiranbhardwaj@gmail.com](mailto:poojakiranbhardwaj@gmail.com)
-- **GitHub**: [github.com/poojakira](https://github.com/poojakira)
-- **LinkedIn**: [linkedin.com/in/poojakiran](https://linkedin.com/in/poojakiran)
-- **Portfolio**: [poojakira.github.io](https://poojakira.github.io)
+**Cybersecurity Innovation Researcher - TEM 598 Technology Innovation Lab, Arizona State University x Honeywell Aerospace Innovation Hub.**
+Contributed to a graduate research practicum exploring AI and cybersecurity challenges for aerospace systems.
+
+- **Personalized E-learning System Using Reinforcement Learning Through Satellite**  
+  IEEE Xplore, 2024: https://ieeexplore.ieee.org/document/10440852
+- **Smart Charge Pro Empowering Future Mobility With Advanced Safety And Efficiency In Electric Vehicle Charging Infrastructure**  
+  IOSR Journal of Computer Engineering, 2023: https://www.iosrjournals.org/iosr-jce/pages/25(4)Series-1.html
 
 ---
 
-*Last updated: July 2026 · 7 repositories ship runnable code with tests.*
+## Availability and Contact
+
+- Location: Greater Phoenix Area, AZ
+- Visa: F-1 OPT; H-1B sponsorship needed
+- Target roles: ML Security Engineer, AI Security Engineer, Applied ML Security Engineer
+- Email: [poojakiranbhardwaj@gmail.com](mailto:poojakiranbhardwaj@gmail.com)
+- GitHub: [github.com/poojakira](https://github.com/poojakira)
+- LinkedIn: [linkedin.com/in/poojakiran](https://linkedin.com/in/poojakiran)
+
+---
+
+*Last updated: July 2026. Claims are limited to public, inspectable work.*
