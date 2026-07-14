@@ -3,3 +3,8 @@ pnpm-lock.yaml
 pnpm-workspace.yaml
 
 .env
+
+.venv/
+__pycache__/
+tests/__pycache__/
+.pytest_cache/
