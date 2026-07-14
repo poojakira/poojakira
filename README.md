@@ -12,11 +12,10 @@ AI Security Engineer building security controls around AI/ML systems: model supp
 
 | Project | Description | Status | Stars | Forks |
 | :--- | :--- | :--- | :--- | :--- |
-| [**hf-model-provenance-scanner**](https://github.com/poojakira/hf-model-provenance-scanner) | Zero-dependency scanner for Hugging Face models: RCE, impersonation, provenance, SBOM. | Maintained | ![GitHub stars](https://img.shields.io/github/stars/poojakira/hf-model-provenance-scanner?style=social) | ![GitHub forks](https://img.shields.io/github/forks/poojakira/hf-model-provenance-scanner?style=social) |
-| [**llm-redteam-framework**](https://github.com/poojakira/llm-redteam-framework) | Generates adversarial prompts and detects them with an offline char-n-gram TF-IDF classifier. | Maintained | ![GitHub stars](https://img.shields.io/github/stars/poojakira/llm-redteam-framework?style=social) | ![GitHub forks](https://img.shields.io/github/forks/poojakira/llm-redteam-framework?style=social) |
-| [**mcp-security-gateway-monitor**](https://github.com/poojakira/mcp-security-gateway-monitor) | Monitors MCP tool calls for prompt injection, PII leakage, shadow servers, and exfiltration. | Maintained | ![GitHub stars](https://img.shields.io/github/stars/poojakira/mcp-security-gateway-monitor?style=social) | ![GitHub forks](https://img.shields.io/github/forks/poojakira/mcp-security-gateway-monitor?style=social) |
-| [**adversarial-ml-lab**](https://github.com/poojakira/adversarial-ml-lab) | FGSM, PGD, and C&W attacks on PyTorch classifiers plus PGD adversarial-training defense. | Research Prototype | ![GitHub stars](https://img.shields.io/github/stars/poojakira/adversarial-ml-lab?style=social) | ![GitHub forks](https://img.shields.io/github/forks/poojakira/adversarial-ml-lab?style=social) |
-
+| [**hf-model-provenance-scanner**](https://github.com/poojakira/hf-model-provenance-scanner) | Zero-dependency scanner for Hugging Face models: RCE, impersonation, provenance, SBOM. | Maintained 
+| [**llm-redteam-framework**](https://github.com/poojakira/llm-redteam-framework) | Generates adversarial prompts and detects them with an offline char-n-gram TF-IDF classifier. | Maintained 
+| [**mcp-security-gateway-monitor**](https://github.com/poojakira/mcp-security-gateway-monitor) | Monitors MCP tool calls for prompt injection, PII leakage, shadow servers, and exfiltration. | Maintained 
+| [**adversarial-ml-lab**](https://github.com/poojakira/adversarial-ml-lab) | FGSM, PGD, and C&W attacks on PyTorch classifiers plus PGD adversarial-training defense. | Research Prototype 
 ---
 
 ## 💡 Research Interests
