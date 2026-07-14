@@ -24,7 +24,7 @@ dataset-poisoning detection, and secure ML serving.
 | [mcp-security-gateway-monitor](https://github.com/poojakira/mcp-security-gateway-monitor) | Monitors MCP tool calls for prompt injection, PII leakage, shadow servers, and exfiltration, with a SHA-256 hash-chained, WAL-persisted immutable audit log. Optional (BETA) scikit-learn classifier. | 0.1.0 | 462 |
 | [adversarial-ml-lab](https://github.com/poojakira/adversarial-ml-lab) | FGSM, PGD, and C&W attacks on PyTorch classifiers plus PGD adversarial-training defense. Eval harness emits CI-gateable JSON benchmark reports. | 0.1.0 | 295 |
 | [dataset-poisoning-detector](https://github.com/poojakira/dataset-poisoning-detector) | Detects anomalous/poisoned training samples via per-class z-score, IQR fences, and IsolationForest, returning per-sample anomaly scores with feature-level attribution. | 0.2.0 | 34 |
-| [PulseNet-RUL-Forecasting](https://github.com/poojakira/PulseNet-RUL-Forecasting) | Turbofan remaining-useful-life forecasting on NASA C-MAPSS, with JWT RS256 RBAC, a hash-chained audit ledger, and an FGSM adversarial-eval CI gate. | 2.1.0 | 60 |
+| [PulseNet-RUL-Forecasting](https://github.com/poojakira/PulseNet-RUL-Forecasting) | Turbofan remaining-useful-life forecasting on NASA C-MAPSS, with JWT (HS256) RBAC, a hash-chained audit ledger, and an FGSM adversarial-eval CI gate. | 2.1.0 | 60 |
 | [model-privacy-attacks](https://github.com/poojakira/model-privacy-attacks) | Membership-inference (confidence-threshold and shadow-model) and model-extraction attacks on sklearn classifiers, plus a reference-free Min-K% Prob MIA over LLM token log-probs. Seed-42 synthetic tests measure implementation correctness, not real-world leakage. | 0.1.0 | 8 |
 | [llm-redteam-framework](https://github.com/poojakira/llm-redteam-framework) | Generates adversarial prompts across six mutation categories (override, role-switch, context-escape, indirect-embed, obfuscation, multi-step) plus hard-negative benign prompts, and detects them with an offline char-n-gram TF-IDF + logistic-regression classifier scored on a leave-templates-out held-out split. | 0.1.0 | 24 |
 
@@ -38,8 +38,11 @@ a repo for org impersonation, pickle deserialization RCE gadgets, and missing
 trust signals *before* any file is loaded — without executing the model.
 
 ```bash
-pip install -e . && hf-scanner meta-llama/Llama-3-8B --mode remote
+pip install -e . && hf-scanner gpt2 --mode remote
 ```
+
+> Any public HF repo id works (e.g. `gpt2`). Gated repos such as
+> `meta-llama/Llama-3-8B` require an `HF_TOKEN` with access.
 
 **adversarial-ml-lab** — Most production classifiers are never tested for
 adversarial robustness. This lab runs FGSM/PGD/C&W against a PyTorch model and
@@ -98,7 +101,7 @@ pip install -e . && python -m pytest tests/ -q
 - **Adversarial ML**: FGSM, PGD, C&W attacks; PGD adversarial training; FGSM CI gating
 - **LLM/Agent security**: prompt-injection & exfiltration monitoring for MCP tool calls (OWASP LLM Top 10)
 - **Data security**: dataset-poisoning detection with per-sample anomaly attribution
-- **Secure serving**: JWT RS256, RBAC, rate limiting, hash-chained audit logging, Prometheus metrics
+- **Secure serving**: JWT auth, RBAC, rate limiting, hash-chained audit logging, Prometheus metrics
 - **Stack**: Python 3.11+, PyTorch, scikit-learn, FastAPI, Docker, GitHub Actions
 
 ---
