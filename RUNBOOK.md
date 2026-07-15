@@ -11,6 +11,10 @@ python -m pytest tests -q -ra -W error
 python tools/build_security_dashboard.py
 ```
 
+
+## Sibling repository inputs
+
+`tools/build_security_dashboard.py` reads the profile repo plus sibling checkouts in the same parent directory. For a full local dashboard, clone the selected public repositories next to this repository before rebuilding. If a sibling repo is absent, the dashboard must show an open check instead of implying validation.
 ## Evidence refresh
 
 ```bash

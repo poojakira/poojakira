@@ -29,7 +29,9 @@ def main() -> None:
         "subject": subjects,
         "predicateType": "https://slsa.dev/provenance/v0.2",
         "predicate": {
-            "builder": {"id": "https://github.com/poojakira/poojakira/.github/workflows/pages.yml"},
+            "builder": {
+                "id": "https://github.com/poojakira/poojakira/.github/workflows/pages.yml"
+            },
             "buildType": "profile-dashboard-local-build",
             "invocation": {
                 "configSource": {
@@ -41,7 +43,9 @@ def main() -> None:
             "metadata": {"buildStartedOn": datetime.now(timezone.utc).isoformat()},
         },
     }
-    OUT.write_text(json.dumps(statement, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    OUT.write_text(
+        json.dumps(statement, indent=2, sort_keys=True) + "\n", encoding="utf-8"
+    )
     print(f"wrote {OUT}")
 
 

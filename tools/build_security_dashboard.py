@@ -20,6 +20,13 @@ SKIP_DIRS = {
     ".pytest_cache",
     ".ruff_cache",
     "htmlcov",
+    ".mypy_cache",
+    ".pyright_cache",
+    "data",
+    "docs",
+    "evidence_artifacts",
+    "mlruns",
+    "models",
 }
 
 
@@ -99,10 +106,19 @@ def repo_snapshot(spec: RepoSpec) -> dict[str, object]:
     path = repo_path(spec)
     files = list(iter_repo_files(path)) if path.exists() else []
     text_index = read_repo_text(files)
-    tests = [p for p in files if "test" in p.name.lower() or "tests" in p.parts]
-    workflows = [p for p in files if ".github" in p.parts and p.suffix.lower() in {".yml", ".yaml"}]
-    licenses = [p for p in files if p.name.lower() in {"license", "license.md", "license.txt", "copying", "notice"}]
-    evidence = [control for control in spec.controls if normalize(control) in normalize(text_index)]
+    tests = [p for p in files if is_test_file(path, p)]
+    workflows = [p for p in files if is_workflow_file(path, p)]
+    licenses = [
+        p
+        for p in files
+        if p.name.lower()
+        in {"license", "license.md", "license.txt", "copying", "notice"}
+    ]
+    evidence = [
+        control
+        for control in spec.controls
+        if normalize(control) in normalize(text_index)
+    ]
     missing = [control for control in spec.controls if control not in evidence]
     return {
         "path": path,
@@ -126,7 +142,11 @@ def repo_card(spec: RepoSpec, snapshot: dict[str, object]) -> str:
     evidence = snapshot["evidence"]
     missing = snapshot["missing"]
     git = str(snapshot["git"])
-    risk = "ready" if exists and licenses and workflows and not missing and git == "clean" else "attention"
+    risk = (
+        "ready"
+        if exists and licenses and workflows and not missing and git == "clean"
+        else "attention"
+    )
     open_checks = []
     if not exists:
         open_checks.append("repo clone unavailable in this workspace")
@@ -154,6 +174,33 @@ def repo_card(spec: RepoSpec, snapshot: dict[str, object]) -> str:
     """
 
 
+def relative_parts(root: Path, candidate: Path) -> tuple[str, ...]:
+    try:
+        return candidate.relative_to(root).parts
+    except ValueError:
+        return candidate.parts
+
+
+def is_test_file(root: Path, candidate: Path) -> bool:
+    parts = relative_parts(root, candidate)
+    return (
+        len(parts) >= 2
+        and parts[0] == "tests"
+        and candidate.suffix == ".py"
+        and (candidate.name.startswith("test_") or candidate.name.endswith("_test.py"))
+    )
+
+
+def is_workflow_file(root: Path, candidate: Path) -> bool:
+    parts = relative_parts(root, candidate)
+    return (
+        len(parts) == 3
+        and parts[0] == ".github"
+        and parts[1] == "workflows"
+        and candidate.suffix.lower() in {".yml", ".yaml"}
+    )
+
+
 def iter_repo_files(path: Path):
     for root, dirs, files in os.walk(path):
         dirs[:] = [directory for directory in dirs if directory not in SKIP_DIRS]
@@ -168,7 +215,15 @@ def iter_repo_files(path: Path):
 def read_repo_text(files: list[Path]) -> str:
     chunks: list[str] = []
     for candidate in files:
-        if candidate.suffix.lower() not in {".py", ".md", ".yml", ".yaml", ".json", ".toml", ".sh"}:
+        if candidate.suffix.lower() not in {
+            ".py",
+            ".md",
+            ".yml",
+            ".yaml",
+            ".json",
+            ".toml",
+            ".sh",
+        }:
             continue
         try:
             chunks.append(candidate.read_text(encoding="utf-8", errors="ignore"))
@@ -187,7 +242,7 @@ def git_status(path: Path) -> str:
     if not (path / ".git").exists():
         return "not-a-git-repo"
     result = subprocess.run(
-        ["git", "status", "--short"],
+        ["git", "status", "--short", "--untracked-files=no"],
         cwd=path,
         capture_output=True,
         text=True,

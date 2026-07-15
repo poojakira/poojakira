@@ -29,7 +29,11 @@ def test_dashboard_builder_outputs_conservative_public_page():
     assert "Generated from checked-out repository files" in dashboard
     for forbidden in ("El" + "ite", "Verified 2026" + " security controls"):
         assert forbidden not in dashboard
-    for repo in ["poojakira", "hf-model-provenance-scanner", "dataset-poisoning-detector"]:
+    for repo in [
+        "poojakira",
+        "hf-model-provenance-scanner",
+        "dataset-poisoning-detector",
+    ]:
         assert repo in dashboard
 
 
@@ -44,3 +48,23 @@ def test_profile_provenance_has_real_sha256_digests():
         assert len(digest) == 64
         assert set(digest) <= set("0123456789abcdef")
         assert digest != "..."
+
+
+def test_dashboard_counts_only_real_test_and_workflow_files(tmp_path):
+    from tools import build_security_dashboard
+
+    repo = tmp_path / "repo"
+    (repo / "tests").mkdir(parents=True)
+    (repo / "docs").mkdir()
+    (repo / ".github" / "workflows").mkdir(parents=True)
+    real_test = repo / "tests" / "test_api.py"
+    fake_test = repo / "docs" / "contest.md"
+    real_workflow = repo / ".github" / "workflows" / "ci.yml"
+    non_workflow_yaml = repo / ".github" / "dependabot.yml"
+    for path in (real_test, fake_test, real_workflow, non_workflow_yaml):
+        path.write_text("x", encoding="utf-8")
+
+    assert build_security_dashboard.is_test_file(repo, real_test)
+    assert not build_security_dashboard.is_test_file(repo, fake_test)
+    assert build_security_dashboard.is_workflow_file(repo, real_workflow)
+    assert not build_security_dashboard.is_workflow_file(repo, non_workflow_yaml)
