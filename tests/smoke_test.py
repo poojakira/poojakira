@@ -68,3 +68,20 @@ def test_dashboard_counts_only_real_test_and_workflow_files(tmp_path):
     assert not build_security_dashboard.is_test_file(repo, fake_test)
     assert build_security_dashboard.is_workflow_file(repo, real_workflow)
     assert not build_security_dashboard.is_workflow_file(repo, non_workflow_yaml)
+
+
+def test_dashboard_ignores_own_generated_outputs_for_profile_dirty_state():
+    from tools import build_security_dashboard
+
+    generated_only = " M security-dashboard.html\n M provenance.json\n"
+    source_change = " M README.md\n"
+
+    assert (
+        build_security_dashboard.effective_git_status_lines(
+            build_security_dashboard.PROFILE_ROOT, generated_only
+        )
+        == []
+    )
+    assert build_security_dashboard.effective_git_status_lines(
+        build_security_dashboard.PROFILE_ROOT, source_change
+    ) == [" M README.md"]

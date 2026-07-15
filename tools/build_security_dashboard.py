@@ -9,6 +9,7 @@ from pathlib import Path
 PROFILE_ROOT = Path(__file__).resolve().parents[1]
 WORKSPACE_ROOT = PROFILE_ROOT.parent
 OUT = PROFILE_ROOT / "security-dashboard.html"
+GENERATED_PROFILE_FILES = {"security-dashboard.html", "provenance.json"}
 SKIP_DIRS = {
     ".git",
     ".venv",
@@ -250,7 +251,19 @@ def git_status(path: Path) -> str:
     )
     if result.returncode != 0:
         return "git-error"
-    return "clean" if not result.stdout.strip() else "dirty"
+    dirty_lines = effective_git_status_lines(path, result.stdout)
+    return "clean" if not dirty_lines else "dirty"
+
+
+def effective_git_status_lines(path: Path, stdout: str) -> list[str]:
+    dirty_lines = [line for line in stdout.splitlines() if line.strip()]
+    if path.resolve() != PROFILE_ROOT.resolve():
+        return dirty_lines
+    return [
+        line
+        for line in dirty_lines
+        if line[3:].strip().strip('"') not in GENERATED_PROFILE_FILES
+    ]
 
 
 def render_page(cards: list[str]) -> str:
