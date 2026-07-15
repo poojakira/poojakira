@@ -8,3 +8,7 @@ pnpm-workspace.yaml
 __pycache__/
 tests/__pycache__/
 .pytest_cache/
+
+evidence_artifacts/
+docs/
+provenance.json
