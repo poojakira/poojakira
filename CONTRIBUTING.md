@@ -1,24 +1,26 @@
 # Contributing
 
 ## Scope
-This project is a portfolio demonstration of ML security engineering patterns. It is maintained for hiring screen evaluation.
+This repository maintains the public GitHub profile README and a conservative evidence dashboard for selected public AI/ML security repositories.
 
 ## How to Submit Changes
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/your-change`)
-3. Make your changes
-4. Run linting: `ruff check .`
-5. Run formatting: `ruff format --check .`
-6. Run tests: `pytest --cov=src --cov-fail-under=80`
-7. Run security scan: `bandit -r src/ -ll`
-8. Submit a pull request
+1. Fork the repository.
+2. Create a feature branch: `git checkout -b feature/your-change`.
+3. Make the smallest truthful change.
+4. Install validation dependencies: `python -m pip install -r requirements-dev.txt`.
+5. Run tests: `python -m pytest tests -q -ra -W error`.
+6. Rebuild the dashboard: `python tools/build_security_dashboard.py`.
+7. Submit a pull request with command output.
+
+## Evidence Rules
+- Do not commit generated `evidence_artifacts/`, `docs/`, or `provenance.json` output.
+- Do not cite benchmark, production, or security maturity claims unless the source repository contains the command and passing validation evidence.
+- Use `./run_evidence.sh` only to regenerate local evidence outputs.
 
 ## Coding Standards
-- Follow PEP 8 (enforced by ruff)
-- Type hints required for all public functions
-- Docstrings for all public modules, classes, and functions
-- Test coverage minimum 80%
-- No sensitive data (keys, passwords) in code
+- Keep profile claims public and inspectable.
+- Prefer explicit unknown/open-check labels over unsupported maturity claims.
+- No sensitive data, keys, passwords, or private employment data in this repository.
 
 ## Code of Conduct
-Be respectful, constructive, and professional. This is a professional portfolio project.
+Be respectful, constructive, and professional.
