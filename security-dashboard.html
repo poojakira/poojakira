@@ -8,321 +8,161 @@
     body { margin: 0; font-family: Inter, Arial, sans-serif; background: #f6f7f9; color: #15202b; }
     header { padding: 40px 28px 20px; max-width: 1180px; margin: auto; }
     h1 { margin: 0 0 10px; font-size: 34px; letter-spacing: 0; }
-    .sub { max-width: 900px; color: #4d5b6a; line-height: 1.5; }
-    main { max-width: 1180px; margin: 0 auto 48px; padding: 0 28px; display: grid; grid-template-columns: repeat(auto-fit, minmax(310px, 1fr)); gap: 16px; }
+    a { color: #1d4ed8; text-decoration: none; }
+    .sub { max-width: 920px; color: #4d5b6a; line-height: 1.5; }
+    main { max-width: 1180px; margin: 0 auto 48px; padding: 0 28px; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 16px; }
     .card { background: white; border: 1px solid #d9dee5; border-radius: 8px; padding: 18px; box-shadow: 0 1px 2px rgba(15, 23, 42, .04); }
     .card.attention { border-left: 4px solid #b45309; }
     .card.ready { border-left: 4px solid #047857; }
     .card-head { display: flex; gap: 10px; align-items: flex-start; justify-content: space-between; }
     h2 { margin: 0; font-size: 17px; line-height: 1.25; }
-    .card-head span { color: #526172; font-size: 12px; text-align: right; max-width: 130px; }
-    .standards { color: #2f5d8c; font-size: 13px; }
+    .card-head span { color: #526172; font-size: 12px; text-align: right; max-width: 150px; }
     dl { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 14px 0; }
     dt { color: #657386; font-size: 11px; }
     dd { margin: 2px 0 0; font-weight: 700; font-size: 15px; }
     p { font-size: 13px; line-height: 1.45; }
+    code { background: #eef2f7; border: 1px solid #d8e0ea; border-radius: 4px; padding: 2px 5px; white-space: normal; }
     footer { max-width: 1180px; margin: 0 auto 36px; padding: 0 28px; color: #5f6f80; font-size: 12px; }
   </style>
 </head>
 <body>
   <header>
     <h1>ML Security Portfolio Evidence Dashboard</h1>
-    <p class="sub">Generated from local repository files. Counts and evidence terms are computed from checked-in code, tests, workflows, and docs; this page intentionally avoids unsupported benchmark or production claims.</p>
+    <p class="sub">Generated from checked-out repository files. This dashboard reports only observable files, tests, workflows, licenses, git state, and configured evidence terms. It is an index, not a benchmark certification or production-readiness claim.</p>
   </header>
   <main>
     
     <article class="card attention">
       <div class="card-head">
-        <h2>Model-Supply-Chain-Auditor</h2>
-        <span>Model supply-chain security</span>
+        <h2><a href="https://github.com/poojakira/poojakira">poojakira</a></h2>
+        <span>Public GitHub profile and evidence dashboard</span>
       </div>
-      <p class="standards">OWASP LLM05 / SLSA / NIST AI RMF Map/Measure</p>
-      <p><strong>Data:</strong> Security fixtures only; no company dataset required.</p>
       <dl>
-        <div><dt>Files</dt><dd>47</dd></div>
-        <div><dt>Tests</dt><dd>10</dd></div>
+        <div><dt>Files</dt><dd>23</dd></div>
+        <div><dt>Tests</dt><dd>2</dd></div>
         <div><dt>Workflows</dt><dd>3</dd></div>
-        <div><dt>Git</dt><dd>dirty</dd></div>
+        <div><dt>License</dt><dd>yes</dd></div>
       </dl>
-      <p><strong>Evidence:</strong> pickle scanner, safetensors, signing, provenance, policy, sarif</p>
-      <p><strong>Open checks:</strong> none from configured map</p>
+      <p><strong>Evidence terms found:</strong> pytest, github actions, pages, license, security</p>
+      <p><strong>Open checks:</strong> git state: dirty</p>
+      <p><strong>User run command:</strong> <code>python -m pytest tests -q -ra -W error</code></p>
     </article>
     
     <article class="card attention">
       <div class="card-head">
-        <h2>LLM-Guard-Scanner</h2>
-        <span>LLM application security</span>
+        <h2><a href="https://github.com/poojakira/hf-model-provenance-scanner">hf-model-provenance-scanner</a></h2>
+        <span>Hugging Face model supply-chain scanner</span>
       </div>
-      <p class="standards">OWASP LLM01 / OWASP LLM02 / MITRE ATLAS</p>
-      <p><strong>Data:</strong> Deterministic attack fixtures; no company dataset claimed.</p>
       <dl>
-        <div><dt>Files</dt><dd>26</dd></div>
-        <div><dt>Tests</dt><dd>3</dd></div>
+        <div><dt>Files</dt><dd>99</dd></div>
+        <div><dt>Tests</dt><dd>34</dd></div>
         <div><dt>Workflows</dt><dd>1</dd></div>
-        <div><dt>Git</dt><dd>dirty</dd></div>
+        <div><dt>License</dt><dd>no</dd></div>
       </dl>
-      <p><strong>Evidence:</strong> prompt injection, rag poisoning, output scanner, canary, normalization</p>
-      <p><strong>Open checks:</strong> none from configured map</p>
+      <p><strong>Evidence terms found:</strong> pickle, safetensors, sarif, webhook, baseline, sandbox</p>
+      <p><strong>Open checks:</strong> license file not detected, git state: dirty</p>
+      <p><strong>User run command:</strong> <code>PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 python -m pytest tests -q -ra -W error</code></p>
     </article>
     
     <article class="card attention">
       <div class="card-head">
-        <h2>Adversarial-Robustness-Toolkit</h2>
-        <span>Adversarial ML</span>
+        <h2><a href="https://github.com/poojakira/mcp-security-gateway-monitor">mcp-security-gateway-monitor</a></h2>
+        <span>MCP tool-call security monitor</span>
       </div>
-      <p class="standards">MITRE ATLAS / NIST AI RMF Measure</p>
-      <p><strong>Data:</strong> Attack implementation fixtures; no company dataset claimed.</p>
-      <dl>
-        <div><dt>Files</dt><dd>31</dd></div>
-        <div><dt>Tests</dt><dd>3</dd></div>
-        <div><dt>Workflows</dt><dd>1</dd></div>
-        <div><dt>Git</dt><dd>dirty</dd></div>
-      </dl>
-      <p><strong>Evidence:</strong> fgsm, pgd, autoattack, randomized smoothing, robustness report</p>
-      <p><strong>Open checks:</strong> none from configured map</p>
-    </article>
-    
-    <article class="card attention">
-      <div class="card-head">
-        <h2>ML-Privacy-Attacks</h2>
-        <span>Privacy attack evaluation</span>
-      </div>
-      <p class="standards">NIST AI RMF Govern/Measure / Privacy threat modeling</p>
-      <p><strong>Data:</strong> Official UCI Bank Marketing loader; not company-financial data.</p>
-      <dl>
-        <div><dt>Files</dt><dd>37</dd></div>
-        <div><dt>Tests</dt><dd>1</dd></div>
-        <div><dt>Workflows</dt><dd>1</dd></div>
-        <div><dt>Git</dt><dd>dirty</dd></div>
-      </dl>
-      <p><strong>Evidence:</strong> membership inference, model inversion, confidence sanitization, privacy report</p>
-      <p><strong>Open checks:</strong> none from configured map</p>
-    </article>
-    
-    <article class="card attention">
-      <div class="card-head">
-        <h2>Secure-ML-platform</h2>
-        <span>Secure ML serving</span>
-      </div>
-      <p class="standards">OWASP A03/A05 / NIST AI RMF Manage</p>
-      <p><strong>Data:</strong> NASA C-MAPSS predictive-maintenance data path where available.</p>
-      <dl>
-        <div><dt>Files</dt><dd>126</dd></div>
-        <div><dt>Tests</dt><dd>17</dd></div>
-        <div><dt>Workflows</dt><dd>1</dd></div>
-        <div><dt>Git</dt><dd>dirty</dd></div>
-      </dl>
-      <p><strong>Evidence:</strong> jwt, tenant, rate limit, audit, artifact integrity, encryption</p>
-      <p><strong>Open checks:</strong> none from configured map</p>
-    </article>
-    
-    <article class="card attention">
-      <div class="card-head">
-        <h2>PulseNet-RUL-Forecasting</h2>
-        <span>Predictive maintenance ML serving</span>
-      </div>
-      <p class="standards">OWASP A03/A05 / NIST AI RMF Manage</p>
-      <p><strong>Data:</strong> NASA C-MAPSS predictive-maintenance data path where available.</p>
-      <dl>
-        <div><dt>Files</dt><dd>140</dd></div>
-        <div><dt>Tests</dt><dd>13</dd></div>
-        <div><dt>Workflows</dt><dd>1</dd></div>
-        <div><dt>Git</dt><dd>dirty</dd></div>
-      </dl>
-      <p><strong>Evidence:</strong> jwt, rate limit, audit, artifact integrity, prometheus</p>
-      <p><strong>Open checks:</strong> none from configured map</p>
-    </article>
-    
-    <article class="card attention">
-      <div class="card-head">
-        <h2>RTX-OOM-Guard</h2>
-        <span>ML systems reliability</span>
-      </div>
-      <p class="standards">Operational resilience / AppSec API hardening</p>
-      <p><strong>Data:</strong> Local telemetry/benchmark traces; not official company data.</p>
-      <dl>
-        <div><dt>Files</dt><dd>334</dd></div>
-        <div><dt>Tests</dt><dd>45</dd></div>
-        <div><dt>Workflows</dt><dd>3</dd></div>
-        <div><dt>Git</dt><dd>dirty</dd></div>
-      </dl>
-      <p><strong>Evidence:</strong> cors allowlist, prometheus, pytest, oom risk, telemetry</p>
-      <p><strong>Open checks:</strong> none from configured map</p>
-    </article>
-    
-    <article class="card attention">
-      <div class="card-head">
-        <h2>docquery</h2>
-        <span>Secure RAG infrastructure</span>
-      </div>
-      <p class="standards">OWASP LLM01 / OWASP LLM06 / OWASP LLM08</p>
-      <p><strong>Data:</strong> Official SEC EDGAR filings/company facts supported.</p>
-      <dl>
-        <div><dt>Files</dt><dd>69</dd></div>
-        <div><dt>Tests</dt><dd>12</dd></div>
-        <div><dt>Workflows</dt><dd>1</dd></div>
-        <div><dt>Git</dt><dd>dirty</dd></div>
-      </dl>
-      <p><strong>Evidence:</strong> context guard, citation, auth, rate limit, trust_remote_code</p>
-      <p><strong>Open checks:</strong> none from configured map</p>
-    </article>
-    
-    <article class="card attention">
-      <div class="card-head">
-        <h2>coderev-agents</h2>
-        <span>Agentic trust boundaries</span>
-      </div>
-      <p class="standards">OWASP LLM01 / OWASP LLM06 / OWASP LLM08</p>
-      <p><strong>Data:</strong> Security fixtures over code diffs; no company dataset claimed.</p>
-      <dl>
-        <div><dt>Files</dt><dd>24</dd></div>
-        <div><dt>Tests</dt><dd>3</dd></div>
-        <div><dt>Workflows</dt><dd>1</dd></div>
-        <div><dt>Git</dt><dd>dirty</dd></div>
-      </dl>
-      <p><strong>Evidence:</strong> trust boundary, untrusted diff, langgraph, pip-audit</p>
-      <p><strong>Open checks:</strong> none from configured map</p>
-    </article>
-    
-    <article class="card attention">
-      <div class="card-head">
-        <h2>production-ml-platform</h2>
-        <span>ML platform controls</span>
-      </div>
-      <p class="standards">OWASP A03 / NIST AI RMF Govern/Manage</p>
-      <p><strong>Data:</strong> Official NYC TLC sample loader; not company-financial data.</p>
-      <dl>
-        <div><dt>Files</dt><dd>43</dd></div>
-        <div><dt>Tests</dt><dd>3</dd></div>
-        <div><dt>Workflows</dt><dd>1</dd></div>
-        <div><dt>Git</dt><dd>dirty</dd></div>
-      </dl>
-      <p><strong>Evidence:</strong> rs256, drift, rollback, pip-audit, bandit, official data</p>
-      <p><strong>Open checks:</strong> none from configured map</p>
-    </article>
-    
-    <article class="card attention">
-      <div class="card-head">
-        <h2>CubeSat-Health-Monitor</h2>
-        <span>Telemetry anomaly security</span>
-      </div>
-      <p class="standards">IoT telemetry integrity / Secrets management</p>
-      <p><strong>Data:</strong> Synthetic/simulated telemetry; must be labeled as demo data.</p>
-      <dl>
-        <div><dt>Files</dt><dd>80</dd></div>
-        <div><dt>Tests</dt><dd>7</dd></div>
-        <div><dt>Workflows</dt><dd>1</dd></div>
-        <div><dt>Git</dt><dd>dirty</dd></div>
-      </dl>
-      <p><strong>Evidence:</strong> hmac, ephemeral secret, audit, stress test</p>
-      <p><strong>Open checks:</strong> none from configured map</p>
-    </article>
-    
-    <article class="card attention">
-      <div class="card-head">
-        <h2>Mission-Control-Telemetry-Simulator</h2>
-        <span>Mission telemetry validation</span>
-      </div>
-      <p class="standards">Secure SDLC / CI security gate</p>
-      <p><strong>Data:</strong> Synthetic/simulated telemetry; must be labeled as demo data.</p>
-      <dl>
-        <div><dt>Files</dt><dd>55</dd></div>
-        <div><dt>Tests</dt><dd>5</dd></div>
-        <div><dt>Workflows</dt><dd>1</dd></div>
-        <div><dt>Git</dt><dd>dirty</dd></div>
-      </dl>
-      <p><strong>Evidence:</strong> bandit, pytest, streaming ml, telemetry</p>
-      <p><strong>Open checks:</strong> none from configured map</p>
-    </article>
-    
-    <article class="card attention">
-      <div class="card-head">
-        <h2>Orbital-IoT-Monitor</h2>
-        <span>IoT broker exposure control</span>
-      </div>
-      <p class="standards">IoT broker hardening / CI security gate</p>
-      <p><strong>Data:</strong> Synthetic/simulated telemetry; must be labeled as demo data.</p>
-      <dl>
-        <div><dt>Files</dt><dd>25</dd></div>
-        <div><dt>Tests</dt><dd>0</dd></div>
-        <div><dt>Workflows</dt><dd>1</dd></div>
-        <div><dt>Git</dt><dd>dirty</dd></div>
-      </dl>
-      <p><strong>Evidence:</strong> mqtt config validation, pip-audit, docker, verification</p>
-      <p><strong>Open checks:</strong> none from configured map</p>
-    </article>
-    
-    <article class="card attention">
-      <div class="card-head">
-        <h2>Aerospace-Trajectory-Simulator</h2>
-        <span>Scientific API hardening</span>
-      </div>
-      <p class="standards">API hardening / Numerical validation</p>
-      <p><strong>Data:</strong> NASA physics references plus simulation outputs; not company data.</p>
-      <dl>
-        <div><dt>Files</dt><dd>80</dd></div>
-        <div><dt>Tests</dt><dd>6</dd></div>
-        <div><dt>Workflows</dt><dd>1</dd></div>
-        <div><dt>Git</dt><dd>dirty</dd></div>
-      </dl>
-      <p><strong>Evidence:</strong> cors allowlist, pytest, prometheus, schemas</p>
-      <p><strong>Open checks:</strong> none from configured map</p>
-    </article>
-    
-    <article class="card attention">
-      <div class="card-head">
-        <h2>ESG-Carbon-Telemetry</h2>
-        <span>Audit-backed data API</span>
-      </div>
-      <p class="standards">Secrets management / Secure SDLC</p>
-      <p><strong>Data:</strong> Demo sustainability records unless replaced with official filings.</p>
       <dl>
         <div><dt>Files</dt><dd>85</dd></div>
-        <div><dt>Tests</dt><dd>8</dd></div>
-        <div><dt>Workflows</dt><dd>4</dd></div>
-        <div><dt>Git</dt><dd>dirty</dd></div>
+        <div><dt>Tests</dt><dd>17</dd></div>
+        <div><dt>Workflows</dt><dd>1</dd></div>
+        <div><dt>License</dt><dd>no</dd></div>
       </dl>
-      <p><strong>Evidence:</strong> ephemeral secret, jwt, bandit, pip-audit, hash chain</p>
-      <p><strong>Open checks:</strong> none from configured map</p>
+      <p><strong>Evidence terms found:</strong> prompt injection, pii, audit, rate limit, metrics, docker</p>
+      <p><strong>Open checks:</strong> license file not detected</p>
+      <p><strong>User run command:</strong> <code>python -m pytest tests -q -ra</code></p>
     </article>
     
     <article class="card attention">
       <div class="card-head">
-        <h2>A-Personalized-E-Learning-System-Using-Reinforcement-Learning-Through-Satellite-</h2>
-        <span>RL demo reliability</span>
+        <h2><a href="https://github.com/poojakira/llm-redteam-framework">llm-redteam-framework</a></h2>
+        <span>Offline LLM red-team detector experiments</span>
       </div>
-      <p class="standards">Input validation / Testability</p>
-      <p><strong>Data:</strong> Interactive quiz data only; no company dataset claimed.</p>
       <dl>
-        <div><dt>Files</dt><dd>7</dd></div>
+        <div><dt>Files</dt><dd>866</dd></div>
+        <div><dt>Tests</dt><dd>15</dd></div>
+        <div><dt>Workflows</dt><dd>1</dd></div>
+        <div><dt>License</dt><dd>no</dd></div>
+      </dl>
+      <p><strong>Evidence terms found:</strong> red team, detector, prompt injection, pytest, grouped</p>
+      <p><strong>Open checks:</strong> license file not detected</p>
+      <p><strong>User run command:</strong> <code>PYTHONPATH=src python -m pytest tests -q -ra</code></p>
+    </article>
+    
+    <article class="card attention">
+      <div class="card-head">
+        <h2><a href="https://github.com/poojakira/PulseNet-RUL-Forecasting">PulseNet-RUL-Forecasting</a></h2>
+        <span>NASA C-MAPSS RUL forecasting with security gates</span>
+      </div>
+      <dl>
+        <div><dt>Files</dt><dd>156</dd></div>
+        <div><dt>Tests</dt><dd>21</dd></div>
+        <div><dt>Workflows</dt><dd>3</dd></div>
+        <div><dt>License</dt><dd>yes</dd></div>
+      </dl>
+      <p><strong>Evidence terms found:</strong> audit, rbac, prometheus, pip-audit, bandit, pyright</p>
+      <p><strong>Open checks:</strong> git state: dirty</p>
+      <p><strong>User run command:</strong> <code>python -m pytest tests -q -ra -W error</code></p>
+    </article>
+    
+    <article class="card attention">
+      <div class="card-head">
+        <h2><a href="https://github.com/poojakira/dataset-poisoning-detector">dataset-poisoning-detector</a></h2>
+        <span>Dataset poisoning and anomaly detection</span>
+      </div>
+      <dl>
+        <div><dt>Files</dt><dd>3421</dd></div>
+        <div><dt>Tests</dt><dd>46</dd></div>
+        <div><dt>Workflows</dt><dd>1</dd></div>
+        <div><dt>License</dt><dd>yes</dd></div>
+      </dl>
+      <p><strong>Evidence terms found:</strong> fastapi, api key, redis, kafka, prometheus, pytest</p>
+      <p><strong>Open checks:</strong> git state: dirty</p>
+      <p><strong>User run command:</strong> <code>python -m pytest tests -q -ra -W error</code></p>
+    </article>
+    
+    <article class="card attention">
+      <div class="card-head">
+        <h2><a href="https://github.com/poojakira/model-privacy-attacks">model-privacy-attacks</a></h2>
+        <span>Membership inference and privacy attack evaluation</span>
+      </div>
+      <dl>
+        <div><dt>Files</dt><dd>14</dd></div>
         <div><dt>Tests</dt><dd>1</dd></div>
         <div><dt>Workflows</dt><dd>1</dd></div>
-        <div><dt>Git</dt><dd>dirty</dd></div>
+        <div><dt>License</dt><dd>no</dd></div>
       </dl>
-      <p><strong>Evidence:</strong> safe parsing, pytest, q-learning</p>
-      <p><strong>Open checks:</strong> none from configured map</p>
+      <p><strong>Evidence terms found:</strong> membership inference, privacy, pytest, metrics, report</p>
+      <p><strong>Open checks:</strong> license file not detected</p>
+      <p><strong>User run command:</strong> <code>python -m pytest tests -q -ra</code></p>
     </article>
     
     <article class="card attention">
       <div class="card-head">
-        <h2>Pooja_Portfolio</h2>
-        <span>Recruiter site claim hygiene</span>
+        <h2><a href="https://github.com/poojakira/adversarial-ml-lab">adversarial-ml-lab</a></h2>
+        <span>Adversarial ML attacks and defenses</span>
       </div>
-      <p class="standards">Supply-chain hygiene / Evidence claims</p>
-      <p><strong>Data:</strong> Portfolio metadata only; claims validated by scripts.</p>
       <dl>
-        <div><dt>Files</dt><dd>31</dd></div>
-        <div><dt>Tests</dt><dd>0</dd></div>
+        <div><dt>Files</dt><dd>5962</dd></div>
+        <div><dt>Tests</dt><dd>53</dd></div>
         <div><dt>Workflows</dt><dd>1</dd></div>
-        <div><dt>Git</dt><dd>dirty</dd></div>
+        <div><dt>License</dt><dd>no</dd></div>
       </dl>
-      <p><strong>Evidence:</strong> verify claims, npm audit, github pages</p>
-      <p><strong>Open checks:</strong> none from configured map</p>
+      <p><strong>Evidence terms found:</strong> fgsm, pgd, adversarial, pytest, robustness</p>
+      <p><strong>Open checks:</strong> license file not detected</p>
+      <p><strong>User run command:</strong> <code>python -m pytest tests -q -ra</code></p>
     </article>
     
   </main>
   <footer>
-    Standards map: OWASP LLM Top 10 2025, MITRE ATLAS, NIST AI RMF, SLSA, and practical AppSec/DevSecOps controls. Rebuild with <code>python tools/build_security_dashboard.py</code>.
+    Rebuild with <code>python tools/build_security_dashboard.py</code>. Verify each project with its own README/RUNBOOK and CI logs before citing results.
   </footer>
 </body>
 </html>
