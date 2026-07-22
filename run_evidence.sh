@@ -5,12 +5,23 @@ ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 EVIDENCE_DIR="$ROOT/evidence_artifacts"
 mkdir -p "$EVIDENCE_DIR"
 
+if command -v python >/dev/null 2>&1; then
+  PYTHON_CMD=(python)
+elif command -v python3 >/dev/null 2>&1; then
+  PYTHON_CMD=(python3)
+elif command -v py >/dev/null 2>&1; then
+  PYTHON_CMD=(py -3.12)
+else
+  echo "No Python executable found. Install Python 3.12 or set PATH." >&2
+  exit 127
+fi
+
 cd "$ROOT"
-python -m pytest tests -q -ra -W error | tee "$EVIDENCE_DIR/profile_pytest.log"
-python tools/build_security_dashboard.py | tee "$EVIDENCE_DIR/dashboard_build.log"
-python tools/write_profile_provenance.py | tee "$EVIDENCE_DIR/provenance_build.log"
+"${PYTHON_CMD[@]}" -m pytest tests -q -ra -W error | tee "$EVIDENCE_DIR/profile_pytest.log"
+"${PYTHON_CMD[@]}" tools/build_security_dashboard.py | tee "$EVIDENCE_DIR/dashboard_build.log"
+"${PYTHON_CMD[@]}" tools/write_profile_provenance.py | tee "$EVIDENCE_DIR/provenance_build.log"
 cp provenance.json "$EVIDENCE_DIR/profile_provenance.json"
-python - <<'PY'
+"${PYTHON_CMD[@]}" - <<'PY'
 import hashlib
 import json
 from datetime import datetime, timezone
