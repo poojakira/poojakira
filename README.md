@@ -57,3 +57,14 @@ Contributed to a graduate research practicum exploring AI and cybersecurity chal
 
 *Last updated: July 2026. Claims are limited to public, inspectable work.*
 
+## Operational Runbook
+
+Verified profile-maintenance path uses [RUNBOOK.md](RUNBOOK.md). Minimal validation:
+
+```powershell
+py -3.12 -m pip install -r requirements-dev.txt
+py -3.12 -m pytest tests -q
+```
+
+Scope note: this profile README links to public work; claims should remain limited to inspectable repositories and verified artifacts.
+
