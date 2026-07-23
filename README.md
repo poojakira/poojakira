@@ -14,7 +14,6 @@ I build security controls around AI/ML systems: model supply-chain checks, LLM/a
 | [hf-model-provenance-scanner](https://github.com/poojakira/hf-model-provenance-scanner) | Hugging Face model provenance, impersonation, pickle-risk, and supply-chain signal checks. | Public repo |
 | [mcp-security-gateway-monitor](https://github.com/poojakira/mcp-security-gateway-monitor) | MCP tool-call monitoring for prompt injection, PII leakage, shadow servers, and exfiltration patterns. | Public repo |
 | [llm-redteam-framework](https://github.com/poojakira/llm-redteam-framework) | Adversarial prompt generation and offline detector experiments for LLM red-team workflows. | Public repo |
-| [PulseNet-RUL-Forecasting](https://github.com/poojakira/PulseNet-RUL-Forecasting) | NASA C-MAPSS RUL forecasting with security-oriented CI, audit logging, RBAC, and threat modeling. | Public repo |
 | [dataset-poisoning-detector](https://github.com/poojakira/dataset-poisoning-detector) | Dataset poisoning and anomalous-sample detection experiments. | Public repo |
 | [model-privacy-attacks](https://github.com/poojakira/model-privacy-attacks) | Membership-inference and model-privacy attack evaluation. | Public repo |
 | [adversarial-ml-lab](https://github.com/poojakira/adversarial-ml-lab) | FGSM, PGD, and C&W adversarial ML attacks plus adversarial-training defenses. | Prototype |
