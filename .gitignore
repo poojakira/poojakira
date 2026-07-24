@@ -12,3 +12,6 @@ tests/__pycache__/
 evidence_artifacts/
 docs/
 provenance.json
+
+.coverage
+.coverage.*
