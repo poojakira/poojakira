@@ -1,4 +1,4 @@
-.PHONY: all demo smoke test dashboard provenance
+.PHONY: all demo smoke test dashboard provenance verify
 
 all: smoke
 
@@ -15,3 +15,5 @@ dashboard:
 
 provenance: dashboard
 	python tools/write_profile_provenance.py
+
+verify: smoke
