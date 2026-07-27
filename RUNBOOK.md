@@ -1,27 +1,34 @@
-# Public Profile Runbook
+# Runbook
 
-## Scope
-This repository publishes the GitHub profile README and a conservative evidence dashboard for selected public AI/ML security repositories.
+## Engineering Update - 2026-07-27
 
-## Local validation
+Repository: poojakira
+Purpose: Public profile and portfolio evidence dashboard
 
-```bash
-python -m pip install -r requirements-dev.txt
-python -m pytest tests -q -ra -W error
-python tools/build_security_dashboard.py
-```
+## Build
 
+- Install: make install
+- Lint: make lint
+- Format: make format
+- Test: make test
+- Package build: make build
+- Security scan: make security
+- Full local gate: make verify
 
-## Sibling repository inputs
+## Dashboard
 
-`tools/build_security_dashboard.py` reads the profile repo plus sibling checkouts in the same parent directory. For a full local dashboard, clone the selected public repositories next to this repository before rebuilding. If a sibling repo is absent, the dashboard must show an open check instead of implying validation.
-## Evidence refresh
+3D operational dashboard: security-dashboard.html; make dashboard regenerates and preserves the 3D view.
 
-```bash
-./run_evidence.sh
-```
+## Dependencies And Data
 
-The evidence script writes generated logs and hashes under `evidence_artifacts/`. Those files are local build outputs and are intentionally ignored by git. Do not cite them unless they were regenerated from a clean checkout and the command output is available.
+Dashboard remains an evidence index, not a certification or production-readiness claim.
 
-## GitHub Pages
-The Pages workflow clones the selected public repositories, runs profile tests, rebuilds `security-dashboard.html`, copies it to `docs/index.html`, and deploys GitHub Pages. The dashboard is an index of observable repo files, not a certification that any project is production ready.
+## Validation Snapshot
+
+Validated: profile smoke tests passed (5 tests), Ruff passed for tools/tests, generator py_compile passed, browser validation reported nonblank WebGL canvas.
+
+## Operating Limits
+
+- Re-check Linux and GitHub Actions after pushing to main.
+- Treat local dashboard scores as evidence indicators, not certifications.
+- Do not cite production readiness until clean CI, dependency audit, license status, and runtime smoke tests are current.

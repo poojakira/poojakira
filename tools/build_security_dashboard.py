@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import html
+import json
 import os
 import subprocess
 from dataclasses import dataclass
@@ -92,7 +93,20 @@ REPOS = (
 
 
 def main() -> None:
-    cards = [repo_card(spec, repo_snapshot(spec)) for spec in REPOS]
+    snapshots = [(spec, repo_snapshot(spec)) for spec in REPOS]
+    if OUT.exists():
+        template = OUT.read_text(encoding="utf-8")
+        if "id=\"riskScene\"" in template and "const repos=" in template:
+            OUT.write_text(
+                render_operational_page(
+                    template,
+                    [dashboard_repo_payload(spec, snapshot) for spec, snapshot in snapshots],
+                ),
+                encoding="utf-8",
+            )
+            print(f"wrote {OUT}")
+            return
+    cards = [repo_card(spec, snapshot) for spec, snapshot in snapshots]
     OUT.write_text(render_page(cards), encoding="utf-8")
     print(f"wrote {OUT}")
 
@@ -134,6 +148,114 @@ def repo_snapshot(spec: RepoSpec) -> dict[str, object]:
     }
 
 
+
+ATTACK_COVERAGE = {
+    "poojakira": ["Governance", "CI/CD", "Evidence publishing"],
+    "hf-model-provenance-scanner": [
+        "Supply Chain",
+        "Unsafe Deserialization",
+        "Sandboxing",
+        "Detection Engineering",
+    ],
+    "mcp-security-gateway-monitor": [
+        "Prompt Injection",
+        "Exfiltration",
+        "PII Leakage",
+        "Monitoring",
+    ],
+    "llm-redteam-framework": [
+        "Red Teaming",
+        "Prompt Injection",
+        "Detection Evaluation",
+    ],
+    "PulseNet-RUL-Forecasting": [
+        "Secure Serving",
+        "AuthZ",
+        "Telemetry",
+        "Dependency Audit",
+    ],
+    "dataset-poisoning-detector": [
+        "Data Poisoning",
+        "API Security",
+        "Telemetry",
+        "Streaming Pipeline",
+    ],
+    "model-privacy-attacks": [
+        "Privacy Attack",
+        "Membership Inference",
+        "Metrics Reporting",
+    ],
+    "adversarial-ml-lab": [
+        "Evasion",
+        "Adversarial Training",
+        "Robustness Evaluation",
+    ],
+}
+
+MATURITY = {
+    "poojakira": "Evidence Hub",
+    "hf-model-provenance-scanner": "Operational Candidate",
+    "mcp-security-gateway-monitor": "Operational Candidate",
+    "llm-redteam-framework": "Validated Prototype",
+    "PulseNet-RUL-Forecasting": "Hardening",
+    "dataset-poisoning-detector": "Hardening",
+    "model-privacy-attacks": "Validated Prototype",
+    "adversarial-ml-lab": "Hardening",
+}
+
+
+def dashboard_repo_payload(spec: RepoSpec, snapshot: dict[str, object]) -> dict[str, object]:
+    files = snapshot["files"]
+    tests = snapshot["tests"]
+    workflows = snapshot["workflows"]
+    licenses = snapshot["licenses"]
+    evidence = snapshot["evidence"]
+    missing = snapshot["missing"]
+    git = str(snapshot["git"])
+    open_checks: list[str] = []
+    if not snapshot["exists"]:
+        open_checks.append("repo clone unavailable in this workspace")
+    if not licenses:
+        open_checks.append("license file not detected")
+    open_checks.extend(str(item) for item in missing)
+    if git != "clean":
+        open_checks.append(f"git state: {git}")
+    return {
+        "name": spec.name,
+        "topic": spec.topic,
+        "url": f"https://github.com/poojakira/{spec.name}",
+        "files": len(files),
+        "tests": len(tests),
+        "workflows": len(workflows),
+        "license": bool(licenses),
+        "evidence": list(evidence),
+        "configuredControls": len(spec.controls),
+        "openChecks": open_checks,
+        "command": spec.run_command,
+        "attack": ATTACK_COVERAGE.get(spec.name, []),
+        "maturity": MATURITY.get(spec.name, "Unclassified"),
+    }
+
+
+def render_operational_page(template: str, repos: list[dict[str, object]]) -> str:
+    marker = "const repos="
+    start = template.index(marker) + len(marker)
+    end = template.index(";\n    const maturityOrder", start)
+    payload = json.dumps(repos, separators=(",", ":"))
+    page = template[:start] + payload + template[end:]
+    page = page.replace(
+        "Static evidence surface for selected public repositories.",
+        "Generated from checked-out repository files. Static evidence surface for selected public repositories.",
+    )
+    page = page.replace(
+        "Scores below are derived from observable local files, tests, workflows, license presence, configured security terms, and known open checks in this snapshot; they are not certification claims.",
+        "Scores below are derived from observable local files, tests, workflows, license presence, configured security terms, and known open checks in this snapshot; they are not a benchmark certification or production-readiness claim.",
+    )
+    page = page.replace(
+        "Rebuild note: <code>python tools/build_security_dashboard.py</code> may overwrite this handcrafted operational view because the generator currently emits the simpler card dashboard. Verify each project with its own README, RUNBOOK, clean checkout, and CI logs before citing results.",
+        "Rebuild with <code>python tools/build_security_dashboard.py</code>. Verify each project with its own README/RUNBOOK, clean checkout, and CI logs before citing results.",
+    )
+    return page
 def repo_card(spec: RepoSpec, snapshot: dict[str, object]) -> str:
     exists = bool(snapshot["exists"])
     files = snapshot["files"]
