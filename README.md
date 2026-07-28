@@ -66,20 +66,5 @@ py -3.12 -m pip install -r requirements-dev.txt
 py -3.12 -m pytest tests -q
 ```
 
-Scope note: this profile README links to public work; claims should remain limited to inspectable repositories and verified artifacts.
-<!-- engineering-update-2026-07-27 -->
-## Engineering Update - 2026-07-27
 
-Scope: Public profile and portfolio evidence dashboard.
-
-Current hardening pass:
-- Build system: Makefile targets added or verified for install, lint, format, test, build, security, and verify.
-- Dashboard: 3D operational dashboard: security-dashboard.html; make dashboard regenerates and preserves the 3D view.
-- ATT&CK mapping: repos that map detections now use the shared v19 mapping builder where applicable.
-- Validation: Validated: profile smoke tests passed (5 tests), Ruff passed for tools/tests, generator py_compile passed, browser validation reported nonblank WebGL canvas.
-
-Known limits:
-- Linux and GitHub Actions post-push results must be checked after this push.
-- Security scans are build targets; dependency advisories can change after this local snapshot.
-- No production-readiness or benchmark-certification claim is made from local checks alone.
 <!-- /engineering-update-2026-07-27 -->
