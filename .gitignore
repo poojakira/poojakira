@@ -14,4 +14,9 @@ docs/
 provenance.json
 
 .coverage
-.coverage.*
+.coverage.*venv/
+.pytest_cache/
+__pycache__/
+*.pyc
+.coverage
+*.egg-info
