@@ -22,45 +22,33 @@ jobs:
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
         with:
           fetch-depth: 0
-
       - name: Setup Pages
         uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b
         with:
           enablement: true
-
       - name: Set up Python
         uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1
         with:
           python-version: "3.12"
-
       - name: Install validation dependencies
         run: python -m pip install -r requirements-dev.txt
-
-      - name: Clone selected public repositories
-        run: |
-          set -euo pipefail
-          for repo in hf-model-provenance-scanner mcp-security-gateway-monitor llm-redteam-framework PulseNet-RUL-Forecasting dataset-poisoning-detector model-privacy-attacks adversarial-ml-lab; do
-            git clone --depth 1 "https://github.com/poojakira/${repo}.git" "../${repo}"
-          done
-
+      - name: Validate claim registry
+        run: python tools/validate_claims.py --max-age-days 90
       - name: Validate profile repository
         run: python -m pytest tests -q -ra -W error
-
       - name: Build dashboard
         run: python tools/build_security_dashboard.py
-
       - name: Copy dashboard to docs
         run: |
           mkdir -p docs
           cp security-dashboard.html docs/index.html
           cp README.md docs/README.md
           cp RUNBOOK.md docs/RUNBOOK.md
-
+          cp claims/registry.json docs/claims-registry.json
       - name: Upload artifact
         uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa
         with:
           path: ./docs
-
   deploy:
     environment:
       name: github-pages

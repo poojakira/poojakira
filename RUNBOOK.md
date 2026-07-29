@@ -1,34 +1,44 @@
-# Runbook
+# Portfolio Evidence Runbook
 
-## Engineering Update - 2026-07-27
+This repository publishes an evidence index for public engineering work. It must not turn documentation keywords into implementation claims, score formulas, or production-readiness labels.
 
-Repository: poojakira
-Purpose: Public profile and portfolio evidence dashboard
+## Local Validation
 
-## Build
+```powershell
+py -3.12 -m pip install -r requirements-dev.txt
+py -3.12 -m pytest
+python -m pytest
+python tools/validate_claims.py --max-age-days 3650
+python tools/build_security_dashboard.py
+python tools/write_profile_provenance.py
+```
 
-- Install: make install
-- Lint: make lint
-- Format: make format
-- Test: make test
-- Package build: make build
-- Security scan: make security
-- Full local gate: make verify
+Use the long local staleness window only for historical/local validation. CI uses a shorter freshness window.
+
+## Claim Registry
+
+Claims live in `claims/registry.json`. Each claim must include:
+
+- claim
+- repository
+- project_type
+- evidence_type
+- evidence_url
+- source_commit
+- measurement_date
+- status
+- limitations
+
+Allowed evidence types are encoded in `tools/validate_claims.py`. Numerical metric claims require immutable coverage, benchmark, or CI evidence. Unsupported score or maturity wording fails validation.
 
 ## Dashboard
 
-3D operational dashboard: security-dashboard.html; make dashboard regenerates and preserves the 3D view.
+`tools/build_security_dashboard.py` renders `security-dashboard.html` from the registry only. It does not scan repository text for keywords and does not compute readiness, risk, security, ATT&CK, or score formulas.
 
-## Dependencies And Data
+## Stale Evidence
 
-Dashboard remains an evidence index, not a certification or production-readiness claim.
+`.github/workflows/evidence-freshness.yml` runs on a schedule with external link checks. When validation fails, it opens or comments on an issue and fails the workflow. It must not silently update claims or generated artifacts.
 
-## Validation Snapshot
+## Provenance Language
 
-Validated: profile smoke tests passed (5 tests), Ruff passed for tools/tests, generator py_compile passed, browser validation reported nonblank WebGL canvas.
-
-## Operating Limits
-
-- Re-check Linux and GitHub Actions after pushing to main.
-- Treat local dashboard scores as evidence indicators, not certifications.
-- Do not cite production readiness until clean CI, dependency audit, license status, and runtime smoke tests are current.
+`tools/write_profile_provenance.py` writes an unsigned profile evidence manifest. It is not SLSA provenance and must not be described as signed provenance.

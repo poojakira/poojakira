@@ -1,12 +1,15 @@
+from __future__ import annotations
+
+import argparse
 import hashlib
 import json
 import subprocess
-from datetime import datetime, timezone
 from pathlib import Path
+from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
-SUBJECTS = ["README.md", "RUNBOOK.md", "security-dashboard.html"]
-OUT = ROOT / "provenance.json"
+SUBJECTS = ["README.md", "RUNBOOK.md", "security-dashboard.html", "claims/registry.json"]
+DEFAULT_OUT = ROOT / "provenance.json"
 
 
 def sha256(path: Path) -> str:
@@ -18,35 +21,32 @@ def git_value(args: list[str]) -> str:
     return result.stdout.strip() if result.returncode == 0 else "unknown"
 
 
-def main() -> None:
+def build_manifest() -> dict[str, Any]:
     subjects = []
-    for relative in SUBJECTS:
+    for relative in sorted(SUBJECTS):
         path = ROOT / relative
         if path.exists():
             subjects.append({"name": relative, "digest": {"sha256": sha256(path)}})
-    statement = {
-        "_type": "https://in-toto.io/Statement/v0.1",
+    return {
+        "schema_version": "1.0.0",
+        "kind": "unsigned-profile-evidence-manifest",
         "subject": subjects,
-        "predicateType": "https://slsa.dev/provenance/v0.2",
-        "predicate": {
-            "builder": {
-                "id": "https://github.com/poojakira/poojakira/.github/workflows/pages.yml"
-            },
-            "buildType": "profile-dashboard-local-build",
-            "invocation": {
-                "configSource": {
-                    "uri": "https://github.com/poojakira/poojakira",
-                    "digest": {"gitCommit": git_value(["git", "rev-parse", "HEAD"])},
-                    "entryPoint": "python tools/build_security_dashboard.py",
-                }
-            },
-            "metadata": {"buildStartedOn": datetime.now(timezone.utc).isoformat()},
+        "source": {
+            "repository": "https://github.com/poojakira/poojakira",
+            "commit": git_value(["git", "rev-parse", "HEAD"]),
+            "tree_state": git_value(["git", "status", "--short"]),
         },
+        "limitations": "This is a deterministic digest manifest for profile artifacts. It is not SLSA provenance and is not signed.",
     }
-    OUT.write_text(
-        json.dumps(statement, indent=2, sort_keys=True) + "\n", encoding="utf-8"
-    )
-    print(f"wrote {OUT}")
+
+
+def main(argv: list[str] | None = None) -> None:
+    parser = argparse.ArgumentParser(description="Write unsigned profile evidence manifest")
+    parser.add_argument("--output", type=Path, default=DEFAULT_OUT)
+    args = parser.parse_args(argv)
+    args.output.parent.mkdir(parents=True, exist_ok=True)
+    args.output.write_text(json.dumps(build_manifest(), indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    print(f"wrote {args.output}")
 
 
 if __name__ == "__main__":

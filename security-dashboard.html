@@ -3,120 +3,161 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ML Security Portfolio Operational Dashboard</title>
-  <script defer src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <title>Evidence-Based Engineering Portfolio</title>
   <style>
-    :root { color-scheme: light; --bg:#f4f5f1; --ink:#151915; --muted:#58625b; --line:#cfd6ce; --panel:#fff; --soft:#eef2ed; --ok:#1f7a4d; --warn:#b46a10; --bad:#b83232; --info:#2868a8; --neutral:#5f6268; --shadow:0 18px 44px rgba(32,39,34,.08); }
-    * { box-sizing: border-box; }
-    body { margin:0; min-width:320px; font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif; background:var(--bg); color:var(--ink); letter-spacing:0; }
-    a { color:inherit; text-decoration-thickness:1px; text-underline-offset:3px; }
-    header, main, footer { width:min(1440px,100%); margin:0 auto; padding-inline:clamp(16px,3vw,36px); }
-    header { padding-top:22px; padding-bottom:14px; border-bottom:1px solid var(--line); }
-    .topline { display:flex; flex-wrap:wrap; align-items:flex-start; justify-content:space-between; gap:14px; }
-    h1 { margin:0; max-width:760px; font-size:clamp(24px,3vw,40px); line-height:1.04; font-weight:780; letter-spacing:0; }
-    .stamp { display:grid; gap:5px; min-width:min(100%,300px); color:var(--muted); font-size:12px; line-height:1.35; text-align:right; }
-    .stamp strong { color:var(--ink); font-size:13px; }
-    .summary { max-width:1060px; margin:12px 0 0; color:var(--muted); font-size:14px; line-height:1.5; }
-    main { display:grid; gap:18px; padding-top:18px; padding-bottom:34px; }
-    section { min-width:0; border:1px solid var(--line); background:var(--panel); box-shadow:var(--shadow); }
-    .section-head { display:flex; flex-wrap:wrap; align-items:end; justify-content:space-between; gap:12px; padding:16px 18px 12px; border-bottom:1px solid var(--line); background:var(--soft); }
-    h2,h3 { margin:0; font-weight:760; letter-spacing:0; }
-    h2 { font-size:clamp(17px,2vw,22px); } h3 { font-size:14px; }
-    .section-note { margin:0; max-width:720px; color:var(--muted); font-size:12px; line-height:1.45; }
-    .kpis { display:grid; grid-template-columns:repeat(6,minmax(120px,1fr)); gap:10px; }
-    .kpi { min-height:96px; padding:14px; border:1px solid var(--line); background:var(--panel); }
-    .kpi span { display:block; color:var(--muted); font-size:11px; font-weight:720; text-transform:uppercase; }
-    .kpi strong { display:block; margin-top:7px; font-size:clamp(24px,3vw,36px); line-height:1; }
-    .kpi small { display:block; margin-top:7px; color:var(--muted); font-size:12px; line-height:1.35; }
-    .grid-2 { display:grid; grid-template-columns:minmax(0,1.45fr) minmax(320px,.55fr); gap:18px; }
-    .scene-wrap { position:relative; min-height:540px; background:linear-gradient(#fff,#f9faf7); overflow:hidden; }
-    #riskScene { display:block; width:100%; height:540px; min-height:360px; }
-    .legend { position:absolute; inset:auto 14px 14px 14px; display:flex; flex-wrap:wrap; gap:8px; pointer-events:none; }
-    .chip,.status-pill { display:inline-flex; align-items:center; gap:6px; min-height:28px; border:1px solid var(--line); background:rgba(255,255,255,.92); padding:5px 8px; color:var(--muted); font-size:12px; line-height:1.2; white-space:nowrap; }
-    .dot { width:9px; height:9px; border-radius:50%; background:var(--neutral); flex:0 0 auto; }
-    .ok { color:var(--ok); } .warn { color:var(--warn); } .bad { color:var(--bad); } .info { color:var(--info); }
-    .dot.ok { background:var(--ok); } .dot.warn { background:var(--warn); } .dot.bad { background:var(--bad); } .dot.info { background:var(--info); }
-    .side-panel { display:grid; align-content:start; gap:14px; min-width:0; }
-    .selected { border:1px solid var(--line); background:var(--panel); padding:16px; }
-    .selected-title { display:flex; justify-content:space-between; gap:12px; align-items:flex-start; }
-    .selected-title h3 { overflow-wrap:anywhere; font-size:18px; }
-    .score-row { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin:14px 0; }
-    .metric { min-width:0; border:1px solid var(--line); background:#fbfcfa; padding:10px; }
-    .metric span { display:block; color:var(--muted); font-size:11px; text-transform:uppercase; }
-    .metric strong { display:block; margin-top:5px; font-size:22px; line-height:1; }
-    .list { display:grid; gap:8px; margin:0; padding:0; list-style:none; }
-    .list li { display:flex; gap:8px; align-items:flex-start; color:var(--muted); font-size:12px; line-height:1.35; }
-    .fallback { display:none; padding:16px; border-top:1px solid var(--line); background:#fffaf0; color:#5b3d12; font-size:13px; line-height:1.45; }
-    .chart-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; padding:18px; }
-    .chart-panel { min-width:0; min-height:310px; border:1px solid var(--line); background:#fff; padding:14px; }
-    .chart-panel canvas { display:block; width:100%; max-width:100%; height:240px; }
-    .chart-fallback { display:none; gap:8px; margin-top:12px; }
-    .bar { display:grid; grid-template-columns:minmax(90px,135px) 1fr minmax(34px,auto); gap:8px; align-items:center; color:var(--muted); font-size:12px; }
-    .bar span:first-child { overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
-    .track { height:9px; border:1px solid var(--line); background:#eef0ed; }
-    .fill { display:block; height:100%; background:var(--info); }
-    .repo-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:12px; padding:18px; }
-    .repo-card { display:grid; gap:12px; min-width:0; border:1px solid var(--line); border-left-width:5px; background:#fff; padding:14px; }
-    .repo-card[data-state="ready"] { border-left-color:var(--ok); } .repo-card[data-state="attention"] { border-left-color:var(--warn); } .repo-card[data-state="high"] { border-left-color:var(--bad); }
-    .repo-head { display:flex; justify-content:space-between; gap:10px; align-items:flex-start; }
-    .repo-head a { font-size:15px; font-weight:760; overflow-wrap:anywhere; }
-    .repo-head p { margin:5px 0 0; color:var(--muted); font-size:12px; line-height:1.35; }
-    .mini-stats { display:grid; grid-template-columns:repeat(4,1fr); gap:7px; }
-    .mini-stats div { min-width:0; border:1px solid var(--line); background:#fbfcfa; padding:8px; }
-    .mini-stats span { display:block; color:var(--muted); font-size:10px; text-transform:uppercase; }
-    .mini-stats strong { display:block; margin-top:4px; font-size:15px; }
-    .progress { display:grid; gap:5px; }
-    .progress-label { display:flex; justify-content:space-between; gap:8px; color:var(--muted); font-size:12px; }
-    .progress .track { height:10px; } .progress .fill.ok { background:var(--ok); } .progress .fill.warn { background:var(--warn); } .progress .fill.bad { background:var(--bad); }
-    .tags { display:flex; flex-wrap:wrap; gap:6px; }
-    .tag { border:1px solid var(--line); background:#f6f8f5; padding:4px 7px; color:var(--muted); font-size:11px; line-height:1.2; }
-    .ops-table-wrap { overflow-x:auto; padding:18px; }
-    table { width:100%; min-width:880px; border-collapse:collapse; background:#fff; }
-    th,td { border-bottom:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; font-size:12px; line-height:1.35; }
-    th { color:var(--muted); background:#f6f8f5; font-size:11px; text-transform:uppercase; }
-    td code, footer code { display:inline-block; max-width:420px; padding:2px 5px; border:1px solid #d8e0dc; background:#f5f7f4; color:#2a2f2a; white-space:normal; overflow-wrap:anywhere; }
-    .maturity { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:12px; padding:18px; }
-    .lane { min-width:0; border:1px solid var(--line); background:#fff; padding:14px; }
-    .lane h3 { margin-bottom:10px; color:var(--muted); text-transform:uppercase; font-size:12px; }
-    .lane ul { display:grid; gap:8px; margin:0; padding:0; list-style:none; }
-    .lane li { border:1px solid var(--line); padding:8px; font-size:12px; line-height:1.3; overflow-wrap:anywhere; background:#fbfcfa; }
-    footer { padding-bottom:30px; color:var(--muted); font-size:12px; line-height:1.45; }
-    .sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
-    @media (max-width:1180px) { .kpis,.chart-grid,.maturity { grid-template-columns:repeat(2,minmax(0,1fr)); } .grid-2 { grid-template-columns:1fr; } .scene-wrap,#riskScene { min-height:460px; height:460px; } .stamp { text-align:left; } }
-    @media (max-width:700px) { header,main,footer { padding-inline:12px; } .kpis,.chart-grid,.maturity,.score-row { grid-template-columns:1fr; } .section-head { padding:14px; } .repo-grid,.chart-grid,.maturity,.ops-table-wrap { padding:12px; } .mini-stats { grid-template-columns:repeat(2,1fr); } .scene-wrap,#riskScene { min-height:390px; height:390px; } .legend { position:static; padding:10px; border-top:1px solid var(--line); background:#fff; } }
+    :root { color-scheme: light; --ink:#17202a; --muted:#526172; --line:#d7dde5; --bg:#f7f8fa; --panel:#fff; --ok:#176b45; --warn:#9a5a00; --bad:#a12828; }
+    body { margin:0; font-family: Arial, sans-serif; background:var(--bg); color:var(--ink); }
+    header, main, footer { max-width:1120px; margin:0 auto; padding:24px; }
+    header { padding-top:38px; }
+    h1 { margin:0 0 10px; font-size:32px; letter-spacing:0; }
+    h2 { margin:0; font-size:20px; }
+    a { color:#195db3; text-decoration:none; }
+    p { line-height:1.5; }
+    .summary { color:var(--muted); max-width:860px; }
+    .repo { background:var(--panel); border:1px solid var(--line); border-radius:8px; margin:0 0 16px; overflow:hidden; }
+    .repo-head { display:flex; justify-content:space-between; gap:12px; padding:16px; border-bottom:1px solid var(--line); }
+    .type { color:var(--muted); font-size:13px; }
+    table { width:100%; border-collapse:collapse; }
+    th, td { text-align:left; vertical-align:top; padding:12px 16px; border-bottom:1px solid var(--line); font-size:14px; }
+    th { color:var(--muted); font-size:12px; text-transform:uppercase; letter-spacing:.04em; }
+    tr:last-child td { border-bottom:0; }
+    .status { display:inline-block; border-radius:999px; padding:3px 8px; font-size:12px; background:#eef2f7; }
+    .verified_documentation, .verified_public_repository { color:var(--ok); background:#e9f6ef; }
+    .blocked, .stale, .unverified { color:var(--bad); background:#faeaea; }
+    .note { color:var(--muted); }
+    code { background:#eef2f7; border:1px solid var(--line); border-radius:4px; padding:2px 4px; }
   </style>
 </head>
 <body>
-  <header><div class="topline"><h1>ML Security Portfolio Operational Dashboard</h1><div class="stamp" aria-label="Dashboard evidence status"><strong>Evidence snapshot: local checkout</strong><span>CI run freshness, vulnerabilities, package publication, and production use are unresolved unless explicitly shown.</span></div></div><p class="summary">Generated from checked-out repository files. Static evidence surface for selected public repositories. Scores below are derived from observable local files, tests, workflows, license presence, configured security terms, and known open checks in this snapshot; they are not a benchmark certification or production-readiness claim.</p></header>
+  <header>
+    <h1>Evidence-Based Engineering Portfolio</h1>
+    <p class="summary">This page summarizes only claims recorded in <code>claims/registry.json</code>. Documentation keywords, repository size, test-file counts, and local dashboard formulas do not count as implemented controls. Missing CI, release, coverage, SBOM, provenance, or benchmark evidence stays explicit instead of becoming a score.</p>
+  </header>
   <main>
-    <section aria-labelledby="portfolio-summary"><div class="section-head"><div><h2 id="portfolio-summary">Portfolio Risk And Readiness</h2><p class="section-note">Risk increases with unresolved license gaps, dirty git state, missing configured evidence terms, absent workflows, and low test signal. External CI pass/fail state is not embedded in this file.</p></div></div><div class="kpis" id="kpis" aria-live="polite"></div></section>
-    <section aria-labelledby="risk-surface"><div class="section-head"><div><h2 id="risk-surface">3D Operational Risk Surface</h2><p class="section-note">X axis: readiness. Y axis: security evidence coverage. Z axis: unresolved risk. Taller markers require more verification before public claims.</p></div></div><div class="grid-2"><div class="scene-wrap"><canvas id="riskScene" aria-label="3D repository readiness and risk map"></canvas><div class="legend"><span class="chip"><span class="dot ok"></span>Operationally stronger</span><span class="chip"><span class="dot warn"></span>Needs evidence cleanup</span><span class="chip"><span class="dot bad"></span>High unresolved risk</span></div><div class="fallback" id="sceneFallback">3D surface unavailable. WebGL or the Three.js CDN did not initialize; the repository table and score bars below remain available.</div></div><aside class="side-panel" aria-labelledby="selected-repo-title"><div class="selected"><div class="selected-title"><h3 id="selected-repo-title">Repository Detail</h3><span class="status-pill" id="selected-state">Select from surface</span></div><div class="score-row"><div class="metric"><span>Readiness</span><strong id="selected-readiness">--</strong></div><div class="metric"><span>Risk</span><strong id="selected-risk">--</strong></div><div class="metric"><span>Coverage</span><strong id="selected-coverage">--</strong></div></div><ul class="list" id="selected-notes"></ul></div><div class="selected"><h3>Unresolved Status</h3><ul class="list"><li><span class="dot warn"></span><span>Latest GitHub Actions result is not stored in this static HTML.</span></li><li><span class="dot warn"></span><span>Dirty local repos require clean-clone confirmation before maturity claims.</span></li><li><span class="dot bad"></span><span>Missing license files block clean reuse claims for affected repositories.</span></li><li><span class="dot info"></span><span>Security controls are keyword-backed signals, not independent audit attestations.</span></li></ul></div></aside></div></section>
-    <section aria-labelledby="posture"><div class="section-head"><div><h2 id="posture">CI, Security, And ATT&amp;CK-Adjacent Coverage</h2><p class="section-note">Charts use Chart.js when available; fallback bars render from the same embedded dataset.</p></div></div><div class="chart-grid"><div class="chart-panel"><h3>Portfolio Posture</h3><canvas id="postureChart" aria-label="Portfolio posture chart"></canvas><div class="chart-fallback" id="postureFallback"></div></div><div class="chart-panel"><h3>Risk By Repository</h3><canvas id="riskChart" aria-label="Repository risk chart"></canvas><div class="chart-fallback" id="riskFallback"></div></div><div class="chart-panel"><h3>ATT&amp;CK-Adjacent Coverage</h3><canvas id="attackChart" aria-label="ATTACK-adjacent coverage chart"></canvas><div class="chart-fallback" id="attackFallback"></div></div></div></section>
-    <section aria-labelledby="repo-register"><div class="section-head"><div><h2 id="repo-register">Repository Register</h2><p class="section-note">Per-repo status keeps visible gaps next to strengths. No repo is labeled production-ready from this page alone.</p></div></div><div class="repo-grid" id="repoGrid"></div></section>
-    <section aria-labelledby="maturity-board"><div class="section-head"><div><h2 id="maturity-board">Product Maturity Board</h2><p class="section-note">Placement is derived from local evidence density and unresolved blockers, not market adoption or external deployment evidence.</p></div></div><div class="maturity" id="maturityBoard"></div></section>
-    <section aria-labelledby="ops-register"><div class="section-head"><div><h2 id="ops-register">Operational Evidence Register</h2><p class="section-note">Commands are the repo-specific validation entry points captured in this dashboard snapshot.</p></div></div><div class="ops-table-wrap"><table><thead><tr><th>Repository</th><th>CI / Tests</th><th>Security Signals</th><th>Open Checks</th><th>Validation Command</th></tr></thead><tbody id="opsRows"></tbody></table></div></section>
+    <section class="repo" aria-labelledby="repo-poojakira-pulsenet-rul-forecasting">
+      <div class="repo-head">
+        <div>
+          <h2 id="repo-poojakira-pulsenet-rul-forecasting"><a href="https://github.com/poojakira/PulseNet-RUL-Forecasting">poojakira/PulseNet-RUL-Forecasting</a></h2>
+          <div class="type">joint research service prototype</div>
+        </div>
+        <span class="status verified_public_repository">verified public repository</span>
+      </div>
+      <table>
+        <thead><tr><th>Claim</th><th>Evidence</th><th>Status and limitations</th></tr></thead>
+        <tbody>
+          <tr><td>PulseNet-RUL-Forecasting is a jointly authored RUL forecasting and anomaly-serving research project.</td><td><a href="https://github.com/poojakira/PulseNet-RUL-Forecasting/commit/791bad27ad84110cfe947a1ea1d02d1852a70630">current documentation</a><br><span class="note">commit <code>791bad27ad84110cfe947a1ea1d02d1852a70630</code>; measured 2026-07-29</span></td><td><span class="status verified_public_repository">verified public repository</span><br><span class="note">Joint authorship must be preserved. No dashboard RUL, production deployment, Kubernetes, or security metric is claimed without reproducible evidence.</span></td></tr>
+        </tbody>
+      </table>
+    </section>
+    <section class="repo" aria-labelledby="repo-poojakira-adversarial-ml-lab">
+      <div class="repo-head">
+        <div>
+          <h2 id="repo-poojakira-adversarial-ml-lab"><a href="https://github.com/poojakira/adversarial-ml-lab">poojakira/adversarial-ml-lab</a></h2>
+          <div class="type">prototype research library</div>
+        </div>
+        <span class="status verified_public_repository">verified public repository</span>
+      </div>
+      <table>
+        <thead><tr><th>Claim</th><th>Evidence</th><th>Status and limitations</th></tr></thead>
+        <tbody>
+          <tr><td>adversarial-ml-lab is an adversarial ML algorithm prototype and research lab.</td><td><a href="https://github.com/poojakira/adversarial-ml-lab/commit/ef333916ca78e554ee4fadf0c8d00a06fdae8897">current documentation</a><br><span class="note">commit <code>ef333916ca78e554ee4fadf0c8d00a06fdae8897</code>; measured 2026-07-29</span></td><td><span class="status verified_public_repository">verified public repository</span><br><span class="note">No clean or robust accuracy metric is claimed without generated benchmark-suite evidence.</span></td></tr>
+        </tbody>
+      </table>
+    </section>
+    <section class="repo" aria-labelledby="repo-poojakira-dataset-poisoning-detector">
+      <div class="repo-head">
+        <div>
+          <h2 id="repo-poojakira-dataset-poisoning-detector"><a href="https://github.com/poojakira/dataset-poisoning-detector">poojakira/dataset-poisoning-detector</a></h2>
+          <div class="type">research service</div>
+        </div>
+        <span class="status verified_public_repository">verified public repository</span>
+      </div>
+      <table>
+        <thead><tr><th>Claim</th><th>Evidence</th><th>Status and limitations</th></tr></thead>
+        <tbody>
+          <tr><td>dataset-poisoning-detector is a dataset poisoning and anomalous-sample detection research service.</td><td><a href="https://github.com/poojakira/dataset-poisoning-detector/commit/d2f614b3b5bdd8fa934e60b84d4316dc10cfbb26">current documentation</a><br><span class="note">commit <code>d2f614b3b5bdd8fa934e60b84d4316dc10cfbb26</code>; measured 2026-07-29</span></td><td><span class="status verified_public_repository">verified public repository</span><br><span class="note">No portfolio claim is made for reproduced benchmark precision, recall, false-positive rate, multi-worker readiness, or production deployment.</span></td></tr>
+        </tbody>
+      </table>
+    </section>
+    <section class="repo" aria-labelledby="repo-poojakira-hf-model-provenance-scanner">
+      <div class="repo-head">
+        <div>
+          <h2 id="repo-poojakira-hf-model-provenance-scanner"><a href="https://github.com/poojakira/hf-model-provenance-scanner">poojakira/hf-model-provenance-scanner</a></h2>
+          <div class="type">research library</div>
+        </div>
+        <span class="status verified_public_repository">verified public repository</span>
+      </div>
+      <table>
+        <thead><tr><th>Claim</th><th>Evidence</th><th>Status and limitations</th></tr></thead>
+        <tbody>
+          <tr><td>hf-model-provenance-scanner is a research scanner for model repository provenance and unsafe artifact signals.</td><td><a href="https://github.com/poojakira/hf-model-provenance-scanner/commit/0ec51f208143a0952df091e9423fd1072cd6965a">current documentation</a><br><span class="note">commit <code>0ec51f208143a0952df091e9423fd1072cd6965a</code>; measured 2026-07-29</span></td><td><span class="status verified_public_repository">verified public repository</span><br><span class="note">No portfolio claim is made here for green required CI, signed release, SBOM, benchmark results, or production deployment.</span></td></tr>
+        </tbody>
+      </table>
+    </section>
+    <section class="repo" aria-labelledby="repo-poojakira-llm-redteam-framework">
+      <div class="repo-head">
+        <div>
+          <h2 id="repo-poojakira-llm-redteam-framework"><a href="https://github.com/poojakira/llm-redteam-framework">poojakira/llm-redteam-framework</a></h2>
+          <div class="type">research library</div>
+        </div>
+        <span class="status verified_public_repository">verified public repository</span>
+      </div>
+      <table>
+        <thead><tr><th>Claim</th><th>Evidence</th><th>Status and limitations</th></tr></thead>
+        <tbody>
+          <tr><td>llm-redteam-framework is a defensive LLM evaluation research library.</td><td><a href="https://github.com/poojakira/llm-redteam-framework/commit/c65bcfb040849ce50183d8b4a2f3a464a453073a">current documentation</a><br><span class="note">commit <code>c65bcfb040849ce50183d8b4a2f3a464a453073a</code>; measured 2026-07-29</span></td><td><span class="status verified_public_repository">verified public repository</span><br><span class="note">No benchmark metric or model quality claim is made without generated benchmark-suite evidence.</span></td></tr>
+        </tbody>
+      </table>
+    </section>
+    <section class="repo" aria-labelledby="repo-poojakira-mcp-security-gateway-monitor">
+      <div class="repo-head">
+        <div>
+          <h2 id="repo-poojakira-mcp-security-gateway-monitor"><a href="https://github.com/poojakira/mcp-security-gateway-monitor">poojakira/mcp-security-gateway-monitor</a></h2>
+          <div class="type">prototype service</div>
+        </div>
+        <span class="status verified_public_repository">verified public repository</span>
+      </div>
+      <table>
+        <thead><tr><th>Claim</th><th>Evidence</th><th>Status and limitations</th></tr></thead>
+        <tbody>
+          <tr><td>mcp-security-gateway-monitor is an MCP security gateway prototype under active hardening.</td><td><a href="https://github.com/poojakira/mcp-security-gateway-monitor/commit/448d3b786872e7abe217b57e60604c25b4c002f5">current documentation</a><br><span class="note">commit <code>448d3b786872e7abe217b57e60604c25b4c002f5</code>; measured 2026-07-29</span></td><td><span class="status verified_public_repository">verified public repository</span><br><span class="note">No portfolio claim is made here for full inline enforcement acceptance, green required CI, signed release, benchmark results, or production deployment.</span></td></tr>
+        </tbody>
+      </table>
+    </section>
+    <section class="repo" aria-labelledby="repo-poojakira-model-privacy-attacks">
+      <div class="repo-head">
+        <div>
+          <h2 id="repo-poojakira-model-privacy-attacks"><a href="https://github.com/poojakira/model-privacy-attacks">poojakira/model-privacy-attacks</a></h2>
+          <div class="type">research library</div>
+        </div>
+        <span class="status verified_public_repository">verified public repository</span>
+      </div>
+      <table>
+        <thead><tr><th>Claim</th><th>Evidence</th><th>Status and limitations</th></tr></thead>
+        <tbody>
+          <tr><td>model-privacy-attacks is a model privacy evaluation research library.</td><td><a href="https://github.com/poojakira/model-privacy-attacks/commit/b6432e159d1b989eac87db6d5a5cdd07672549b0">current documentation</a><br><span class="note">commit <code>b6432e159d1b989eac87db6d5a5cdd07672549b0</code>; measured 2026-07-29</span></td><td><span class="status verified_public_repository">verified public repository</span><br><span class="note">No privacy attack advantage, AUROC, DP, or uncertainty metric is claimed without benchmark-suite evidence.</span></td></tr>
+        </tbody>
+      </table>
+    </section>
+    <section class="repo" aria-labelledby="repo-poojakira-poojakira">
+      <div class="repo-head">
+        <div>
+          <h2 id="repo-poojakira-poojakira"><a href="https://github.com/poojakira/poojakira">poojakira/poojakira</a></h2>
+          <div class="type">portfolio evidence index</div>
+        </div>
+        <span class="status verified_documentation">verified documentation</span>
+      </div>
+      <table>
+        <thead><tr><th>Claim</th><th>Evidence</th><th>Status and limitations</th></tr></thead>
+        <tbody>
+          <tr><td>Profile repository is an evidence index and does not certify production readiness.</td><td><a href="https://github.com/poojakira/poojakira/commit/3f3941c0214dabdb6dabe4aae003e6890711f2c6">current documentation</a><br><span class="note">commit <code>3f3941c0214dabdb6dabe4aae003e6890711f2c6</code>; measured 2026-07-29</span></td><td><span class="status verified_documentation">verified documentation</span><br><span class="note">Does not prove downstream repository release readiness, coverage, signed provenance, SBOM, benchmarks, or production deployment.</span></td></tr>
+        </tbody>
+      </table>
+    </section>
   </main>
-  <footer>Rebuild with <code>python tools/build_security_dashboard.py</code>. Verify each project with its own README/RUNBOOK, clean checkout, and CI logs before citing results.</footer>
-  <noscript><div class="fallback" style="display:block">JavaScript is disabled. The interactive 3D surface and charts cannot render, but the dashboard remains a conservative static evidence artifact.</div></noscript>
-  <script>
-    const repos=[{"name":"poojakira","topic":"Public GitHub profile and evidence dashboard","url":"https://github.com/poojakira/poojakira","files":23,"tests":1,"workflows":2,"license":true,"evidence":["pytest","github actions","pages","license","security"],"configuredControls":5,"openChecks":["git state: dirty"],"command":"python -m pytest tests -q -ra -W error","attack":["Governance","CI/CD","Evidence publishing"],"maturity":"Evidence Hub"},{"name":"hf-model-provenance-scanner","topic":"Hugging Face model supply-chain scanner","url":"https://github.com/poojakira/hf-model-provenance-scanner","files":120,"tests":15,"workflows":1,"license":true,"evidence":["pickle","safetensors","sarif","webhook","baseline","sandbox"],"configuredControls":6,"openChecks":["git state: dirty"],"command":"PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 python -m pytest tests -q -ra -W error","attack":["Supply Chain","Unsafe Deserialization","Sandboxing","Detection Engineering"],"maturity":"Operational Candidate"},{"name":"mcp-security-gateway-monitor","topic":"MCP tool-call security monitor","url":"https://github.com/poojakira/mcp-security-gateway-monitor","files":103,"tests":18,"workflows":2,"license":false,"evidence":["prompt injection","pii","audit","rate limit","metrics","docker"],"configuredControls":6,"openChecks":["license file not detected","git state: dirty"],"command":"python -m pytest tests -q -ra","attack":["Prompt Injection","Exfiltration","PII Leakage","Monitoring"],"maturity":"Operational Candidate"},{"name":"llm-redteam-framework","topic":"Offline LLM red-team detector experiments","url":"https://github.com/poojakira/llm-redteam-framework","files":28,"tests":4,"workflows":1,"license":false,"evidence":["red team","detector","prompt injection","pytest","grouped"],"configuredControls":5,"openChecks":["license file not detected","git state: dirty"],"command":"PYTHONPATH=src python -m pytest tests -q -ra","attack":["Red Teaming","Prompt Injection","Detection Evaluation"],"maturity":"Validated Prototype"},{"name":"PulseNet-RUL-Forecasting","topic":"NASA C-MAPSS RUL forecasting with security gates","url":"https://github.com/poojakira/PulseNet-RUL-Forecasting","files":129,"tests":13,"workflows":2,"license":true,"evidence":["audit","rbac","prometheus","pip-audit","bandit","pyright"],"configuredControls":6,"openChecks":["git state: dirty"],"command":"python -m pytest tests -q -ra -W error","attack":["Secure Serving","AuthZ","Telemetry","Dependency Audit"],"maturity":"Hardening"},{"name":"dataset-poisoning-detector","topic":"Dataset poisoning and anomaly detection","url":"https://github.com/poojakira/dataset-poisoning-detector","files":47,"tests":10,"workflows":1,"license":false,"evidence":["fastapi","api key","redis","kafka","prometheus","pytest"],"configuredControls":6,"openChecks":["license file not detected","git state: dirty"],"command":"python -m pytest tests -q -ra -W error","attack":["Data Poisoning","API Security","Telemetry","Streaming Pipeline"],"maturity":"Hardening"},{"name":"model-privacy-attacks","topic":"Membership inference and privacy attack evaluation","url":"https://github.com/poojakira/model-privacy-attacks","files":24,"tests":2,"workflows":1,"license":false,"evidence":["membership inference","privacy","pytest","metrics","report"],"configuredControls":5,"openChecks":["license file not detected","git state: dirty"],"command":"python -m pytest tests -q -ra","attack":["Privacy Attack","Membership Inference","Metrics Reporting"],"maturity":"Validated Prototype"},{"name":"adversarial-ml-lab","topic":"Adversarial ML attacks and defenses","url":"https://github.com/poojakira/adversarial-ml-lab","files":47,"tests":1,"workflows":1,"license":false,"evidence":["fgsm","pgd","adversarial","pytest","robustness"],"configuredControls":5,"openChecks":["license file not detected","git state: dirty"],"command":"python -m pytest tests -q -ra","attack":["Evasion","Adversarial Training","Robustness Evaluation"],"maturity":"Hardening"}];
-    const maturityOrder=["Operational Candidate","Hardening","Validated Prototype","Evidence Hub"],attackCategories=["Supply Chain","Prompt Injection","Exfiltration","PII Leakage","Data Poisoning","Privacy Attack","Evasion","Secure Serving","Monitoring"];
-    const esc=v=>String(v).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]));
-    const scoreRepo=repo=>{const evidenceCoverage=Math.round(repo.evidence.length/repo.configuredControls*100),testSignal=Math.min(100,Math.round(repo.tests/16*100)),workflowSignal=Math.min(100,repo.workflows*45),licenseSignal=repo.license?100:0,dirtyPenalty=repo.openChecks.some(i=>i.includes("dirty"))?12:0,licensePenalty=repo.license?0:18,missingPenalty=Math.max(0,repo.configuredControls-repo.evidence.length)*8,readiness=Math.max(0,Math.min(100,Math.round(evidenceCoverage*.34+testSignal*.22+workflowSignal*.18+licenseSignal*.16+(repo.files>20?10:4)-dirtyPenalty))),risk=Math.max(0,Math.min(100,Math.round(100-readiness+licensePenalty+dirtyPenalty+missingPenalty+Math.max(0,8-repo.tests)*2))),state=risk>=62?"high":risk>=36?"attention":"ready";return{...repo,evidenceCoverage,testSignal,workflowSignal,readiness,risk,state};};
-    const scored=repos.map(scoreRepo); let selectedRepo=scored[0];
-    function stateLabel(repo){return repo.state==="ready"?"Lower unresolved risk":repo.state==="high"?"High unresolved risk":"Needs evidence cleanup";}
-    function renderKpis(){const total=scored.length,licenses=scored.filter(r=>r.license).length,workflows=scored.reduce((s,r)=>s+r.workflows,0),tests=scored.reduce((s,r)=>s+r.tests,0),openChecks=scored.reduce((s,r)=>s+r.openChecks.length,0),avgReadiness=Math.round(scored.reduce((s,r)=>s+r.readiness,0)/total);document.getElementById("kpis").innerHTML=[["Repos",total,"Selected public ML/security portfolio set"],["Avg readiness",`${avgReadiness}%`,"Derived from local files, tests, workflows, and license signal"],["Workflow files",workflows,"Presence only; latest run status unresolved"],["Test files",tests,"Counted from local test file inventory"],["License present",`${licenses}/${total}`,"Missing licenses remain public-use blockers"],["Open checks",openChecks,"Visible unresolved items in this snapshot"]].map(([l,v,d])=>`<div class="kpi"><span>${l}</span><strong>${v}</strong><small>${d}</small></div>`).join("");}
-    function renderSelected(repo){selectedRepo=repo;const state=document.getElementById("selected-state");state.textContent=stateLabel(repo);state.className=`status-pill ${repo.state==="ready"?"ok":repo.state==="high"?"bad":"warn"}`;document.getElementById("selected-repo-title").textContent=repo.name;document.getElementById("selected-readiness").textContent=`${repo.readiness}%`;document.getElementById("selected-risk").textContent=`${repo.risk}%`;document.getElementById("selected-coverage").textContent=`${repo.evidenceCoverage}%`;const checks=repo.openChecks.length?repo.openChecks:["none from configured map"];document.getElementById("selected-notes").innerHTML=[`<li><span class="dot info"></span><span>${esc(repo.topic)}</span></li>`,`<li><span class="dot ${repo.license?"ok":"bad"}"></span><span>License: ${repo.license?"detected":"not detected"}</span></li>`,`<li><span class="dot ${repo.workflows?"ok":"bad"}"></span><span>Workflow files: ${repo.workflows}; latest remote CI state unresolved.</span></li>`,`<li><span class="dot ${checks[0]==="none from configured map"?"ok":"warn"}"></span><span>Open checks: ${esc(checks.join(", "))}</span></li>`,`<li><span class="dot info"></span><span>Coverage: ${esc(repo.attack.join(", "))}</span></li>`].join("");}
-    function renderRepoGrid(){document.getElementById("repoGrid").innerHTML=scored.map(repo=>{const checks=repo.openChecks.length?repo.openChecks:["none from configured map"],fillClass=repo.state==="ready"?"ok":repo.state==="high"?"bad":"warn";return `<article class="repo-card" data-state="${repo.state}"><div class="repo-head"><div><a href="${repo.url}">${esc(repo.name)}</a><p>${esc(repo.topic)}</p></div><span class="status-pill ${fillClass}">${stateLabel(repo)}</span></div><div class="mini-stats"><div><span>Files</span><strong>${repo.files}</strong></div><div><span>Tests</span><strong>${repo.tests}</strong></div><div><span>Flows</span><strong>${repo.workflows}</strong></div><div><span>License</span><strong>${repo.license?"yes":"no"}</strong></div></div><div class="progress"><div class="progress-label"><span>Readiness</span><strong>${repo.readiness}%</strong></div><div class="track"><div class="fill ${fillClass}" style="width:${repo.readiness}%"></div></div></div><div class="tags">${repo.evidence.map(item=>`<span class="tag">${esc(item)}</span>`).join("")}</div><ul class="list">${checks.map(item=>`<li><span class="dot ${item==="none from configured map"?"ok":"warn"}"></span><span>${esc(item)}</span></li>`).join("")}</ul></article>`;}).join("");}
-    function renderMaturity(){document.getElementById("maturityBoard").innerHTML=maturityOrder.map(lane=>{const items=scored.filter(r=>r.maturity===lane);return `<div class="lane"><h3>${lane}</h3><ul>${items.map(r=>`<li>${esc(r.name)}<br><span class="${r.state==="ready"?"ok":r.state==="high"?"bad":"warn"}">${r.readiness}% readiness / ${r.risk}% risk</span></li>`).join("")||"<li>No repository in this lane</li>"}</ul></div>`;}).join("");}
-    function renderOpsTable(){document.getElementById("opsRows").innerHTML=scored.map(repo=>{const checks=repo.openChecks.length?repo.openChecks.join(", "):"none from configured map";return `<tr><td><a href="${repo.url}">${esc(repo.name)}</a><br>${esc(repo.maturity)}</td><td>${repo.tests} tests, ${repo.workflows} workflow files<br>Latest run: unresolved in static page</td><td>${esc(repo.evidence.join(", "))}</td><td>${esc(checks)}</td><td><code>${esc(repo.command)}</code></td></tr>`;}).join("");}
-    function fallbackBars(targetId,rows,color="var(--info)"){const target=document.getElementById(targetId);target.style.display="grid";target.innerHTML=rows.map(([label,value])=>`<div class="bar"><span title="${esc(label)}">${esc(label)}</span><span class="track"><span class="fill" style="width:${Math.max(0,Math.min(100,value))}%; background:${color}"></span></span><strong>${value}</strong></div>`).join("");}
-    function renderCharts(){const posture=[["License coverage",Math.round(scored.filter(r=>r.license).length/scored.length*100)],["Workflow presence",Math.round(scored.filter(r=>r.workflows>0).length/scored.length*100)],["Evidence coverage",Math.round(scored.reduce((s,r)=>s+r.evidenceCoverage,0)/scored.length)],["Clean local state",Math.round(scored.filter(r=>!r.openChecks.some(i=>i.includes("dirty"))).length/scored.length*100)],["Test depth",Math.round(scored.reduce((s,r)=>s+r.testSignal,0)/scored.length)]],riskRows=scored.map(r=>[r.name,r.risk]),attackRows=attackCategories.map(c=>[c,scored.filter(r=>r.attack.includes(c)).length]);if(!window.Chart){fallbackBars("postureFallback",posture);fallbackBars("riskFallback",riskRows,"var(--warn)");fallbackBars("attackFallback",attackRows.map(([l,c])=>[l,Math.round(c/scored.length*100)]),"var(--ok)");return;}Chart.defaults.font.family=getComputedStyle(document.body).fontFamily;Chart.defaults.color="#58625b";new Chart(document.getElementById("postureChart"),{type:"radar",data:{labels:posture.map(r=>r[0]),datasets:[{label:"Portfolio posture",data:posture.map(r=>r[1]),borderColor:"#2868a8",backgroundColor:"rgba(40,104,168,.16)",pointBackgroundColor:"#2868a8"}]},options:{responsive:true,maintainAspectRatio:false,scales:{r:{min:0,max:100,ticks:{stepSize:25}}},plugins:{legend:{display:false}}}});new Chart(document.getElementById("riskChart"),{type:"bar",data:{labels:riskRows.map(r=>r[0]),datasets:[{label:"Risk",data:riskRows.map(r=>r[1]),backgroundColor:riskRows.map(r=>r[1]>=62?"#b83232":r[1]>=36?"#b46a10":"#1f7a4d")}]},options:{indexAxis:"y",responsive:true,maintainAspectRatio:false,scales:{x:{min:0,max:100}},plugins:{legend:{display:false}}}});new Chart(document.getElementById("attackChart"),{type:"doughnut",data:{labels:attackRows.map(r=>r[0]),datasets:[{data:attackRows.map(r=>r[1]),backgroundColor:["#2868a8","#b46a10","#7a4e9d","#b83232","#1f7a4d","#5f6268","#c05621","#11847f","#61762c"]}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:"bottom",labels:{boxWidth:10,font:{size:11}}}}}});}
-    function webglAvailable(){try{const c=document.createElement("canvas");return Boolean(window.WebGLRenderingContext&&(c.getContext("webgl")||c.getContext("experimental-webgl")));}catch(e){return false;}}
-    function renderScene(){const fallback=document.getElementById("sceneFallback"),canvas=document.getElementById("riskScene");if(!window.THREE||!webglAvailable()){fallback.style.display="block";fallbackBars("postureFallback",scored.map(r=>[r.name,r.readiness]),"var(--info)");return;}const THREE=window.THREE,scene=new THREE.Scene();scene.background=new THREE.Color(0xf9faf7);const renderer=new THREE.WebGLRenderer({canvas,antialias:true,alpha:false,preserveDrawingBuffer:true});renderer.setPixelRatio(Math.min(window.devicePixelRatio||1,2));const camera=new THREE.PerspectiveCamera(42,1,.1,1000);camera.position.set(0,82,126);camera.lookAt(0,0,0);scene.add(new THREE.AmbientLight(0xffffff,.78));const key=new THREE.DirectionalLight(0xffffff,.86);key.position.set(48,96,60);scene.add(key);const group=new THREE.Group();scene.add(group);const grid=new THREE.GridHelper(112,14,0x9aa49a,0xd6ddd4);group.add(grid);const axisMaterial=new THREE.LineBasicMaterial({color:0x5f6268});[[new THREE.Vector3(-58,0,0),new THREE.Vector3(58,0,0)],[new THREE.Vector3(-58,0,-44),new THREE.Vector3(-58,52,-44)],[new THREE.Vector3(-58,0,-44),new THREE.Vector3(-58,0,44)]].forEach(points=>group.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(points),axisMaterial)));const raycaster=new THREE.Raycaster(),pointer=new THREE.Vector2(),repoMeshes=[],colors={ready:0x1f7a4d,attention:0xb46a10,high:0xb83232};scored.forEach((repo,index)=>{const x=-48+repo.readiness/100*96,z=40-repo.evidenceCoverage/100*80,height=8+repo.risk/100*42,radius=2.8+Math.min(5,repo.tests/7),mat=new THREE.MeshStandardMaterial({color:colors[repo.state],roughness:.48,metalness:.08}),column=new THREE.Mesh(new THREE.CylinderGeometry(radius,radius,height,24),mat);column.position.set(x,height/2,z);column.userData.repo=repo;group.add(column);repoMeshes.push(column);const cap=new THREE.Mesh(new THREE.SphereGeometry(radius*.92,24,16),mat);cap.position.set(x,height+radius*.85,z);cap.userData.repo=repo;group.add(cap);repoMeshes.push(cap);const ring=new THREE.Mesh(new THREE.TorusGeometry(radius+1.2,.16,10,36),new THREE.MeshBasicMaterial({color:index===0?0x151915:0x8c948c}));ring.position.set(x,.22,z);ring.rotation.x=Math.PI/2;ring.userData.repo=repo;group.add(ring);repoMeshes.push(ring);});function resize(){const rect=canvas.getBoundingClientRect(),width=Math.max(320,Math.floor(rect.width)),height=Math.max(320,Math.floor(rect.height));renderer.setSize(width,height,false);camera.aspect=width/height;camera.updateProjectionMatrix();}function setPointer(event){const rect=canvas.getBoundingClientRect();pointer.x=(event.clientX-rect.left)/rect.width*2-1;pointer.y=-(event.clientY-rect.top)/rect.height*2+1;raycaster.setFromCamera(pointer,camera);}canvas.addEventListener("click",event=>{setPointer(event);const hit=raycaster.intersectObjects(repoMeshes,false)[0];if(hit&&hit.object.userData.repo)renderSelected(hit.object.userData.repo);});canvas.addEventListener("pointermove",event=>{setPointer(event);canvas.style.cursor=raycaster.intersectObjects(repoMeshes,false).length?"pointer":"default";});window.addEventListener("resize",resize);let frame=0;function animate(){frame+=.006;group.rotation.y=Math.sin(frame)*.16;renderer.render(scene,camera);requestAnimationFrame(animate);}resize();animate();}
-    function init(){renderKpis();renderSelected(selectedRepo);renderRepoGrid();renderMaturity();renderOpsTable();renderCharts();renderScene();}
-    window.addEventListener("DOMContentLoaded",init);
-  </script>
+  <footer>
+    <p>Generated deterministically from the claim registry. Rebuild with <code>python tools/build_security_dashboard.py</code>. Validate with <code>python tools/validate_claims.py --check-links</code>.</p>
+  </footer>
+  <script type="application/json" id="claim-registry">{&quot;claims&quot;:[{&quot;claim&quot;:&quot;Profile repository is an evidence index and does not certify production readiness.&quot;,&quot;evidence_type&quot;:&quot;current_documentation&quot;,&quot;evidence_url&quot;:&quot;https://github.com/poojakira/poojakira/commit/3f3941c0214dabdb6dabe4aae003e6890711f2c6&quot;,&quot;limitations&quot;:&quot;Does not prove downstream repository release readiness, coverage, signed provenance, SBOM, benchmarks, or production deployment.&quot;,&quot;measurement_date&quot;:&quot;2026-07-29&quot;,&quot;project_type&quot;:&quot;portfolio evidence index&quot;,&quot;repository&quot;:&quot;poojakira/poojakira&quot;,&quot;source_commit&quot;:&quot;3f3941c0214dabdb6dabe4aae003e6890711f2c6&quot;,&quot;status&quot;:&quot;verified_documentation&quot;},{&quot;claim&quot;:&quot;hf-model-provenance-scanner is a research scanner for model repository provenance and unsafe artifact signals.&quot;,&quot;evidence_type&quot;:&quot;current_documentation&quot;,&quot;evidence_url&quot;:&quot;https://github.com/poojakira/hf-model-provenance-scanner/commit/0ec51f208143a0952df091e9423fd1072cd6965a&quot;,&quot;limitations&quot;:&quot;No portfolio claim is made here for green required CI, signed release, SBOM, benchmark results, or production deployment.&quot;,&quot;measurement_date&quot;:&quot;2026-07-29&quot;,&quot;project_type&quot;:&quot;research library&quot;,&quot;repository&quot;:&quot;poojakira/hf-model-provenance-scanner&quot;,&quot;source_commit&quot;:&quot;0ec51f208143a0952df091e9423fd1072cd6965a&quot;,&quot;status&quot;:&quot;verified_public_repository&quot;},{&quot;claim&quot;:&quot;mcp-security-gateway-monitor is an MCP security gateway prototype under active hardening.&quot;,&quot;evidence_type&quot;:&quot;current_documentation&quot;,&quot;evidence_url&quot;:&quot;https://github.com/poojakira/mcp-security-gateway-monitor/commit/448d3b786872e7abe217b57e60604c25b4c002f5&quot;,&quot;limitations&quot;:&quot;No portfolio claim is made here for full inline enforcement acceptance, green required CI, signed release, benchmark results, or production deployment.&quot;,&quot;measurement_date&quot;:&quot;2026-07-29&quot;,&quot;project_type&quot;:&quot;prototype service&quot;,&quot;repository&quot;:&quot;poojakira/mcp-security-gateway-monitor&quot;,&quot;source_commit&quot;:&quot;448d3b786872e7abe217b57e60604c25b4c002f5&quot;,&quot;status&quot;:&quot;verified_public_repository&quot;},{&quot;claim&quot;:&quot;llm-redteam-framework is a defensive LLM evaluation research library.&quot;,&quot;evidence_type&quot;:&quot;current_documentation&quot;,&quot;evidence_url&quot;:&quot;https://github.com/poojakira/llm-redteam-framework/commit/c65bcfb040849ce50183d8b4a2f3a464a453073a&quot;,&quot;limitations&quot;:&quot;No benchmark metric or model quality claim is made without generated benchmark-suite evidence.&quot;,&quot;measurement_date&quot;:&quot;2026-07-29&quot;,&quot;project_type&quot;:&quot;research library&quot;,&quot;repository&quot;:&quot;poojakira/llm-redteam-framework&quot;,&quot;source_commit&quot;:&quot;c65bcfb040849ce50183d8b4a2f3a464a453073a&quot;,&quot;status&quot;:&quot;verified_public_repository&quot;},{&quot;claim&quot;:&quot;dataset-poisoning-detector is a dataset poisoning and anomalous-sample detection research service.&quot;,&quot;evidence_type&quot;:&quot;current_documentation&quot;,&quot;evidence_url&quot;:&quot;https://github.com/poojakira/dataset-poisoning-detector/commit/d2f614b3b5bdd8fa934e60b84d4316dc10cfbb26&quot;,&quot;limitations&quot;:&quot;No portfolio claim is made for reproduced benchmark precision, recall, false-positive rate, multi-worker readiness, or production deployment.&quot;,&quot;measurement_date&quot;:&quot;2026-07-29&quot;,&quot;project_type&quot;:&quot;research service&quot;,&quot;repository&quot;:&quot;poojakira/dataset-poisoning-detector&quot;,&quot;source_commit&quot;:&quot;d2f614b3b5bdd8fa934e60b84d4316dc10cfbb26&quot;,&quot;status&quot;:&quot;verified_public_repository&quot;},{&quot;claim&quot;:&quot;model-privacy-attacks is a model privacy evaluation research library.&quot;,&quot;evidence_type&quot;:&quot;current_documentation&quot;,&quot;evidence_url&quot;:&quot;https://github.com/poojakira/model-privacy-attacks/commit/b6432e159d1b989eac87db6d5a5cdd07672549b0&quot;,&quot;limitations&quot;:&quot;No privacy attack advantage, AUROC, DP, or uncertainty metric is claimed without benchmark-suite evidence.&quot;,&quot;measurement_date&quot;:&quot;2026-07-29&quot;,&quot;project_type&quot;:&quot;research library&quot;,&quot;repository&quot;:&quot;poojakira/model-privacy-attacks&quot;,&quot;source_commit&quot;:&quot;b6432e159d1b989eac87db6d5a5cdd07672549b0&quot;,&quot;status&quot;:&quot;verified_public_repository&quot;},{&quot;claim&quot;:&quot;adversarial-ml-lab is an adversarial ML algorithm prototype and research lab.&quot;,&quot;evidence_type&quot;:&quot;current_documentation&quot;,&quot;evidence_url&quot;:&quot;https://github.com/poojakira/adversarial-ml-lab/commit/ef333916ca78e554ee4fadf0c8d00a06fdae8897&quot;,&quot;limitations&quot;:&quot;No clean or robust accuracy metric is claimed without generated benchmark-suite evidence.&quot;,&quot;measurement_date&quot;:&quot;2026-07-29&quot;,&quot;project_type&quot;:&quot;prototype research library&quot;,&quot;repository&quot;:&quot;poojakira/adversarial-ml-lab&quot;,&quot;source_commit&quot;:&quot;ef333916ca78e554ee4fadf0c8d00a06fdae8897&quot;,&quot;status&quot;:&quot;verified_public_repository&quot;},{&quot;claim&quot;:&quot;PulseNet-RUL-Forecasting is a jointly authored RUL forecasting and anomaly-serving research project.&quot;,&quot;evidence_type&quot;:&quot;current_documentation&quot;,&quot;evidence_url&quot;:&quot;https://github.com/poojakira/PulseNet-RUL-Forecasting/commit/791bad27ad84110cfe947a1ea1d02d1852a70630&quot;,&quot;limitations&quot;:&quot;Joint authorship must be preserved. No dashboard RUL, production deployment, Kubernetes, or security metric is claimed without reproducible evidence.&quot;,&quot;measurement_date&quot;:&quot;2026-07-29&quot;,&quot;project_type&quot;:&quot;joint research service prototype&quot;,&quot;repository&quot;:&quot;poojakira/PulseNet-RUL-Forecasting&quot;,&quot;source_commit&quot;:&quot;791bad27ad84110cfe947a1ea1d02d1852a70630&quot;,&quot;status&quot;:&quot;verified_public_repository&quot;}],&quot;generated_by&quot;:&quot;tools/build_security_dashboard.py&quot;,&quot;measurement_date&quot;:&quot;2026-07-29&quot;,&quot;schema_version&quot;:&quot;1.0.0&quot;}</script>
 </body>
 </html>
