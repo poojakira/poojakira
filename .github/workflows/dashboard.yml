@@ -19,12 +19,8 @@ jobs:
           python-version: "3.12"
       - name: Install validation dependencies
         run: python -m pip install -r requirements-dev.txt
-      - name: Clone selected public repositories
-        run: |
-          set -euo pipefail
-          for repo in hf-model-provenance-scanner mcp-security-gateway-monitor llm-redteam-framework PulseNet-RUL-Forecasting dataset-poisoning-detector model-privacy-attacks adversarial-ml-lab; do
-            git clone --depth 1 "https://github.com/poojakira/${repo}.git" "../${repo}"
-          done
+      - name: Validate claim registry
+        run: python tools/validate_claims.py --max-age-days 90
       - name: Validate profile repository
         run: python -m pytest tests -q -ra -W error
       - name: Build dashboard

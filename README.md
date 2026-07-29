@@ -1,36 +1,34 @@
-# Pooja Kiran - ML Security Engineer
+# Pooja Kiran - ML Security Engineering Portfolio
 
-I build security controls around AI/ML systems: model supply-chain checks, LLM/agent security monitoring, adversarial robustness experiments, dataset-poisoning detection, model privacy evaluation, and secure ML serving.
+I work on defensive AI/ML security systems: model repository scanning, MCP gateway enforcement, LLM evaluation, dataset-poisoning analysis, model privacy evaluation, adversarial robustness, and RUL/anomaly-serving research.
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/poojakiran)
 [![Email](https://img.shields.io/badge/Email-Reach%20Me-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:poojakiranbhardwaj@gmail.com)
 
----
+## Evidence Policy
+
+This profile is an evidence index, not a scoreboard. Claims are maintained in [claims/registry.json](claims/registry.json) and rendered into [security-dashboard.html](security-dashboard.html). Documentation keyword presence does not count as an implemented control. Missing CI, signed release, coverage, SBOM, provenance, or benchmark evidence remains visible as a limitation.
 
 ## Selected Public Work
 
-| Project | What it demonstrates | Status |
+| Project | Type | Scope |
 | :--- | :--- | :--- |
-| [hf-model-provenance-scanner](https://github.com/poojakira/hf-model-provenance-scanner) | Hugging Face model provenance, impersonation, pickle-risk, and supply-chain signal checks. | Public repo |
-| [mcp-security-gateway-monitor](https://github.com/poojakira/mcp-security-gateway-monitor) | MCP tool-call monitoring for prompt injection, PII leakage, shadow servers, and exfiltration patterns. | Public repo |
-| [llm-redteam-framework](https://github.com/poojakira/llm-redteam-framework) | Adversarial prompt generation and offline detector experiments for LLM red-team workflows. | Public repo |
-| [dataset-poisoning-detector](https://github.com/poojakira/dataset-poisoning-detector) | Dataset poisoning and anomalous-sample detection experiments. | Public repo |
-| [model-privacy-attacks](https://github.com/poojakira/model-privacy-attacks) | Membership-inference and model-privacy attack evaluation. | Public repo |
-| [adversarial-ml-lab](https://github.com/poojakira/adversarial-ml-lab) | FGSM, PGD, and C&W adversarial ML attacks plus adversarial-training defenses. | Prototype |
-| [PulseNet-RUL-Forecasting](https://github.com/poojakira/PulseNet-RUL-Forecasting) | RUL forecasting and FDIA attack verification. | Public repo |
-
----
+| [hf-model-provenance-scanner](https://github.com/poojakira/hf-model-provenance-scanner) | Research library | Model repository provenance and unsafe artifact signal scanning. |
+| [mcp-security-gateway-monitor](https://github.com/poojakira/mcp-security-gateway-monitor) | Prototype service | MCP security gateway and policy-enforcement hardening work. |
+| [llm-redteam-framework](https://github.com/poojakira/llm-redteam-framework) | Research library | Defensive LLM prompt-attack evaluation workflows. |
+| [dataset-poisoning-detector](https://github.com/poojakira/dataset-poisoning-detector) | Research service | Dataset poisoning and anomalous-sample analysis. |
+| [model-privacy-attacks](https://github.com/poojakira/model-privacy-attacks) | Research library | Model privacy attack evaluation methodology. |
+| [adversarial-ml-lab](https://github.com/poojakira/adversarial-ml-lab) | Prototype research library | FGSM, PGD, C&W and robustness experiment code. |
+| [PulseNet-RUL-Forecasting](https://github.com/poojakira/PulseNet-RUL-Forecasting) | Joint research service prototype | Jointly authored RUL forecasting and anomaly-serving research. |
 
 ## Technical Focus
 
-- Model supply chain: provenance checks, pickle-risk detection, typosquat/homoglyph signals, SBOM-oriented workflows
-- LLM and agent security: prompt-injection monitoring, tool-call inspection, exfiltration and PII-leak detection
-- Adversarial ML: FGSM, PGD, C&W attacks; adversarial training; CI-oriented robustness checks
-- Data security: dataset-poisoning detection and per-sample anomaly attribution
-- Secure serving: JWT auth, RBAC, rate limiting, audit logging, Prometheus metrics
-- Stack: Python 3.11+, PyTorch, scikit-learn, FastAPI, Docker, GitHub Actions
-
----
+- Model supply chain: artifact safety, provenance checks, repository risk signals, SBOM-oriented workflows
+- LLM and agent security: prompt-injection evaluation, tool-call inspection, exfiltration and PII-leak detection
+- Adversarial ML: attack implementation, invariant testing, robustness evaluation design
+- Data security: poisoning detection, drift analysis, webhook/API hardening
+- Secure serving: authentication, authorization, rate limiting, audit logging, service health checks
+- Evidence systems: reproducible benchmark contracts, claim registries, immutable source/data/config identifiers
 
 ## Research and Publications
 
@@ -42,9 +40,19 @@ Contributed to a graduate research practicum exploring AI and cybersecurity chal
 - **Smart Charge Pro Empowering Future Mobility With Advanced Safety And Efficiency In Electric Vehicle Charging Infrastructure**  
   IOSR Journal of Computer Engineering, 2023: https://www.iosrjournals.org/iosr-jce/pages/25(4)Series-1.html
 
----
+## Maintenance
 
-## Availability and Contact
+```powershell
+py -3.12 -m pip install -r requirements-dev.txt
+py -3.12 -m pytest
+python -m pytest
+python tools/validate_claims.py
+python tools/build_security_dashboard.py
+```
+
+Scheduled validation checks claim freshness and external links. It opens an issue when evidence becomes stale or unreachable; it never silently edits public claims.
+
+## Contact
 
 - Location: Greater Phoenix Area, AZ
 - Visa: F-1 OPT; H-1B sponsorship needed
@@ -53,18 +61,4 @@ Contributed to a graduate research practicum exploring AI and cybersecurity chal
 - GitHub: [github.com/poojakira](https://github.com/poojakira)
 - LinkedIn: [linkedin.com/in/poojakiran](https://linkedin.com/in/poojakiran)
 
----
-
-*Last updated: July 2026. Claims are limited to public, inspectable work.*
-
-## Operational Runbook
-
-Verified profile-maintenance path uses [RUNBOOK.md](RUNBOOK.md). Minimal validation:
-
-```powershell
-py -3.12 -m pip install -r requirements-dev.txt
-py -3.12 -m pytest tests -q
-```
-
-
-<!-- /engineering-update-2026-07-27 -->
+*Last updated: July 2026. Claims are limited to public, inspectable evidence recorded in the claim registry.*
