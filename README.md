@@ -1,6 +1,6 @@
 # Pooja Kiran - ML Security Engineering
 
-I spend most of my time thinking about how ML systems break — and how to stop that from happening. My work sits at the intersection of AI and security: scanning model repositories for sketchy artifacts, hardening MCP gateways, red-teaming LLMs, hunting for poisoned training data, and testing models against privacy attacks. I also dabble in RUL forecasting and anomaly detection research on the side.
+I spend most of my time thinking about how ML systems break and how to stop that from happening. My work sits at the intersection of AI and security: scanning model repositories for sketchy artifacts, hardening MCP gateways, red-teaming LLMs, hunting for poisoned training data, and testing models against privacy attacks. I also dabble in RUL forecasting and anomaly detection research on the side.
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/poojakiran)
 [![Email](https://img.shields.io/badge/Email-Reach%20Me-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:poojakiranbhardwaj@gmail.com)
