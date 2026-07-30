@@ -1,13 +1,14 @@
-# Pooja Kiran - ML Security Engineering Portfolio
+# Pooja Kiran - ML Security Engineering
 
-I work on defensive AI/ML security systems: model repository scanning, MCP gateway enforcement, LLM evaluation, dataset-poisoning analysis, model privacy evaluation, adversarial robustness, and RUL/anomaly-serving research.
+I spend most of my time thinking about how ML systems break — and how to stop that from happening. My work sits at the intersection of AI and security: scanning model repositories for sketchy artifacts, hardening MCP gateways, red-teaming LLMs, hunting for poisoned training data, and testing models against privacy attacks. I also dabble in RUL forecasting and anomaly detection research on the side.
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/poojakiran)
 [![Email](https://img.shields.io/badge/Email-Reach%20Me-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:poojakiranbhardwaj@gmail.com)
 
 ## Evidence Policy
 
-This profile is an evidence index, not a scoreboard. Claims are maintained in [claims/registry.json](claims/registry.json) and rendered into [security-dashboard.html](security-dashboard.html). Documentation keyword presence does not count as an implemented control. Missing CI, signed release, coverage, SBOM, provenance, or benchmark evidence remains visible as a limitation.
+I treat this page as an evidence index, not a scoreboard. Every claim lives in [claims/registry.json](claims/registry.json) and rendered into [security-dashboard.html](security-dashboard.html). Documentation keyword presence does not count as an implemented control. Missing CI, signed release, coverage, SBOM, provenance, or benchmark evidence remains visible as a limitation.
+
 
 ## Selected Public Work
 
