@@ -7,8 +7,7 @@ I spend most of my time thinking about how ML systems break and how to stop that
 
 ## Evidence Policy
 
-I treat this page as an evidence index, not a scoreboard. Every claim lives in [claims/registry.json](claims/registry.json) and rendered into [security-dashboard.html](security-dashboard.html). Documentation keyword presence does not count as an implemented control. Missing CI, signed release, coverage, SBOM, provenance, or benchmark evidence remains visible as a limitation.
-
+I treat this page as an evidence index, not a scoreboard. Every claim lives in [claims/registry.json](claims/registry.json) and is rendered into [security-dashboard.html](security-dashboard.html). Documentation keyword presence does not count as an implemented control. Missing CI, signed release, coverage, SBOM, provenance, or benchmark evidence remains visible as a limitation.
 
 ## Selected Public Work
 
