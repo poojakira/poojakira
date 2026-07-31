@@ -34,7 +34,6 @@ def build_manifest() -> dict[str, Any]:
         "source": {
             "repository": "https://github.com/poojakira/poojakira",
             "commit": git_value(["git", "rev-parse", "HEAD"]),
-            "tree_state": git_value(["git", "status", "--short"]),
         },
         "limitations": "This is a deterministic digest manifest for profile artifacts. It is not SLSA provenance and is not signed.",
     }
@@ -45,7 +44,9 @@ def main(argv: list[str] | None = None) -> None:
     parser.add_argument("--output", type=Path, default=DEFAULT_OUT)
     args = parser.parse_args(argv)
     args.output.parent.mkdir(parents=True, exist_ok=True)
-    args.output.write_text(json.dumps(build_manifest(), indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    args.output.write_text(
+        json.dumps(build_manifest(), indent=2, sort_keys=True) + "\n", encoding="utf-8"
+    )
     print(f"wrote {args.output}")
 
 
