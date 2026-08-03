@@ -9,17 +9,29 @@ I spend most of my time thinking about how ML systems break and how to stop that
 
 I treat this page as an evidence index, not a scoreboard. Every claim lives in [claims/registry.json](claims/registry.json) and is rendered into [security-dashboard.html](security-dashboard.html). Documentation keyword presence does not count as an implemented control. Missing CI, signed release, coverage, SBOM, provenance, or benchmark evidence remains visible as a limitation.
 
+## Live Dashboards
+
+All project dashboards are hosted at: **[poojakira.github.io/mlsec-dashboards](https://poojakira.github.io/mlsec-dashboards/)**
+
+Each dashboard shows real evidence data from benchmark runs — scan results, detection metrics, performance numbers.
+
 ## Selected Public Work
 
-| Project | Type | Scope |
+| Project | Type | Dashboard |
 | :--- | :--- | :--- |
-| [hf-model-provenance-scanner](https://github.com/poojakira/hf-model-provenance-scanner) | Research library | Model repository provenance and unsafe artifact signal scanning. |
-| [mcp-security-gateway-monitor](https://github.com/poojakira/mcp-security-gateway-monitor) | Prototype service | MCP security gateway and policy-enforcement hardening work. |
-| [llm-redteam-framework](https://github.com/poojakira/llm-redteam-framework) | Research library | Defensive LLM prompt-attack evaluation workflows. |
-| [dataset-poisoning-detector](https://github.com/poojakira/dataset-poisoning-detector) | Research service | Dataset poisoning and anomalous-sample analysis. |
-| [model-privacy-attacks](https://github.com/poojakira/model-privacy-attacks) | Research library | Model privacy attack evaluation methodology. |
-| [adversarial-ml-lab](https://github.com/poojakira/adversarial-ml-lab) | Prototype research library | FGSM, PGD, C&W and robustness experiment code. |
-| [PulseNet-RUL-Forecasting](https://github.com/poojakira/PulseNet-RUL-Forecasting) | Joint research service prototype | Jointly authored RUL forecasting and anomaly-serving research. |
+| [hf-model-provenance-scanner](https://github.com/poojakira/hf-model-provenance-scanner) | Model supply chain scanner | [Dashboard](https://poojakira.github.io/mlsec-dashboards/hf-model-provenance-scanner/) |
+| [mcp-security-gateway-monitor](https://github.com/poojakira/mcp-security-gateway-monitor) | MCP tool-call firewall (51% detection rate) | [Dashboard](https://poojakira.github.io/mlsec-dashboards/mcp-security-gateway-monitor/) |
+| [llm-redteam-framework](https://github.com/poojakira/llm-redteam-framework) | Prompt injection detector (F1=0.93) | [Dashboard](https://poojakira.github.io/mlsec-dashboards/llm-redteam-framework/) |
+| [dataset-poisoning-detector](https://github.com/poojakira/dataset-poisoning-detector) | Training data anomaly flagging (ROC-AUC ~0.54) | [Dashboard](https://poojakira.github.io/mlsec-dashboards/dataset-poisoning-detector/) |
+| [model-privacy-attacks](https://github.com/poojakira/model-privacy-attacks) | Membership inference + extraction attacks | [Dashboard](https://poojakira.github.io/mlsec-dashboards/model-privacy-attacks/) |
+| [adversarial-ml-lab](https://github.com/poojakira/adversarial-ml-lab) | FGSM/PGD/C&W attack + defense evaluation | [Dashboard](https://poojakira.github.io/mlsec-dashboards/adversarial-ml-lab/) |
+| [PulseNet-RUL-Forecasting](https://github.com/poojakira/PulseNet-RUL-Forecasting) | ICS/OT equipment RUL prediction (F1=0.54) | [Dashboard](https://poojakira.github.io/mlsec-dashboards/PulseNet-RUL-Forecasting/) |
+| [attack-v19-core](https://github.com/poojakira/attack-v19-core) | MITRE ATT&CK v19 data models | [Dashboard](https://poojakira.github.io/mlsec-dashboards/attack-v19-core/) |
+| [attack-detection-engine](https://github.com/poojakira/attack-detection-engine) | 5-source telemetry detection (42 rules) | [Dashboard](https://poojakira.github.io/mlsec-dashboards/attack-detection-engine/) |
+| [aws-agent-identity-guard](https://github.com/poojakira/aws-agent-identity-guard) | IAM policy linter for AI agents | [Dashboard](https://poojakira.github.io/mlsec-dashboards/aws-agent-identity-guard/) |
+| [unified-ml-security-platform](https://github.com/poojakira/unified-ml-security-platform) | Architecture spec (not a running platform) | [Dashboard](https://poojakira.github.io/mlsec-dashboards/unified-ml-security-platform/) |
+| [mlsec-benchmark-suite](https://github.com/poojakira/mlsec-benchmark-suite) | Benchmark runner (smoke tests only) | [Dashboard](https://poojakira.github.io/mlsec-dashboards/mlsec-benchmark-suite/) |
+| [ml-security-command-center](https://github.com/poojakira/ml-security-command-center) | Aggregate status view (simulated data) | [Dashboard](https://poojakira.github.io/mlsec-dashboards/ml-security-command-center/) |
 
 ## Technical Focus
 
