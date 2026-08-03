@@ -1,4 +1,4 @@
-# Pooja Kiran - ML Security Engineering
+# Pooja Kiran - AI/ ML Security Engineering
 
 I spend most of my time thinking about how ML systems break and how to stop that from happening. My work sits at the intersection of AI and security: scanning model repositories for sketchy artifacts, hardening MCP gateways, red-teaming LLMs, hunting for poisoned training data, and testing models against privacy attacks. I also dabble in RUL forecasting and anomaly detection research on the side.
 
