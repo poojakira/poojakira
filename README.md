@@ -5,7 +5,7 @@ Security engineer focused on AI/ML workload protection on AWS. I build tools tha
 ## What I Ship
 
 ### [aws-agent-identity-guard](https://github.com/poojakira/aws-agent-identity-guard)
-Static IAM policy linter for AI agent roles. 25 rules targeting Bedrock, SageMaker, Lambda, and ECS agent permissions. Zero runtime dependencies. SARIF output for CI gating.
+Static IAM policy linter for AI agent roles. 22 rules targeting Bedrock, SageMaker, Lambda, and ECS agent permissions. Zero runtime dependencies. SARIF output for CI gating.
 
 ```bash
 pip install aws-agent-identity-guard
