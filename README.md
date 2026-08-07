@@ -34,8 +34,9 @@ Supply chain security scanner for HuggingFace models. Detects malicious pickle o
 
 - **IAM for AI agents** — Least-privilege policies for Bedrock, SageMaker, MCP servers
 - **Model supply chain** — Binary analysis of pickle/safetensors/GGUF without execution
+- **Workflow automation** — n8n pipelines for scan orchestration, alert routing, and automated quarantine
 - **Threat modeling** — STRIDE for ML pipelines, MITRE ATT&CK v19 mapping
-- **Zero-cost tooling** — Stdlib-only Python, no cloud services required for core functionality
+- **Zero-cost tooling** — Stdlib-only Python, n8n Community Edition, no paid services required
 
 ## Evidence Policy
 
