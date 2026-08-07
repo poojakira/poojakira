@@ -1,29 +1,42 @@
-# Pooja Kiran — ML Security Engineer
+# Pooja Kiran
 
-Building security tooling for the ML lifecycle: model supply chain security, LLM red-teaming, adversarial robustness, and privacy-preserving ML.
+Security engineer focused on AI/ML workload protection on AWS. I build tools that catch real misconfigurations before they become incidents.
 
-[GitHub](https://github.com/poojakira) · [LinkedIn](https://linkedin.com/in/poojakiran)
+## What I Ship
 
-## Projects
+### [aws-agent-identity-guard](https://github.com/poojakira/aws-agent-identity-guard)
+Static IAM policy linter for AI agent roles. 25 rules targeting Bedrock, SageMaker, Lambda, and ECS agent permissions. Zero runtime dependencies. SARIF output for CI gating.
 
-| Repo | What It Does | Key Threat | Status | Evidence |
-|------|-------------|-----------|--------|----------|
-| [llm-redteam-framework](https://github.com/poojakira/llm-redteam-framework) | FastAPI scan service: prompt injection, PII leakage, RAG poisoning → SARIF output, PR gate | LLM01 Prompt Injection | F1=0.70 OOD / 0.93 curated | [`results/scan_metrics.json`](https://github.com/poojakira/llm-redteam-framework/blob/main/results/scan_metrics.json) |
-| [hf-model-provenance-scanner](https://github.com/poojakira/hf-model-provenance-scanner) | Scan HuggingFace models for supply chain attacks; Ed25519 model signing | T1683.001 ML Supply Chain | 12/12 internal fixture suite | [`tests/redteam/`](https://github.com/poojakira/hf-model-provenance-scanner/tree/main/tests/redteam) |
-| [mcp-security-gateway-monitor](https://github.com/poojakira/mcp-security-gateway-monitor) | MCP tool-call security monitor — layered call inspection and policy decisions | T1684, T1687 | P99 < 5ms per tool call | [`benchmark/`](https://github.com/poojakira/mcp-security-gateway-monitor/tree/main/benchmark) |
-| [adversarial-ml-lab](https://github.com/poojakira/adversarial-ml-lab) | FGSM/PGD/C&W attacks on CIFAR-10 ResNet-18; Madry adversarial training | AML.T0043 Craft Adversarial Data | Literature-consistent results (no weights committed) | [`results/cifar10_resnet18_benchmark.json`](https://github.com/poojakira/adversarial-ml-lab/blob/main/results/cifar10_resnet18_benchmark.json) |
-| [model-privacy-attacks](https://github.com/poojakira/model-privacy-attacks) | Yeom MIA, Fredrikson inversion, DP-SGD defense (synthetic data) | T1685 ML Privacy | MIA advantage=0.42; ε=0.54 at σ=4.0 | [`results/mia_advantage_report.json`](https://github.com/poojakira/model-privacy-attacks/blob/main/results/mia_advantage_report.json) |
-| [dataset-poisoning-detector](https://github.com/poojakira/dataset-poisoning-detector) | Anomaly screening for training data integrity | T1685, T1688 | Research baseline | [`README.md`](https://github.com/poojakira/dataset-poisoning-detector/blob/main/README.md) |
-| [PulseNet-RUL-Forecasting](https://github.com/poojakira/PulseNet-RUL-Forecasting) | Jointly authored RUL forecasting and anomaly-serving research; STRIDE threat model | 12 STRIDE surfaces | F1=0.54 Isolation Forest, NASA C-MAPSS FD001 | [`docs/evidence/validation_results.json`](https://github.com/poojakira/PulseNet-RUL-Forecasting/blob/main/docs/evidence/validation_results.json) |
+```bash
+pip install aws-agent-identity-guard
+aws-agent-identity-guard deploy/agent-role-policy.json
+```
+Catches: unconstrained PassRole, wildcard tool execution, Bedrock control-plane in runtime roles, audit-trail tampering, missing session tags.
 
-## Security Engineering Focus
+### [hf-model-provenance-scanner](https://github.com/poojakira/hf-model-provenance-scanner)
+Supply chain security scanner for HuggingFace models. Detects malicious pickle opcodes, safetensors metadata injection, obfuscated Python, and typosquatted organizations. Taint engine with symbolic resolution — capabilities not in Protect AI's ModelScan.
 
-- **Threat Modeling**: STRIDE across ML pipelines; MITRE ATLAS + ATT&CK v19 mapping
-- **Privacy**: Membership inference (Yeom 2018), model inversion (Fredrikson 2015), DP-SGD
-- **Supply Chain**: Ed25519 model signing, SHA-256 artifact manifests, SARIF CI gates
-- **LLM Security**: OWASP LLM Top 10, RAG poisoning detection, canary token tracking
-- **Adversarial ML**: FGSM, PGD, C&W attacks; Madry AT on CIFAR-10 ResNet-18
+- 12/12 internal incident-reproduction fixtures detected
+- FP rate: 5.9% on known-good configs from meta-llama, google, mistralai, microsoft
+- P99 < 5ms for header-only mode
+
+## Research & Reference Implementations
+
+| Repo | What | Honest Status |
+|------|------|---------------|
+| [mcp-security-gateway-monitor](https://github.com/poojakira/mcp-security-gateway-monitor) | MCP tool-call security monitor | 51% detection — architecture prototype, not production |
+| [model-privacy-attacks](https://github.com/poojakira/model-privacy-attacks) | Membership inference + DP-SGD | Educational. Synthetic data only. |
+| [adversarial-ml-lab](https://github.com/poojakira/adversarial-ml-lab) | FGSM/PGD/C&W attack library | Educational. Use IBM ART for production. |
+| [PulseNet-RUL-Forecasting](https://github.com/poojakira/PulseNet-RUL-Forecasting) | Secure MLOps reference architecture | STRIDE threat model + security controls. F1=0.54 ML. |
+| [attack-v19-core](https://github.com/poojakira/attack-v19-core) | MITRE ATT&CK v19 data models | Typed Pydantic wrapper + v19 revocation map |
+
+## What I Focus On
+
+- **IAM for AI agents** — Least-privilege policies for Bedrock, SageMaker, MCP servers
+- **Model supply chain** — Binary analysis of pickle/safetensors/GGUF without execution
+- **Threat modeling** — STRIDE for ML pipelines, MITRE ATT&CK v19 mapping
+- **Zero-cost tooling** — Stdlib-only Python, no cloud services required for core functionality
 
 ## Evidence Policy
 
-All metrics link to committed JSON artifacts in their respective repositories. Synthetic data results are marked as such. Each repo README states what is and is not production-ready. No metric is claimed without a reproducible evidence file.
+Every metric in this profile links to a committed artifact. Synthetic results are labeled. No metric is claimed without a reproducible evidence file. I'd rather report F1=0.54 honestly than fake 0.95.
