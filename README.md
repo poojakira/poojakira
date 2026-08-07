@@ -19,6 +19,7 @@ Supply chain security scanner for HuggingFace models. Detects malicious pickle o
 - 12/12 internal incident-reproduction fixtures detected
 - FP rate: 5.9% on known-good configs from meta-llama, google, mistralai, microsoft
 - P99 < 5ms for header-only mode
+- [n8n SOC automation workflows](https://github.com/poojakira/hf-model-provenance-scanner/blob/main/integrations/N8N_MASTERY.md) — 18-node incident pipeline with Redis dedup, MITRE enrichment, auto-remediation
 
 ## Research & Reference Implementations
 
