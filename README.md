@@ -2,6 +2,8 @@
 
 I build security tooling for AI agent infrastructure.
 
+[GitHub](https://github.com/poojakira) · [LinkedIn](https://linkedin.com/in/poojakiran)
+
 ## Tools
 
 ### [aws-agent-identity-guard](https://github.com/poojakira/aws-agent-identity-guard)
