@@ -18,7 +18,7 @@ def test_public_profile_contains_selected_repos_and_contact_links():
         "adversarial-ml-lab",
     ]:
         assert f"https://github.com/poojakira/{repo}" in readme
-    assert "Jointly authored RUL forecasting" in readme
+    assert "aws-agent-identity-guard" in readme
     assert "production-grade" not in readme.lower()
     assert "https://github.com/poojakira" in readme
     assert "https://linkedin.com/in/poojakiran" in readme
