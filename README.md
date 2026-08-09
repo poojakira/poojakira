@@ -1,10 +1,16 @@
 <!-- Animated gradient header (renders on GitHub) -->
 <p align="center">
+<<<<<<< HEAD
   <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0b3d91,50:1f6feb,100:6f42c1&height=200&section=header&text=Pooja%20Kiran&fontSize=52&fontColor=ffffff&desc=AI%2FML%20Security%20Engineer&descSize=22&descAlignY=60" alt="Pooja Kiran — AI/ML Security Engineer" />
+=======
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0b3d91,50:1f6feb,100:6f42c1&height=180&section=header&text=Pooja%20Kiran&fontSize=54&fontColor=ffffff&fontAlignY=42" alt="Pooja Kiran" />
+>>>>>>> b48b009 (fix: remove flaky github-readme-stats (503) and typing-svg (403); fix header spacing (name + clean title))
 </p>
 
+<h2 align="center">AI/ML Security Engineer</h2>
+
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=20&duration=3200&pause=800&color=1F6FEB&center=true&vCenter=true&width=720&lines=Securing+AI+agents%2C+models%2C+and+the+MCP+supply+chain;IAM+for+agents+%7C+Model+provenance+%7C+MCP+gateway;Evidence-first%3A+every+claim+ties+to+a+reproducible+artifact" alt="typing" />
+  <em>Securing AI agents, models, and the MCP supply chain &nbsp;·&nbsp; evidence-first, every claim ties to a reproducible artifact</em>
 </p>
 
 <p align="center">
@@ -146,8 +152,10 @@ Development.
 ---
 
 <p align="center">
-  <img height="165" src="https://github-readme-stats.vercel.app/api?username=poojakira&show_icons=true&theme=github_dark&hide_border=true&count_private=true" alt="GitHub stats" />
-  <img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=poojakira&layout=compact&theme=github_dark&hide_border=true&langs_count=6" alt="Top languages" />
+  <img src="https://img.shields.io/badge/Open--Source_Security_Tools-3-1f6feb?style=flat-square" alt="tools" />
+  <img src="https://img.shields.io/badge/IEEE_Publication-INDICON_2023-6f42c1?style=flat-square" alt="publication" />
+  <img src="https://img.shields.io/badge/MS_Information_Technology-3.87_GPA-2ea44f?style=flat-square" alt="gpa" />
+  <img src="https://img.shields.io/github/followers/poojakira?style=flat-square&label=Followers&color=0b3d91" alt="followers" />
 </p>
 
 <p align="center"><sub>Evidence policy: every metric above links to a committed, reproducible artifact in its repo. Numbers are measured, not estimated.</sub></p>
