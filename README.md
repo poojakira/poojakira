@@ -3,9 +3,7 @@
 <<<<<<< HEAD
   <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0b3d91,50:1f6feb,100:6f42c1&height=200&section=header&text=Pooja%20Kiran&fontSize=52&fontColor=ffffff&desc=AI%2FML%20Security%20Engineer&descSize=22&descAlignY=60" alt="Pooja Kiran — AI/ML Security Engineer" />
 =======
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0b3d91,50:1f6feb,100:6f42c1&height=180&section=header&text=Pooja%20Kiran&fontSize=54&fontColor=ffffff&fontAlignY=42" alt="Pooja Kiran" />
->>>>>>> b48b009 (fix: remove flaky github-readme-stats (503) and typing-svg (403); fix header spacing (name + clean title))
-</p>
+  
 
 <h2 align="center">AI/ML Security Engineer</h2>
 
