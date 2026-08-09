@@ -1,6 +1,5 @@
 <!-- Animated gradient header (renders on GitHub) -->
 <p align="center">
-<<<<<<< HEAD
   <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0b3d91,50:1f6feb,100:6f42c1&height=200&section=header&text=Pooja%20Kiran&fontSize=52&fontColor=ffffff&desc=AI%2FML%20Security%20Engineer&descSize=22&descAlignY=60" alt="Pooja Kiran — AI/ML Security Engineer" />
 =======
   
