@@ -81,15 +81,15 @@
       "limitations": "No clean or robust accuracy metric is claimed without generated benchmark-suite evidence."
     },
     {
-      "claim": "PulseNet-RUL-Forecasting is a jointly authored RUL forecasting and anomaly-serving research project.",
+      "claim": "PulseNet-RUL-Forecasting was a joint RUL forecasting research project; archived 2026-08-11 as experimental/not production-ready.",
       "repository": "poojakira/PulseNet-RUL-Forecasting",
-      "project_type": "joint research service prototype",
-      "evidence_type": "current_documentation",
-      "evidence_url": "https://github.com/poojakira/PulseNet-RUL-Forecasting/commit/791bad27ad84110cfe947a1ea1d02d1852a70630",
+      "project_type": "archived research prototype",
+      "evidence_type": "archive_decision_record",
+      "evidence_url": "https://github.com/poojakira/PulseNet-RUL-Forecasting/blob/main/ARCHIVE.md",
       "source_commit": "791bad27ad84110cfe947a1ea1d02d1852a70630",
-      "measurement_date": "2026-07-29",
-      "status": "verified_public_repository",
-      "limitations": "Joint authorship must be preserved. No dashboard RUL, production deployment, Kubernetes, or security metric is claimed without reproducible evidence."
+      "measurement_date": "2026-08-11",
+      "status": "archived",
+      "limitations": "Not production-ready. No validated deployment, security controls, or field evidence. See ARCHIVE.md for reopening criteria."
     }
   ]
 }

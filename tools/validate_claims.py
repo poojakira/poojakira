@@ -31,6 +31,7 @@ ALLOWED_EVIDENCE_TYPES = {
     "provenance",
     "benchmark_result",
     "current_documentation",
+    "archive_decision_record",
 }
 ALLOWED_STATUSES = {
     "verified_documentation",
@@ -41,6 +42,7 @@ ALLOWED_STATUSES = {
     "stale",
     "blocked",
     "unverified",
+    "archived",
 }
 FORBIDDEN_CLAIM_TERMS = {
     "production-grade",

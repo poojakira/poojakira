@@ -12,7 +12,6 @@ def test_public_profile_contains_selected_repos_and_contact_links():
         "hf-model-provenance-scanner",
         "mcp-security-gateway-monitor",
         "llm-redteam-framework",
-        "PulseNet-RUL-Forecasting",
         "dataset-poisoning-detector",
         "model-privacy-attacks",
         "adversarial-ml-lab",

@@ -1,8 +1,6 @@
 <!-- Animated gradient header (renders on GitHub) -->
 <p align="center">
   <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0b3d91,50:1f6feb,100:6f42c1&height=200&section=header&text=Pooja%20Kiran&fontSize=52&fontColor=ffffff&descSize=22&descAlignY=60" alt="Pooja Kiran — AI/ML Security Engineer" />
-=======
-  
 
 <h2 align="center">AI/ML Security Engineer</h2>
 
@@ -35,14 +33,14 @@ evidence-first: every claim on this profile ties to a reproducible artifact you 
 Static IAM policy linter for AI agent roles. **25 rules** across Bedrock, SageMaker, and Lambda,
 zero runtime dependencies, SARIF output, and a CI gate that blocks over-privileged policies before
 they deploy. Includes kill-chain rules (AIG019-021) modeled on the 2026 OpenAI–Hugging Face
-incident: it flags the credential-harvest + lateral-movement combination that turned a foothold
-into a three-day breach.
+incident: it flags the credential-harvest + lateral-movement combination that escalated a foothold
+into extended compromise.
 `pip install -e .` · zero deps · SARIF · [`--live-scan`] real AWS accounts
 
 ### 🔬 [hf-model-provenance-scanner](https://github.com/poojakira/hf-model-provenance-scanner)
 Model supply-chain scanner that detects pickle RCE, SafeTensors injection, and typosquatting
 through a taint engine with symbolic resolution. In a head-to-head against Protect AI's ModelScan
-0.8.8 it caught **8/8 payloads to ModelScan's 6/8**, reproduced **12/12** 2024–26 CVEs, and
+0.8.8 it caught **8/8 payloads to ModelScan's 6/8**, reproduced **12 incident fixtures** (2 CVEs + 10 research cases) from 2024–26, and
 produced **0 false positives** on legitimate sklearn/PyTorch/numpy models. Scans a Hugging Face
 URL over HTTP range requests, so it flags a malicious model *before* you download the weights.
 
@@ -59,7 +57,6 @@ Adversarial ML and privacy research, all mapped to MITRE ATLAS and the NIST AI R
 - [adversarial-ml-lab](https://github.com/poojakira/adversarial-ml-lab) — FGSM / PGD / C&W attacks benchmarked against a real pretrained ResNet-18.
 - [model-privacy-attacks](https://github.com/poojakira/model-privacy-attacks) — Yeom / Shokri / LiRA membership inference, model inversion, and a DP-SGD defense, with a privacy-risk assessment on the real UCI Adult dataset.
 - [dataset-poisoning-detector](https://github.com/poojakira/dataset-poisoning-detector) — spectral-signature detection for label-flip data poisoning, including a scan-before-you-train check for Hugging Face datasets.
-- [PulseNet-RUL-Forecasting](https://github.com/poojakira/PulseNet-RUL-Forecasting) — a NASA C-MAPSS remaining-useful-life forecaster (1D-CNN, RMSE 13.19) wrapped in a secure-MLOps pipeline with STRIDE threat modeling, RBAC, and a tamper-evident audit log.
 
 ---
 
@@ -114,7 +111,7 @@ Adversarial ML and privacy research, all mapped to MITRE ATLAS and the NIST AI R
   `pip`-installable with zero runtime deps.
 - Built **hf-model-provenance-scanner**, a model supply-chain scanner detecting pickle RCE,
   SafeTensors injection, and typosquatting via a taint engine with symbolic resolution. Detected
-  8/8 payloads vs 6/8 for Protect AI ModelScan, reproduced 12/12 2024–26 CVEs, 0 false positives.
+  8/8 payloads vs 6/8 for Protect AI ModelScan, reproduced 12 incident fixtures (2 CVEs + 10 research cases) 2024–26, 0 false positives.
 - Built **mcp-security-gateway-monitor**, a JSON-RPC 2.0 proxy inspecting every MCP tool call
   against 55 patterns for prompt injection and data exfiltration, with Unicode normalization,
   hash-chained audit logging, and Kubernetes deployment manifests.
