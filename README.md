@@ -17,7 +17,7 @@ I build security controls around AI/ML systems: model supply-chain checks, LLM/a
 | [dataset-poisoning-detector](https://github.com/poojakira/dataset-poisoning-detector) | Dataset poisoning and anomalous-sample detection experiments. | Public repo |
 | [model-privacy-attacks](https://github.com/poojakira/model-privacy-attacks) | Membership-inference and model-privacy attack evaluation. | Public repo |
 | [adversarial-ml-lab](https://github.com/poojakira/adversarial-ml-lab) | FGSM, PGD, and C&W adversarial ML attacks plus adversarial-training defenses. | Prototype |
-| [PulseNet-RUL-Forecasting](https://github.com/poojakira/PulseNet-RUL-Forecasting) | RUL forecasting and FDIA attack verification. | Public repo |
+| [PulseNet-RUL-Forecasting](https://github.com/poojakira/PulseNet-RUL-Forecasting) | NASA C-MAPSS RUL research prototype. | **Archived** |
 
 ---
 
@@ -55,7 +55,7 @@ Contributed to a graduate research practicum exploring AI and cybersecurity chal
 
 ---
 
-*Last updated: July 2026. Claims are limited to public, inspectable work.*
+*Last updated: August 2026. Claims are limited to public, inspectable work with traceable evidence.*
 
 ## Operational Runbook
 
