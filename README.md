@@ -1,6 +1,6 @@
-# Pooja Kiran - ML Security Engineer
+# Pooja Kiran - AI Agent Security Engineer 
 
-I build security controls around AI/ML systems: model supply-chain checks, LLM/agent security monitoring, adversarial robustness experiments, dataset-poisoning detection, model privacy evaluation, and secure ML serving.
+I build security controls around AI systems: model supply-chain checks, LLM/agent security monitoring, adversarial robustness experiments, dataset-poisoning detection, model privacy evaluation, and secure ML serving.
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/poojakiran)
 [![Email](https://img.shields.io/badge/Email-Reach%20Me-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:poojakiranbhardwaj@gmail.com)
@@ -32,7 +32,7 @@ I build security controls around AI/ML systems: model supply-chain checks, LLM/a
 
 ---
 
-## Research and Publications
+##   AI Research and Publications
 
 **Cybersecurity Innovation Researcher - TEM 598 Technology Innovation Lab, Arizona State University x Honeywell Aerospace Innovation Hub.**
 Contributed to a graduate research practicum exploring AI and cybersecurity challenges for aerospace systems.
