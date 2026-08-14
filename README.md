@@ -4,7 +4,7 @@
 
 **Agent Runtime Security · MCP & Tool Security · Agent Identity & Authorization · AI/ML Security**
 
-I build security boundaries for AI agents and autonomous systems — controlling **what agents can access, which tools they can invoke, how identities and permissions are scoped, how agent actions are monitored, and how malicious or unintended behavior is detected and contained**.
+I build security boundaries for AI agents and autonomous systems controlling **what agents can access, which tools they can invoke, how identities and permissions are scoped, how agent actions are monitored, and how malicious or unintended behavior is detected and contained**.
 
 My work spans agent runtime security, MCP and tool-call inspection, least-privilege cloud identity, AI supply-chain security, adversarial evaluation, and security controls designed to produce **inspectable and reproducible evidence**.
 
