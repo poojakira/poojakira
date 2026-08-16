@@ -10,7 +10,7 @@ Recent work includes an inline MCP security gateway, an AWS IAM policy analyzer 
 
 I care about security engineering that is testable, reproducible, and honest about its limitations.
 
-[LinkedIn](https://linkedin.com/in/poojakiran) | [Portfolio](https://poojakira.github.io/Pooja_Kiran_Portfolio_Website/) | [Resume](https://poojakira.github.io/Pooja_Kiran_Portfolio_Website/Pooja_Kiran.pdf) | [Email](mailto:poojakiranbhardwaj@gmail.com)
+[LinkedIn](https://linkedin.com/in/poojakiran) | [Portfolio](https://poojakira.github.io/Pooja_Kiran_Portfolio_Website/) | [Email](mailto:poojakiranbhardwaj@gmail.com)
 
 ---
 
