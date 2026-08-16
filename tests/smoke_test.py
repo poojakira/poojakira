@@ -8,7 +8,7 @@ def test_public_profile_contains_selected_repos_and_contact_links():
     readme = (ROOT / "README.md").read_text(encoding="utf-8")
     for repo in [
         "hf-model-provenance-scanner",
-        "mcp-security-gateway-monitor",
+        "mcp-agent-security-gateway",
         "llm-redteam-framework",
         "PulseNet-RUL-Forecasting",
         "dataset-poisoning-detector",

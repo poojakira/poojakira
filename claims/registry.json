@@ -26,12 +26,12 @@
       "limitations": "No portfolio claim is made here for green required CI, signed release, SBOM, benchmark results, or production deployment."
     },
     {
-      "claim": "mcp-security-gateway-monitor is an MCP security gateway prototype under active hardening.",
-      "repository": "poojakira/mcp-security-gateway-monitor",
+      "claim": "mcp-agent-security-gateway is an MCP security gateway prototype under active hardening.",
+      "repository": "poojakira/mcp-agent-security-gateway",
       "project_type": "prototype service",
       "evidence_type": "current_documentation",
-      "evidence_url": "https://github.com/poojakira/mcp-security-gateway-monitor/commit/448d3b786872e7abe217b57e60604c25b4c002f5",
-      "source_commit": "448d3b786872e7abe217b57e60604c25b4c002f5",
+      "evidence_url": "https://github.com/poojakira/mcp-agent-security-gateway/commit/060c4724df6fb386ad088a01b4fbcaa10275d003",
+      "source_commit": "060c4724df6fb386ad088a01b4fbcaa10275d003",
       "measurement_date": "2026-07-29",
       "status": "verified_public_repository",
       "limitations": "No portfolio claim is made here for full inline enforcement acceptance, green required CI, signed release, benchmark results, or production deployment."

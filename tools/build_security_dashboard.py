@@ -54,8 +54,8 @@ REPOS = (
         "PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 python -m pytest tests -q -ra -W error",
     ),
     RepoSpec(
-        "mcp-security-gateway-monitor",
-        "MCP tool-call security monitor",
+        "mcp-agent-security-gateway",
+        "MCP agent security gateway",
         ("prompt injection", "pii", "audit", "rate limit", "metrics", "docker"),
         "python -m pytest tests -q -ra",
     ),
@@ -157,7 +157,7 @@ ATTACK_COVERAGE = {
         "Sandboxing",
         "Detection Engineering",
     ],
-    "mcp-security-gateway-monitor": [
+    "mcp-agent-security-gateway": [
         "Prompt Injection",
         "Exfiltration",
         "PII Leakage",
@@ -195,7 +195,7 @@ ATTACK_COVERAGE = {
 MATURITY = {
     "poojakira": "Evidence Hub",
     "hf-model-provenance-scanner": "Operational Candidate",
-    "mcp-security-gateway-monitor": "Operational Candidate",
+    "mcp-agent-security-gateway": "Operational Candidate",
     "llm-redteam-framework": "Validated Prototype",
     "PulseNet-RUL-Forecasting": "Hardening",
     "dataset-poisoning-detector": "Hardening",

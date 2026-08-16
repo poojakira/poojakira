@@ -22,7 +22,7 @@ jobs:
       - name: Clone selected public repositories
         run: |
           set -euo pipefail
-          for repo in hf-model-provenance-scanner mcp-security-gateway-monitor llm-redteam-framework PulseNet-RUL-Forecasting dataset-poisoning-detector model-privacy-attacks adversarial-ml-lab; do
+          for repo in hf-model-provenance-scanner mcp-agent-security-gateway llm-redteam-framework PulseNet-RUL-Forecasting dataset-poisoning-detector model-privacy-attacks adversarial-ml-lab; do
             git clone --depth 1 "https://github.com/poojakira/${repo}.git" "../${repo}"
           done
       - name: Validate profile repository
