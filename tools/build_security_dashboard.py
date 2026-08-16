@@ -243,10 +243,12 @@ def render_operational_page(template: str, repos: list[dict[str, object]]) -> st
     end = template.index(";\n    const maturityOrder", start)
     payload = json.dumps(repos, separators=(",", ":"))
     page = template[:start] + payload + template[end:]
-    page = page.replace(
-        "Static evidence surface for selected public repositories.",
-        "Generated from checked-out repository files. Static evidence surface for selected public repositories.",
-    )
+    summary_prefix = "Generated from checked-out repository files."
+    summary_body = "Static evidence surface for selected public repositories."
+    while f"{summary_prefix} {summary_prefix}" in page:
+        page = page.replace(f"{summary_prefix} {summary_prefix}", summary_prefix)
+    if f"{summary_prefix} {summary_body}" not in page:
+        page = page.replace(summary_body, f"{summary_prefix} {summary_body}", 1)
     page = page.replace(
         "Scores below are derived from observable local files, tests, workflows, license presence, configured security terms, and known open checks in this snapshot; they are not certification claims.",
         "Scores below are derived from observable local files, tests, workflows, license presence, configured security terms, and known open checks in this snapshot; they are not a benchmark certification or production-readiness claim.",
