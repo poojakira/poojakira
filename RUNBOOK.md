@@ -7,12 +7,9 @@ Purpose: Public profile and portfolio evidence dashboard
 
 ## Build
 
-- Install: make install
 - Lint: make lint
 - Format: make format
 - Test: make test
-- Package build: make build
-- Security scan: make security
 - Full local gate: make verify
 
 ## Dashboard

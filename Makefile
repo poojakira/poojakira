@@ -1,4 +1,6 @@
-.PHONY: all demo smoke test dashboard provenance verify
+PYTHON ?= python
+
+.PHONY: all demo smoke test dashboard provenance verify lint format
 
 all: smoke
 
@@ -8,12 +10,18 @@ demo:
 smoke: test dashboard provenance
 
 test:
-	python -m pytest tests -q -ra -W error
+	$(PYTHON) -m pytest tests -q -ra -W error
 
 dashboard:
-	python tools/build_security_dashboard.py
+	$(PYTHON) tools/build_security_dashboard.py
 
 provenance: dashboard
-	python tools/write_profile_provenance.py
+	$(PYTHON) tools/write_profile_provenance.py
 
 verify: smoke
+
+lint:
+	$(PYTHON) -m ruff check tools tests
+
+format:
+	$(PYTHON) -m ruff format tools tests
