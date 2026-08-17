@@ -1,31 +1,119 @@
-# Runbook
+# Runbook — poojakira (GitHub Profile)
 
-## Engineering Update - 2026-07-27
+Step-by-step guide to run the profile validation and dashboard tools locally.
 
-Repository: poojakira
-Purpose: Public profile and portfolio evidence dashboard
+---
 
-## Build
+## Prerequisites
 
-- Lint: make lint
-- Format: make format
-- Test: make test
-- Full local gate: make verify
+- Python 3.10+ (`py --version` on Windows, `python3 --version` on Linux)
+- pip (bundled with Python)
+- Git
+- Sibling repos cloned in the same parent directory (for dashboard metrics)
 
-## Dashboard
+---
 
-3D operational dashboard: security-dashboard.html; make dashboard regenerates and preserves the 3D view.
+## Step 1: Clone
 
-## Dependencies And Data
+**Windows (PowerShell):**
+```powershell
+git clone https://github.com/poojakira/poojakira.git
+cd poojakira
+```
 
-Dashboard remains an evidence index, not a certification or production-readiness claim.
+**Linux/macOS:**
+```bash
+git clone https://github.com/poojakira/poojakira.git
+cd poojakira
+```
 
-## Validation Snapshot
+---
 
-Validated: profile smoke tests passed (5 tests), Ruff passed for tools/tests, generator py_compile passed, browser validation reported nonblank WebGL canvas.
+## Step 2: Install Dependencies
 
-## Operating Limits
+**Windows (PowerShell):**
+```powershell
+py -m pip install pytest ruff -q
+```
 
-- Re-check Linux and GitHub Actions after pushing to main.
-- Treat local dashboard scores as evidence indicators, not certifications.
-- Do not cite production readiness until clean CI, dependency audit, license status, and runtime smoke tests are current.
+**Linux/macOS:**
+```bash
+pip install pytest ruff
+```
+
+---
+
+## Step 3: Run Tests
+
+**Windows (PowerShell):**
+```powershell
+py -m pytest tests/ -q --tb=short
+```
+
+**Linux/macOS:**
+```bash
+pytest tests/ -q --tb=short
+```
+
+Expected: `5 passed`
+
+---
+
+## Step 4: Build Security Dashboard
+
+**Windows (PowerShell):**
+```powershell
+py tools/build_security_dashboard.py
+```
+
+**Linux/macOS:**
+```bash
+python3 tools/build_security_dashboard.py
+```
+
+Expected output: `wrote <path>/security-dashboard.html`
+
+Open `security-dashboard.html` in your browser to see the 3D security dashboard.
+
+---
+
+## Step 5: Lint
+
+**Windows (PowerShell):**
+```powershell
+py -m ruff check tools tests
+```
+
+**Linux/macOS:**
+```bash
+ruff check tools tests
+```
+
+Expected: `All checks passed!`
+
+---
+
+## Step 6: Makefile Targets
+
+If you have `make` installed:
+
+| Target | Command | What it does |
+|--------|---------|-------------|
+| test | `make test PYTHON=py` | Run all tests |
+| lint | `make lint PYTHON=py` | Lint tools and tests |
+| format | `make format PYTHON=py` | Auto-format code |
+| dashboard | `make dashboard PYTHON=py` | Regenerate dashboard HTML |
+| verify | `make verify PYTHON=py` | Full local gate (all checks) |
+
+> **Windows note:** Add `PYTHON=py` to all make commands since `python` may not be on PATH.
+
+---
+
+## Troubleshooting
+
+| Problem | Solution |
+|---------|----------|
+| `py` not found | Install Python from python.org, ensure "Add to PATH" is checked |
+| `make` not found | Install via `winget install GnuWin32.Make` or run commands directly |
+| Tests fail | Ensure sibling repos exist in same parent directory |
+| Dashboard empty | Sibling repos need to be cloned for metrics to populate |
