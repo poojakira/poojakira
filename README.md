@@ -31,6 +31,7 @@ The detection engineering work: I authored Sigma rules for agent-specific TTPs (
 | [dataset-poisoning-detector](https://github.com/poojakira/dataset-poisoning-detector) | Training data anomaly detection, 12,400 samples/sec |
 | [model-privacy-attacks](https://github.com/poojakira/model-privacy-attacks) | MIA + model inversion with DP-SGD countermeasures |
 | [attack-v19-core](https://github.com/poojakira/attack-v19-core) | MITRE ATT&CK v19 data models shared across all repos |
+| [PulseNet-RUL-Forecasting](https://github.com/poojakira/PulseNet-RUL-Forecasting) | Secure MLOps reference (archived, NASA C-MAPSS) |
 
 ## Background
 
