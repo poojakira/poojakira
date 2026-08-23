@@ -1,71 +1,55 @@
 # Pooja Kiran Bharadwaj
 
-AI Security Engineer. I build detection and enforcement tools for ML/AI systems — scanning model files before they execute, intercepting dangerous tool calls, and analyzing cloud permissions for AI agent roles.
+**What if the AI model you just downloaded is already attacking you?**
+
+Pickle files on Hugging Face execute arbitrary code the moment you call `torch.load()`. Most scanners require downloading the full model to check — gigabytes of weights you might not want on your machine. Mine fetches only the first few KB and catches exploits that existing tools miss.
+
+That question — *is this AI system safe to run?* — led me to build three open-source tools that sit between AI systems and the damage they can do.
 
 ---
 
-## Flagship Projects
+## The Tools
 
-### [mcp-agent-security-gateway](https://github.com/poojakira/mcp-agent-security-gateway)
-Security middleware for MCP (Model Context Protocol) tool calls. Sits between AI agents and the tools they invoke, inspecting every call for prompt injection, PII leakage, and exfiltration patterns.
+**[mcp-agent-security-gateway](https://github.com/poojakira/mcp-agent-security-gateway)** — What happens when your AI agent calls a tool you didn't expect?
 
-`17 stars` · `5 forks` · `114 commits` · CI passing · Python/FastAPI
-
----
-
-### [hf-model-provenance-scanner](https://github.com/poojakira/hf-model-provenance-scanner)
-Scans Hugging Face model repositories for pickle exploits, supply-chain attacks, and provenance issues — without downloading full model weights. Fetches only file headers via HTTP Range requests.
-
-- 350 tests passing · CI green on Python 3.10/3.11/3.12
-- Scanned top 100 most-downloaded HF models
-- 12/12 red-team attacks detected (JFrog, Sonatype, CRLF bypass techniques)
-- Runtime inference monitor — intercepts `torch.load()` before execution
-- Cryptographic provenance ledger — hash-chained, Ed25519-signed event log
-- Model quality evaluator — bias, drift, and accuracy monitoring
-- Output: SARIF 2.1, CycloneDX 1.5, MITRE ATT&CK mapping
+Intercepts every MCP tool call in real-time. Catches prompt injection, PII leakage, and data exfiltration before they leave your infrastructure. `17 ★` · `5 forks`
 
 ---
 
-### [aws-agent-identity-guard](https://github.com/poojakira/aws-agent-identity-guard)
-Static IAM policy analyzer for AI agent roles on AWS. Detects privilege escalation paths, credential-harvesting patterns, and audit-trail suppression in IAM policies. SARIF output for CI integration.
+**[hf-model-provenance-scanner](https://github.com/poojakira/hf-model-provenance-scanner)** — Can you trust a model file you haven't opened yet?
 
-`64 commits` · CI passing · Python
-
----
-
-## Other Projects
-
-| Project | What it does |
-|---------|-------------|
-| [adversarial-ml-lab](https://github.com/poojakira/adversarial-ml-lab) | FGSM/PGD/C&W robustness benchmarks for CIFAR-10 (MITRE ATLAS AML.T0043) |
-| [llm-redteam-framework](https://github.com/poojakira/llm-redteam-framework) | Automated prompt injection and jailbreak simulation (OWASP LLM Top 10) |
-| [model-privacy-attacks](https://github.com/poojakira/model-privacy-attacks) | Membership inference and model inversion attack implementations |
-| [dataset-poisoning-detector](https://github.com/poojakira/dataset-poisoning-detector) | Statistical anomaly detection for training data integrity |
-| [attack-v19-core](https://github.com/poojakira/attack-v19-core) | MITRE ATT&CK v19 data models and technique lookup for Python |
-| [unified-ml-security-platform](https://github.com/poojakira/unified-ml-security-platform) | Orchestration layer integrating the above tools |
-| [mlsec-benchmark-suite](https://github.com/poojakira/mlsec-benchmark-suite) | Cross-project benchmark harness for ML security tooling |
+Scans HuggingFace repos without downloading weights. Detects pickle exploits, typosquatting, rug-pulls, and obfuscated payloads using only file headers. Intercepts `torch.load()` at runtime to block malicious models before execution. Scanned the top 100 most-downloaded models. 12/12 documented real-world attacks detected.
 
 ---
 
-## Skills
+**[aws-agent-identity-guard](https://github.com/poojakira/aws-agent-identity-guard)** — Does your AI agent have permissions it should never use?
 
-**Languages & Frameworks**: Python · FastAPI · pytest
-
-**Security**: MITRE ATT&CK · MITRE ATLAS · SARIF · Sigma rules · CodeQL · Bandit · pip-audit · Trivy · Grype
-
-**AI/ML Security**: Prompt injection detection · Model supply-chain verification · Adversarial robustness · MCP protocol security · Pickle exploit analysis
-
-**Cloud**: AWS IAM · STS credential chains · Least-privilege policy analysis
+Static IAM analysis for AI agent roles. Finds privilege escalation paths and credential-harvesting patterns that standard AWS tools don't flag.
 
 ---
 
-## Background
+## The Research Stack
 
-MS Information Technology, Arizona State University (2026). IEEE published researcher (INDICON 2023). 16 public repos, 15 with CI passing.
+| What I wanted to know | What I built |
+|----------------------|-------------|
+| Can I fool a vision model with imperceptible noise? | [adversarial-ml-lab](https://github.com/poojakira/adversarial-ml-lab) — FGSM/PGD/C&W benchmarks |
+| Can I break an LLM's guardrails systematically? | [llm-redteam-framework](https://github.com/poojakira/llm-redteam-framework) — Automated jailbreak simulation |
+| Can I extract training data from a model? | [model-privacy-attacks](https://github.com/poojakira/model-privacy-attacks) — Membership inference & inversion |
+| Can I poison a dataset without being detected? | [dataset-poisoning-detector](https://github.com/poojakira/dataset-poisoning-detector) — Statistical anomaly detection |
 
 ---
 
-## Contact
+## Numbers
+
+- 16 public repos · 15 with CI green
+- 350+ tests across the flagship scanner alone
+- 100 HuggingFace models scanned with real results published
+- IEEE published (INDICON 2023)
+- MS Information Technology, Arizona State University (2026)
+
+---
+
+## Let's talk
 
 [LinkedIn](https://linkedin.com/in/poojakiran) · pooja.kiran@asu.edu
 
