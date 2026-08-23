@@ -2,7 +2,7 @@
 
 **What if the AI model you just downloaded is already attacking you?**
 
-Pickle files on Hugging Face execute arbitrary code the moment you call `torch.load()`. Most scanners require downloading the full model to check  -  gigabytes of weights you might not want on your machine. Mine fetches only the first few KB and catches exploits that existing tools miss.
+Pickle files on Hugging Face execute arbitrary code the moment you call `torch.load()`. Most scanners require downloading the full model to check  gigabytes of weights you might not want on your machine. Mine fetches only the first few KB and catches exploits that existing tools miss.
 
 That question  -  *is this AI system safe to run?*  -  led me to build three open-source tools that sit between AI systems and the damage they can do.
 
@@ -10,19 +10,19 @@ That question  -  *is this AI system safe to run?*  -  led me to build three ope
 
 ## The Tools
 
-**[mcp-agent-security-gateway](https://github.com/poojakira/mcp-agent-security-gateway)** - What happens when your AI agent calls a tool you didn't expect?
+**[mcp-agent-security-gateway](https://github.com/poojakira/mcp-agent-security-gateway)** : What happens when your AI agent calls a tool you didn't expect?
 
 Intercepts every MCP tool call in real-time. Catches prompt injection, PII leakage, and data exfiltration before they leave your infrastructure. `17 ★` · `5 forks`
 
 ---
 
-**[hf-model-provenance-scanner](https://github.com/poojakira/hf-model-provenance-scanner)**  -  Can you trust a model file you haven't opened yet?
+**[hf-model-provenance-scanner](https://github.com/poojakira/hf-model-provenance-scanner)** : Can you trust a model file you haven't opened yet?
 
 Scans HuggingFace repos without downloading weights. Detects pickle exploits, typosquatting, rug-pulls, and obfuscated payloads using only file headers. Intercepts `torch.load()` at runtime to block malicious models before execution. Scanned the top 100 most-downloaded models. 12/12 documented real-world attacks detected.
 
 ---
 
-**[aws-agent-identity-guard](https://github.com/poojakira/aws-agent-identity-guard)**  -  Does your AI agent have permissions it should never use?
+**[aws-agent-identity-guard](https://github.com/poojakira/aws-agent-identity-guard)** :  Does your AI agent have permissions it should never use?
 
 Static IAM analysis for AI agent roles. Finds privilege escalation paths and credential-harvesting patterns that standard AWS tools don't flag.
 
