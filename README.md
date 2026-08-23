@@ -40,8 +40,6 @@ Static IAM analysis for AI agent roles. Finds privilege escalation paths and cre
 ---
 
 ## Numbers
-
-- 16 public repos · 15 with CI green
 - 350+ tests across the flagship scanner alone
 - 100 HuggingFace models scanned with real results published
 - IEEE published (INDICON 2023)
@@ -51,6 +49,6 @@ Static IAM analysis for AI agent roles. Finds privilege escalation paths and cre
 
 ## Let's talk
 
-[LinkedIn](https://linkedin.com/in/poojakiran) · pooja.kiran@asu.edu
+[LinkedIn](https://linkedin.com/in/poojakiran) · pkiran1@asu.edu
 
 F-1 OPT EAD | Greater Phoenix Area
