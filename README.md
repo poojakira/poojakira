@@ -10,7 +10,7 @@ That question — *is this AI system safe to run?* — led me to build three ope
 
 ## The Tools
 
-**[mcp-agent-security-gateway](https://github.com/poojakira/mcp-agent-security-gateway)** — What happens when your AI agent calls a tool you didn't expect?
+**[mcp-agent-security-gateway](https://github.com/poojakira/mcp-agent-security-gateway)** - What happens when your AI agent calls a tool you didn't expect?
 
 Intercepts every MCP tool call in real-time. Catches prompt injection, PII leakage, and data exfiltration before they leave your infrastructure. `17 ★` · `5 forks`
 
