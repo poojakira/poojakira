@@ -1,76 +1,62 @@
 # Pooja Kiran Bharadwaj
 
-**AI Security Engineer** · Building detection and enforcement tools for ML/AI systems
+I build security tools for AI/ML systems — focused on supply-chain integrity, agent runtime safety, and adversarial robustness.
 
-What if the AI model you just downloaded is already attacking you?
+Most of my work starts from a concrete problem: pickle files on Hugging Face can execute arbitrary code on `torch.load()`, AI agents can be tricked into exfiltrating data through tool calls, and IAM policies for agent roles are rarely reviewed for escalation paths. I built tools to address each of these.
 
-Pickle files on Hugging Face execute arbitrary code the moment you call `torch.load()`. Most scanners require downloading full model weights to check them. Mine fetches only the first few KB and catches exploits that existing tools miss.
-
-That question — *is this AI system safe to run?* — led me to build open-source tools that sit between AI systems and the damage they can do.
+These are research and portfolio projects, not deployed production systems. They're functional, tested, and open-source — but they haven't been hardened for enterprise use or run at scale.
 
 ---
 
-## 🛡️ Production Security Tools
-
-### [mcp-agent-security-gateway](https://github.com/poojakira/mcp-agent-security-gateway)
-Real-time interception layer for AI agent tool calls. Catches prompt injection, PII leakage, and data exfiltration before they leave your infrastructure. Enforces policy on every MCP tool invocation.
+## Detection & Enforcement Tools
 
 ### [hf-model-provenance-scanner](https://github.com/poojakira/hf-model-provenance-scanner)
-Supply-chain security scanner for HuggingFace model repos — without downloading weights. Detects pickle exploits, typosquatting, rug-pulls, and obfuscated payloads using file headers alone. Runtime `torch.load()` interception blocks malicious models before execution.
+Supply-chain scanner for HuggingFace model repos. Detects pickle exploits, typosquatting, and obfuscated payloads by inspecting file headers — without downloading full model weights. Includes a runtime `torch.load()` interception hook.
 
-> 100 top HuggingFace models scanned · 12/12 documented real-world attacks detected · 350+ tests
+See the [repo README](https://github.com/poojakira/hf-model-provenance-scanner#readme) for test coverage and scan methodology.
+
+### [mcp-agent-security-gateway](https://github.com/poojakira/mcp-agent-security-gateway)
+Interception layer for MCP-protocol AI agent tool calls. Applies policy checks for prompt injection patterns, PII in outbound payloads, and data exfiltration attempts.
+
+See the [repo README](https://github.com/poojakira/mcp-agent-security-gateway#readme) for architecture and current detection capabilities.
 
 ### [aws-agent-identity-guard](https://github.com/poojakira/aws-agent-identity-guard)
-Static IAM analysis purpose-built for AI agent roles. Identifies privilege escalation paths and credential-harvesting patterns that standard AWS tools miss.
+Static analysis of IAM policies for AI agent roles. Flags privilege escalation paths and credential-harvesting patterns specific to agent workloads.
+
+See the [repo README](https://github.com/poojakira/aws-agent-identity-guard#readme) for supported checks and usage.
 
 ---
 
-## 🔬 Research & Red Team Labs
+## Research & Red Team Labs
 
-| Domain | Repository | Techniques |
-|--------|-----------|------------|
-| Adversarial robustness | [adversarial-ml-lab](https://github.com/poojakira/adversarial-ml-lab) | FGSM, PGD, C&W attack benchmarks |
-| LLM guardrail evasion | [llm-redteam-framework](https://github.com/poojakira/llm-redteam-framework) | Automated jailbreak simulation & evaluation |
-| Model privacy | [model-privacy-attacks](https://github.com/poojakira/model-privacy-attacks) | Membership inference, model inversion |
-| Data integrity | [dataset-poisoning-detector](https://github.com/poojakira/dataset-poisoning-detector) | Statistical anomaly detection for training data |
-
----
-
-## 🧭 Frameworks & Methodology
-
-My work maps to established AI/ML threat taxonomies:
-
-- **OWASP Top 10 for LLMs** — prompt injection defense, insecure output handling, supply chain vulnerabilities
-- **MITRE ATLAS** — adversarial ML threat modeling, technique coverage across reconnaissance through impact
-- **NIST AI RMF** — risk identification and measurement for ML systems in production
-- **OWASP ML Security Top 10** — model theft prevention, data poisoning detection, adversarial input resilience
+| Repository | What it does |
+|-----------|-------------|
+| [adversarial-ml-lab](https://github.com/poojakira/adversarial-ml-lab) | FGSM, PGD, C&W attack implementations and robustness benchmarks |
+| [llm-redteam-framework](https://github.com/poojakira/llm-redteam-framework) | Automated jailbreak simulation and guardrail evaluation |
+| [model-privacy-attacks](https://github.com/poojakira/model-privacy-attacks) | Membership inference and model inversion experiments |
+| [dataset-poisoning-detector](https://github.com/poojakira/dataset-poisoning-detector) | Statistical anomaly detection for training data integrity |
 
 ---
 
-## ⚡ Technical Focus
+## Relevant Frameworks
 
-```
-Supply Chain Security    ██████████████████░░  Model provenance, dependency integrity, artifact signing
-Agent Runtime Security   █████████████████░░░  Tool-call interception, policy enforcement, sandboxing
-Adversarial ML           ████████████████░░░░  Evasion attacks, robustness testing, certified defenses
-Privacy & Extraction     ██████████████░░░░░░  Membership inference, model inversion, differential privacy
-LLM Red Teaming          █████████████████░░░  Jailbreak automation, guardrail evaluation, alignment testing
-```
+My work draws from these threat taxonomies:
 
-**Languages & Tools:** Python · PyTorch · AWS IAM · Docker · GitHub Actions · Pytest · FastAPI
+- **OWASP Top 10 for LLMs** — prompt injection, insecure output handling, supply chain
+- **MITRE ATLAS** — adversarial ML threat modeling
+- **NIST AI RMF** — risk identification for ML systems
 
 ---
 
-## 📌 Highlights
+## Background
 
-- **IEEE published** — INDICON 2023
-- **MS Information Technology** — Arizona State University (2026)
-- **350+ tests** across the flagship model scanner
-- **100 HuggingFace models** scanned with results published
+- MS Information Technology — Arizona State University (2026)
+- Published at IEEE INDICON 2023
+- Languages & tools: Python, PyTorch, AWS IAM, Docker, GitHub Actions, Pytest, FastAPI
 
 ---
 
-## Let's talk
+## Contact
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-poojakiran-0A66C2?style=flat&logo=linkedin)](https://linkedin.com/in/poojakiran) · 📧 pkiran1@asu.edu
 
