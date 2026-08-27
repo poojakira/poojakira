@@ -10,17 +10,17 @@ These are research and portfolio projects, not deployed production systems. They
 
 ## Detection & Enforcement Tools
 
-### [hf-model-provenance-scanner](https://github.com/poojakira/hf-model-provenance-scanner)
+### [hf-model-provenance-scanner](https://github.com/poojakira/hf-model-provenance-scanner) `[Beta]`
 Supply-chain scanner for HuggingFace model repos. Detects pickle exploits, typosquatting, and obfuscated payloads by inspecting file headers -- without downloading full model weights. Includes a runtime `torch.load()` interception hook.
 
 See the [repo README](https://github.com/poojakira/hf-model-provenance-scanner#readme) for test coverage and scan methodology.
 
-### [mcp-agent-security-gateway](https://github.com/poojakira/mcp-agent-security-gateway)
+### [mcp-agent-security-gateway](https://github.com/poojakira/mcp-agent-security-gateway) `[Beta]`
 Interception layer for MCP-protocol AI agent tool calls. Applies policy checks for prompt injection patterns, PII in outbound payloads, and data exfiltration attempts.
 
 See the [repo README](https://github.com/poojakira/mcp-agent-security-gateway#readme) for architecture and current detection capabilities.
 
-### [aws-agent-identity-guard](https://github.com/poojakira/aws-agent-identity-guard)
+### [aws-agent-identity-guard](https://github.com/poojakira/aws-agent-identity-guard) `[Beta]`
 Static analysis of IAM policies for AI agent roles. Flags privilege escalation paths and credential-harvesting patterns specific to agent workloads.
 
 See the [repo README](https://github.com/poojakira/aws-agent-identity-guard#readme) for supported checks and usage.
@@ -29,12 +29,12 @@ See the [repo README](https://github.com/poojakira/aws-agent-identity-guard#read
 
 ## Research & Red Team Labs
 
-| Repository | What it does |
-|-----------|-------------|
-| [adversarial-ml-lab](https://github.com/poojakira/adversarial-ml-lab) | FGSM, PGD, C&W attack implementations and robustness benchmarks |
-| [llm-redteam-framework](https://github.com/poojakira/llm-redteam-framework) | Automated jailbreak simulation and guardrail evaluation |
-| [model-privacy-attacks](https://github.com/poojakira/model-privacy-attacks) | Membership inference and model inversion experiments |
-| [dataset-poisoning-detector](https://github.com/poojakira/dataset-poisoning-detector) | Statistical anomaly detection for training data integrity |
+| Repository | What it does | Status |
+|-----------|-------------|--------|
+| [adversarial-ml-lab](https://github.com/poojakira/adversarial-ml-lab) | FGSM, PGD, C&W attack implementations and robustness benchmarks | Research |
+| [llm-redteam-framework](https://github.com/poojakira/llm-redteam-framework) | Automated jailbreak simulation and guardrail evaluation | Beta |
+| [model-privacy-attacks](https://github.com/poojakira/model-privacy-attacks) | Membership inference and model inversion experiments | Research |
+| [dataset-poisoning-detector](https://github.com/poojakira/dataset-poisoning-detector) | Statistical anomaly detection for training data integrity | Beta |
 
 ---
 
