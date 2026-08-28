@@ -38,6 +38,28 @@ See the [repo README](https://github.com/poojakira/aws-agent-identity-guard#read
 
 ---
 
+## Platforms & Integration
+
+Higher-level workspaces that tie the individual tools together.
+
+| Repository | What it does | Status |
+|-----------|-------------|--------|
+| [unified-ml-security-platform](https://github.com/poojakira/unified-ml-security-platform) | Integration workspace wiring the security services together with CI, compose validation, scans, and health checks | Beta |
+| [ml-security-command-center](https://github.com/poojakira/ml-security-command-center) | Unified command-center dashboard aggregating signals from the ML security tools | Research |
+| [mlsec-dashboards](https://github.com/poojakira/mlsec-dashboards) | Evidence-based live dashboards and product demos for the tooling | Research |
+| [mlsec-benchmark-suite](https://github.com/poojakira/mlsec-benchmark-suite) | Cross-project benchmark harness for measuring ML security tooling | Research |
+
+---
+
+## Applied ML & Supporting Work
+
+| Repository | What it does | Status |
+|-----------|-------------|--------|
+| [PulseNet-RUL-Forecasting](https://github.com/poojakira/PulseNet-RUL-Forecasting) | NASA C-MAPSS remaining-useful-life forecasting with adversarial sensor-input checks and secure MLOps controls | Archived |
+| [attack-v19-core](https://github.com/poojakira/attack-v19-core) | MITRE ATT&CK v19 data models and technique lookup for Python | Beta |
+
+---
+
 ## Relevant Frameworks
 
 My work draws from these threat taxonomies:
