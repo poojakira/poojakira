@@ -35,7 +35,7 @@
 
 ### 🤖 Meet my AI Security Assistant — it scans, greets you, and answers questions about me
 
-<a href="https://poojakira.github.io/">
+<a href="https://poojakira.github.io/poojakira/">
   <img src="https://img.shields.io/badge/▶_LAUNCH_THE_SCANNER_BOT-00E5FF?style=for-the-badge&logo=probot&logoColor=black" alt="Launch the AI Security Assistant" />
 </a>
 
