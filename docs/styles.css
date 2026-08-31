@@ -142,6 +142,12 @@ body{
 @keyframes pulse{50%{opacity:.4}}
 .chat-title{font-family:'Fira Code',monospace;font-size:13px;letter-spacing:1px}
 .chat-sub{margin-left:auto;color:var(--green);font-size:12px}
+.voice-toggle{
+  margin-left:10px;font-size:11.5px;padding:5px 10px;border-radius:20px;cursor:pointer;
+  background:rgba(0,229,255,.10);border:1px solid var(--line);color:var(--text);
+  font-family:'Fira Code',monospace;transition:.2s;white-space:nowrap;
+}
+.voice-toggle:hover{background:rgba(0,229,255,.2);border-color:var(--cyan);box-shadow:0 0 10px rgba(0,229,255,.3)}
 
 .messages{flex:1;padding:18px;overflow-y:auto;display:flex;flex-direction:column;gap:12px}
 .msg{max-width:82%;padding:11px 14px;border-radius:14px;font-size:14.5px;line-height:1.5;
