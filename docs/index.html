@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Pooja Kiran Bharadwaj · AI Security Assistant</title>
+<meta name="description" content="Interactive AI Security Assistant — ask questions about Pooja Kiran Bharadwaj, AI Security Engineer." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<div class="grid-bg"></div>
+<div class="scanlines"></div>
+
+<!-- ===================== BOOT OVERLAY ===================== -->
+<div id="boot" class="boot">
+  <pre class="boot-log" id="bootLog"></pre>
+</div>
+
+<main class="app" id="app" aria-hidden="true">
+
+  <!-- ===================== SCANNER AVATAR ===================== -->
+  <section class="scanner-panel">
+    <div class="scanner">
+      <div class="scanner-ring"></div>
+      <div class="avatar-wrap">
+        <!-- Replace photo.jpg with your real photo (see SETUP.md) -->
+        <img id="avatar" class="avatar" src="photo.jpg" alt="Pooja Kiran Bharadwaj"
+             onerror="this.onerror=null;this.src='https://avatars.githubusercontent.com/u/90021441?v=4';" />
+        <div class="scan-line"></div>
+        <div class="scan-grid"></div>
+        <div class="corner tl"></div><div class="corner tr"></div>
+        <div class="corner bl"></div><div class="corner br"></div>
+      </div>
+      <div class="scan-status" id="scanStatus">● IDENTITY VERIFIED</div>
+    </div>
+
+    <div class="id-card">
+      <h1 class="name">Pooja Kiran Bharadwaj</h1>
+      <p class="role">AI Security Engineer</p>
+      <p class="tags">Agentic AI · MCP/Tool Security · IAM · Model Supply-Chain</p>
+      <div class="badges">
+        <span class="badge open">● Open to work</span>
+        <span class="badge">F-1 OPT</span>
+        <span class="badge">Phoenix, AZ</span>
+      </div>
+      <div class="links">
+        <a href="https://github.com/poojakira" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://linkedin.com/in/poojakiran" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="mailto:pkiran1@asu.edu">Email</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CHAT PANEL ===================== -->
+  <section class="chat-panel">
+    <header class="chat-head">
+      <span class="dot"></span>
+      <span class="chat-title">AI SECURITY ASSISTANT</span>
+      <span class="chat-sub" id="statusText">online</span>
+    </header>
+
+    <div class="messages" id="messages" aria-live="polite"></div>
+
+    <div class="chips" id="chips"></div>
+
+    <form class="composer" id="composer" autocomplete="off">
+      <input id="input" type="text" placeholder="Ask me anything about Pooja…"
+             aria-label="Ask a question" />
+      <button type="submit" aria-label="Send">➤</button>
+    </form>
+  </section>
+</main>
+
+<script src="knowledge.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
