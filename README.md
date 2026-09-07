@@ -1,6 +1,6 @@
 <!-- Profile README — the gateway into the full interactive experience. -->
 
-# Pooja Kiran — AI Security Engineer
+# Pooja Kiran — Security Engineer (AI agents)
 
 **Security for the moment AI stops generating text and starts taking actions.**
 
