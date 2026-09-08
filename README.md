@@ -56,7 +56,6 @@ Findings map to **MITRE ATT&amp;CK v19 / ATLAS** and **NIST AI RMF** where the r
 
 ## Research &amp; publications
 
-- Cybersecurity Innovation Researcher — TEM 598 Technology Innovation Lab, Arizona State University × Honeywell Aerospace Innovation Hub.
 - [Personalized E-learning System Using Reinforcement Learning Through Satellite](https://ieeexplore.ieee.org/document/10440852) — IEEE Xplore, 2024.
 - [Smart Charge Pro — EV Charging Infrastructure](https://www.iosrjournals.org/iosr-jce/pages/25(4)Series-1.html) — IOSR-JCE, 2023.
 
