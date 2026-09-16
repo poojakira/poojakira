@@ -1,11 +1,33 @@
-# Portfolio Security Audit
+# PORTFOLIO_SECURITY_AUDIT.md
 
 Date: 2026-09-16
 Owner: `poojakira`
 
-## Audit scope
+## Executive summary
 
-The GitHub account currently exposes 20 repositories. The mandatory security/ML-security scope was 14 repositories:
+The account currently exposes **19 repositories**. The requested security/AI-security audit scope contains **14 repositories**; the remaining repositories are portfolio/site, infrastructure, private non-security work, or unrelated ML work and were classified rather than silently treated as security projects.
+
+The audit was performed against the live GitHub repositories using source, tests, documentation, CI configuration, committed evidence, and GitHub Actions results where available. Direct source changes were made for the highest-confidence correctness and security findings.
+
+The most important corrected issue was the former NumPy DP-SGD implementation in `model-privacy-attacks`: it clipped an aggregate batch gradient and produced an unvalidated epsilon estimate. That path can no longer be mistaken for formal DP-SGD. Formal DP-SGD is now explicitly routed through an Opacus-backed path with per-example clipping/noising/accounting, while the NumPy implementation is labeled research-only.
+
+### Current finding counts
+
+These counts include historical findings that were fixed during this audit and residual documentation/architecture findings that remain open.
+
+| Priority | Count | State |
+|---|---:|---|
+| P0 | 1 | fixed |
+| P1 | 5 | fixed or materially mitigated |
+| P2 | 6 | mixed: fixed and remaining limitations |
+| P3 | 1 | fixed in current patch; CI verification pending |
+| P4 | 3 | documentation mismatches remain |
+
+No numerical repository score is assigned.
+
+## Repositories inspected
+
+### Mandatory security/AI-security scope
 
 1. `mcp-agent-security-gateway`
 2. `hf-model-provenance-scanner`
@@ -22,170 +44,328 @@ The GitHub account currently exposes 20 repositories. The mandatory security/ML-
 13. `ml-security-command-center`
 14. `PulseNet-RUL-Forecasting`
 
-Additional account repositories were classified as portfolio/site or non-security work rather than silently treating them as security projects.
+### Additional account repositories classified outside the security audit scope
 
-## Important execution limitation
-
-The GitHub connector permitted source inspection and direct commits, but this environment could not clone repositories with the local git client because outbound DNS/network access was unavailable. Therefore no local `pytest`, `ruff`, `pip-audit`, Docker, Kubernetes, Terraform, or build command is claimed as executed by this audit.
-
-Any test result below that is described as existing evidence comes from committed repository artifacts or source inspection, not a fresh local execution.
-
-## Executive summary
-
-The audit found several material security/documentation issues and corrected the highest-confidence issues that could be fixed safely through the GitHub source interface.
-
-### Severity counts
-
-- P0: 1 confirmed correctness/security-claim issue: the former DP-SGD implementation was not DP-SGD because it clipped the aggregate batch gradient.
-- P1: 3 confirmed boundary issues: MCP client authentication/default availability behavior, LLM red-team API fail-open authentication, and unified gateway header forwarding.
-- P2: 2 confirmed documentation/semantic mismatches: stale WebSocket authentication documentation and stale DP-SGD documentation/claims.
-- P3: 0 freshly executed build/test failures because local execution was unavailable.
-- P4: multiple stale or overly broad claims identified for follow-up, especially benchmark/readiness wording.
+- `poojakira` — profile/report repository
+- `poojakira.github.io` — portfolio/documentation site
+- `Pooja_Kiran_Portfolio_Website` — portfolio website
+- `Carrier` — private/non-security repository
+- `pooja_carrier-website` — private career-site work
 
 ## Repository matrix
 
-| Repository | Classification | Code | Security boundary | Tests/evidence | Docs | Status |
+| Repository | Classification | Code | Security tests/evidence | Documentation | Benchmarks/evidence | Status |
 |---|---|---|---|---|---|---|
-| mcp-agent-security-gateway | Flagship security repo | substantive | API-key protected production server; client corrected | committed tests present; not freshly executed | extensive; some historical claim material | VERIFIED WITH LIMITATIONS |
-| hf-model-provenance-scanner | Flagship security repo | substantive | provenance/static scanning | substantial committed evidence | limitations explicitly present | VERIFIED WITH LIMITATIONS |
-| aws-agent-identity-guard | Flagship cloud/IAM security repo | substantive static analyzer | static policy analysis | tests present | explicitly says it cannot determine effective permissions | VERIFIED WITH LIMITATIONS |
-| llm-redteam-framework | Flagship AI security/research repo | substantive | API key corrected to fail closed | security tests present; not freshly executed | corrected security config added | VERIFIED WITH LIMITATIONS |
-| adversarial-ml-lab | ML security research repo | substantive benchmark harness | attack/evaluation boundary | 94-test claim exists in README; not freshly executed | several readiness claims require evidence review | EXPERIMENTAL |
-| dataset-poisoning-detector | ML security detection service | substantive | REST auth and WebSocket auth implemented | WebSocket auth regression test exists | source docstring contains stale WebSocket statement | VERIFIED WITH LIMITATIONS |
-| model-privacy-attacks | Privacy research repo | substantive | DP path corrected to Opacus-backed setup | new regression test added; not executed locally | DP documentation corrected | RESEARCH/EXPERIMENTAL |
-| unified-ml-security-platform | Integration gateway | substantive scaffold | gateway auth enforced | gateway tests present; not freshly executed | shared-key architecture remains a limitation | INTEGRATION SCAFFOLD |
-| attack-v19-core | ATT&CK data/model library | substantive data package | not a runtime security boundary | package metadata and migration docs inspected | versioned ATT&CK model | VERIFIED WITH LIMITATIONS |
-| attack-detection-engine | Detection engine | substantive | detection-oriented | package/test surface identified; not freshly executed | needs current evidence verification | VERIFIED WITH LIMITATIONS |
-| mlsec-benchmark-suite | Benchmark suite | benchmark/research | measurement boundary | benchmark artifacts require reproducibility checks | benchmark claims need artifact-level verification | RESEARCH/EXPERIMENTAL |
-| mlsec-dashboards | Observability/dashboard | presentation/integration | depends on upstream controls | dashboard code present | should not be treated as enforcement | INTEGRATION SCAFFOLD |
-| ml-security-command-center | Integration/dashboard | small private repo | architecture surface | not enough executable evidence exposed through current inspection | requires deeper local execution | UNVERIFIED |
-| PulseNet-RUL-Forecasting | ML project, not primarily security | ML application | not a security control | private repository; not locally executable here | security portfolio relevance is limited | UNRELATED/ML |
+| `mcp-agent-security-gateway` | Flagship runtime security repo | Substantive | Strong boundary tests; CI evidence | Extensive; some historical claims need rerun | Fixture/committed benchmarks | **VERIFIED WITH LIMITATIONS** |
+| `hf-model-provenance-scanner` | Flagship supply-chain scanner | Substantive | Strong static-analysis tests | Narrow-claim language present | Fixture-scoped | **VERIFIED WITH LIMITATIONS** |
+| `aws-agent-identity-guard` | Flagship cloud/IAM static analyzer | Substantive | Rule/test surface present | Correctly limits effective-permission claims | Rule corpus | **VERIFIED WITH LIMITATIONS** |
+| `llm-redteam-framework` | Flagship adversarial AI-security harness | Substantive | API/auth/security tests present | Security configuration is correct; README has one stale auth paragraph | Historical benchmark artifacts | **VERIFIED WITH LIMITATIONS** |
+| `adversarial-ml-lab` | ML-security research/attack lab | Substantive experimental harness | Large committed test surface; fresh run not completed | Readiness wording is broader than evidence | Historical synthetic benchmarks | **EXPERIMENTAL** |
+| `dataset-poisoning-detector` | ML-security detection service | Substantive | REST + WebSocket auth tests exist | One stale source docstring remains | Controlled benchmarks | **VERIFIED WITH LIMITATIONS** |
+| `model-privacy-attacks` | Privacy/security research | Substantive | New DP regression tests; latest CI rerun pending | Formal/non-formal DP scope corrected | Historical MIA/DP artifacts | **EXPERIMENTAL** |
+| `unified-ml-security-platform` | Integration gateway/scaffold | Substantive | Header and gateway-auth tests | Shared-key limitation remains | Integration checks | **INTEGRATION SCAFFOLD** |
+| `attack-v19-core` | Threat-intelligence data foundation | Substantive data package | Package/data validation surface | Versioned model, not runtime enforcement | Data artifacts | **VERIFIED WITH LIMITATIONS** |
+| `attack-detection-engine` | Detection engine | Substantive | Test surface identified; fresh run unavailable | Requires current artifact reproduction | Detection evaluation | **VERIFIED WITH LIMITATIONS** |
+| `mlsec-benchmark-suite` | Benchmark/research framework | Substantive | Benchmark tests present | Scoring framework corrected to avoid readiness labels | Benchmark artifacts | **EXPERIMENTAL** |
+| `mlsec-dashboards` | Evidence/observability dashboard | Substantive presentation layer | Dashboard tests/evidence | Readiness language narrowed to local tool scope | Static committed evidence | **INTEGRATION SCAFFOLD** |
+| `ml-security-command-center` | Static portfolio inventory | Small focused implementation | Unit-test surface; not a runtime security tool | Production-readiness claim removed | Static source inventory | **VERIFIED WITH LIMITATIONS** |
+| `PulseNet-RUL-Forecasting` | Non-security ML application with security utilities | Substantive | Security utility tests exist; fresh run unavailable | Ledger security language corrected | ML application benchmarks | **EXPERIMENTAL** |
 
-## Confirmed findings and fixes
+## Finding register
 
-### SEC-001 — `model-privacy-attacks`: aggregate-gradient pseudo-DP
+### SEC-001 — `model-privacy-attacks` aggregate-gradient pseudo-DP
 
-Severity: P0
+**Severity:** P0 — fixed
 
-The former `dp_sgd_step` computed one aggregate gradient over a batch, clipped that aggregate norm, then added Gaussian noise. Per-example clipping is required for the standard DP-SGD mechanism. Adding Gaussian noise to an aggregate gradient does not by itself establish `(epsilon, delta)`-DP.
+**Problem:** The former `dp_sgd_step` clipped the aggregate batch gradient rather than clipping each example's contribution, then added Gaussian noise. A hand-written sampled-Gaussian accountant produced a formal-looking epsilon without validated accounting.
 
-**Fix:** the legacy function now raises explicitly instead of allowing a caller to mistake it for formal DP-SGD. A new `make_private_training_components()` path delegates per-example gradients, clipping, noise, and accounting to Opacus. `get_privacy_spent()` obtains epsilon from the actual accountant.
+**Security impact:** A caller could incorrectly treat the mechanism as providing formal `(epsilon, delta)`-DP when the implementation did not support that conclusion.
 
-**Regression test:** `tests/test_dp_sgd_security.py` prevents the legacy implementation from silently returning a training result.
+**Root cause:** The mechanism and the privacy accountant were implemented independently without a trusted accounting boundary.
 
-### SEC-002 — `mcp-agent-security-gateway`: GatewayClient authentication and fail-open default
+**Fix:**
+- Legacy `dp_sgd_step()` now raises explicitly instead of performing pseudo-DP.
+- The NumPy `DPSGD` path is retained only as a research mechanism demonstration and reports `epsilon=None` and `formal_guarantee=False`.
+- Formal training now uses `PrivacyEngine.make_private()` or `make_private_with_epsilon()` through `make_private_training_components()`.
+- `get_privacy_spent()` obtains epsilon from the configured accountant.
+- Historical epsilon output is preserved but relabeled as an unverified historical artifact.
 
-Severity: P1
+**Tests added:** `tests/test_dp_sgd_security.py`.
 
-The production server requires `X-API-Key`, while the client did not provide a key and defaulted to fail-open. That made the integration path inconsistent with the protected production boundary.
+**Verification:** Latest CI patch is in progress after a first CI attempt caught only Ruff issues in the new patch. No formal epsilon result was claimed by this audit.
 
-**Fix:** `GatewayClient` now accepts `api_key`, sends `X-API-Key`, defaults to `fail_closed=True`, rejects non-positive timeouts, and treats an unavailable/authentication-failed gateway as blocking under the default mode.
+**Evidence:** the current defense code explicitly distinguishes formal Opacus-backed training from the research mechanism. fileciteturn93file0
 
-**Regression tests:** client API-key propagation, fail-closed default, explicit fail-open opt-in, HTTP 401 blocking, and guard-before-tool-execution behavior.
+**Remaining limitation:** The actual training run must use the returned private model, optimizer, and data loader consistently for the stated privacy accounting to apply.
 
-### SEC-003 — `llm-redteam-framework`: missing API secret disabled authentication
+### SEC-002 — `mcp-agent-security-gateway` client authorization denial could fail open
 
-Severity: P1
+**Severity:** P1 — fixed
 
-The API previously treated an absent `REDTEAM_API_KEY` as an anonymous deployment mode.
+**Problem:** The client had `fail_closed=False` available and caught HTTP errors too broadly. An explicit 4xx authorization denial from a protected gateway could be interpreted as an availability failure and become allowed in fail-open mode.
 
-**Fix:** protected endpoints now fail closed when the secret is missing. Key comparison uses `hmac.compare_digest`. `/metrics` is also authenticated. The test suite was updated so rate-limit/input tests use an explicit test key and the missing-secret case expects 401.
+**Fix:**
+- Explicit 4xx responses are always blocking.
+- 5xx responses and transport failures are the only failures governed by the explicit availability mode.
+- Default remains `fail_closed=True`.
+- Client sends `X-API-Key` when configured.
 
-### SEC-004 — `unified-ml-security-platform`: unrestricted upstream header forwarding
+**Regression tests:** `tests/test_client.py` covers 400/401/403/429, 503, transport failure, API-key propagation, and guard-before-tool execution.
 
-Severity: P1
+### SEC-003 — `mcp-agent-security-gateway` client/server authentication semantics were inconsistent
 
-The gateway copied the entire incoming request header set to internal services. This could propagate caller-controlled `Authorization`, `Cookie`, and other security-sensitive material across the trust boundary.
+**Severity:** P1 — fixed
 
-**Fix:** added an explicit request-header allowlist and injects the gateway's configured internal `X-API-Key`. Caller-supplied authentication material is not implicitly forwarded.
+**Problem:** The protected API required API-key authentication while the client configuration did not make credential handling explicit and defaulted toward availability.
 
-**Remaining limitation:** the architecture still uses one shared API key for internal services. This is a simplified integration architecture, not strong per-service identity or zero-trust authentication.
+**Fix:** `GatewayClient(base_url, api_key=..., fail_closed=True)` is now explicit and safe by default. The server already rejects missing/invalid keys.
 
-### SEC-005 — `dataset-poisoning-detector`: WebSocket authentication status
+### SEC-004 — `llm-redteam-framework` authentication previously disabled when secret was absent
 
-Current source inspection shows `/stream` already validates `X-API-Key` and rejects unauthorized upgrades with WebSocket close code 1008. A corresponding regression test exists.
+**Severity:** P1 — fixed in code
 
-However, the module-level security docstring still contains an obsolete statement saying WebSockets are unauthenticated. This is a documentation defect and should be cleaned in the next source edit.
+**Problem:** Earlier API behavior treated a missing `REDTEAM_API_KEY` as authentication disabled.
 
-## Claim audit highlights
+**Fix:** Current API code requires the secret for protected endpoints, uses `hmac.compare_digest`, and protects `/metrics` as well as `/scan`. `SECURITY_CONFIGURATION.md` is explicit that there is no anonymous production mode.
 
-- `mcp-agent-security-gateway`: historical 313-test/100%-coverage language is explicitly identified in its research report as stale and requiring re-run before current citation.
-- `hf-model-provenance-scanner`: 100% detection claims are documented as narrow fixture/suite claims, not universal real-world detection. Keep that scope visible.
-- `adversarial-ml-lab`: several capabilities are labeled production-ready in technical reporting even though the README describes advanced modules as experimental/lightly tested. Those readiness labels need artifact-level reconciliation before being treated as current production claims.
-- `aws-agent-identity-guard`: documentation correctly distinguishes static policy analysis from effective AWS permissions and runtime validation.
-- `model-privacy-attacks`: formal DP wording has been corrected to require Opacus-backed training; no fresh DP epsilon benchmark was produced by this audit.
+**Remaining documentation defect:** `README.md` still contains a stale historical paragraph saying a missing key disables authentication. The dedicated security configuration is authoritative and the README section should be reconciled in the next edit.
 
-## Test execution record
+### SEC-005 — `unified-ml-security-platform` trust-boundary header forwarding
 
-### Actually executed in this environment
+**Severity:** P1 — fixed
 
-No repository test suite was executed locally. The attempted git clone failed because the environment could not resolve `github.com`.
+**Problem:** The gateway previously forwarded arbitrary caller headers to internal services.
 
-### Not executed
+**Fix:** Explicit allowlist now permits only intentionally selected request metadata; the gateway sets its own internal `X-API-Key`. Caller `Authorization`, `Cookie`, and caller `X-API-Key` do not cross the boundary.
 
-- `pytest`
-- `pytest --cov`
-- `ruff check`
-- `ruff format --check`
+**Regression tests:** `tests/test_gateway.py` now proves security-sensitive headers are excluded and gateway identity is injected.
+
+**Additional hardening:** external API-key comparison now uses `hmac.compare_digest`.
+
+**Remaining limitation:** one shared internal API key still creates shared blast radius. The repository should be described as a simplified integration architecture, not zero-trust service identity.
+
+### SEC-006 — `dataset-poisoning-detector` WebSocket authentication documentation mismatch
+
+**Severity:** P4 — open documentation defect
+
+**Observed implementation:** `/stream` validates `X-API-Key` and rejects unauthorized connections; a regression test covers the behavior.
+
+**Problem:** A module-level docstring still says WebSocket connections are unauthenticated.
+
+**Required fix:** Remove the obsolete statement and keep the security configuration, implementation, and tests aligned.
+
+### SEC-007 — `adversarial-ml-lab` readiness claims exceed current evidence
+
+**Severity:** P2/P4 — open documentation reconciliation
+
+**Problem:** `docs/TECHNICAL_REPORT.md` labels several attack/harness capabilities "production-ready" while the same project describes advanced modules as experimental and its evaluations as synthetic/small-model research.
+
+**Required wording:** describe those components as research/benchmark capabilities until real deployment validation exists. Synthetic benchmark results must not be promoted to production claims.
+
+### SEC-008 — `mlsec-benchmark-suite` composite score previously implied production readiness
+
+**Severity:** P2 — fixed
+
+**Fix:** `docs/SCORING_FRAMEWORK.md` now states that benchmark scores are measurement results only. Score ranges no longer map to "production-ready" or "best-in-class" and CI gates are explicitly benchmark gates rather than deployment approvals.
+
+### SEC-009 — `mlsec-dashboards` readiness wording exceeded evidence
+
+**Severity:** P2 — fixed
+
+**Fix:** README now describes it as a local developer/portfolio evidence dashboard, not a production-facing service. Static benchmark output is explicitly distinguished from live monitoring.
+
+### SEC-010 — `ml-security-command-center` readiness wording exceeded implementation scope
+
+**Severity:** P2 — fixed
+
+**Fix:** README now uses "Intended-Use Readiness Assessment" and states that the project is a bounded static source inventory. Test counts are not security-effectiveness measurements.
+
+### SEC-011 — `PulseNet-RUL-Forecasting` audit ledger overstated integrity and failed silently on corruption
+
+**Severity:** P1 within the ledger's audit scope — fixed
+
+**Problems found:**
+- Hash chaining was described as "tamper-proof" even though the implementation has no external trust anchor/signature/distributed immutability.
+- Corrupt/unreadable persisted ledgers were silently replaced with a new genesis block, which could destroy evidence.
+- Integrity validation did not validate the genesis block's own hash; rewriting the genesis contents and hash could evade a chain-link-only check.
+- Persistence errors were swallowed.
+
+**Fix:**
+- Language changed from tamper-proof to tamper-evident.
+- Genesis block is explicitly validated.
+- Corrupt persisted ledgers raise `LedgerIntegrityError` instead of silently resetting.
+- Persistence failures propagate as `LedgerIntegrityError`.
+- Atomic temp-file write + `os.replace()` is used for persistence.
+
+**Regression tests:** `tests/test_blockchain_integrity_regressions.py` covers tampered genesis, corrupt storage, and persistence failure.
+
+**Remaining limitation:** The ledger remains locally tamper-evident, not cryptographically unforgeable against an operator who can rewrite both ledger state and trusted reference state.
+
+### SEC-012 — `model-privacy-attacks` CI feedback on new patch
+
+**Severity:** P3 — fixed in source, CI rerun pending
+
+The first run of the new DP regression commit failed only on Ruff (`unused torch import` and one E501 line). Both were corrected in commit `500ce145eb59dcbabae19ff07622a7805013e09e`; the corresponding CI run was pending at the time of this report.
+
+## Security-boundary review
+
+For each runtime boundary, the audit used this model:
+
+```text
+Input
+  -> Authentication
+  -> Authorization
+  -> Validation
+  -> Policy evaluation
+  -> Enforcement
+  -> Logging/evidence
+  -> Response
+```
+
+### `mcp-agent-security-gateway`
+
+- **Input:** structured MCP tool-call payloads
+- **Authentication:** API key at protected server boundary
+- **Authorization:** policy/layer verdicts
+- **Validation:** JSON/protocol/input guards
+- **Policy evaluation:** multi-layer inspection
+- **Enforcement:** client `guard()` raises `ToolBlocked` before real tool invocation
+- **Failure mode:** fail closed by default for transport availability
+- **Known trade-off:** shadow mode intentionally allows detector failures for monitoring deployments
+
+### `llm-redteam-framework`
+
+- **Authentication:** explicit API key for protected endpoints
+- **Validation:** prompt-length and rate-limit controls
+- **Enforcement semantics:** detector verdict blocks at the API response layer only; downstream tool/agent execution must still enforce the verdict
+
+### `dataset-poisoning-detector`
+
+- **Authentication:** REST API key and WebSocket API key
+- **Enforcement:** unauthorized WebSocket upgrades are rejected
+- **Known limitation:** in-memory rate limiting is process-local, not distributed
+
+### `unified-ml-security-platform`
+
+- **Authentication:** gateway API key
+- **Authorization:** gateway dependency before proxying
+- **Validation:** path service allowlist
+- **Enforcement:** internal service identity is gateway-controlled; caller security headers are filtered
+- **Known limitation:** shared internal key creates shared blast radius
+
+## Test execution and verification record
+
+### Verified through GitHub Actions during this audit
+
+`mcp-agent-security-gateway`, commit `0f25219d0f20521382819654f8a267202febe304`:
+- Ruff lint: success
+- Ruff formatter check: success
+- focused Pyright: success
+- Bandit: success
+- pip-audit: success
+- CodeQL: success
+- Windows control-plane job: success
+- Python 3.10 tests: success
+- Python 3.11 tests: success
+- Python 3.12 tests: success
+- security scanner job: success
+- Docker build was still running at report time
+
+`unified-ml-security-platform`, commit `80bb66ddd964ad08153b71490346b0ff0c00c3a8`:
+- prior CI run completed successfully, including the header-boundary regression tests.
+- new constant-time comparison commit `00226b719cfb933687b35d6145979d57fd6c8ca0` had a workflow in progress at report time.
+
+`model-privacy-attacks`:
+- commit `bf2fefd0863d50676a127f309b206c446b83653e` CI run was executed and failed at Ruff before tests could run; the failure was corrected.
+- latest corrected commit `500ce145eb59dcbabae19ff07622a7805013e09e` had a new CI run pending/in progress at report time.
+
+### Not executed locally in this environment
+
+No local repository test suites were run because local git cloning/outbound network access was unavailable. Consequently the following are not claimed as locally executed:
+
+- `python -m pytest -q`
+- `python -m pytest --cov`
+- `ruff check .`
+- `ruff format --check .`
 - `pip-audit`
 - `python -m build`
-- Docker builds/compose validation
+- Docker/Compose validation
 - Kubernetes validation
 - Terraform validation
-- full cross-repository end-to-end tests
+- complete cross-repository end-to-end tests
 
-Reason: local repository cloning/network access was unavailable.
+### Benchmark reproduction
 
-## Files changed
+No new benchmark numbers were generated by this audit. Existing benchmark artifacts are treated as historical or scoped evidence until fresh reproduction is performed.
+
+## Files changed in the current audit
 
 ### `mcp-agent-security-gateway`
 - `src/mcp_monitor/client.py`
 - `tests/test_client.py`
 
 Commits:
-- `e8e866b8d3c5a2da99dbd7dbc31699657b7895b6`
-- `73cca8a08023191e0fd1aaf6b6b43d9ebdbb00de`
-
-### `llm-redteam-framework`
-- `src/redteam/api/app.py`
-- `tests/test_api_security.py`
-- `SECURITY_CONFIGURATION.md`
-
-Commits:
-- `d5f92bbb7450d378fb460e0f5edae0f5bc2351f9`
-- `56cc80517264fee91da064f49506fada6c6bc563`
-- `d5f1b4921f512a03ecb0d860a35f55405ee48d60`
+- `16446df24772aa2260790b83537f2d482e2ab8a9`
+- `0f25219d0f20521382819654f8a267202febe304`
 
 ### `model-privacy-attacks`
-- `pyproject.toml`
 - `src/privacy_attacks/defenses.py`
-- `DP_SGD.md`
-- `README.md`
+- `src/privacy_attacks/defenses/dp_sgd.py`
+- `scripts/verify_epsilon.py`
+- `results/epsilon_verification.json`
 - `tests/test_dp_sgd_security.py`
 
 Commits:
-- `9f4bb863d32fefa870b408c949f2cce85f8297b7`
-- `57db67c8a0f14f79c15376e773967d7b838b4c98`
-- `7f8d834ec836674e457036f4543252f71817f4b7`
-- `81f1ec54dcff2272a28636d261d4ecdab1348f3f`
-- `db2af97b09068de09ade333c39f0b5535af343b3`
+- `8d6c1471bb902331d4422cda549041a8cfc38eea`
+- `414b3ddb70ca1f85eccd26ce5d5df09e60531ed2`
+- `b1109039b1c46dc83a363e69b2e402950973b03e`
+- `1cf506e81d0274d204a92876d3d4ac3925380c74`
+- `bf2fefd0863d50676a127f309b206c446b83653e`
+- `ddbbde7430223d7063a44ac6544d11e16d6c2a4d`
+- `500ce145eb59dcbabae19ff07622a7805013e09e`
 
 ### `unified-ml-security-platform`
+- `tests/test_gateway.py`
 - `gateway_server.py`
 
+Commits:
+- `80bb66ddd964ad08153b71490346b0ff0c00c3a8`
+- `00226b719cfb933687b35d6145979d57fd6c8ca0`
+
+### `mlsec-dashboards`
+- `README.md`
+
 Commit:
-- `7864d70ff832954cbec221b41f4e399cab7e06da`
+- `b04e9563810ae7746a9e24afd0dca536c38274c2`
 
-## Remaining work
+### `mlsec-benchmark-suite`
+- `docs/SCORING_FRAMEWORK.md`
 
-1. Re-run all repository test/lint/security/build commands from fresh clones in a network-enabled environment.
-2. Reconcile stale documentation in `dataset-poisoning-detector` source docstrings.
-3. Add/verify header-forwarding regression tests in `unified-ml-security-platform`.
-4. Independently run and compare Opacus epsilon accounting for representative DP configurations.
-5. Perform artifact-by-artifact benchmark reproduction for all repositories before citing current metrics.
-6. Audit GitHub Actions permissions and action pinning repository-by-repository.
-7. Audit historical git history for secrets where repository visibility and access make that appropriate.
-8. Perform full cross-repository schema compatibility tests.
+Commit:
+- `df4a9d6a4fece4882e4c7643d45d0779a8cb7d1f`
+
+### `ml-security-command-center`
+- `README.md`
+
+Commit:
+- `c8bba4f062a86ca373649bf559ea04baa9998478`
+
+### `PulseNet-RUL-Forecasting`
+- `src/pulsenet/security/blockchain.py`
+- `tests/test_blockchain_integrity_regressions.py`
+
+Commits:
+- `dcb79437063b1b0bd55657d96d2969a4a68171c9`
+- `3f3f61721ad8d68f1d10188303b6452566d6fb8a`
+
+## Remaining known limitations
+
+1. `llm-redteam-framework/README.md` has a stale historical paragraph saying missing `REDTEAM_API_KEY` disables auth; the current code and `SECURITY_CONFIGURATION.md` are fail-closed.
+2. `dataset-poisoning-detector` retains one stale source docstring describing `/stream` as unauthenticated.
+3. `adversarial-ml-lab` technical reporting still has production-readiness wording that must be narrowed to experimental/research scope.
+4. `unified-ml-security-platform` uses a shared internal API key, so service identity separation is simplified rather than zero-trust.
+5. Fresh benchmark reproduction remains outstanding across the portfolio.
+6. Historical git-secret scanning, complete cross-repo schema compatibility testing, and exhaustive workflow/action review remain outstanding.
 
 ## Portfolio security posture
 
@@ -194,33 +374,35 @@ Commit:
 - `unified-ml-security-platform` gateway
 
 ### Static analysis
-- `aws-agent-identity-guard`
 - `hf-model-provenance-scanner`
+- `aws-agent-identity-guard`
 
 ### Detection
 - `dataset-poisoning-detector`
 - `attack-detection-engine`
 
-### Adversarial testing/research
+### Adversarial testing / research
 - `llm-redteam-framework`
 - `adversarial-ml-lab`
 - `model-privacy-attacks`
 
-### Threat-intelligence/data foundation
+### Threat intelligence / data foundation
 - `attack-v19-core`
 
-### Benchmarking/evidence
+### Benchmark / evidence
 - `mlsec-benchmark-suite`
 
-### Observability/integration
+### Observability / integration
 - `mlsec-dashboards`
 - `ml-security-command-center`
 
-### Non-security ML work
+### Non-security ML
 - `PulseNet-RUL-Forecasting`
 
-## Bottom line
+## Portfolio conclusion
 
-The strongest engineering evidence is concentrated in the MCP gateway, AWS agent identity guard, HF provenance scanner, LLM red-team framework, and dataset poisoning detector. The privacy repository is now more honest technically because the former pseudo-DP implementation cannot be mistaken for formal DP-SGD.
+The strongest evidence for a Security Engineer / Detection Engineering / AI Security portfolio comes from projects where the security boundary is explicit and the evidence chain is inspectable: MCP gateway enforcement, AWS IAM analysis, HF model provenance, LLM red-team evaluation, and dataset-poisoning detection.
 
-This audit deliberately does **not** claim that the portfolio is production-ready or that every repository is fully verified. The remaining gap is fresh execution and artifact-level reproduction, not cosmetic README polishing.
+The privacy project is now technically more defensible because formal DP language is limited to the Opacus-backed path and the old pseudo-accountant cannot silently produce a formal-looking epsilon.
+
+This report does **not** claim that every repository is fully verified or production-ready. The unresolved gap is primarily fresh execution/reproduction and a small set of stale documentation claims.
