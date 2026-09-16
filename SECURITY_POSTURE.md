@@ -1,16 +1,18 @@
-# Portfolio Security Posture
+# SECURITY_POSTURE.md
 
 Date: 2026-09-16
+
+This document classifies what each security/ML-security repository actually does. The categories are capability classes, not quality scores.
 
 ## Runtime enforcement
 
 ### `mcp-agent-security-gateway`
 
-Security gateway with protected production API, policy evaluation, and tool-call guard middleware. The client now sends an API key when configured and defaults to fail-closed on gateway transport failure.
+A runtime MCP security gateway with a protected API, policy evaluation, and client-side guard middleware. The client sends `X-API-Key` when configured, defaults to fail-closed for availability failures, and treats explicit upstream authorization denials as blocking.
 
 ### `unified-ml-security-platform`
 
-Authenticated gateway that routes requests to internal services. The proxy now uses an explicit request-header allowlist and injects the gateway's internal API key rather than forwarding caller-controlled authentication headers.
+An authenticated integration gateway that routes to configured internal services. The proxy uses an explicit request-header allowlist and injects the gateway's internal API key rather than forwarding caller-controlled authentication headers.
 
 **Limitation:** service identity is still based on a shared key across configured services.
 
@@ -18,61 +20,71 @@ Authenticated gateway that routes requests to internal services. The proxy now u
 
 ### `aws-agent-identity-guard`
 
-Static AWS IAM policy analysis focused on agent permissions and risky constructs. It should not be described as determining effective account permissions without AWS-side evaluation.
+Static AWS IAM policy analysis focused on agent permissions and risky constructs. It must not be described as determining effective AWS account permissions without AWS-side/runtime evaluation.
 
 ### `hf-model-provenance-scanner`
 
-Static model/repository provenance analysis. A suspicious provenance indicator is not proof of malware or compromise.
+Static model/repository provenance analysis. Suspicious provenance indicators are evidence for review, not proof of maliciousness or compromise.
 
 ## Detection
 
-- `dataset-poisoning-detector`: anomaly/poisoning detection service with authenticated REST and WebSocket boundaries in current source.
-- `attack-detection-engine`: ATT&CK-mapped detection engine.
+### `dataset-poisoning-detector`
 
-Detection accuracy is dataset/configuration dependent and must not be generalized from fixture results.
+Anomaly/poisoning detection service with authenticated REST and WebSocket boundaries in current source.
 
-## Adversarial testing
+### `attack-detection-engine`
+
+ATT&CK-mapped detection engine. Current effectiveness claims remain configuration/dataset dependent.
+
+Detection metrics must be scoped to the specific dataset, fixtures, attack types, and evaluation method.
+
+## Adversarial testing / red teaming
 
 ### `llm-redteam-framework`
 
-Offline prompt-injection evaluation and detector testing. The API now fails closed when its API secret is missing.
+Offline prompt-injection evaluation and detector testing. Protected API endpoints fail closed when the API secret is missing. The detector verdict is not itself a secure downstream execution boundary.
 
 ### `adversarial-ml-lab`
 
-Adversarial ML attack and robustness measurement harness for CIFAR-10/classifier experiments. It is a benchmark/research harness, not a universal robustness guarantee.
+Adversarial ML attack and robustness measurement harness for classifier experiments. It is a research/benchmark environment, not a universal robustness guarantee or independently validated production platform.
 
 ## Privacy/security research
 
 ### `model-privacy-attacks`
 
-Membership-inference and privacy-defense research. The previous aggregate-gradient pseudo-DP implementation was replaced with an Opacus-backed preparation path. Formal DP should only be claimed from an actual accountant result for a specific training configuration.
+Membership-inference and privacy-defense research. Formal DP-SGD is limited to the corrected Opacus-backed path and requires the actual accountant result for a specific training configuration. The NumPy mechanism demonstration is explicitly non-formal.
 
-## Threat intelligence/data foundation
+## Threat intelligence / data foundation
 
 ### `attack-v19-core`
 
 Versioned ATT&CK v19 data/model foundation. It is a data/model package, not itself a runtime enforcement boundary.
 
-## Benchmarking/evidence
+## Benchmarking / evidence
 
 ### `mlsec-benchmark-suite`
 
-Benchmark/evidence infrastructure. Results are measurements under specified configurations and require reproducibility metadata before being presented as current.
+Benchmark and scoring infrastructure. Composite scores are measurements under declared benchmark conditions; they are not production-readiness determinations.
 
-## Observability/integration
+## Observability / integration
 
-- `mlsec-dashboards`: dashboard/visualization layer.
-- `ml-security-command-center`: integration/command-center surface.
+### `mlsec-dashboards`
 
-These should not be represented as independent security enforcement merely because they display security findings.
+Static evidence dashboard layer. It can display committed benchmark/security evidence; it is not itself enforcement.
 
-## Non-security ML
+### `ml-security-command-center`
 
-`PulseNet-RUL-Forecasting` is primarily an ML forecasting project and should not be counted as evidence of security-control implementation.
+Static source-inventory/portfolio command-center surface. It counts source declarations and records revisions; it does not execute the tests it inventories and does not measure security effectiveness.
+
+## Audit/ML utility within non-security ML project
+
+### `PulseNet-RUL-Forecasting`
+
+Primarily an ML forecasting project. Its audit ledger now provides tamper-evident local hash chaining and explicit corruption/persistence failure handling. It does not establish tamper-proof or distributed immutable logging.
 
 ## Security-boundary model
 
-For runtime security components, the expected flow is:
+For every runtime security component, the expected flow is:
 
 ```text
 Input
@@ -81,8 +93,12 @@ Input
   -> Validation
   -> Policy evaluation
   -> Enforcement
-  -> Logging
+  -> Logging/evidence
   -> Response
 ```
 
-The audit specifically found and corrected gaps where authentication, enforcement, or trust-boundary handling did not match the documented security semantics.
+The audit specifically identified and corrected cases where authentication, enforcement, or trust-boundary handling did not match documented semantics.
+
+## Evidence rule
+
+A security capability is considered stronger when the implementation, caller enforcement, tests, configuration, and documentation all agree. Static code presence alone is not treated as proof that the control is effective in deployment.
