@@ -1,86 +1,58 @@
-<!-- Profile README — the gateway into the full interactive experience. -->
+# Pooja Kiran — Security Engineer
 
-# Pooja Kiran - Security Engineer | AI Security | Agentic AI
+I build security controls for AI systems, cloud identities, and model supply chains.
 
-**Security for the moment AI stops generating text and starts taking actions.**
+My current work focuses on three boundaries that are easy to describe and hard to secure well: **agent-to-tool execution**, **cloud permissions**, and **model artifacts before load**.
 
-I build the controls that sit between an AI agent's decision and a real-world action:
-inspecting tool calls, constraining cloud identity, and checking model artifacts before
-they are trusted.
+## Flagship projects
 
-**Agentic AI & LLM Security · MCP & Tool Security · IAM & Least Privilege ·
-Detection Engineering · Model Supply-Chain Security**
+### [MCP Agent Security Gateway](https://github.com/poojakira/mcp-agent-security-gateway)
+Inline MCP/JSON-RPC inspection for agent tool calls, with policy decisions, prompt-injection signals, audit logging, telemetry, and a local Elastic detection lab.
 
----
+- Current verified CI baseline: **629 passing tests, 78.47% statement coverage**
+- Evidence: [VERIFIED_METRICS.md](https://github.com/poojakira/mcp-agent-security-gateway/blob/main/VERIFIED_METRICS.md)
+- Scope: prototype security gateway; only traffic routed through it is controlled
 
-## ▶ Enter the Interactive Portfolio
+### [AWS Agent Identity Guard](https://github.com/poojakira/aws-agent-identity-guard)
+Static IAM analysis for AI-agent and tool-executor roles, including identity-policy, trust-policy, and permission-boundary checks.
 
-**[poojakira.github.io/Pooja_Kiran_Portfolio_Website](https://poojakira.github.io/Pooja_Kiran_Portfolio_Website/)**
+- **25 deterministic rule IDs**
+- Fresh CI evidence: **230 passed, 3 skipped**
+- Performance is reported as a synthetic CI gate, not production throughput
+- Evidence: [VERIFIED_METRICS.md](https://github.com/poojakira/aws-agent-identity-guard/blob/main/VERIFIED_METRICS.md)
 
-Ask my AI, talk to me by voice, explore an Engineering Atlas, open flagship projects with
-threat models and architecture, and run safe in-browser security demos — every answer linked
-to its source.
+### [HF Model Provenance Scanner](https://github.com/poojakira/hf-model-provenance-scanner)
+Pre-load scanning for model repositories, including pickle-risk, provenance, impersonation, and model-supply-chain signals.
 
-**Static · Keyless · Private · No Trackers · No Third-Party Scripts**
+- Fixture-scoped detection evidence is documented in the repository
+- No claim of real-world detection rate or commercial scanner parity
+- Evidence: [VERIFIED_METRICS.md](https://github.com/poojakira/hf-model-provenance-scanner/blob/main/VERIFIED_METRICS.md)
 
-[![Interactive Portfolio](https://img.shields.io/badge/Interactive_Portfolio-Enter-1b2a4a?style=for-the-badge)](https://poojakira.github.io/Pooja_Kiran_Portfolio_Website/)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/poojakiran/)
-[![Email](https://img.shields.io/badge/Email-Reach%20me-c8532b?style=for-the-badge&logo=gmail&logoColor=white)](mailto:poojakiranbhardwaj@gmail.com)
+## Supporting work
 
----
+- [LLM Red Team Framework](https://github.com/poojakira/llm-redteam-framework) — prompt-injection evaluation with grouped and out-of-distribution testing
+- [Dataset Poisoning Detector](https://github.com/poojakira/dataset-poisoning-detector) — streaming/statistical screening with explicit benchmark limitations
+- [Adversarial ML Lab](https://github.com/poojakira/adversarial-ml-lab) — adversarial robustness measurement
+- [ML Security Benchmark Suite](https://github.com/poojakira/mlsec-benchmark-suite) — cross-project regression and fixture harness
+- [ATT&CK v19 Core](https://github.com/poojakira/attack-v19-core) — shared ATT&CK v19 mapping utilities
+- [Unified ML Security Platform](https://github.com/poojakira/unified-ml-security-platform) — integration-topology prototype for the security tools above
 
-## Flagship Work
+## Engineering principles
 
-| Project | What it does | Evidence & Limits |
-| :--- | :--- | :--- |
-| **[mcp-agent-security-gateway](https://github.com/poojakira/mcp-agent-security-gateway)** | Inspects and gates MCP tool calls at the agent-to-tool boundary — inline stdio proxy, 5-layer decision pipeline, 55 prompt-injection patterns, hash-chained audit log, ECS/Elastic detection lab. **629 tests, 78.47% coverage.** | Prototype; controls only traffic routed through it. |
-| **[aws-agent-identity-guard](https://github.com/poojakira/aws-agent-identity-guard)** | Static IAM linter for agent roles: 25 deterministic rules, text/JSON/SARIF output, CI merge gate. No AWS credentials needed. | Best-effort linter; complements Access Analyzer/Prowler. |
-| **[hf-model-provenance-scanner](https://github.com/poojakira/hf-model-provenance-scanner)** | Scans model repositories for pickle risk, provenance, and impersonation indicators; maps supported findings to MITRE ATT&CK v19. | Fixture-scoped evidence; not a real-world detection rate. |
+- **Attach scope to every metric.** A test count, F1 score, or latency number is incomplete without the environment and dataset.
+- **Separate detection from enforcement.** A component that returns a decision is not a firewall unless it actually controls execution.
+- **Prefer reproducible evidence over adjectives.** CI, committed fixtures, and explicit limitations carry more weight than "production-ready."
+- **Treat failure modes as part of the design.** Security behavior during parse errors, unavailable dependencies, and incomplete scans is documented and tested.
 
-Quantitative résumé/portfolio claims are anchored in each flagship repository's `VERIFIED_METRICS.md` file and reconciled against CI/evidence artifacts.
+## Research and publications
 
-**Resume snapshot proof:** [`RESUME_METRICS_EVIDENCE.md`](RESUME_METRICS_EVIDENCE.md) records the exact application-time values and explains later repository growth without rewriting historical claims.
+- [A Personalized E-Learning System Using Reinforcement Learning Through Satellite](https://ieeexplore.ieee.org/document/10440852) — IEEE INDICON 2023 proceedings
+- [Smart Charge Pro: Empowering Future Mobility With Advanced Safety And Efficiency In Electric Vehicle Charging Infrastructure](https://www.iosrjournals.org/iosr-jce/pages/25(4)Series-1.html) — IOSR-JCE, 2023
 
-### Supporting Research
+## Links
 
-| Project | Focus | Honest Status |
-| :--- | :--- | :--- |
-| **[llm-redteam-framework](https://github.com/poojakira/llm-redteam-framework)** | Prompt-injection detection with grouped and out-of-distribution evaluation. | Research baseline; F1 0.97 grouped held-out, ~0.98 on external benchmark fixtures, and 0.83 on out-of-distribution novel phrasings. |
-| **[mlsec-benchmark-suite](https://github.com/poojakira/mlsec-benchmark-suite)** | Cross-project benchmark harness for ML security tooling; validates IAM analysis, model scanning, prompt-injection detection, and dataset-poisoning analysis using typed adapters, versioned fixtures, and shared JSON Schema. | 67 test functions across 8 modules; benchmark results are scoped to the committed fixture set. |
-| **[adversarial-ml-lab](https://github.com/poojakira/adversarial-ml-lab)** | FGSM / PGD / C&W attacks, adaptive-attack research, and defense evaluation; maps to MITRE ATLAS. | Committed measured SmallCNN benchmark: 71.82% clean accuracy and 0.00% PGD-20 robust accuracy at ε=8/255; defense implementations exist, but no production-robustness claim is made. |
-| **model-privacy-attacks** *(private — not yet public)* | Membership-inference and model-privacy risk measurement. | No metric claimed without benchmark-suite evidence. |
-| **[dataset-poisoning-detector](https://github.com/poojakira/dataset-poisoning-detector)** | Anomaly-based poisoning screening over a streaming pipeline. | ROC-AUC ≈ 0.53–0.56 (near random); research baseline. |
+- Portfolio: https://poojakira.github.io/Pooja_Kiran_Portfolio_Website/
+- LinkedIn: https://www.linkedin.com/in/poojakiran/
+- Email: poojakiranbhardwaj@gmail.com
 
----
-
-## How I Work
-
-- **Secure the action, not just the prompt.** Controls belong at the hand-off from decision to execution.
-- **A metric is meaningful only with its scope attached.** Distribution and model before the number.
-- **A documented weakness beats an undocumented promise.** Every project names what it does not do.
-- **Least privilege is a pre-deploy decision.** Catch over-broad IAM before an agent holds it.
-
-Findings map to **MITRE ATT&CK v19 / ATLAS** and **NIST AI RMF** where the repositories support it.
-
----
-
-## Research & Publications
-
-- **[Personalized E-learning System Using Reinforcement Learning Through Satellite](https://ieeexplore.ieee.org/document/10440852)** — IEEE Xplore, 2024.
-- **[Smart Charge Pro — EV Charging Infrastructure](https://www.iosrjournals.org/iosr-jce/pages/25(4)Series-1.html)** — IOSR-JCE, 2023.
-
----
-
-## Contact
-
-- **Interactive Portfolio:** https://poojakira.github.io/Pooja_Kiran_Portfolio_Website/
-- **Location:** Greater Phoenix Area, AZ
-- **Work Authorization:** F-1 OPT
-- **Open to:** Security Engineer roles focused on AI security, agentic AI, detection engineering, application security, cloud security, and IAM.
-- **Email:** [poojakiranbhardwaj@gmail.com](mailto:poojakiranbhardwaj@gmail.com)
-- **GitHub:** [@poojakira](https://github.com/poojakira)
-- **LinkedIn:** [in/poojakiran](https://www.linkedin.com/in/poojakiran/)
-
----
-
-<sub>Claims are limited to public, inspectable work with traceable evidence. Last updated September 2026.</sub>
+<sub>Quantitative claims above are intentionally limited to values with repository-level evidence.</sub>
