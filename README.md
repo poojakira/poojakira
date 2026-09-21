@@ -39,6 +39,8 @@ to its source.
 
 Quantitative résumé/portfolio claims are anchored in each flagship repository's `VERIFIED_METRICS.md` file and reconciled against CI/evidence artifacts.
 
+**Resume snapshot proof:** [`RESUME_METRICS_EVIDENCE.md`](RESUME_METRICS_EVIDENCE.md) records the exact application-time values and explains later repository growth without rewriting historical claims.
+
 ### Supporting Research
 
 | Project | Focus | Honest Status |
