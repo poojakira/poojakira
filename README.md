@@ -33,9 +33,11 @@ to its source.
 
 | Project | What it does | Evidence & Limits |
 | :--- | :--- | :--- |
-| **[mcp-agent-security-gateway](https://github.com/poojakira/mcp-agent-security-gateway)** | Inspects and gates MCP tool calls at the agent-to-tool boundary — inline stdio proxy, 5-layer decision pipeline, 50+ injection rules, hash-chained audit log, ECS/Elastic detection lab. **622 tests, 78% coverage.** | Prototype; controls only traffic routed through it. |
+| **[mcp-agent-security-gateway](https://github.com/poojakira/mcp-agent-security-gateway)** | Inspects and gates MCP tool calls at the agent-to-tool boundary — inline stdio proxy, 5-layer decision pipeline, 55 prompt-injection patterns, hash-chained audit log, ECS/Elastic detection lab. **629 tests, 78.47% coverage.** | Prototype; controls only traffic routed through it. |
 | **[aws-agent-identity-guard](https://github.com/poojakira/aws-agent-identity-guard)** | Static IAM linter for agent roles: 25 deterministic rules, text/JSON/SARIF output, CI merge gate. No AWS credentials needed. | Best-effort linter; complements Access Analyzer/Prowler. |
 | **[hf-model-provenance-scanner](https://github.com/poojakira/hf-model-provenance-scanner)** | Scans model repositories for pickle risk, provenance, and impersonation indicators; maps supported findings to MITRE ATT&CK v19. | Fixture-scoped evidence; not a real-world detection rate. |
+
+Quantitative résumé/portfolio claims are anchored in each flagship repository's `VERIFIED_METRICS.md` file and reconciled against CI/evidence artifacts.
 
 ### Supporting Research
 
