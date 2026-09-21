@@ -47,7 +47,7 @@ Quantitative résumé/portfolio claims are anchored in each flagship repository'
 | :--- | :--- | :--- |
 | **[llm-redteam-framework](https://github.com/poojakira/llm-redteam-framework)** | Prompt-injection detection with grouped and out-of-distribution evaluation. | Research baseline; F1 0.97 grouped held-out, ~0.98 on external benchmark fixtures, and 0.83 on out-of-distribution novel phrasings. |
 | **[mlsec-benchmark-suite](https://github.com/poojakira/mlsec-benchmark-suite)** | Cross-project benchmark harness for ML security tooling; validates IAM analysis, model scanning, prompt-injection detection, and dataset-poisoning analysis using typed adapters, versioned fixtures, and shared JSON Schema. | 67 test functions across 8 modules; benchmark results are scoped to the committed fixture set. |
-| **[adversarial-ml-lab](https://github.com/poojakira/adversarial-ml-lab)** | FGSM / PGD / C&W attacks, unit-tested; maps to MITRE ATLAS. | Benchmark artifacts not committed; defenses not implemented. |
+| **[adversarial-ml-lab](https://github.com/poojakira/adversarial-ml-lab)** | FGSM / PGD / C&W attacks, adaptive-attack research, and defense evaluation; maps to MITRE ATLAS. | Committed measured SmallCNN benchmark: 71.82% clean accuracy and 0.00% PGD-20 robust accuracy at ε=8/255; defense implementations exist, but no production-robustness claim is made. |
 | **model-privacy-attacks** *(private — not yet public)* | Membership-inference and model-privacy risk measurement. | No metric claimed without benchmark-suite evidence. |
 | **[dataset-poisoning-detector](https://github.com/poojakira/dataset-poisoning-detector)** | Anomaly-based poisoning screening over a streaming pipeline. | ROC-AUC ≈ 0.53–0.56 (near random); research baseline. |
 
