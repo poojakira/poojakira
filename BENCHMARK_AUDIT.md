@@ -31,7 +31,7 @@ Committed small-CNN/CIFAR-10 measurements are experiment results for that datase
 
 ### `llm-redteam-framework`
 
-The repository reports grouped-split F1=0.97, random-split F1=1.0, and novel-phrasing OOD F1=0.83. Those values are configuration-specific measurements. The OOD benchmark should remain paired with its dataset construction, split, seed, and test-size details.
+The current repository reports grouped-reference F1=0.9714, random-split F1=1.0, and same-detector novel-phrasing OOD F1=0.7188. These are configuration-specific measurements; the OOD result remains paired with its 50 hand-authored fixtures, split seed 42, corpus seed 20240713, and test size 0.3.
 
 ### `model-privacy-attacks`
 
