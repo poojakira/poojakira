@@ -13,7 +13,7 @@ Inline MCP/JSON-RPC inspection for agent tool calls, with policy decisions, prom
 
 - Current verified CI baseline: **629 passing tests, 78.47% statement coverage**
 - Evidence: [VERIFIED_METRICS.md](https://github.com/poojakira/mcp-agent-security-gateway/blob/main/VERIFIED_METRICS.md)
-- Scope: prototype security gateway; only traffic routed through it is controlled
+- Scope: production-oriented security gateway; enforcement applies only to traffic routed through a supported integration path
 
 ### [AWS Agent Identity Guard](https://github.com/poojakira/aws-agent-identity-guard)
 Static IAM analysis for AI-agent and tool-executor roles, including identity-policy, trust-policy, and permission-boundary checks.
@@ -37,7 +37,7 @@ Pre-load scanning for model repositories, including pickle-risk, provenance, imp
 - [Adversarial ML Lab](https://github.com/poojakira/adversarial-ml-lab) — adversarial robustness measurement
 - [ML Security Benchmark Suite](https://github.com/poojakira/mlsec-benchmark-suite) — cross-project regression and fixture harness
 - [ATT&CK v19 Core](https://github.com/poojakira/attack-v19-core) — shared ATT&CK v19 mapping utilities
-- [Unified ML Security Platform](https://github.com/poojakira/unified-ml-security-platform) — integration-topology prototype for the security tools above
+- [Unified ML Security Platform](https://github.com/poojakira/unified-ml-security-platform) — deployable integration gateway and normalized service topology for the security tools above
 
 ## Engineering principles
 
