@@ -1,0 +1,33 @@
+name: Production Gate
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify-evidence-index:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Reject unresolved placeholders and merge markers
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          bad = []
+          markers = ("<<<<<<<", "=======", ">>>>>>>", "TODO: FILL", "TBD_METRIC")
+          for p in Path(".").glob("*.md"):
+              text = p.read_text(encoding="utf-8")
+              for marker in markers:
+                  if marker in text:
+                      bad.append(f"{p}: {marker}")
+          if bad:
+              raise SystemExit("\n".join(bad))
+          print("profile evidence documents contain no unresolved release placeholders")
+          PY
