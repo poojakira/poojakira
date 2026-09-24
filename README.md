@@ -11,7 +11,7 @@ My current work focuses on three boundaries that are easy to describe and hard t
 ### [MCP Agent Security Gateway](https://github.com/poojakira/mcp-agent-security-gateway)
 Inline MCP/JSON-RPC inspection for agent tool calls, with policy decisions, prompt-injection signals, audit logging, telemetry, and a local Elastic detection lab.
 
-- Current verified CI baseline: **629 passing tests, 78.47% statement coverage**
+- Current verified CI baseline: **641 passing tests, 79.54% statement coverage**
 - Evidence: [VERIFIED_METRICS.md](https://github.com/poojakira/mcp-agent-security-gateway/blob/main/VERIFIED_METRICS.md)
 - Scope: production-oriented security gateway; enforcement applies only to traffic routed through a supported integration path
 
