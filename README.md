@@ -19,7 +19,7 @@ Inline MCP/JSON-RPC inspection for agent tool calls, with policy decisions, prom
 Static IAM analysis for AI-agent and tool-executor roles, including identity-policy, trust-policy, and permission-boundary checks.
 
 - **25 deterministic rule IDs**
-- Fresh CI evidence: **230 passed, 3 skipped**
+- Fresh CI evidence: **231 passed, 3 skipped**
 - Performance is reported as a synthetic CI gate, not production throughput
 - Evidence: [VERIFIED_METRICS.md](https://github.com/poojakira/aws-agent-identity-guard/blob/main/VERIFIED_METRICS.md)
 
