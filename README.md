@@ -1,7 +1,5 @@
 # Pooja Kiran — Security Engineer
 
-**Repository owner & maintainer:** Pooja Kiran ([@poojakira](https://github.com/poojakira)) — I own and maintain this repository and drive its design, engineering, validation, documentation, and evidence-backed releases.
-
 I build security controls for AI systems, cloud identities, and model supply chains.
 
 My current work focuses on three boundaries that are easy to describe and hard to secure well: **agent-to-tool execution**, **cloud permissions**, and **model artifacts before load**.
