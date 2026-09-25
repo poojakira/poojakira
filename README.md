@@ -9,7 +9,7 @@ My current work focuses on three boundaries that are easy to describe and hard t
 ### [MCP Agent Security Gateway](https://github.com/poojakira/mcp-agent-security-gateway)
 Inline MCP/JSON-RPC inspection for agent tool calls, with policy decisions, prompt-injection signals, audit logging, telemetry, and a local Elastic detection lab.
 
-- Current verified CI baseline: **641 passing tests, 79.54% statement coverage**
+- Current verified CI baseline: **648 passing tests, 79.61% statement coverage**
 - Evidence: [VERIFIED_METRICS.md](https://github.com/poojakira/mcp-agent-security-gateway/blob/main/VERIFIED_METRICS.md)
 - Scope: production-oriented security gateway; enforcement applies only to traffic routed through a supported integration path
 
@@ -17,7 +17,7 @@ Inline MCP/JSON-RPC inspection for agent tool calls, with policy decisions, prom
 Static IAM analysis for AI-agent and tool-executor roles, including identity-policy, trust-policy, and permission-boundary checks.
 
 - **25 deterministic rule IDs**
-- Fresh CI evidence: **231 passed, 3 skipped**
+- Fresh CI evidence: **235 passed, 3 skipped**
 - Performance is reported as a synthetic CI gate, not production throughput
 - Evidence: [VERIFIED_METRICS.md](https://github.com/poojakira/aws-agent-identity-guard/blob/main/VERIFIED_METRICS.md)
 
