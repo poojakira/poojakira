@@ -1,10 +1,14 @@
 # Pooja Kiran — Security Engineer
 
-I build security controls for AI systems, cloud identities, and model supply chains.
+I build **security infrastructure for AI agents, cloud identities, and model supply chains**.
 
-My current work focuses on three boundaries that are easy to describe and hard to secure well: **agent-to-tool execution**, **cloud permissions**, and **model artifacts before load**.
+My work focuses on three security boundaries:
 
-## Flagship projects
+**agent → tool execution** · **identity → authorization** · **model artifact → load**
+
+I build the controls, tests, and evidence needed to make those boundaries measurable and reproducible.
+
+## Start here
 
 ### [MCP Agent Security Gateway](https://github.com/poojakira/mcp-agent-security-gateway)
 Inline MCP/JSON-RPC inspection for agent tool calls, with policy decisions, prompt-injection signals, audit logging, telemetry, and a local Elastic detection lab.
@@ -28,14 +32,29 @@ Pre-load scanning for model repositories, including pickle-risk, provenance, imp
 - No claim of real-world detection rate or commercial scanner parity
 - Evidence: [VERIFIED_METRICS.md](https://github.com/poojakira/hf-model-provenance-scanner/blob/main/VERIFIED_METRICS.md)
 
+## Six-project security portfolio
+
+| Project | Security boundary |
+|---|---|
+| [MCP Agent Security Gateway](https://github.com/poojakira/mcp-agent-security-gateway) | Agent/tool execution |
+| [AWS Agent Identity Guard](https://github.com/poojakira/aws-agent-identity-guard) | Cloud identity & authorization |
+| [HF Model Provenance Scanner](https://github.com/poojakira/hf-model-provenance-scanner) | Model supply chain |
+| [LLM Red Team Framework](https://github.com/poojakira/llm-redteam-framework) | Adversarial evaluation |
+| [Dataset Poisoning Detector](https://github.com/poojakira/dataset-poisoning-detector) | Data/ML security |
+| [Adversarial ML Lab](https://github.com/poojakira/adversarial-ml-lab) | Adversarial robustness |
+
 ## Supporting work
 
-- [LLM Red Team Framework](https://github.com/poojakira/llm-redteam-framework) — prompt-injection evaluation with grouped and out-of-distribution testing
-- [Dataset Poisoning Detector](https://github.com/poojakira/dataset-poisoning-detector) — streaming/statistical screening with explicit benchmark limitations
-- [Adversarial ML Lab](https://github.com/poojakira/adversarial-ml-lab) — adversarial robustness measurement
 - [ML Security Benchmark Suite](https://github.com/poojakira/mlsec-benchmark-suite) — cross-project regression and fixture harness
 - [ATT&CK v19 Core](https://github.com/poojakira/attack-v19-core) — shared ATT&CK v19 mapping utilities
 - [Unified ML Security Platform](https://github.com/poojakira/unified-ml-security-platform) — deployable integration gateway and normalized service topology for the security tools above
+
+## What I care about
+
+- **Agent security:** MCP, tool-call security, prompt injection, authorization, data-flow controls, and execution boundaries
+- **Cloud security:** AWS IAM, policy analysis, least privilege, and agent/tool identity
+- **AI/ML security:** adversarial testing, model provenance, poisoning, and security evaluation
+- **Security engineering:** Python, FastAPI, Docker, Kubernetes, CI, testing, telemetry, and reproducible security controls
 
 ## Engineering principles
 
@@ -49,11 +68,12 @@ Pre-load scanning for model repositories, including pickle-risk, provenance, imp
 - [A Personalized E-Learning System Using Reinforcement Learning Through Satellite](https://ieeexplore.ieee.org/document/10440852) — IEEE INDICON 2023 proceedings
 - [Smart Charge Pro: Empowering Future Mobility With Advanced Safety And Efficiency In Electric Vehicle Charging Infrastructure](https://www.iosrjournals.org/iosr-jce/pages/25(4)Series-1.html) — IOSR-JCE, 2023
 
-## Links
+## Explore the work
+
+If you're interested in **AI agent security, MCP security, cloud IAM, adversarial ML, or model supply-chain security**, start with the flagship projects above, reproduce the tests, open an issue, or contribute a fix.
 
 - Portfolio: https://poojakira.github.io/Pooja_Kiran_Portfolio_Website/
-- Provenance ledger: [PROVENANCE_LEDGER.md](PROVENANCE_LEDGER.md)
 - LinkedIn: https://www.linkedin.com/in/poojakiran/
-- Email: poojakiranbhardwaj@gmail.com
+- Provenance ledger: [PROVENANCE_LEDGER.md](PROVENANCE_LEDGER.md)
 
 <sub>Quantitative claims above are intentionally limited to values with repository-level evidence.</sub>
