@@ -13,7 +13,7 @@ I build the controls, tests, and evidence needed to make those boundaries measur
 ### [MCP Agent Security Gateway](https://github.com/poojakira/mcp-agent-security-gateway)
 Inline MCP/JSON-RPC inspection for agent tool calls, with policy decisions, prompt-injection signals, audit logging, telemetry, and a local Elastic detection lab.
 
-- Current verified CI baseline: **648 passing tests, 79.61% statement coverage**
+- Current verified local baseline: **652 passing tests, ~79.2% statement coverage** (Python 3.12; historical main-CI snapshot: 641 tests / 79.54%)
 - Evidence: [VERIFIED_METRICS.md](https://github.com/poojakira/mcp-agent-security-gateway/blob/main/VERIFIED_METRICS.md)
 - Scope: production-oriented security gateway; enforcement applies only to traffic routed through a supported integration path
 
