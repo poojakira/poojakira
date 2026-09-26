@@ -49,6 +49,23 @@ Pre-load scanning for model repositories, including pickle-risk, provenance, imp
 - [ATT&CK v19 Core](https://github.com/poojakira/attack-v19-core) — shared ATT&CK v19 mapping utilities
 - [Unified ML Security Platform](https://github.com/poojakira/unified-ml-security-platform) — deployable integration gateway and normalized service topology for the security tools above
 
+## Research poster collection — *Security Systems*
+
+Each project has a technical research poster (36 × 48 in) following IEEE-style research-poster information architecture: problem, threat model, one research question, hero architecture, methodology, verified evidence, honest negative results, security boundary, limitations, and reproducibility. Every metric is evidence-backed; historical and projected numbers are labeled and kept separate from current results. *These are engineering research posters, not IEEE submissions — no affiliation or endorsement is claimed.*
+
+| # | Poster | Repository |
+|---|---|---|
+| 01 | Runtime Policy Enforcement at the AI Agent-to-Tool Boundary | [poster](https://github.com/poojakira/mcp-agent-security-gateway#research-poster) · [PDF](https://github.com/poojakira/mcp-agent-security-gateway/blob/main/poster/poster_36x48.pdf) |
+| 02 | Static Security Analysis of AWS IAM Policies for AI Workload Identities | [poster](https://github.com/poojakira/aws-agent-identity-guard#research-poster) · [PDF](https://github.com/poojakira/aws-agent-identity-guard/blob/main/poster/poster_36x48.pdf) |
+| 03 | Non-Executing Security Analysis of AI Model Supply-Chain Artifacts | [poster](https://github.com/poojakira/hf-model-provenance-scanner#research-poster) · [PDF](https://github.com/poojakira/hf-model-provenance-scanner/blob/main/poster/poster_36x48.pdf) |
+| 04 | Statistical Screening for Poisoned ML Training Data | [poster](https://github.com/poojakira/dataset-poisoning-detector#research-poster) · [PDF](https://github.com/poojakira/dataset-poisoning-detector/blob/main/poster/poster_36x48.pdf) |
+| 05 | Evaluating an Offline Detector Against Adversarial Prompt Attacks | [poster](https://github.com/poojakira/llm-redteam-framework#research-poster) · [PDF](https://github.com/poojakira/llm-redteam-framework/blob/main/poster/poster_36x48.pdf) |
+| 06 | Measuring Neural-Network Robustness Under Adversarial Perturbation | [poster](https://github.com/poojakira/adversarial-ml-lab#research-poster) · [PDF](https://github.com/poojakira/adversarial-ml-lab/blob/main/poster/poster_36x48.pdf) |
+| 07 | A Unified Control Plane for ML Security Services | [poster](https://github.com/poojakira/unified-ml-security-platform#research-poster) · [PDF](https://github.com/poojakira/unified-ml-security-platform/blob/main/poster/poster_36x48.pdf) |
+| 08 | Version-Aware Normalization of Findings Against MITRE ATT&CK v19 | [poster](https://github.com/poojakira/attack-v19-core#research-poster) · [PDF](https://github.com/poojakira/attack-v19-core/blob/main/poster/poster_36x48.pdf) |
+| 09 | Reproducible Regression Harness for ML Security Tools | [poster](https://github.com/poojakira/mlsec-benchmark-suite#research-poster) · [PDF](https://github.com/poojakira/mlsec-benchmark-suite/blob/main/poster/poster_36x48.pdf) |
+| 10 | Evidence-Centered Visualization for ML Security Engineering | [poster](https://github.com/poojakira/mlsec-dashboards#research-poster) · [PDF](https://github.com/poojakira/mlsec-dashboards/blob/main/poster/poster_36x48.pdf) |
+
 ## What I care about
 
 - **Agent security:** MCP, tool-call security, prompt injection, authorization, data-flow controls, and execution boundaries
