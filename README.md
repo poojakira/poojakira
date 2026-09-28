@@ -32,6 +32,8 @@ Pre-load scanning for model repositories, including pickle-risk, provenance, imp
 - No claim of real-world detection rate or commercial scanner parity
 - Evidence: [VERIFIED_METRICS.md](https://github.com/poojakira/hf-model-provenance-scanner/blob/main/VERIFIED_METRICS.md)
 
+The portfolio site is live, but the public `Pooja_Kiran_Portfolio_Website` repository currently contains no site source. This profile links to the deployed page as a viewing experience, not as evidence of a current TypeScript codebase.
+
 ## Six-project security portfolio
 
 | Project | Security boundary |
@@ -51,7 +53,7 @@ Pre-load scanning for model repositories, including pickle-risk, provenance, imp
 
 ## Research poster collection — *Security Systems*
 
-Each project has a technical research poster (36 × 48 in) following IEEE-style research-poster information architecture: problem, threat model, one research question, hero architecture, methodology, verified evidence, honest negative results, security boundary, limitations, and reproducibility. Every metric is evidence-backed; historical and projected numbers are labeled and kept separate from current results. *These are engineering research posters, not IEEE submissions — no affiliation or endorsement is claimed.*
+Each project has a technical research poster (36 × 48 in) following IEEE-style research-poster information architecture: problem, threat model, one research question, hero architecture, methodology, verified evidence, honest negative results, security boundary, limitations, and reproducibility. Metrics are tied to named evidence snapshots. A poster printed at an older commit is a dated result, not a fresh measurement of the latest `main`; project evidence files carry newer baselines where available. *These are engineering research posters, not IEEE submissions — no affiliation or endorsement is claimed.*
 
 | # | Poster | Repository |
 |---|---|---|
@@ -70,8 +72,8 @@ Each project has a technical research poster (36 × 48 in) following IEEE-style 
 
 - **Agent security:** MCP, tool-call security, prompt injection, authorization, data-flow controls, and execution boundaries
 - **Cloud security:** AWS IAM, policy analysis, least privilege, and agent/tool identity
-- **AI/ML security:** adversarial testing, model provenance, poisoning, and security evaluation
-- **Security engineering:** Python, FastAPI, Docker, Kubernetes, CI, testing, telemetry, and reproducible security controls
+- **AI/ML security:** adversarial testing, model provenance, poisoning, and security evaluation; model-privacy source is currently private
+- **Security engineering:** Python, FastAPI, Docker, CI, testing, telemetry, and reproducible security controls; Kubernetes deployment manifests are present for selected projects, without a claim of live cluster operation
 
 ## Engineering principles
 
