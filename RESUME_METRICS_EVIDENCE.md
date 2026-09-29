@@ -33,7 +33,7 @@ Resume values:
 
 Evidence: https://github.com/poojakira/aws-agent-identity-guard/blob/main/RESUME_EVIDENCE.md
 
-The performance figures are CI regression gates on a 500-policy synthetic benchmark, not universal production guarantees. The current verified repository baseline is **231 passed, 3 skipped**; the latest evidence run documented in `VERIFIED_METRICS.md` measured **1.1040 ms p95** and **1,913 policies/second** while passing both advertised thresholds.
+The performance figures are CI regression gates on a 500-policy synthetic benchmark, not universal production guarantees. The historical main-CI baseline is **231 passed, 3 skipped** with **1.1040 ms p95** and **1,913 policies/second**. The current verification section in `VERIFIED_METRICS.md` records **235 passed, 3 skipped** on current main and a local synthetic benchmark of **0.6935 ms p95** and **3,178 policies/second**; those newer performance values are local measurements, not production throughput.
 
 ## HF Model Provenance Scanner
 
@@ -46,7 +46,7 @@ Resume values:
 
 Evidence: https://github.com/poojakira/hf-model-provenance-scanner/blob/main/RESUME_EVIDENCE.md
 
-The 195 figure is a committed historical Windows/Python 3.12.10 validation snapshot recorded in the runbook. Later Linux CI grew beyond that snapshot; the current verified repository baseline is **214 passed, 1 skipped** plus **6 additional pytest subtests**. The historical 195 value remains provenance for the frozen résumé snapshot, not the current project count.
+The 195 figure is a committed historical Windows/Python 3.12.10 validation snapshot recorded in the runbook. Later Linux CI grew beyond that snapshot; the current verified repository baseline is **211 passed** plus **6 additional pytest subtests**, with **66.90%** statement coverage on Python 3.11/3.12. The historical 195 value remains provenance for the frozen résumé snapshot, not the current project count.
 
 The 12/12, 18/18, and four-benign-sample claims are fixture-scoped. They are not claims of universal detection accuracy or a universal 0% false-positive rate.
 
