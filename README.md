@@ -32,7 +32,7 @@ Pre-load scanning for model repositories, including pickle-risk, provenance, imp
 - No claim of real-world detection rate or commercial scanner parity
 - Evidence: [VERIFIED_METRICS.md](https://github.com/poojakira/hf-model-provenance-scanner/blob/main/VERIFIED_METRICS.md)
 
-The portfolio site is live, but the public `Pooja_Kiran_Portfolio_Website` repository currently contains no site source. This profile links to the deployed page as a viewing experience, not as evidence of a current TypeScript codebase.
+The portfolio site is live, and the public `Pooja_Kiran_Portfolio_Website` repository now contains the Next.js/TypeScript site source plus the tracked resume PDF. Website claims should still be checked against the underlying project evidence rather than inferred from presentation copy.
 
 ## Six-project security portfolio
 
