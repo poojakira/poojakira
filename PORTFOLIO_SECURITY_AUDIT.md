@@ -5,13 +5,15 @@ Owner: `poojakira`
 
 ## Executive summary
 
-The account currently exposes **19 repositories**. The requested security/AI-security audit scope contains **14 repositories**; the remaining repositories are portfolio/site, infrastructure, private non-security work, or unrelated ML work and were classified rather than silently treated as security projects.
+> **Historical audit snapshot (2026-09-16).** Findings and CI states below describe that audit point unless a section explicitly says otherwise. Repositories continued to change after this report; current quantitative claims should use each repository's latest evidence anchor.
+
+The account exposed **19 repositories** at this audit point. The requested security/AI-security audit scope contains **14 repositories**; the remaining repositories are portfolio/site, infrastructure, private non-security work, or unrelated ML work and were classified rather than silently treated as security projects.
 
 The audit was performed against the live GitHub repositories using source, tests, documentation, CI configuration, committed evidence, and GitHub Actions results where available. Direct source changes were made for the highest-confidence correctness and security findings.
 
 The most important corrected issue was the former NumPy DP-SGD implementation in `model-privacy-attacks`: it clipped an aggregate batch gradient and produced an unvalidated epsilon estimate. That path can no longer be mistaken for formal DP-SGD. Formal DP-SGD is now explicitly routed through an Opacus-backed path with per-example clipping/noising/accounting, while the NumPy implementation is labeled research-only.
 
-### Current finding counts
+### Finding counts at the 2026-09-16 audit snapshot
 
 These counts include historical findings that were fixed during this audit and residual documentation/architecture findings that remain open.
 
