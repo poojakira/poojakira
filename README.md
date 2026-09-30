@@ -105,3 +105,13 @@ If you're interested in **AI agent security, MCP security, cloud IAM, adversaria
 - Provenance ledger: [PROVENANCE_LEDGER.md](PROVENANCE_LEDGER.md)
 
 <sub>Quantitative claims above are intentionally limited to values with repository-level evidence.</sub>
+
+<!-- repo-verification:start -->
+## Verification update — 2026-09-30
+
+- **Scope:** Account-wide `poojakira` repository pass covering source/configuration, CI/release workflows, security-hygiene gates, dependency/SAST controls, and documentation consistency.
+- **Remediation:** Reviewed profile workflows and documentation surfaces; no repository-controlled defect required a code change in this pass.
+- **Verification state:** Latest completed Profile CI, Production Gate, Security Hygiene, and Documentation Integrity checks were green.
+- **Security note:** Keep claims tied to repository evidence and avoid presenting portfolio metrics as production/customer metrics.
+- **Evidence boundary:** This update records repository and GitHub Actions evidence observed during the pass. It is not a claim of independent penetration testing, production deployment, or zero residual risk.
+<!-- repo-verification:end -->
