@@ -138,3 +138,13 @@ If a real credential is ever exposed, revoke or rotate it at the provider first,
 This repository publishes public profile content; it is not an API service. Authentication, authorization, rate limiting, and upload handling are GitHub platform controls rather than application handlers here. Local verification of `scripts/security_scan.py` and `scripts/verify_profile.py` passed at revision `541b5a0954ad5a04af6f6e528648089cd5d78344`. Pattern scanning is a detection aid, not proof that every historical credential is absent or revoked. Provider/account security settings require separate verification.
 
 Local `.env` and `.env.*` files are ignored; permitted example/sample templates must contain only empty values or explicit placeholders. This static repository requires no owner API key, AWS credential, or shared dashboard key. Keep credentials in your own deployment secret store; anything included in public website/profile content is public.
+
+<!-- security-local-config:start -->
+## Secrets and local configuration
+
+- Never commit real API keys, access tokens, passwords, cloud credentials, private keys, or a populated `.env` file.
+- Local `.env` and `.env.*` files are ignored by Git. Only safe templates such as `.env.example` or `.env.sample` may be committed, and they must contain placeholder or empty values only.
+- If an integration needs credentials, create your own local `.env` file (or use your shell/secret manager) and supply **your own** API key. In GitHub Actions, use repository/environment secrets rather than hard-coding values in workflow YAML.
+- Do not copy or reuse any credential that appears in repository history, examples, tests, screenshots, logs, or documentation. Test strings are not intended to be usable credentials.
+- If a real credential is ever committed, **revoke or rotate it at the credential provider first**, then remove it from the current tree and reachable Git history. Deleting a key from GitHub does not revoke it.
+<!-- security-local-config:end -->
