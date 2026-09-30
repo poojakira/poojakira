@@ -20,7 +20,7 @@ https://github.com/poojakira/mcp-agent-security-gateway/actions/runs/33696855146
 
 That run reports 622 passed and 78.41% measured statement coverage, rounded to 78% on the resume.
 
-The repository later grew to 641 passing tests at 79.54% statement coverage, and the current verified baseline on `main` is **659 tests / 82%**; current project/profile claims should cite the repository's `VERIFIED_METRICS.md` rather than this historical resume snapshot.
+The repository later grew through 641 passing tests at 79.54% and 659 tests at 82%. The current verified baseline on `main` is **707 passing tests / 82.85% statement coverage** on Python 3.12, with the same suite green on Python 3.10 and 3.11. Current project/profile claims should cite the repository's `VERIFIED_METRICS.md`; the older figures above remain historical resume snapshots.
 
 ## AWS Agent Identity Guard
 
