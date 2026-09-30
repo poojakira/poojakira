@@ -83,3 +83,17 @@ All repository-file controls that can be enforced from source are hardened and C
 At revision `541b5a0954ad5a04af6f6e528648089cd5d78344`, both profile verification scripts passed. Reviewed the static publication and workflow boundary. There are no application API, authentication, authorization, upload, or database handlers to patch. No new application-code defect was established in this follow-up; documentation now distinguishes repository checks from GitHub platform controls and credential-provider revocation.
 
 Reachable-history Gitleaks scanning reported zero matches. The historical `.env.example` contains no nonempty assignments; no private credential file path was identified. Scanner results do not verify provider revocation, dangling server objects, or account security settings.
+
+<!-- hardening-followup-20260930:start -->
+## Account-wide follow-up hardening — 2026-09-30
+
+The connected GitHub scope used for this pass was restricted to the `poojakira` account and its 19 repositories.
+
+- Every reviewed repository ignores populated `.env`/local credential files and common private-key/cloud credential stores while permitting placeholder-only `.env.example`/`.env.sample` templates.
+- Repository READMEs instruct users to create their own local `.env` when needed, provide their own API/provider credentials, and revoke/rotate any genuinely exposed credential at its provider before Git cleanup.
+- GitHub Actions hardening was expanded across the account: immutable action references, non-persisted checkout credentials, dangerous-trigger rejection, and secret-history checks are enforced by repository CI policy.
+- A historical dashboard application-key-like value in `mlsec-dashboards` was treated as compromised defensively. The current runtime rejects that exact historical value by SHA-256 fingerprint without recommitting its plaintext.
+- No confirmed live cloud/provider API key was established in the current `main` trees during this pass. Pattern matches that remain in security repositories include detector rules, attack fixtures, documentation placeholders, and synthetic test values.
+- Provider-side revocation can only be asserted when performed at that provider. GitHub repository edits cannot revoke AWS/OpenAI/Hugging Face/etc. credentials by themselves.
+- The profile repository's previously documented GitHub-hosted branch-protection/ruleset gap remains an account/repository administration setting; the connected GitHub capability in this session does not expose a branch-protection/ruleset mutation.
+<!-- hardening-followup-20260930:end -->
