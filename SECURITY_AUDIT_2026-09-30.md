@@ -69,3 +69,10 @@ All repository-file controls that can be enforced from source are hardened and C
 - **Security note:** Keep claims tied to repository evidence and avoid presenting portfolio metrics as production/customer metrics.
 - **Evidence boundary:** This update records repository and GitHub Actions evidence observed during the pass. It is not a claim of independent penetration testing, production deployment, or zero residual risk.
 <!-- repo-verification:end -->
+
+## Verification checkpoint — 2026-09-30
+
+- **Snapshot commit:** `b56a4e6bcc8fdef6f4fe5f3ebbd18a3406c22f24`
+- **Status:** PARTIALLY VERIFIED
+- **Evidence:** Profile CI, Security Hygiene, and Documentation Integrity passed on the current main revision. The Production Gate was still queued at the verification snapshot.
+- This checkpoint is intentionally date-bounded. It does not claim zero vulnerabilities or universal production readiness.
