@@ -131,3 +131,10 @@ Keep runtime credentials outside Git. If this repository provides an `.env.examp
 Do not commit AWS access keys or session credentials, API tokens, service-account JSON, private keys, package-manager credentials, Terraform state, or secret-bearing `tfvars`. CI/deployment credentials belong in GitHub Actions secrets or the deployment provider's secret manager. AWS account IDs are identifiers; AWS access-key IDs, secret access keys, and session tokens are credentials.
 
 If a real credential is ever exposed, revoke or rotate it at the provider first, then remove it from the working tree and reachable Git history. The Security Hygiene workflow checks the current tree and reachable history for common credential formats without printing matched secret values.
+
+
+### Profile security scope — 2026-09-30
+
+This repository publishes public profile content; it is not an API service. Authentication, authorization, rate limiting, and upload handling are GitHub platform controls rather than application handlers here. Local verification of `scripts/security_scan.py` and `scripts/verify_profile.py` passed at revision `541b5a0954ad5a04af6f6e528648089cd5d78344`. Pattern scanning is a detection aid, not proof that every historical credential is absent or revoked. Provider/account security settings require separate verification.
+
+Local `.env` and `.env.*` files are ignored; permitted example/sample templates must contain only empty values or explicit placeholders. This static repository requires no owner API key, AWS credential, or shared dashboard key. Keep credentials in your own deployment secret store; anything included in public website/profile content is public.

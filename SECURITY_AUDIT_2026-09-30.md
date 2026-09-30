@@ -76,3 +76,10 @@ All repository-file controls that can be enforced from source are hardened and C
 - **Status:** PARTIALLY VERIFIED
 - **Evidence:** Profile CI, Security Hygiene, and Documentation Integrity passed on the current main revision. The Production Gate was still queued at the verification snapshot.
 - This checkpoint is intentionally date-bounded. It does not claim zero vulnerabilities or universal production readiness.
+
+
+## Follow-up local scope review
+
+At revision `541b5a0954ad5a04af6f6e528648089cd5d78344`, both profile verification scripts passed. Reviewed the static publication and workflow boundary. There are no application API, authentication, authorization, upload, or database handlers to patch. No new application-code defect was established in this follow-up; documentation now distinguishes repository checks from GitHub platform controls and credential-provider revocation.
+
+Reachable-history Gitleaks scanning reported zero matches. The historical `.env.example` contains no nonempty assignments; no private credential file path was identified. Scanner results do not verify provider revocation, dangling server objects, or account security settings.
