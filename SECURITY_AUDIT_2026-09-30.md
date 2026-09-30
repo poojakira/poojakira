@@ -72,10 +72,10 @@ All repository-file controls that can be enforced from source are hardened and C
 
 ## Verification checkpoint — 2026-09-30
 
-- **Snapshot commit:** `b56a4e6bcc8fdef6f4fe5f3ebbd18a3406c22f24`
-- **Status:** PARTIALLY VERIFIED
-- **Evidence:** Profile CI, Security Hygiene, and Documentation Integrity passed on the current main revision. The Production Gate was still queued at the verification snapshot.
-- This checkpoint is intentionally date-bounded. It does not claim zero vulnerabilities or universal production readiness.
+- **Checked snapshot:** `33071a6f651ccd4e7e3e6b2ccee96c1a18583b30`
+- **Status:** VERIFIED GREEN
+- **Evidence:** Profile CI, Production Gate, Security Hygiene, and Documentation Integrity completed successfully for the cited checked snapshot.
+- This record is immutable and date-bounded. Later `main` commits may be newer; consult GitHub Actions for the latest run state. It does not claim zero vulnerabilities or universal production readiness.
 
 
 ## Follow-up local scope review
