@@ -75,6 +75,15 @@ Each project has a technical research poster (36 × 48 in) following IEEE-style 
 - **AI/ML security:** adversarial testing, model provenance, poisoning, and security evaluation; model-privacy source is currently private
 - **Security engineering:** Python, FastAPI, Docker, CI, testing, telemetry, and reproducible security controls; Kubernetes deployment manifests are present for selected projects, without a claim of live cluster operation
 
+## Repository security
+
+This profile repository is documentation-only; it does not run an API, database, authentication system, payment flow, or upload endpoint. Repository-level hardening is enforced through read-only/pinned GitHub Actions, secret-file and token scanning, CODEOWNERS, Dependabot, and CI policy checks.
+
+- [Security checklist](SECURITY_CHECKLIST.md)
+- [Security audit](SECURITY_AUDIT_2026-09-30.md)
+- [Recovery runbook](RUNBOOK.md)
+- [Security policy](SECURITY.md)
+
 ## Engineering principles
 
 - **Attach scope to every metric.** A test count, F1 score, or latency number is incomplete without the environment and dataset.
