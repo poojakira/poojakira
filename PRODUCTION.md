@@ -1,32 +1,48 @@
 # Production Operating Contract
 
-## System role
+## Repository role
 
-This repository is maintained as a **portfolio engineering control repository**.
+This repository is the public GitHub profile and evidence index for `poojakira`. It is **not** an application runtime: it does not expose an API, database, authentication system, payment flow, webhook receiver, or upload endpoint.
 
-## Production purpose
+## Release objective
 
-maintain a release/evidence index whose public claims point to reproducible repository evidence.
+Keep public profile claims, security documentation, and evidence links accurate, reviewable, and reproducible.
 
-## Release gate
+## Required gates
 
-A release is promotable only when linked metrics are current; stale or unsupported claims are rejected before publication.
+A change to `main` is considered release-ready only when these checks pass:
 
-## Operating requirements
+- **Profile CI**
+- **Production Gate**
+- **Documentation Integrity**
+- **Security Hygiene**
 
-- Configuration must come from explicit environment/config files; secrets must never be committed.
-- Production defaults must fail safely when required identity, credentials, artifacts, or dependencies are missing.
-- Health/readiness behavior must represent real dependency state where the repository exposes a service.
-- Logs and machine-readable outputs must support incident/debug reconstruction without leaking secrets.
-- Dependency and security findings at the repository's blocking threshold must stop promotion.
-- Public metrics and benchmark claims must identify their dataset, environment, and scope.
-- Deployment images/artifacts must be versioned and immutable at promotion time.
-- Rollback must be possible without rewriting Git history.
+The repository security scanner rejects tracked secret files, high-confidence provider-token literals, unpinned third-party Actions, write-enabled workflow permissions, unsafe workflow triggers, and checkout steps that persist credentials.
 
-## Evidence boundary
+## Public-data rules
 
-"Production-oriented" describes the engineering and release contract of this repository. It does **not** mean that an external enterprise deployment, penetration test, certification, uptime history, or scale target has occurred unless a separate committed artifact proves it.
+- Do not commit secrets, private keys, service-account files, access tokens, passwords, or local environment files.
+- Do not publish private/internal URLs or unsupported security claims.
+- Quantitative claims must link to repository-level evidence and identify their scope.
+- Use HTTPS for external links.
+- Do not use Git-history rewrites to manufacture provenance.
 
-## Change management
+## Dependency and workflow policy
 
-Main is the supported integration branch. Production changes should be small, reviewable, tested, and tied to observable behavior. Historical benchmark/research material may remain for evidence, but active README, security, runbook, and deployment surfaces must describe the supported runtime rather than an academic or prototype status.
+- GitHub Actions are pinned to immutable 40-character commit SHAs.
+- Workflow permissions remain read-only.
+- `actions/checkout` uses `persist-credentials: false`.
+- Dependabot monitors GitHub Actions weekly.
+- CODEOWNERS assigns the repository to `@poojakira`.
+
+## Recovery
+
+There is no mutable production database to restore. Rollback is source-control based: identify the last known-good commit, revert the bad change, and require the normal CI gates to pass. See [RUNBOOK.md](RUNBOOK.md).
+
+## Security scope
+
+The full control matrix is in [SECURITY_CHECKLIST.md](SECURITY_CHECKLIST.md). Application controls such as RLS, SQL injection defense, CORS, rate limiting, password hashing, payment idempotency, and upload validation are marked N/A because this repository does not contain those runtime surfaces.
+
+## GitHub-hosted control still required
+
+The `main` branch currently reports as unprotected and no repository ruleset is configured. Repository-admin settings should require pull requests, passing checks, conversation resolution, and block force pushes/deletion. This control cannot be enabled from repository files alone.
