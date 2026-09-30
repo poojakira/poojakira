@@ -10,12 +10,18 @@ on:
 permissions:
   contents: read
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   verify-evidence-index:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
       - name: Reject unresolved placeholders and merge markers
         run: |
           python - <<'PY'
@@ -31,3 +37,5 @@ jobs:
               raise SystemExit("\n".join(bad))
           print("profile evidence documents contain no unresolved release placeholders")
           PY
+      - name: Verify repository security controls
+        run: python scripts/security_scan.py
