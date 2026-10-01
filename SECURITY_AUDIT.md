@@ -17,7 +17,7 @@ This is a profile/documentation repository, not an application runtime. Authenti
 ## Existing controls verified
 
 - Secret/credential ignore rules.
-- Security-hygiene workflow on push and pull request.
+- Security-hygiene workflow available by manual dispatch; automatic push/pull-request execution is disabled for zero-cost operation.
 - Dependabot configuration.
 - CODEOWNERS.
 - Security reporting policy.
