@@ -77,7 +77,7 @@ Each project has a technical research poster (36 × 48 in) following IEEE-style 
 
 ## Repository security
 
-This profile repository is documentation-only; it does not run an API, database, authentication system, payment flow, or upload endpoint. Repository-level hardening is enforced through read-only/pinned GitHub Actions, secret-file and token scanning, CODEOWNERS, Dependabot, and CI policy checks.
+This profile repository is documentation-only; it does not run an API, database, authentication system, payment flow, or upload endpoint. Repository-level hardening is supported by protected `main` branches, read-only/pinned GitHub Actions, secret-file and token scanning, CODEOWNERS, Dependabot, and CI policy checks. Required status checks are not uniformly enforced across all repositories, so branch protection must not be described as an account-wide mandatory-CI merge gate.
 
 - [Security checklist](SECURITY_CHECKLIST.md)
 - [Security audit](SECURITY_AUDIT_2026-09-30.md)
