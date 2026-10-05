@@ -20,7 +20,7 @@
 
 I am a **Security Engineer focused on AI and agent security, application security, cloud IAM, and model supply-chain security**.
 
-I build controls at the boundaries where agents call tools, identities gain authority, and model artifacts enter trusted workflows. My work emphasizes **default-deny design, reproducible testing, security telemetry, and evidence that can be reviewed**.
+I secure three trust boundaries where AI systems become security-critical: **Agent → Tool**, **Identity → Authority**, and **Artifact → Runtime**. My work emphasizes **default-deny design, reproducible testing, security telemetry, and evidence that can be independently reviewed**.
 
 I completed an **M.S. in Information Technology (Security) at Arizona State University**, GPA **3.87/4.00**.
 
@@ -39,7 +39,7 @@ I completed an **M.S. in Information Technology (Security) at Arizona State Univ
 
 ### [MCP Agent Security Gateway](https://github.com/poojakira/mcp-agent-security-gateway)
 
-Default-deny MCP/JSON-RPC gateway for agent-to-tool execution.
+**Agent → Tool.** Default-deny MCP/JSON-RPC gateway for authorization and execution control before downstream tool calls.
 
 **723 passing tests**  
 **81.91% coverage**  
@@ -52,7 +52,7 @@ Python · FastAPI · Elastic Security
 
 ### [AWS Agent Identity Guard](https://github.com/poojakira/aws-agent-identity-guard)
 
-Static analysis for AI-agent and workload IAM policies.
+**Identity → Authority.** Static analysis for privilege, trust-policy, and escalation risk in AI-agent and workload IAM policies.
 
 **25 deterministic rules**  
 **240 passing tests**  
@@ -65,7 +65,7 @@ Python · AWS IAM · GitHub Actions
 
 ### [HF Model Provenance Scanner](https://github.com/poojakira/hf-model-provenance-scanner)
 
-Non-executing inspection of model repositories and artifacts.
+**Artifact → Runtime.** Non-executing inspection of model repositories and artifacts before they enter trusted workflows.
 
 **241 passing tests**  
 **75.67% coverage**  
@@ -77,7 +77,7 @@ Python · SafeTensors · GGUF · ONNX
 </tr>
 </table>
 
-## More work
+## Supporting security research
 
 - [LLM Red Team Framework](https://github.com/poojakira/llm-redteam-framework): adversarial evaluation for LLM security
 - [Dataset Poisoning Detector](https://github.com/poojakira/dataset-poisoning-detector): statistical and streaming checks for training-data integrity
