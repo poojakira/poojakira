@@ -77,6 +77,12 @@ Python · SafeTensors · GGUF · ONNX
 </tr>
 </table>
 
+## Recruiter-ready security evidence
+
+- [MCP Agent-to-Tool Application Security Case Study](https://github.com/poojakira/mcp-agent-security-gateway/blob/main/docs/APPSEC_CASE_STUDY.md) — threat model, attack surface, controls, verification, and residual risks.
+- [MCP 60-Second Recruiter Demo](https://github.com/poojakira/mcp-agent-security-gateway/blob/main/docs/RECRUITER_DEMO_60S.md) — deterministic allow/block, tamper-evident audit, and ECS/SIEM walkthrough.
+- [Dataset API White-Box AppSec Assessment](https://github.com/poojakira/dataset-poisoning-detector/blob/main/docs/APPSEC_ASSESSMENT_2026-10-05.md) — authentication, request boundaries, readiness, WebSocket, and tenant-isolation review.
+
 ## More work
 
 - [LLM Red Team Framework](https://github.com/poojakira/llm-redteam-framework): adversarial evaluation for LLM security
