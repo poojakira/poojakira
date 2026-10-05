@@ -31,6 +31,7 @@ Background dates such as CVEs, papers cited by the code, dataset release years, 
 | `aws-agent-identity-guard` | 2026-08-01 · `b4799d64eeef` | **2026** | [repo provenance](https://github.com/poojakira/aws-agent-identity-guard/blob/main/PROVENANCE.md) |
 | `mlsec-dashboards` | 2026-08-03 · `31f5ad481323` | **2026** | [repo provenance](https://github.com/poojakira/mlsec-dashboards/blob/main/PROVENANCE.md) |
 | `Pooja_Kiran_Portfolio_Website` | 2026-08-17 · `818e84b61976` | **2026** | [repo provenance](https://github.com/poojakira/Pooja_Kiran_Portfolio_Website/blob/main/PROVENANCE.md) |
+| `OS-Resource-Management-Simulator-Dockerized-Flask-Application` | 2026-10-02 · `13a0f0d8ed92` | **2024** | [coursework provenance](https://github.com/poojakira/OS-Resource-Management-Simulator-Dockerized-Flask-Application/blob/main/docs/COURSEWORK_PROVENANCE.md) |
 
 ## Chronology correction found during the audit
 
@@ -46,6 +47,6 @@ Publicly verifiable antecedent work includes:
 - **Smart Charge Pro**, IOSR-JCE, July–August 2023, DOI **10.9790/0661-2504010108**.
 - **A Personalized E-Learning System Using Reinforcement Learning Through Satellite**, IEEE INDICON 2023, DOI **10.1109/INDICON59947.2023.10440852**.
 
-Those items can support a truthful career/research timeline, but they are not evidence that these 2026 security repositories existed in 2022–2024.
+Those items can support a truthful career/research timeline, but they are not evidence that the 2026 security repositories existed in 2022–2024. The OS Resource Management Simulator is a separate exception with direct Fall 2024 coursework lineage documented in its repository; its public Git history begins in 2026, while the underlying coursework reports/source headers establish the 2024 project provenance.
 
 **Audit date:** 2026-09-21
