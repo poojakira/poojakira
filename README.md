@@ -41,8 +41,8 @@ I completed an **M.S. in Information Technology (Security) at Arizona State Univ
 
 Default-deny MCP/JSON-RPC gateway for agent-to-tool execution.
 
-**718 passing tests**  
-**82.46% coverage**  
+**723 passing tests**  
+**81.91% coverage**  
 **55 prompt-injection patterns**
 
 Python · FastAPI · Elastic Security
@@ -55,7 +55,7 @@ Python · FastAPI · Elastic Security
 Static analysis for AI-agent and workload IAM policies.
 
 **25 deterministic rules**  
-**235 passing tests**  
+**240 passing tests**  
 SARIF 2.1.0 · Code Scanning
 
 Python · AWS IAM · GitHub Actions
@@ -68,7 +68,7 @@ Python · AWS IAM · GitHub Actions
 Non-executing inspection of model repositories and artifacts.
 
 **241 passing tests**  
-**75.81% coverage**  
+**75.67% coverage**  
 **33/33 adversarial fixtures**
 
 Python · SafeTensors · GGUF · ONNX
