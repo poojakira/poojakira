@@ -86,6 +86,8 @@ Python · SafeTensors · GGUF · ONNX
 ## Experience
 
 - **Independent AI Security Researcher & Engineer** · Self-directed research · Aug. 2024 to Present
+  - **Directed end-to-end security engineering and architecture reviews** across cloud identity, application services, network trust boundaries, and AI/ML infrastructure; converted threat models and security assessments into enforceable design requirements, prioritized remediation, and evidence-backed release decisions.
+  - **Expanded a continuously verified Python security-control validation track by 16.2% in automated tests** while increasing statement coverage by **3.5 percentage points** as measured Python statements grew by **20.6%**; established repeatable design-review, vulnerability-analysis, adversarial-validation, and automated security-gate practices.
 - **Business & Compliance Lead, AEROSEC** · Honeywell Aerospace Technologies × ASU · Aug. 2025 to Dec. 2025
 - **Graduate Teaching Assistant / IT Grader** · Arizona State University · Jan. 2025 to Oct. 2025
 
