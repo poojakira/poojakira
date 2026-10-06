@@ -18,7 +18,7 @@
 
 ## About
 
-I am a **Security Engineer focused on AI and agent security, application security, cloud IAM, and model supply-chain security**.
+I am a **Security Engineer focused on AI & Agent Security, Application Security, Cloud IAM Security, and Model Supply-Chain Security**.
 
 I secure three trust boundaries where AI systems become security-critical: **Agent → Tool**, **Identity → Authority**, and **Artifact → Runtime**. My work emphasizes **default-deny design, reproducible testing, security telemetry, and evidence that can be independently reviewed**.
 
@@ -93,7 +93,7 @@ Python · SafeTensors · GGUF · ONNX
 
 **AI & Agent Security:** MCP/JSON-RPC 2.0, tool-call security, prompt injection, RAG security, LLM red teaming, model provenance, adversarial ML
 
-**Identity & Product Security:** AWS IAM, least privilege, trust policies, permission boundaries, capability-based authorization, API security, threat modeling
+**Identity & Product Security:** Cloud IAM Security, AWS IAM, least privilege, trust policies, permission boundaries, capability-based authorization, API security, threat modeling
 
 **Security Engineering:** Python, Rust, C++, FastAPI, pytest, Hypothesis, SARIF, CodeQL, Docker, Kubernetes, GitHub Actions
 
