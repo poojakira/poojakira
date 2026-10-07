@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./assets/profile-banner.svg" width="100%" alt="Pooja Kiran, AI Security Engineer" />
+  <img src="./assets/profile-banner.svg" width="100%" alt="Pooja Kiran, Security Engineer" />
 </p>
 
 <p align="center">
@@ -55,7 +55,7 @@ Python · FastAPI · Elastic Security
 **Identity → Authority.** Static analysis for privilege, trust-policy, and escalation risk in AI-agent and workload IAM policies.
 
 **25 deterministic rules**  
-**240 passing tests**  
+**240 passed / 3 skipped**  
 SARIF 2.1.0 · Code Scanning
 
 Python · AWS IAM · GitHub Actions
@@ -67,7 +67,7 @@ Python · AWS IAM · GitHub Actions
 
 **Artifact → Runtime.** Non-executing inspection of model repositories and artifacts before they enter trusted workflows.
 
-**241 passing tests**  
+**241 passed / 1 skipped**  
 **75.67% coverage**  
 **33/33 adversarial fixtures**
 
@@ -86,20 +86,20 @@ Python · SafeTensors · GGUF · ONNX
 ## Experience
 
 - **Independent AI Security Researcher & Engineer** · Self-directed research · Aug. 2024 to Present
-  - **Directed end-to-end security engineering and architecture reviews** across cloud identity, application services, network trust boundaries, and AI/ML infrastructure; converted threat models and security assessments into enforceable design requirements, prioritized remediation, and evidence-backed release decisions.
-  - **Expanded a continuously verified Python security-control validation track by 16.2% in automated tests** while increasing statement coverage by **3.5 percentage points** as measured Python statements grew by **20.6%**; established repeatable design-review, vulnerability-analysis, adversarial-validation, and automated security-gate practices.
+  - **Led security design and architecture reviews** across self-directed AI and cloud security systems, translating threat models into enforceable requirements, CI gates, and documented repository release criteria.
+  - Expanded the **MCP Gateway** validation track from **622 to 723 passing tests (+16.2%)**, while statement coverage rose from **78.41% to 81.91% (+3.5 percentage points)** as measured Python statements grew from **4,679 to 5,644 (+20.6%)**.
 - **Business & Compliance Lead, AEROSEC** · Honeywell Aerospace Technologies × ASU · Aug. 2025 to Dec. 2025
 - **Graduate Teaching Assistant / IT Grader** · Arizona State University · Jan. 2025 to Oct. 2025
 
 ## Core toolkit
 
-**AI & Agent Security:** MCP/JSON-RPC 2.0, tool-call security, prompt injection, RAG security, LLM red teaming, model provenance, adversarial ML
+**AI & Agent Security:** MCP/JSON-RPC 2.0, tool-call security, prompt injection, LLM red teaming, model supply-chain security
 
-**Identity & Product Security:** Cloud IAM Security, AWS IAM, least privilege, trust policies, permission boundaries, capability-based authorization, API security, threat modeling
+**Identity & Application Security:** Cloud IAM Security, AWS IAM, least privilege, trust policies, permission boundaries, capability-based authorization, API security, threat modeling
 
-**Security Engineering:** Python, Rust, C++, FastAPI, pytest, Hypothesis, SARIF, CodeQL, Docker, Kubernetes, GitHub Actions
+**Security Engineering & DevSecOps:** Python, FastAPI, pytest, GitHub Actions, CI/CD security, SARIF 2.1.0, GitHub Code Scanning, Docker
 
-**Detection & Observability:** Elastic Security, ECS, SIEM, Prometheus, tamper-evident audit logging, MITRE ATLAS, OWASP LLM Top 10
+**Detection & Observability:** Elastic Security, ECS, SIEM, Prometheus, tamper-evident audit logging, MITRE ATLAS
 
 ## Research
 
@@ -111,4 +111,4 @@ Python · SafeTensors · GGUF · ONNX
 **LinkedIn:** https://www.linkedin.com/in/poojakiran/  
 **Email:** poojakiranbhardwaj@gmail.com
 
-<sub>Project metrics above are tied to repository-level test and validation evidence. Scope and limitations are documented in the individual repositories.</sub>
+<sub>Project metrics above are current 2026 public-repository verification snapshots. Original development periods are documented separately in each repository's provenance file; current metrics are not projected backward to project inception.</sub>
