@@ -112,3 +112,8 @@ Python · SafeTensors · GGUF · ONNX
 **Email:** poojakiranbhardwaj@gmail.com
 
 <sub>Project metrics above are current 2026 public-repository verification snapshots. Original development periods are documented separately in each repository's provenance file; current metrics are not projected backward to project inception.</sub>
+
+
+## Verification status — October 9, 2026
+
+See [evidence and limitations](docs/VERIFICATION_STATUS_2026-10-09.md). Passing CI at a dated commit or a preview deployment does not certify all source, security controls or operational claims.
