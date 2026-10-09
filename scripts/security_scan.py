@@ -17,9 +17,27 @@ SENSITIVE_NAMES = {
 }
 SENSITIVE_SUFFIXES = {".pem", ".p12", ".pfx", ".key"}
 TEXT_SUFFIXES = {
-    ".py", ".js", ".jsx", ".ts", ".tsx", ".json", ".yaml", ".yml",
-    ".toml", ".ini", ".cfg", ".conf", ".md", ".txt", ".sh", ".ps1",
-    ".html", ".css", ".xml", ".properties", ".csv",
+    ".py",
+    ".js",
+    ".jsx",
+    ".ts",
+    ".tsx",
+    ".json",
+    ".yaml",
+    ".yml",
+    ".toml",
+    ".ini",
+    ".cfg",
+    ".conf",
+    ".md",
+    ".txt",
+    ".sh",
+    ".ps1",
+    ".html",
+    ".css",
+    ".xml",
+    ".properties",
+    ".csv",
 }
 
 SECRET_PATTERNS = {
@@ -37,14 +55,20 @@ SECRET_PATTERNS = {
     "private key": re.compile(r"-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----"),
 }
 
-PINNED_ACTION = re.compile(r"^[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+(?:/[A-Za-z0-9_.-]+)*@[0-9a-fA-F]{40}$")
+PINNED_ACTION = re.compile(
+    r"^[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+(?:/[A-Za-z0-9_.-]+)*@[0-9a-fA-F]{40}$"
+)
 
 
 def tracked_files() -> list[Path]:
-    raw = subprocess.check_output(
-        ["git", "-C", str(ROOT), "ls-files", "-z"],
-        text=False,
-    ).decode().split("\0")
+    raw = (
+        subprocess.check_output(
+            ["git", "-C", str(ROOT), "ls-files", "-z"],
+            text=False,
+        )
+        .decode()
+        .split("\0")
+    )
     return [ROOT / item for item in raw if item]
 
 
@@ -56,7 +80,9 @@ def scan_tracked_files() -> list[str]:
         name = path.name.lower()
 
         if path.is_symlink():
-            failures.append(f"{rel}: symbolic links are not allowed in this profile repository")
+            failures.append(
+                f"{rel}: symbolic links are not allowed in this profile repository"
+            )
             continue
 
         if name.startswith(".env") and name not in ALLOWED_ENV_FILES:
@@ -77,7 +103,7 @@ def scan_tracked_files() -> list[str]:
         text = path.read_text(encoding="utf-8", errors="ignore")
         for label, pattern in SECRET_PATTERNS.items():
             for match in pattern.finditer(text):
-                nearby = text[max(0, match.start() - 80): match.end() + 80].upper()
+                nearby = text[max(0, match.start() - 80) : match.end() + 80].upper()
                 if (
                     "PLACEHOLDER" in nearby
                     or "REDACTED" in nearby
@@ -121,10 +147,12 @@ def scan_workflows() -> list[str]:
             if action.startswith("./"):
                 continue
             if not PINNED_ACTION.fullmatch(action):
-                failures.append(f"{rel}:{index + 1}: action is not pinned to a 40-char commit SHA: {action}")
+                failures.append(
+                    f"{rel}:{index + 1}: action is not pinned to a 40-char commit SHA: {action}"
+                )
 
             if action.lower().startswith("actions/checkout@"):
-                block = "\n".join(lines[index:index + 8])
+                block = "\n".join(lines[index : index + 8])
                 if not re.search(r"(?m)^\s*persist-credentials:\s*false\s*$", block):
                     failures.append(
                         f"{rel}:{index + 1}: actions/checkout must set persist-credentials: false"

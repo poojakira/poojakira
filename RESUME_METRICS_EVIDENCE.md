@@ -6,7 +6,7 @@ Metrics below are tied to named repository snapshots or verification runs. A lat
 
 ## MCP Agent Security Gateway
 
-Current repository evidence values:
+Cited 2026 verification snapshot values (not a test run of the latest commit):
 
 - **723 passing tests**
 - **81.91% statement coverage**
@@ -20,7 +20,7 @@ Historical snapshots such as 622/78%, 641/79.54%, 659/82%, and 707/82.85% remain
 
 ## AWS Agent Identity Guard
 
-Current repository evidence values:
+Cited 2026 verification snapshot values (not a test run of the latest commit):
 
 - **25 deterministic rule IDs**
 - **243 tests collected**
@@ -34,7 +34,7 @@ Repository performance figures are synthetic benchmark measurements and CI regre
 
 ## HF Model Provenance Scanner
 
-Current repository evidence values:
+Cited 2026 verification snapshot values (not a test run of the latest commit):
 
 - **241 passing tests**
 - **1 platform-specific skip**
@@ -49,7 +49,7 @@ Fixture results are regression evidence only. They are not universal detection o
 
 ## Dataset Poisoning Detector
 
-Current repository evidence values:
+Cited 2026 verification snapshot values (not a test run of the latest commit):
 
 - **200 passing tests**
 - **91.20% statement coverage**
@@ -61,7 +61,7 @@ Synthetic poisoning benchmark scores remain dataset- and configuration-scoped. T
 
 ## Account-wide repository-hardening wording
 
-The account currently contains **22 repositories**. Branch protection, required status checks, and workflow cadence are not uniform across the fleet; several private repositories intentionally use manual-only workflows to avoid unplanned hosted-runner usage.
+The October 9, 2026 account inventory found **21 repositories**, including the empty `aegis-immune-fabric` repository. Branch protection, required status checks, and workflow cadence are not uniform across the fleet; several private repositories intentionally use manual-only workflows to avoid unplanned hosted-runner usage.
 
 Current resume/profile wording should therefore say that the portfolio uses protected-branch and CI/security controls where configured. It must not imply that every repository has identical merge-gate enforcement.
 
