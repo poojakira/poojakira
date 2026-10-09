@@ -60,7 +60,9 @@ def main() -> int:
         readme_lower = readme.lower()
         for marker in FORBIDDEN_ACTIVE:
             if marker in readme_lower:
-                failures.append(f"README contains retired active-system marker: {marker}")
+                failures.append(
+                    f"README contains retired active-system marker: {marker}"
+                )
         failures.extend(validate_readme_links(readme))
 
     if failures:
