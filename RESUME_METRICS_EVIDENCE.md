@@ -1,12 +1,25 @@
 # Resume Metrics Evidence
 
-This page is the central evidence index for quantitative security-project claims used across Pooja Kiran's resume and portfolio. Exported or previously submitted resume snapshots may retain an older verified metric set; current repository/profile wording should use the latest cited evidence below.
+This page is the central evidence index for quantitative security-project claims used across Pooja Kiran's resume and portfolio. Exported or previously submitted resume snapshots may retain an older verified metric set; current repository/profile wording should use the latest **separately anchored** evidence recorded below.
 
-Metrics below are tied to named repository snapshots or verification runs. A later repository commit may contain more tests or a different measurement; that does not invalidate an earlier dated snapshot, but current resume wording should use the current evidence set documented here.
+Metrics below are tied to named repository snapshots or verification runs. A later repository commit may contain more tests or a different measurement; that does not invalidate an earlier dated snapshot. The historical poster snapshots below must be distinguished from the current October 2026 hosted results and from the older public resume PDF.
+
+
+## October 11, 2026 latest inspected hosted results (not poster snapshots)
+
+| Project | Main CI reference | Hosted test evidence | Scope |
+|---|---|---|---|
+| MCP Agent Security Gateway | [Run 38012954359](https://github.com/poojakira/mcp-agent-security-gateway/actions/runs/38012954359) | **782 passed, 81.93% coverage** (Python 3.12) | Current CI at cited commit; 69 named detector signatures from separate source inventory, not an independently validated detector recall |
+| AWS Agent Identity Guard | [Run 38009457205](https://github.com/poojakira/aws-agent-identity-guard/actions/runs/38009457205) | **247 collected, 244 passed, 3 skipped** | Static IAM rules; credential-dependent tests not executed |
+| HF Model Provenance Scanner | [Run 38002138828](https://github.com/poojakira/hf-model-provenance-scanner/actions/runs/38002138828) | **260 passed, 1 skipped, 6 subtests, 75.67% coverage** | 33/33 committed fixture detection is separate curated regression evidence |
+
+The tracked portfolio resume cites a different dated Docker gateway snapshot (752 tests), while historical posters cite 723 tests. Neither should be described as the same test run as the newer 782-pass hosted CI. The published resume PDF must be regenerated together with its LaTeX source before changing PDF-facing numbers.
+
+## Historical poster evidence (archived)
 
 ## MCP Agent Security Gateway
 
-Cited 2026 verification snapshot values (not a test run of the latest commit):
+Cited historical 2026 poster snapshot values (not a test run of the latest commit):
 
 - **723 passing tests**
 - **81.91% statement coverage**
@@ -16,7 +29,7 @@ Cited 2026 verification snapshot values (not a test run of the latest commit):
 
 Primary evidence: https://github.com/poojakira/mcp-agent-security-gateway/blob/main/VERIFIED_METRICS.md
 
-Historical snapshots such as 622/78%, 641/79.54%, 659/82%, and 707/82.85% remain historical evidence only. They are not the values used by the current resume.
+Historical snapshots such as 622/78%, 641/79.54%, 659/82%, and 707/82.85% remain historical evidence only. They are not all the values used by the current canonical resume.
 
 ## AWS Agent Identity Guard
 
