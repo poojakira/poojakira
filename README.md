@@ -41,9 +41,9 @@ I completed an **M.S. in Information Technology (Security) at Arizona State Univ
 
 **Agent → Tool.** Default-deny MCP/JSON-RPC gateway for authorization and execution control before downstream tool calls.
 
-**723 passing tests**  
-**81.91% coverage**  
-**55 prompt-injection patterns**
+**782 passing tests**  
+**81.93% coverage**  
+**69 named runtime detector signatures** (source count; not detection efficacy)
 
 Python · FastAPI · Elastic Security
 
@@ -55,7 +55,7 @@ Python · FastAPI · Elastic Security
 **Identity → Authority.** Static analysis for privilege, trust-policy, and escalation risk in AI-agent and workload IAM policies.
 
 **25 deterministic rules**  
-**240 passed / 3 skipped**  
+**244 passed / 3 skipped**  
 SARIF 2.1.0 · Code Scanning
 
 Python · AWS IAM · GitHub Actions
@@ -67,7 +67,7 @@ Python · AWS IAM · GitHub Actions
 
 **Artifact → Runtime.** Non-executing inspection of model repositories and artifacts before they enter trusted workflows.
 
-**241 passed / 1 skipped**  
+**260 passed / 1 skipped**  
 **75.67% coverage**  
 **33/33 adversarial fixtures**
 
@@ -88,7 +88,7 @@ Python · SafeTensors · GGUF · ONNX
 - **Independent AI Security Researcher & Engineer** · Self-directed research · Aug. 2024 to Present
   - **Led security design and architecture reviews** across self-directed AI and cloud security systems, translating threat models into enforceable requirements, CI gates, and documented repository release criteria.
   - Expanded the **MCP Gateway** validation track from **622 to 723 passing tests (+16.2%)**, while statement coverage rose from **78.41% to 81.91% (+3.5 percentage points)** as measured Python statements grew from **4,679 to 5,644 (+20.6%)**.
-- **Business & Compliance Lead, AEROSEC** · Honeywell Aerospace Technologies × ASU · Aug. 2025 to Dec. 2025
+- **Business & Compliance Lead, AEROSEC (academic externship)** · Honeywell Aerospace Technologies × ASU · Aug. 2025 to Dec. 2025
 - **Graduate Teaching Assistant / IT Grader** · Arizona State University · Jan. 2025 to Oct. 2025
 
 ## Core toolkit
@@ -111,7 +111,7 @@ Python · SafeTensors · GGUF · ONNX
 **LinkedIn:** https://www.linkedin.com/in/poojakiran/  
 **Email:** poojakiranbhardwaj@gmail.com
 
-<sub>Project metrics above are cited 2026 public-repository verification snapshots, not test results for the latest commit. Consult RESUME_METRICS_EVIDENCE.md for the evidence sources. Original development periods are documented separately in each repository's provenance file; current metrics are not projected backward to project inception.</sub>
+<sub>The headline test and coverage metrics above are tied to explicitly cited October 2026 hosted runs; the 69-signature figure is a separate detector source count. These must not be treated as a joint security-effectiveness experiment. Consult RESUME_METRICS_EVIDENCE.md for the evidence sources. Original development periods are documented separately in each repository's provenance file; current metrics are not projected backward to project inception.</sub>
 
 
 ## Verification status — October 9, 2026
@@ -120,3 +120,10 @@ See [evidence and limitations](docs/VERIFICATION_STATUS_2026-10-09.md). Passing 
 
 
 Maintenance checks and their limits are recorded in [the October 9 fix verification](docs/FIX_VERIFICATION_2026-10-09.md).
+
+## October 11, 2026 verified-run references
+
+- MCP Agent Security Gateway: [CI 38012954359](https://github.com/poojakira/mcp-agent-security-gateway/actions/runs/38012954359), Python 3.12 **782 passed, 81.93% coverage**. The 69 signatures are a separate code inventory, not this run's efficacy measure; older 723/81.91%/55 metrics remain historical.
+- AWS Agent Identity Guard: [CI 38009457205](https://github.com/poojakira/aws-agent-identity-guard/actions/runs/38009457205), **247 collected, 244 passed, 3 credential-dependent skips**.
+- HF Model Provenance Scanner: [CI 38002138828](https://github.com/poojakira/hf-model-provenance-scanner/actions/runs/38002138828), **260 passed, 1 skipped, 6 subtests, 75.67% statement coverage**. The 33/33 fixture count remains scoped to committed adversarial examples, not real-world detection rate.
+- Older resume PDFs and historical posters may cite different snapshots; never silently replace their denominators or combine dates. See [RESUME_METRICS_EVIDENCE.md](RESUME_METRICS_EVIDENCE.md).
