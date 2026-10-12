@@ -27,6 +27,8 @@ jobs:
           python-version: "3.12"
       - name: Verify production/evidence surfaces
         run: python scripts/verify_profile.py
+      - name: Verify dated recruiting metrics manifest
+        run: python scripts/verify_metrics_manifest.py
       - name: Lint and format maintained Python scripts
         run: |
           python -m pip install ruff==0.8.4

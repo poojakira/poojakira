@@ -5,7 +5,9 @@ This page is the central evidence index for quantitative security-project claims
 Metrics below are tied to named repository snapshots or verification runs. A later repository commit may contain more tests or a different measurement; that does not invalidate an earlier dated snapshot. The historical poster snapshots below must be distinguished from the current October 2026 hosted results and from the older public resume PDF.
 
 
-## October 11, 2026 latest inspected hosted results (not poster snapshots)
+## Hosted CI results reviewed October 12, 2026 (dated October 9–10 UTC; not poster snapshots)
+
+The machine-readable references for these three source snapshots are in [evidence/portfolio_metrics.json](evidence/portfolio_metrics.json). The verifier prevents the main profile and this table from drifting. It does not inspect GitHub Actions logs afresh or replace independent release acceptance testing.
 
 | Project | Main CI reference | Hosted test evidence | Scope |
 |---|---|---|---|
@@ -13,7 +15,7 @@ Metrics below are tied to named repository snapshots or verification runs. A lat
 | AWS Agent Identity Guard | [Run 38009457205](https://github.com/poojakira/aws-agent-identity-guard/actions/runs/38009457205) | **247 collected, 244 passed, 3 skipped** | Static IAM rules; credential-dependent tests not executed |
 | HF Model Provenance Scanner | [Run 38002138828](https://github.com/poojakira/hf-model-provenance-scanner/actions/runs/38002138828) | **260 passed, 1 skipped, 6 subtests, 75.67% coverage** | 33/33 committed fixture detection is separate curated regression evidence |
 
-The tracked portfolio resume cites a different dated Docker gateway snapshot (752 tests), while historical posters cite 723 tests. Neither should be described as the same test run as the newer 782-pass hosted CI. The published resume PDF must be regenerated together with its LaTeX source before changing PDF-facing numbers.
+Previously published résumé versions cited a different dated Docker gateway snapshot (752 tests), while historical posters cite 723 tests. Neither result is from the newer 782-pass hosted CI. The October 12 portfolio update proposes 782 tests and 81.93% coverage together, and must only be considered public once its PDF build, source/artifact reconciliation and GitHub Pages deployment pass.
 
 ## Historical poster evidence (archived)
 
@@ -74,7 +76,9 @@ Synthetic poisoning benchmark scores remain dataset- and configuration-scoped. T
 
 ## Account-wide repository-hardening wording
 
-The October 9, 2026 account inventory found **21 repositories**, including the empty `aegis-immune-fabric` repository. Branch protection, required status checks, and workflow cadence are not uniform across the fleet; several private repositories intentionally use manual-only workflows to avoid unplanned hosted-runner usage.
+**Current connected-account inventory (October 12, 2026): 20 repositories (14 public, 6 private).** The October 9 inventory below recorded 21 repositories, including an empty repository that is not present in the current listing. Keep both snapshots dated; do not silently equate them.
+
+The **historical October 9, 2026** account inventory found **21 repositories**, including the then-empty `aegis-immune-fabric` repository. The **current October 12 listing contains 20 repositories** (14 public, 6 private); the repository is not present in that current connected-account inventory. Branch protection, required status checks, and workflow cadence are not uniform across the fleet; several private repositories intentionally use manual-only workflows to avoid unplanned hosted-runner usage.
 
 Current resume/profile wording should therefore say that the portfolio uses protected-branch and CI/security controls where configured. It must not imply that every repository has identical merge-gate enforcement.
 
