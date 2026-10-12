@@ -74,6 +74,8 @@ Synthetic poisoning benchmark scores remain dataset- and configuration-scoped. T
 
 ## Account-wide repository-hardening wording
 
+**Current connected-account inventory (October 12, 2026): 20 repositories (14 public, 6 private).** The October 9 inventory below recorded 21 repositories, including an empty repository that is not present in the current listing. Keep both snapshots dated; do not silently equate them.
+
 The October 9, 2026 account inventory found **21 repositories**, including the empty `aegis-immune-fabric` repository. Branch protection, required status checks, and workflow cadence are not uniform across the fleet; several private repositories intentionally use manual-only workflows to avoid unplanned hosted-runner usage.
 
 Current resume/profile wording should therefore say that the portfolio uses protected-branch and CI/security controls where configured. It must not imply that every repository has identical merge-gate enforcement.
