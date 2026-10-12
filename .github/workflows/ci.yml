@@ -33,6 +33,7 @@ jobs:
         run: |
           python -m pip install ruff==0.8.4
           python -m ruff check scripts
+          python -m ruff format --diff scripts
           python -m ruff format --check scripts
       - name: Verify repository security controls
         run: python scripts/security_scan.py
