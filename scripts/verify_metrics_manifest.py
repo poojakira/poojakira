@@ -11,9 +11,7 @@ data = json.loads(
     (root / "evidence/portfolio_metrics.json").read_text(encoding="utf-8")
 )
 profile = (root / "README.md").read_text(encoding="utf-8")
-evidence = (root / "RESUME_METRICS_EVIDENCE.md").read_text(
-    encoding="utf-8"
-)
+evidence = (root / "RESUME_METRICS_EVIDENCE.md").read_text(encoding="utf-8")
 projects = data["projects"]
 
 if data["schema_version"] != 1:
