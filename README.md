@@ -87,7 +87,7 @@ Python · SafeTensors · GGUF · ONNX
 
 - **Independent AI Security Researcher & Engineer** · Self-directed research · Aug. 2024 to Present
   - **Led security design and architecture reviews** across self-directed AI and cloud security systems, translating threat models into enforceable requirements, CI gates, and documented repository release criteria.
-  - Published independently checkable October 2026 CI snapshots: **782 passing MCP Gateway tests at 81.93% statement coverage**, **244 passing IAM analyzer tests** (3 credential-dependent skips), and **260 passing model-scanner tests** (1 skipped). These are software test results, not production security-effectiveness rates.
+  - Published independently checkable October 2026 CI snapshots: **782 passing MCP Gateway tests at 81.93% statement coverage**, **244 passing IAM analyzer tests** (3 explicitly disabled separate-rule-API tests), and **260 passing model-scanner tests** (1 skipped). These are software test results, not production security-effectiveness rates.
 - **Business & Compliance Lead, AEROSEC (academic externship)** · Honeywell Aerospace Technologies × ASU · Aug. 2025 to Dec. 2025
 - **Graduate Teaching Assistant / IT Grader** · Arizona State University · Jan. 2025 to Oct. 2025
 
@@ -126,6 +126,6 @@ Maintenance checks and their limits are recorded in [the October 9 fix verificat
 Machine-readable index: [portfolio_metrics.json](evidence/portfolio_metrics.json). CI checks that the main profile and evidence index agree on these dated claims.
 
 - MCP Agent Security Gateway: [CI 38012954359](https://github.com/poojakira/mcp-agent-security-gateway/actions/runs/38012954359), Python 3.12 **782 passed, 81.93% coverage**. The 69 signatures are a separate code inventory, not this run's efficacy measure; older 723/81.91%/55 metrics remain historical.
-- AWS Agent Identity Guard: [CI 38009457205](https://github.com/poojakira/aws-agent-identity-guard/actions/runs/38009457205), **247 collected, 244 passed, 3 credential-dependent skips**.
+- AWS Agent Identity Guard: [CI 38009457205](https://github.com/poojakira/aws-agent-identity-guard/actions/runs/38009457205), **247 collected, 244 passed, 3 explicitly disabled separate-rule-API tests**.
 - HF Model Provenance Scanner: [CI 38002138828](https://github.com/poojakira/hf-model-provenance-scanner/actions/runs/38002138828), **260 passed, 1 skipped, 6 subtests, 75.67% statement coverage**. The 33/33 fixture count remains scoped to committed adversarial examples, not real-world detection rate.
 - Historical posters intentionally retain dated earlier results. The canonical portfolio resume is source-built; confirm the deployed PDF matches the LaTeX and recruiter view after any artifact-sync pull request. Do not silently combine historical denominators or dates. See [RESUME_METRICS_EVIDENCE.md](RESUME_METRICS_EVIDENCE.md).
