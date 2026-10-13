@@ -6,12 +6,12 @@
 
 Connected owner `poojakira`, GitHub user ID `90021441`. Only that owner's account and its **20 repositories** were used. Each repository ID below was retrieved from the authorized GitHub inventory. Repository name/ID pairs are for traceability, not identity or copyright certification.
 
-| Repository | GitHub repository ID | Contributor-policy PR | Status at time of report |
+| Repository | GitHub repository ID | Contributor-policy PR | Final second-round PR status |
 | --- | --- | --- | --- |
 | `PulseNet-RUL-Forecasting` | `1144890505` | [#96](https://github.com/poojakira/PulseNet-RUL-Forecasting/pull/96) | merged |
 | `poojakira` | `1185591185` | [#35](https://github.com/poojakira/poojakira/pull/35) | merged |
 | `mcp-agent-security-gateway` | `1296742217` | [#130](https://github.com/poojakira/mcp-agent-security-gateway/pull/130) | merged |
-| `hf-model-provenance-scanner` | `1296924027` | [#75](https://github.com/poojakira/hf-model-provenance-scanner/pull/75) | awaiting CI |
+| `hf-model-provenance-scanner` | `1296924027` | [#75](https://github.com/poojakira/hf-model-provenance-scanner/pull/75) | merged after successful CI |
 | `dataset-poisoning-detector` | `1297030364` | [#90](https://github.com/poojakira/dataset-poisoning-detector/pull/90) | merged |
 | `model-privacy-attacks` | `1297083816` | [#52](https://github.com/poojakira/model-privacy-attacks/pull/52) | merged |
 | `llm-redteam-framework` | `1297084181` | [#63](https://github.com/poojakira/llm-redteam-framework/pull/63) | merged |
@@ -35,7 +35,7 @@ Connected owner `poojakira`, GitHub user ID `90021441`. Only that owner's accoun
 - All 20 root README files begin with **READ THIS LICENSE**.
 - Initial licenses: 11 MIT, 4 Apache-2.0, 1 existing proprietary, and 4 absent. All 19 first-round licensing PRs merged, with prior license grants preserved and historical texts archived for the previous MIT/Apache repositories.
 - 14 repositories are public; 6 are private. Repository visibility was not modified.
-- Contributor access: owner-maintained, no unsolicited external source, asset or documentation contributions. Written permission plus a separate contributor rights arrangement is required for new invited work. This policy is not a substitute for enforceable signed agreements.
+- All 20 second-round contribution-policy PRs merged into `main` after applicable completed CI checks. Contributor access: owner-maintained, no unsolicited external source, asset or documentation contributions. Written permission plus a separate contributor rights arrangement is required for new invited work. This policy is not a substitute for enforceable signed agreements.
 
 ## Follow-up remediation
 
