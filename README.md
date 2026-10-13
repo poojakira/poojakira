@@ -1,3 +1,5 @@
+> **READ THIS LICENSE BEFORE COPYING, USING, OR MODIFYING ANY MATERIAL.** This repository's owner-controlled original content is proprietary and **All Rights Reserved**. There is no permission to copy, modify, distribute, or reuse it without prior written authorization, subject to existing third-party rights, any prior valid licenses, GitHub's Terms, and applicable law. See [LICENSE](LICENSE).
+
 <p align="center">
   <img src="./assets/profile-banner.svg" width="100%" alt="Pooja Kiran, Security Engineer" />
 </p>
