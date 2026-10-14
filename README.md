@@ -10,7 +10,7 @@ I design security controls at the boundaries where AI systems call tools, worklo
 
 **Tempe, Arizona · Open to U.S. on-site or hybrid security-engineering roles and relocation**
 
-[Portfolio](https://poojakira.github.io/Pooja_Kiran_Portfolio_Website/) · [LinkedIn](https://www.linkedin.com/in/poojakiran) · [Email](mailto:poojakiranbhardwaj@gmail.com)
+[Portfolio](https://poojakira.github.io/Pooja_Kiran_Portfolio_Website/) · [LinkedIn](https://www.linkedin.com/in/poojakiran) · poojakiranbhardwaj@gmail.com
 
 ---
 
