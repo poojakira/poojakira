@@ -11,9 +11,9 @@ The machine-readable references for these three source snapshots are in [evidenc
 
 | Project | Main CI reference | Hosted test evidence | Scope |
 |---|---|---|---|
-| MCP Agent Security Gateway | [Run 38462601803](https://github.com/poojakira/mcp-agent-security-gateway/actions/runs/38462601803) | **782 passed, 81.93% coverage** (Python 3.12) | Current CI at cited commit; 69 named detector signatures from separate source inventory, not an independently validated detector recall |
-| AWS Agent Identity Guard | [Run 38462296804](https://github.com/poojakira/aws-agent-identity-guard/actions/runs/38462296804) | **247 collected, 244 passed, 3 skipped** | Static IAM rules; credential-dependent tests not executed |
-| HF Model Provenance Scanner | [Run 38462464074](https://github.com/poojakira/hf-model-provenance-scanner/actions/runs/38462464074) | **260 passed, 1 skipped, 6 subtests, 75.67% coverage** | 33/33 committed fixture detection is separate curated regression evidence |
+| MCP Agent Security Gateway | [Run 38462601803](https://github.com/poojakira/mcp-agent-security-gateway/actions/runs/38012954359) | **782 passed, 81.93% coverage** (Python 3.12) | Current CI at cited commit; 69 named detector signatures from separate source inventory, not an independently validated detector recall |
+| AWS Agent Identity Guard | [Run 38462296804](https://github.com/poojakira/aws-agent-identity-guard/actions/runs/38009457205) | **247 collected, 244 passed, 3 skipped** | Static IAM rules; credential-dependent tests not executed |
+| HF Model Provenance Scanner | [Run 38462464074](https://github.com/poojakira/hf-model-provenance-scanner/actions/runs/38002138828) | **260 passed, 1 skipped, 6 subtests, 75.67% coverage** | 33/33 committed fixture detection is separate curated regression evidence |
 
 Previously published résumé versions cited a different dated Docker gateway snapshot (752 tests), while historical posters cite 723 tests. Neither result is from the newer 782-pass hosted CI. The October 12 portfolio update proposes 782 tests and 81.93% coverage together, and must only be considered public once its PDF build, source/artifact reconciliation and GitHub Pages deployment pass.
 
