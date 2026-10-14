@@ -1,7 +1,3 @@
-<p align="center">
-  <img src="./assets/security-engineering-mesh.svg" width="100%" alt="Technical illustration of agent, identity and model artifact trust boundaries" />
-</p>
-
 # Pooja Kiran
 **Security Engineer · AI & Agent Security · Application Security · Cloud IAM**
 
@@ -14,17 +10,17 @@ I build security tooling for AI execution paths, workload identities, and model 
 ### [MCP Agent Security Gateway](https://github.com/poojakira/mcp-agent-security-gateway)
 Default-deny MCP/JSON-RPC request gateway with capability authorization, prompt-injection inspection, PII/exfiltration checks, anti-SSRF controls, rate limiting, tamper-evident audit records, and SIEM integration.
 
-**Engineering evidence:** [782 passing tests, 81.93% statement coverage](https://github.com/poojakira/mcp-agent-security-gateway/actions/runs/38012954359) in a dated Python 3.12 CI run. Separate source inventory: 69 detector signatures and 9 Elastic Security rules.
+**Engineering evidence:** [782 passing tests](https://github.com/poojakira/mcp-agent-security-gateway/actions/runs/38012954359) and **81.93% coverage** in a dated Python 3.12 CI run. Separate source inventory: **69 named runtime detector signatures** and nine Elastic Security rules.
 
 ### [AWS Agent Identity Guard](https://github.com/poojakira/aws-agent-identity-guard)
 Static AWS IAM policy analysis with 25 deterministic rule IDs covering excessive permissions, role trust, privilege escalation paths, and audit-control weaknesses. Exports text, JSON, and SARIF 2.1.0 findings for developer review.
 
-**Engineering evidence:** [244 passing tests](https://github.com/poojakira/aws-agent-identity-guard/actions/runs/38009457205) in a dated CI run; three credential-dependent checks were skipped.
+**Engineering evidence:** [244 passed / 3 skipped](https://github.com/poojakira/aws-agent-identity-guard/actions/runs/38009457205) in a dated CI run; the skipped checks require live AWS credentials.
 
 ### [HF Model Provenance Scanner](https://github.com/poojakira/hf-model-provenance-scanner)
 Non-executing inspection of supported model artifacts, with serialization-risk analysis, provenance checks, and dependency evidence. Untrusted model code is not executed by default.
 
-**Engineering evidence:** [260 passing tests, 75.67% statement coverage](https://github.com/poojakira/hf-model-provenance-scanner/actions/runs/38002138828) in a dated CI run; 33 of 33 committed adversarial fixtures flagged in a separate, bounded evaluation.
+**Engineering evidence:** [260 passed / 1 skipped](https://github.com/poojakira/hf-model-provenance-scanner/actions/runs/38002138828) and **75.67% coverage** in a dated CI run; **33/33 adversarial fixtures** flagged in a separate, bounded evaluation.
 
 ## Other systems
 
