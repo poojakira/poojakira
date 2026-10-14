@@ -148,6 +148,18 @@ Static IAM linter for AI-agent roles. **25 deterministic rules** for privilege e
 
 ---
 
+## Dated CI evidence and claim boundaries (October 2026)
+
+These numbers refer to the **linked historical CI runs**, not a live counter or deployment-level effectiveness test. The source inventory and fixture counts below are separate regression evidence.
+
+- **MCP Agent Security Gateway:** [Python 3.12 CI run 38012954359](https://github.com/poojakira/mcp-agent-security-gateway/actions/runs/38012954359): **782 passing tests**, **81.93% coverage**. The separately counted source inventory contains **69 named runtime detector signatures**; this does not establish detector recall or production efficacy.
+- **AWS Agent Identity Guard:** [CI run 38009457205](https://github.com/poojakira/aws-agent-identity-guard/actions/runs/38009457205): **244 passed / 3 skipped**; skipped tests need live AWS credentials. Results cover static-policy analysis, not live permissions.
+- **HF Model Provenance Scanner:** [CI run 38002138828](https://github.com/poojakira/hf-model-provenance-scanner/actions/runs/38002138828): **260 passed / 1 skipped**, **75.67% coverage**. The **33/33 adversarial fixtures** result refers only to committed curated cases, not a universal detection rate.
+
+[Full dated metrics and historical poster evidence](RESUME_METRICS_EVIDENCE.md).
+
+---
+
 ## 🧰 Toolbox
 
 <p>
