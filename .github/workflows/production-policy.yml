@@ -34,7 +34,7 @@ jobs:
               Path("README.md"), Path("SECURITY.md"), Path("PRODUCTION.md"),
               Path("SECURITY_CHECKLIST.md"), Path("SECURITY_AUDIT_2026-09-30.md"),
           ]
-          forbidden = ("<<<<<<<", "=======", ">>>>>>>", "TODO: FILL", "TBD_METRIC")
+          forbidden = ("TODO: FILL", "TBD_METRIC")
           failures = []
           for path in candidates:
               if not path.is_file():
@@ -43,6 +43,12 @@ jobs:
               for marker in forbidden:
                   if marker in body:
                       failures.append(f"{path}: unresolved marker {marker!r}")
+          for path in candidates:
+              if not path.is_file():
+                  continue
+              for line_number, line in enumerate(path.read_text(encoding="utf-8", errors="replace").splitlines(), 1):
+                  if line.startswith("<<<<<<< ") or line.strip() == "=======" or line.startswith(">>>>>>> "):
+                      failures.append(f"{path}:{line_number}: merge conflict marker")
           if failures:
               raise SystemExit("\n".join(failures))
           print("documentation integrity verified")
