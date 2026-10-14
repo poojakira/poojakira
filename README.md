@@ -1,65 +1,45 @@
-<!-- GitHub profile: independently developed, source-backed security engineering -->
-<p align="center">
-  <img src="./assets/security-engineering-mesh.svg" width="100%" alt="Animated isometric security mesh showing the trust boundaries among agents, workload identities, and model artifacts" />
-</p>
-
 # Pooja Kiran
-**Security Engineer | AI & Agent Security | Application Security | Cloud IAM**
+**Security Engineer · AI & Agent Security · Application Security · Cloud IAM**
 
-I design security controls at the boundaries where AI systems call tools, workload identities gain authority, and model artifacts enter runtime environments. My work centers on enforceable decisions, explainable findings, reproducible tests, and explicit evidence boundaries.
+I build security tooling for AI execution paths, workload identities, and model supply chains. My focus is on practical enforcement, deterministic analysis, automated regression testing, and engineering evidence that can be independently inspected.
 
-**Tempe, Arizona · Open to U.S. on-site or hybrid security-engineering roles and relocation**
+[Portfolio](https://poojakira.github.io/Pooja_Kiran_Portfolio_Website/) · [Technical resume](https://poojakira.github.io/Pooja_Kiran_Portfolio_Website/Pooja_Kiran_Agentic_AI_Security_Engineer_Resume.pdf) · [LinkedIn](https://www.linkedin.com/in/poojakiran)
 
-[Portfolio](https://poojakira.github.io/Pooja_Kiran_Portfolio_Website/) · [LinkedIn](https://www.linkedin.com/in/poojakiran) · poojakiranbhardwaj@gmail.com
+## Selected engineering work
+
+### [MCP Agent Security Gateway](https://github.com/poojakira/mcp-agent-security-gateway)
+Default-deny MCP/JSON-RPC request gateway with capability authorization, prompt-injection inspection, PII/exfiltration checks, anti-SSRF controls, rate limiting, tamper-evident audit records, and SIEM integration.
+
+**Engineering evidence:** [782 passing tests](https://github.com/poojakira/mcp-agent-security-gateway/actions/runs/38012954359) and **81.93% coverage** in a dated Python 3.12 CI run. Separate source inventory: **69 named runtime detector signatures** and nine Elastic Security rules.
+
+### [AWS Agent Identity Guard](https://github.com/poojakira/aws-agent-identity-guard)
+Static AWS IAM policy analysis with 25 deterministic rule IDs covering excessive permissions, role trust, privilege escalation paths, and audit-control weaknesses. Exports text, JSON, and SARIF 2.1.0 findings for developer review.
+
+**Engineering evidence:** [244 passed / 3 skipped](https://github.com/poojakira/aws-agent-identity-guard/actions/runs/38009457205) in a dated CI run; the skipped checks require live AWS credentials.
+
+### [HF Model Provenance Scanner](https://github.com/poojakira/hf-model-provenance-scanner)
+Non-executing inspection of supported model artifacts, with serialization-risk analysis, provenance checks, and dependency evidence. Untrusted model code is not executed by default.
+
+**Engineering evidence:** [260 passed / 1 skipped](https://github.com/poojakira/hf-model-provenance-scanner/actions/runs/38002138828) and **75.67% coverage** in a dated CI run; **33/33 adversarial fixtures** flagged in a separate, bounded evaluation.
+
+## Other systems
+
+[LLM Red-Team Framework](https://github.com/poojakira/llm-redteam-framework) · [Dataset Poisoning Detector](https://github.com/poojakira/dataset-poisoning-detector) · [Adversarial ML Lab](https://github.com/poojakira/adversarial-ml-lab) · [ML Security Benchmark Suite](https://github.com/poojakira/mlsec-benchmark-suite) · [Unified ML Security Platform](https://github.com/poojakira/unified-ml-security-platform)
+
+## Engineering foundation
+
+**Languages and platforms:** Python, Rust, C++, Bash, FastAPI, Docker, GitHub Actions, AWS.
+
+**Security and testing:** API security, IAM, least privilege, MCP/JSON-RPC, threat modeling, pytest, SARIF, CodeQL, Elastic Security, SIEM telemetry.
+
+**Education:** M.S., Information Technology (Security), Arizona State University, 2026.
+
+**Experience:** Independent security engineering; Graduate Teaching Assistant and IT Grader; Business & Compliance Lead, AEROSEC academic technology externship (Aug–Dec 2025).
 
 ---
 
-## Selected engineering systems
+The measurements above refer to identified CI snapshots and controlled tests, not production deployment outcomes or generalized attack-detection guarantees. Source code, tests, limitations, and dated evidence are available in the linked repositories.
 
-| System | Implemented engineering scope | Dated verification |
-|---|---|---|
-| **[MCP Agent Security Gateway](https://github.com/poojakira/mcp-agent-security-gateway)** | Default-deny MCP/JSON-RPC authorization, capability controls, request inspection, anti-SSRF policy, rate limits, hash-chained audit evidence, SIEM telemetry | [Python 3.12 CI](https://github.com/poojakira/mcp-agent-security-gateway/actions/runs/38012954359): **782 passing tests**, **81.93% coverage**. Separate source inventory: **69 named runtime detector signatures**, **9 Elastic rule records** |
-| **[AWS Agent Identity Guard](https://github.com/poojakira/aws-agent-identity-guard)** | Static IAM findings across wildcard permissions, `iam:PassRole`, `sts:AssumeRole`, trust-policy weaknesses, permission boundaries, SARIF/GitHub Code Scanning | [Cited CI](https://github.com/poojakira/aws-agent-identity-guard/actions/runs/38009457205): **244 passed / 3 skipped**. **25 deterministic rule IDs** |
-| **[HF Model Provenance Scanner](https://github.com/poojakira/hf-model-provenance-scanner)** | Non-executing model-artifact inspection, serialization-risk analysis, AST/taint checks, dependency and provenance evidence | [Cited CI](https://github.com/poojakira/hf-model-provenance-scanner/actions/runs/38002138828): **260 passed / 1 skipped**, **75.67% coverage**; **33/33 adversarial fixtures** (committed curated cases) flagged in a separate bounded evaluation |
+**Contact:** poojakiranbhardwaj@gmail.com · Tempe, Arizona · Open to U.S. on-site and hybrid roles.
 
-These figures refer to dated repository snapshots, **not live production counters**. Passing tests, static detections, and curated attack fixtures are not proof of field-wide security effectiveness, enterprise adoption, or incident prevention. The [portfolio](https://poojakira.github.io/Pooja_Kiran_Portfolio_Website/) contains architecture explanations and pinned technical posters.
-
-## Engineering approach
-
-**Execution boundary.** Authorize agent requests before tool invocation; normalize and inspect untrusted arguments; record reviewable policy decisions.
-
-**Identity boundary.** Review IAM permissions and role trust, including privilege escalation paths. Static analysis does not claim the complete effective permissions of a deployed account.
-
-**Artifact boundary.** Inspect supported model and repository formats without running untrusted model code by default. Flag incomplete or indeterminate scans explicitly.
-
-**Evidence boundary.** Tie quantitative statements to specific commits, workflows, fixtures, and limitations. Keep historical results separate from current verification.
-
-## Additional projects
-
-| Area | Repositories |
-|---|---|
-| LLM and model evaluation | [LLM Red-Team Framework](https://github.com/poojakira/llm-redteam-framework) · [Adversarial ML Lab](https://github.com/poojakira/adversarial-ml-lab) · [Dataset Poisoning Detector](https://github.com/poojakira/dataset-poisoning-detector) |
-| Integration and measurement | [Unified ML Security Platform](https://github.com/poojakira/unified-ml-security-platform) · [ML Security Benchmark Suite](https://github.com/poojakira/mlsec-benchmark-suite) · [ML Security Dashboards](https://github.com/poojakira/mlsec-dashboards) |
-| Security infrastructure | [ATT&CK v19 Core](https://github.com/poojakira/attack-v19-core) · [SentinelMesh AI Control Plane](https://github.com/poojakira/SentinelMesh-AI-Control-Plane) · [OS Resource Management Service](https://github.com/poojakira/OS-Resource-Management-Simulator-Dockerized-Flask-Application) |
-
-## Technical foundation
-
-**Languages and software:** Python, Bash, Rust, C++, FastAPI, pytest, GitHub Actions, Docker.
-
-**Security disciplines:** application and API security, MCP/JSON-RPC, IAM and least privilege, security testing, model supply-chain controls, security automation.
-
-**Analysis and telemetry:** SARIF 2.1.0, CodeQL, Trivy, Bandit, pip-audit, Elastic Security, SIEM, Prometheus.
-
-## Academic and collaborative work
-
-**Arizona State University:** M.S., Information Technology (Security), 2026. Graduate Teaching Assistant and IT Grader for Web Programming and graduate cybersecurity courses.
-
-**AEROSEC:** Business & Compliance Lead in an externally mentored Technology Innovation Lab academic externship (August–December 2025). Developed third-party airline Passenger Service System risk and commercialization analysis for a proposed product; modeled costs are scenarios, not booked revenue or funded operations.
-
-## Contact and evidence
-
-[Explore projects and technical posters](https://poojakira.github.io/Pooja_Kiran_Portfolio_Website/) · [Review application-ready resume](https://poojakira.github.io/Pooja_Kiran_Portfolio_Website/Pooja_Kiran_Agentic_AI_Security_Engineer_Resume.pdf) · [Connect on LinkedIn](https://www.linkedin.com/in/poojakiran)
-
-The projects are independently engineered and supported by bounded repository evidence. No statement here implies that they are customer-deployed or independently penetration-tested.
-
-<sub>License: original material is subject to the repository's [LICENSE](LICENSE). Read it before reuse.</sub>
+<sub>Review the repository [LICENSE](LICENSE) before reusing original materials.</sub>
