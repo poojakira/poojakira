@@ -24,7 +24,7 @@ Default-deny MCP/JSON-RPC request gateway that inspects selected agent-to-tool c
 
 - **782 passing tests · 81.93% statement coverage** in a dated hosted Python 3.12 CI run.
 - **69 named runtime detector signatures** and nine Elastic Security rules (source-inventory counts, not real-world detection rates).
-- [CI evidence](https://github.com/poojakira/mcp-agent-security-gateway/actions/runs/38462601803) · [Repository](https://github.com/poojakira/mcp-agent-security-gateway)
+- [CI evidence](https://github.com/poojakira/mcp-agent-security-gateway/actions/runs/38012954359) · [Repository](https://github.com/poojakira/mcp-agent-security-gateway)
 
 ### [AWS Agent Identity Guard](https://github.com/poojakira/aws-agent-identity-guard)
 Static AWS IAM policy analysis with 25 deterministic rule IDs covering excessive permissions, role trust, privilege-escalation paths, and audit-control weaknesses. Exports text, JSON, and SARIF 2.1.0 findings.
