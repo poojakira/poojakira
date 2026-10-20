@@ -22,7 +22,7 @@ I build security tooling for AI execution paths, workload identities, and model 
 ### [MCP Agent Security Gateway](https://github.com/poojakira/mcp-agent-security-gateway)
 Default-deny MCP/JSON-RPC request gateway that inspects selected agent-to-tool calls before execution, with capability authorization, prompt-injection inspection, sensitive-data/exfiltration checks, anti-SSRF controls, rate limiting, tamper-evident audit records, and SIEM integration.
 
-- **782 passing tests · 81.93% statement coverage** in a dated hosted Python 3.12 CI run.
+- **782 passing tests · 81.93% coverage** (statement) in a dated hosted Python 3.12 CI run.
 - **69 named runtime detector signatures** and nine Elastic Security rules (source-inventory counts, not real-world detection rates).
 - [CI evidence](https://github.com/poojakira/mcp-agent-security-gateway/actions/runs/38012954359) · [Repository](https://github.com/poojakira/mcp-agent-security-gateway)
 
@@ -36,7 +36,7 @@ Static AWS IAM policy analysis with 25 deterministic rule IDs covering excessive
 Non-executing inspection of supported model artifacts, serialization risks, provenance, and dependency evidence. Untrusted model code is not executed by default.
 
 - **260 passed / 1 skipped · 75.67% coverage** in a dated CI run.
-- **33/33 curated adversarial fixtures flagged** in a bounded evaluation; this is fixture evidence, not a general detection guarantee.
+- **33/33 adversarial fixtures flagged** (curated) in a bounded evaluation; this is fixture evidence, not a general detection guarantee.
 - [CI evidence](https://github.com/poojakira/hf-model-provenance-scanner/actions/runs/38002138828) · [Repository](https://github.com/poojakira/hf-model-provenance-scanner)
 
 ## More security engineering
