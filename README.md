@@ -33,11 +33,18 @@ Static AWS IAM policy analysis with 25 deterministic rule IDs covering excessive
 - [CI evidence](https://github.com/poojakira/aws-agent-identity-guard/actions/runs/38009457205) · [Repository](https://github.com/poojakira/aws-agent-identity-guard)
 
 ### [HF Model Provenance Scanner](https://github.com/poojakira/hf-model-provenance-scanner)
-Non-executing inspection of supported model artifacts, serialization risks, provenance, and dependency evidence. Untrusted model code is not executed by default.
+Non-executing inspection of supported model artifacts, serialization risks, provenance, and dependency evidence. 
 
 - **260 passed / 1 skipped · 75.67% coverage** in a dated CI run.
 - **33/33 adversarial fixtures flagged** (curated) in a bounded evaluation; this is fixture evidence, not a general detection guarantee.
 - [CI evidence](https://github.com/poojakira/hf-model-provenance-scanner/actions/runs/38002138828) · [Repository](https://github.com/poojakira/hf-model-provenance-scanner)
+
+
+### [Attack Detection Engine](https://github.com/poojakira/attack-detection-engine) 
+Offline security detection engine that analyzes logs, network traffic, process behavior, EDR events, source code, CAN frames, firmware, and ARM ELF32 binaries, mapping applicable detections to MITRE ATT&CK v19 with rule-based analysis.
+
+-  verified **68/68 Python 3.12 tests passing in 23.42 seconds** on the merged main branch.
+
 
 ## More security engineering
 
