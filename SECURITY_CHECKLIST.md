@@ -65,4 +65,4 @@ This repository does not run an application server, database, authentication sys
 
 ## Remaining GitHub-hosted control
 
-The repository's `main` branch currently reports **not protected**, and no repository ruleset is configured. Branch protection/rulesets require repository-administration permission and cannot be enabled by the connected GitHub app used for this audit. Enable a `main` ruleset in GitHub that requires pull requests and the four passing checks before merge.
+The earlier audit recorded `main` as **not protected**, with no repository ruleset configured. This document does not re-attest the current GitHub settings. Branch protection/rulesets require repository-administration permission and cannot be enabled by the connected GitHub app used for this audit. Enable a `main` ruleset in GitHub that requires pull requests and the four passing checks before merge.

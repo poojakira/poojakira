@@ -45,4 +45,4 @@ The full control matrix is in [SECURITY_CHECKLIST.md](SECURITY_CHECKLIST.md). Ap
 
 ## GitHub-hosted control still required
 
-The `main` branch currently reports as unprotected and no repository ruleset is configured. Repository-admin settings should require pull requests, passing checks, conversation resolution, and block force pushes/deletion. This control cannot be enabled from repository files alone.
+The earlier audit recorded `main` as unprotected with no repository ruleset configured. This document does not re-attest the current GitHub settings. Repository-admin settings should require pull requests, passing checks, conversation resolution, and block force pushes/deletion. This control cannot be enabled from repository files alone.

@@ -11,7 +11,8 @@
 
 <p align="center">
   <a href="https://poojakira.github.io/Pooja_Kiran_Portfolio_Website/">Portfolio</a> ·
-  <a href="https://poojakira.github.io/Pooja_Kiran_Portfolio_Website/Pooja_Kiran_Agentic_AI_Security_Engineer_Resume.pdf">Technical Resume</a> ·
+  <a href="https://poojakira.github.io/Pooja_Kiran_Portfolio_Website/Pooja_Kiran_Security_Engineer_Resume.pdf">Technical Resume</a> ·
+  <a href="https://poojakira.github.io/Pooja_Kiran_Portfolio_Website/Pooja_Kiran_Engineering_Manager_Resume.pdf">Management Resume</a> ·
   <a href="https://www.linkedin.com/in/poojakiran/">LinkedIn</a>
 </p>
 
@@ -19,38 +20,41 @@ I build security tooling for AI execution paths, workload identities, model supp
 
 ## Selected engineering work
 
-### Agent → Tool: [MCP Agent Security Gateway](https://github.com/poojakira/mcp-agent-security-gateway)
-Default-deny MCP/JSON-RPC request gateway that inspects selected agent-to-tool calls before execution, with capability authorization, prompt-injection inspection, sensitive-data/exfiltration checks, anti-SSRF controls, rate limiting, tamper-evident audit records, and SIEM integration.
+The results below belong to the exact reviewed candidates in the [evidence index](RESUME_METRICS_EVIDENCE.md), dated **November 18, 2026 (America/Phoenix)**. All four release assessments remain **PARTIAL**. The candidates are available in draft PRs; they have not been merged to `main`, released, or approved for public deployment. Test counts describe bounded local verification, not field detection rates.
 
-- **782 passing tests · 81.93% coverage** (statement) in a dated hosted Python 3.12 CI run.
-- **69 named runtime detector signatures** and nine Elastic Security rules (source-inventory counts, not real-world detection rates).
-- [CI evidence](https://github.com/poojakira/mcp-agent-security-gateway/actions/runs/38012954359) · [Repository](https://github.com/poojakira/mcp-agent-security-gateway)
+### [Agent → Tool: MCP Agent Security Gateway](https://github.com/poojakira/mcp-agent-security-gateway)
 
-### Identity → Authority: [AWS Agent Identity Guard](https://github.com/poojakira/aws-agent-identity-guard)
-Static AWS IAM policy analysis with 25 deterministic rule IDs covering excessive permissions, role trust, privilege-escalation paths, and audit-control weaknesses. Exports text, JSON, and SARIF 2.1.0 findings.
+Agent developers submit bounded MCP requests, change capability permissions, and inspect real fixed-child execution receipts and disposable tool-side state in a local policy workbench. Default-deny policy and execution outcomes remain distinct.
 
-- **244 passed / 3 skipped** in a dated CI run; skipped checks require live AWS credentials.
-- [CI evidence](https://github.com/poojakira/aws-agent-identity-guard/actions/runs/38009457205) · [Repository](https://github.com/poojakira/aws-agent-identity-guard)
+- **834 passed / 0 skipped · 81.80% local statement coverage** at source [`d2e7b6ea7c1a`](https://github.com/poojakira/mcp-agent-security-gateway/blob/d2e7b6ea7c1a1f9cb0fb71f73d0a692d8fa0410c/README.md).
+- Broader MCP conformance, arbitrary-server OS containment, externally anchored audit, and deployment-specific privacy/recovery gates remain open.
+- [Source-scoped manifest](https://raw.githubusercontent.com/poojakira/mcp-agent-security-gateway/4f83f01a3ed8aca5639143fe2179afb0f864f46e/release-evidence/manifest.json) · [PARTIAL release assessment](https://github.com/poojakira/mcp-agent-security-gateway/blob/4f83f01a3ed8aca5639143fe2179afb0f864f46e/release-evidence/RELEASE_ASSESSMENT.md) · [Draft review](https://github.com/poojakira/mcp-agent-security-gateway/pull/194)
 
-### Artifact → Runtime: [HF Model Provenance Scanner](https://github.com/poojakira/hf-model-provenance-scanner)
-Non-executing inspection of supported model artifacts, serialization risks, provenance, and dependency evidence. 
+### [Identity → Authority: AWS Agent Identity Guard](https://github.com/poojakira/aws-agent-identity-guard)
 
-- **260 passed / 1 skipped · 75.67% coverage** in a dated CI run.
-- **33/33 adversarial fixtures flagged** (curated) in a bounded evaluation; this is fixture evidence, not a general detection guarantee.
-- [CI evidence](https://github.com/poojakira/hf-model-provenance-scanner/actions/runs/38002138828) · [Repository](https://github.com/poojakira/hf-model-provenance-scanner)
+Cloud developers review bounded IAM and trust policies through the actual static scanners, navigate statement evidence, compare policy edits, and export SARIF 2.1.0. The engine has **24 static checks plus 1 additional live-context check**; the local studio requires no AWS credentials.
 
+- **272 passed / 3 skipped · 77.15% local statement coverage** at source [`abe1c0a1e595`](https://github.com/poojakira/aws-agent-identity-guard/blob/abe1c0a1e5953b18eae762a5c41f400ff677adb2/README.md).
+- The **3 skips cover the absent legacy TestRulesModule API**, not missing AWS credentials. Static findings do not determine effective AWS permissions or prove exploitability.
+- [Source-scoped manifest](https://raw.githubusercontent.com/poojakira/aws-agent-identity-guard/a396433a4070a0ddc68aa83f9b1093e87fc3224f/release-evidence/manifest.json) · [PARTIAL release assessment](https://github.com/poojakira/aws-agent-identity-guard/blob/a396433a4070a0ddc68aa83f9b1093e87fc3224f/release-evidence/RELEASE_ASSESSMENT.md) · [Draft review](https://github.com/poojakira/aws-agent-identity-guard/pull/75)
 
-### [Attack Detection Engine / Aegis HealthSec](https://github.com/poojakira/attack-detection-engine) — Telemetry → Investigation
+### [Artifact → Review: HF Model Provenance Scanner](https://github.com/poojakira/hf-model-provenance-scanner)
 
-A rule-based, multi-domain security engine covering ATT&CK-oriented telemetry, offline CAN/firmware/ARM lab analysis, and a developing healthcare investigation workflow. The **unmerged development branches** add clinical-access detection, PostgreSQL persistence, deterministic correlation, a FastAPI investigation API, analyst audit history, and a React SOC console. The healthcare examples use synthetic access events; MIMIC-IV Demo contributes de-identified clinical context, not actual hospital security logs or authorization decisions.
+ML supply-chain reviewers compare supported local artifacts through a sealed static worker, inspecting hashes, metadata, structure, and concern evidence without loading a model.
 
-- **Milestone C, October 27, 2026:** 212 tests passed in an isolated Python 3.12.3 environment with real PostgreSQL integration; a Docker Compose investigation scenario was also reported as passing. See [PR #48](https://github.com/poojakira/attack-detection-engine/pull/48) and [Milestone C report](https://github.com/poojakira/attack-detection-engine/blob/feat/milestone-c-platform/MILESTONE_C_FINAL_REPORT.md).
-- **Milestone D, October 27, 2026:** 280 local tests reported after authentication, tenant-isolation, container, audit-integrity and supply-chain hardening; see [PR #49](https://github.com/poojakira/attack-detection-engine/pull/49) and its underlying branch. **Hosted CI is blocked because repository Actions are disabled.**
-- **FHIR R4 AuditEvent connector:** [PR #50](https://github.com/poojakira/attack-detection-engine/pull/50) publishes an authenticated FHIR R4 AuditEvent connector for source review (single resource, Bundle, and JSON-list inputs; normalization into the existing investigation pipeline). Its coding agent reports **296 passing local tests** for Milestone E, including real-PostgreSQL end-to-end coverage. The branch is **unmerged** and hosted CI remains blocked; this is not released or independently validated deployment capability. CloudTrail, Sysmon, auditd, and Ruby/Go/Swift/Java/.NET SAST remain planned.
+- **317 passed / 3 skipped · 76.08% local statement coverage · 6 separate passing subtests** at source [`ab26ad5cd6fe`](https://github.com/poojakira/hf-model-provenance-scanner/blob/ab26ad5cd6fe28ae1b0986e20da46be9ebb2f27a/README.md).
+- **Independent closing review is BLOCKED.** Static inspection does not establish publisher identity, training lineage, behavioral safety, model equivalence, or absence of backdoors.
+- [Source-scoped manifest](https://raw.githubusercontent.com/poojakira/hf-model-provenance-scanner/ed25d66b72e374f86e2975930b0ed83b9acf3c09/release-evidence/manifest.json) · [PARTIAL release assessment](https://github.com/poojakira/hf-model-provenance-scanner/blob/ed25d66b72e374f86e2975930b0ed83b9acf3c09/release-evidence/RELEASE_ASSESSMENT.md) · [Draft review](https://github.com/poojakira/hf-model-provenance-scanner/pull/103)
 
-[Healthcare detection PR #47](https://github.com/poojakira/attack-detection-engine/pull/47) · [Investigation PR #48](https://github.com/poojakira/attack-detection-engine/pull/48) · [Hardening PR #49](https://github.com/poojakira/attack-detection-engine/pull/49)
+### [Telemetry → Investigation: Attack Detection Engine / Aegis HealthSec](https://github.com/poojakira/attack-detection-engine)
 
-**Scope:** Synthetic security telemetry, bounded test evidence, and controlled local/container evaluation only; no customer deployment, real-world detection-rate measurement, HIPAA certification, or production-readiness claim. The `main` branch still reflects the earlier offline detection engine until the stacked PRs are reviewed and merged.
+Analysts import bounded synthetic FHIR AuditEvent data into a local React/FastAPI investigation workbench, inspect canonical detector/correlation evidence persisted in PostgreSQL, change thresholds, rerun the same dataset, and export checksummed reports. This is batch investigation.
+
+- **332 passed / 0 skipped · 82.47% local statement coverage** at source [`aa45efd2f9f7`](https://github.com/poojakira/attack-detection-engine/blob/aa45efd2f9f7e229a0ae7b7f8d77adac18d96e83/README.md).
+- Hosted [CI run 44431212087](https://github.com/poojakira/attack-detection-engine/actions/runs/44431212087) was **queued / NOT VERIFIED** at the November 19, 2026 18:12 UTC recheck. Hard parser/detector process deadlines, complete FHIR conformance, PHI/privacy/recovery/load approval, and hostile public hosting remain open.
+- [Source-scoped manifest](https://raw.githubusercontent.com/poojakira/attack-detection-engine/875299dd6a7ed061df792d1150371c688383fc05/release-evidence/manifest.json) · [PARTIAL release assessment](https://github.com/poojakira/attack-detection-engine/blob/875299dd6a7ed061df792d1150371c688383fc05/release-evidence/RELEASE_ASSESSMENT.md) · [Draft review](https://github.com/poojakira/attack-detection-engine/pull/58)
+
+The full browser interfaces run locally using each candidate README. Each assessment links a free guided notebook; its committed cells were executed locally, while the hosted Colab kernel remains **NOT VERIFIED**. There is no verified public hosted full security application. The notebooks and synthetic fixtures do not establish multi-user isolation, continuous monitoring, or production readiness.
 
 ## More security engineering
 
@@ -69,7 +73,7 @@ A rule-based, multi-domain security engine covering ATT&CK-oriented telemetry, o
 ## Background
 
 - **M.S., Information Technology**, Arizona State University (2026)
-- Graduate Teaching Assistant and IT Grader
+- IT Grader
 - Business & Compliance Lead, AEROSEC academic technology externship (Aug–Dec 2025)
 
 ## Connect
@@ -80,4 +84,4 @@ A rule-based, multi-domain security engine covering ATT&CK-oriented telemetry, o
 
 ---
 
-<sub>Metrics above are tied to specific dated CI runs or bounded fixture sets. They are not claims of production deployment, customer adoption, or universal detection effectiveness. Review each repository's scope, limitations, and license before reuse.</sub>
+<sub>Metrics above are tied to exact candidate commits and immutable local-verification archives. They are not claims of production deployment, customer adoption, or universal detection effectiveness. Review each repository's scope, limitations, and license before reuse.</sub>
