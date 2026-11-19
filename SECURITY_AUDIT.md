@@ -1,5 +1,7 @@
 # Security Audit — poojakira
 
+> Historical audit snapshot (2026-09-29). Status statements below describe that audit point. Use [the active evidence index](RESUME_METRICS_EVIDENCE.md) for the four reviewed candidates, current limitations, and release decisions; this correction does not reproduce every earlier benchmark or platform setting.
+
 **Audit date:** 2026-09-29  
 **Scope:** GitHub profile repository, workflows, tracked files, documentation, and secret exposure.
 

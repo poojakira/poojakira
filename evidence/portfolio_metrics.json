@@ -1,40 +1,84 @@
 {
-  "schema_version": 1,
-  "reviewed_as_of": "2026-10-12",
-  "note": "Dated, scoped evidence index. Test outcomes, code inventory, and attack-detection effectiveness are distinct. Historical poster snapshots are not replaced.",
+  "schema_version": 2,
+  "evidence_date": "2026-11-18",
+  "timezone": "America/Phoenix",
+  "scope": "Reviewed candidate commits, not merged releases; local individual testcases and separate subtests. Bounded synthetic/local evidence does not establish deployment readiness or field effectiveness.",
+  "historical_snapshot": {
+    "path": "evidence/portfolio_metrics_2026-10-12.json",
+    "sha256": "e230ea722a4d5b8624518ee0396f66f8f334ed8daaed311c6b790ee19fc3a93e",
+    "note": "Preserved original October snapshot. Its IAM credential-skip/static-rule descriptions were inaccurate; use the active November source-scoped entry for current semantics."
+  },
   "projects": {
-    "mcp_agent_security_gateway": {
-      "url": "https://github.com/poojakira/mcp-agent-security-gateway",
-      "run_id": 38012954359,
-      "run_date_utc": "2026-10-10",
-      "python": "3.12",
-      "passed": 782,
-      "statement_coverage_percent": 81.93,
-      "source_signature_count": 69,
-      "source_count_scope": "Source inventory separate from CI test run; not recall or precision",
-      "historical_poster_test_count": 723
+    "mcp-agent-security-gateway": {
+      "repository": "mcp-agent-security-gateway",
+      "source_commit": "d2e7b6ea7c1a1f9cb0fb71f73d0a692d8fa0410c",
+      "archive_commit": "4f83f01a3ed8aca5639143fe2179afb0f864f46e",
+      "manifest_url": "https://raw.githubusercontent.com/poojakira/mcp-agent-security-gateway/4f83f01a3ed8aca5639143fe2179afb0f864f46e/release-evidence/manifest.json",
+      "assessment_url": "https://github.com/poojakira/mcp-agent-security-gateway/blob/4f83f01a3ed8aca5639143fe2179afb0f864f46e/release-evidence/RELEASE_ASSESSMENT.md",
+      "passed": 834,
+      "skipped": 0,
+      "coverage_percent": 81.80446084185813,
+      "subtests_passed": 0,
+      "release_decision": "PARTIAL",
+      "pr": "https://github.com/poojakira/mcp-agent-security-gateway/pull/194",
+      "source_url": "https://github.com/poojakira/mcp-agent-security-gateway/blob/d2e7b6ea7c1a1f9cb0fb71f73d0a692d8fa0410c/README.md",
+      "local_evidence_generated_utc": "2026-11-19T00:50:24.950957+00:00"
     },
-    "aws_agent_identity_guard": {
-      "url": "https://github.com/poojakira/aws-agent-identity-guard",
-      "run_id": 38009457205,
-      "run_date_utc": "2026-10-10",
-      "collected": 247,
-      "passed": 244,
+    "aws-agent-identity-guard": {
+      "repository": "aws-agent-identity-guard",
+      "source_commit": "abe1c0a1e5953b18eae762a5c41f400ff677adb2",
+      "archive_commit": "a396433a4070a0ddc68aa83f9b1093e87fc3224f",
+      "manifest_url": "https://raw.githubusercontent.com/poojakira/aws-agent-identity-guard/a396433a4070a0ddc68aa83f9b1093e87fc3224f/release-evidence/manifest.json",
+      "assessment_url": "https://github.com/poojakira/aws-agent-identity-guard/blob/a396433a4070a0ddc68aa83f9b1093e87fc3224f/release-evidence/RELEASE_ASSESSMENT.md",
+      "passed": 272,
       "skipped": 3,
-      "static_rules": 25,
-      "scope": "Three credential-dependent live-scan tests skipped; no effective-permission claim"
+      "coverage_percent": 77.14791851195749,
+      "subtests_passed": 0,
+      "release_decision": "PARTIAL",
+      "pr": "https://github.com/poojakira/aws-agent-identity-guard/pull/75",
+      "source_url": "https://github.com/poojakira/aws-agent-identity-guard/blob/abe1c0a1e5953b18eae762a5c41f400ff677adb2/README.md",
+      "local_evidence_generated_utc": "2026-11-19T00:50:25.055324+00:00",
+      "static_checks": 24,
+      "additional_live_context_checks": 1,
+      "skip_reason": "Absent legacy TestRulesModule API; these are not AWS-credential skips."
     },
-    "hf_model_provenance_scanner": {
-      "url": "https://github.com/poojakira/hf-model-provenance-scanner",
-      "run_id": 38002138828,
-      "run_date_utc": "2026-10-09",
-      "passed": 260,
-      "skipped": 1,
+    "hf-model-provenance-scanner": {
+      "repository": "hf-model-provenance-scanner",
+      "source_commit": "ab26ad5cd6fe28ae1b0986e20da46be9ebb2f27a",
+      "archive_commit": "ed25d66b72e374f86e2975930b0ed83b9acf3c09",
+      "manifest_url": "https://raw.githubusercontent.com/poojakira/hf-model-provenance-scanner/ed25d66b72e374f86e2975930b0ed83b9acf3c09/release-evidence/manifest.json",
+      "assessment_url": "https://github.com/poojakira/hf-model-provenance-scanner/blob/ed25d66b72e374f86e2975930b0ed83b9acf3c09/release-evidence/RELEASE_ASSESSMENT.md",
+      "passed": 317,
+      "skipped": 3,
+      "coverage_percent": 76.08318890814559,
       "subtests_passed": 6,
-      "statement_coverage_percent": 75.67,
-      "curated_adversarial_fixtures_detected": 33,
-      "curated_adversarial_fixtures_total": 33,
-      "scope": "Committed fixtures are regressions, not population-level precision or recall"
+      "release_decision": "PARTIAL",
+      "pr": "https://github.com/poojakira/hf-model-provenance-scanner/pull/103",
+      "source_url": "https://github.com/poojakira/hf-model-provenance-scanner/blob/ab26ad5cd6fe28ae1b0986e20da46be9ebb2f27a/README.md",
+      "local_evidence_generated_utc": "2026-11-19T00:50:25.131226+00:00",
+      "independent_closure": "BLOCKED"
+    },
+    "attack-detection-engine": {
+      "repository": "attack-detection-engine",
+      "source_commit": "aa45efd2f9f7e229a0ae7b7f8d77adac18d96e83",
+      "archive_commit": "875299dd6a7ed061df792d1150371c688383fc05",
+      "manifest_url": "https://raw.githubusercontent.com/poojakira/attack-detection-engine/875299dd6a7ed061df792d1150371c688383fc05/release-evidence/manifest.json",
+      "assessment_url": "https://github.com/poojakira/attack-detection-engine/blob/875299dd6a7ed061df792d1150371c688383fc05/release-evidence/RELEASE_ASSESSMENT.md",
+      "passed": 332,
+      "skipped": 0,
+      "coverage_percent": 82.47183565275017,
+      "subtests_passed": 0,
+      "release_decision": "PARTIAL",
+      "pr": "https://github.com/poojakira/attack-detection-engine/pull/58",
+      "source_url": "https://github.com/poojakira/attack-detection-engine/blob/aa45efd2f9f7e229a0ae7b7f8d77adac18d96e83/README.md",
+      "local_evidence_generated_utc": "2026-11-19T00:50:47.990938+00:00",
+      "hosted_ci": {
+        "run_id": 44431212087,
+        "url": "https://github.com/poojakira/attack-detection-engine/actions/runs/44431212087",
+        "status": "queued",
+        "conclusion": null,
+        "checked_utc": "2026-11-19T18:12:25.031Z"
+      }
     }
   }
 }

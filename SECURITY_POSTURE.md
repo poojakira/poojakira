@@ -1,5 +1,7 @@
 # SECURITY_POSTURE.md
 
+> Historical audit snapshot (2026-09-16). Status statements below describe that audit point. Use [the active evidence index](RESUME_METRICS_EVIDENCE.md) for the four reviewed candidates, current limitations, and release decisions; this correction does not reproduce every earlier benchmark or platform setting.
+
 Date: 2026-09-16
 
 This document classifies what each security/ML-security repository actually does. The categories are capability classes, not quality scores.

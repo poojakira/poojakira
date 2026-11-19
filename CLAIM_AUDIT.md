@@ -1,5 +1,7 @@
 # CLAIM_AUDIT.md
 
+> Historical audit snapshot (2026-09-16). Status statements below describe that audit point. Use [the active evidence index](RESUME_METRICS_EVIDENCE.md) for the four reviewed candidates, current limitations, and release decisions; this correction does not reproduce every earlier benchmark or platform setting.
+
 Date: 2026-09-16
 
 A claim is treated as verified only when implementation and evidence support the same scope. Historical, synthetic, fixture-only, and unexecuted claims are labeled accordingly.
