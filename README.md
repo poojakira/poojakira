@@ -97,7 +97,7 @@ Read the [evidence index](RESUME_METRICS_EVIDENCE.md) for exact commits, test sc
 
 ## Connect
 
-[**Portfolio**](https://poojakira.github.io/Pooja_Kiran_Portfolio_Website/) · [**LinkedIn**](https://www.linkedin.com/in/poojakiran/) · [**IEEE publication**](https://ieeexplore.ieee.org/document/10440852) · [**Email**](mailto:poojakiranbhardwaj@gmail.com)
+[**Portfolio**](https://poojakira.github.io/Pooja_Kiran_Portfolio_Website/) · [**LinkedIn**](https://www.linkedin.com/in/poojakiran/) · [**IEEE publication**](https://ieeexplore.ieee.org/document/10440852) · **Email:** poojakiranbhardwaj@gmail.com
 
 *Interested in software engineering, backend systems, AI-agent infrastructure, and application security. The code and its limits are open for inspection.*
 
