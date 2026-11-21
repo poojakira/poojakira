@@ -96,9 +96,12 @@ def validate(root: Path) -> list[str]:
             )
             continue
         passed, skipped, subtests = counts
+        coverage_unit = (
+            "line" if repository == "attack-detection-engine" else "statement"
+        )
         metric = (
             f"{passed} passed / {skipped} skipped · "
-            f"{coverage:.2f}% local statement coverage"
+            f"{coverage:.2f}% local {coverage_unit} coverage"
         )
         if subtests:
             metric += f" · {subtests} separate passing subtests"
@@ -119,17 +122,22 @@ def validate(root: Path) -> list[str]:
     run_url = (
         "https://github.com/poojakira/attack-detection-engine/actions/runs/" f"{run_id}"
     )
+    run_api_url = (
+        "https://api.github.com/repos/poojakira/attack-detection-engine/actions/runs/"
+        f"{run_id}"
+    )
     if (
         type(run_id) is not int
         or run_id <= 0
         or aegis.get("url") != run_url
+        or aegis.get("api_url") != run_api_url
         or aegis.get("status") != "queued"
         or aegis.get("conclusion") is not None
     ):
         failures.append(
             "Aegis hosted observation differs from the dated queued recheck"
         )
-    if run_url not in profile or run_url not in evidence:
+    if run_api_url not in profile or run_api_url not in evidence:
         failures.append("Missing Aegis hosted observation link")
     for text, label in ((profile, "README"), (evidence, "evidence index")):
         for required in (

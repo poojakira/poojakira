@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import re
+from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import urlparse
 
@@ -47,6 +48,38 @@ def validate_readme_links(readme: str) -> list[str]:
     return failures
 
 
+PORTFOLIO = "https://poojakira.github.io/Pooja_Kiran_Portfolio_Website/"
+RESUME = PORTFOLIO + "Pooja_Kiran_Software_Engineer_Resume.pdf"
+
+
+class ProfileLinks(HTMLParser):
+    def __init__(self):
+        super().__init__()
+        self.links = []
+
+    def handle_starttag(self, tag, attrs):
+        if tag == "a":
+            href = dict(attrs).get("href")
+            if href:
+                self.links.append(href)
+
+
+def validate_portfolio_links(readme: str) -> list[str]:
+    """Check the profile's HTML navigation against the Pages artifact contract."""
+    page = ProfileLinks()
+    page.feed(readme)
+    if PORTFOLIO not in page.links:
+        return ["Profile navigation is missing the canonical Pages URL"]
+    resumes = [
+        link
+        for link in page.links
+        if link.startswith(PORTFOLIO) and urlparse(link).path.lower().endswith(".pdf")
+    ]
+    if resumes != [RESUME]:
+        return ["Profile navigation must link the generated Pages résumé exactly once"]
+    return []
+
+
 def main() -> int:
     failures: list[str] = []
 
@@ -64,6 +97,7 @@ def main() -> int:
                     f"README contains retired active-system marker: {marker}"
                 )
         failures.extend(validate_readme_links(readme))
+        failures.extend(validate_portfolio_links(readme))
 
     if failures:
         for failure in failures:
