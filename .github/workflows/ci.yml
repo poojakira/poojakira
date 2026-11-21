@@ -26,7 +26,9 @@ jobs:
         with:
           python-version: "3.12"
       - name: Verify production/evidence surfaces
-        run: python scripts/verify_profile.py
+        run: |
+          python -m unittest discover -s tests -p test_profile_links.py
+          python scripts/verify_profile.py
       - name: Verify dated recruiting metrics manifest
         run: python scripts/verify_metrics_manifest.py
       - name: Lint and format maintained Python scripts
