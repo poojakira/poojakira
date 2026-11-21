@@ -9,3 +9,5 @@ Python 3.12.14 executed both source checks. The HTTP API response confirmed the 
 
 
 The local workflow syntax check used actionlint 1.7.7. The Markdown lexical check inspected relative file targets. It does not establish heading fragments, external targets, or example commands. Logs and command wrappers are in the workspace audit directory.
+
+The draft's initial hosted Profile CI run reached the formatter and returned failure. The source was formatted using Ruff 0.8.4. Lint, format check, both evidence scripts, and the security script then exited 0 locally. [Initial hosted failure](https://github.com/poojakira/poojakira/actions/runs/44847124842)

@@ -30,6 +30,7 @@ Historical Profile CI failure 44656173132 executed the profile evidence verifica
 |---|---|---|---|---|
 | PROFILE-01 | Low | README.md:12–55 | The profile emphasized the legacy résumé links and labeled Aegis coverage as statements. The profile now links the generated résumé and uses the archive’s line-coverage terminology. The evidence index and parity checker agree. | Implemented locally |
 | PROFILE-02 | Low | README.md and RESUME_METRICS_EVIDENCE.md | The queued CI HTML page returned HTTP 404. The public actions API returned the exact head, queued status and empty conclusion for the same run ID. The profile and index now link to the verified API record. | Implemented locally |
+| PROFILE-03 | Low | scripts/verify_metrics_manifest.py | The first evidence update omitted a formatter pass and failed the hosted Ruff format check. Formatted with Ruff 0.8.4, then reran lint, formatting, both parity checks, and the security check locally. | Fixed locally. [Failed run](https://github.com/poojakira/poojakira/actions/runs/44847124842) |
 
 ## Residual risk
 

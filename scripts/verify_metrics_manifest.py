@@ -96,7 +96,9 @@ def validate(root: Path) -> list[str]:
             )
             continue
         passed, skipped, subtests = counts
-        coverage_unit = "line" if repository == "attack-detection-engine" else "statement"
+        coverage_unit = (
+            "line" if repository == "attack-detection-engine" else "statement"
+        )
         metric = (
             f"{passed} passed / {skipped} skipped · "
             f"{coverage:.2f}% local {coverage_unit} coverage"
